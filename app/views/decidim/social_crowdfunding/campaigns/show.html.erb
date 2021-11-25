@@ -1,0 +1,95 @@
+<div class="row column view-header">
+  <h2 class="heading2"><%= translated_attribute current_campaign.name %></h2>
+</div>
+
+<div class="row">
+  <div class="columns section view-side mediumlarge-4 mediumlarge-push-8 large-4 large-push-8">
+    <div class="card extra">
+      <div class="card__content">
+        <div class="campaign__date">
+          <%= campaign_date %>
+        </div>
+        <div class="campaign__status">
+          <%= campaign_status %>
+        </div>
+
+        <% if current_campaign.can_donate? %>
+          <%= link_to t(".donate"), current_campaign.url, class: "button expanded button--sc", target: :blank %>
+        <% else %>
+          <%= link_to t(".view"), current_campaign.url, class: "button expanded button--sc", target: :blank %>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="card extra">
+      <div class="definition-data">
+        <div class="reached definition-data__item">
+          <span class="definition-data__title"><%= t(".money.received") %></span>
+          <span class="definition-data__number"> <%= campaign_money current_campaign.amount %> </span>
+        </div>
+        <div class="minimum definition-data__item definition-data__item--double">
+          <span class="definition-data__title"><%= t(".money.minimum") %></span>
+          <span class="definition-data__number"> <%= campaign_money current_campaign.minimum %> </span>
+        </div>
+        <div class="optimum definition-data__item definition-data__item--double">
+          <span class="definition-data__title"><%= t(".money.optimum") %></span>
+          <span class="definition-data__number"> <%= campaign_money current_campaign.optimum %> </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card extra">
+      <%= render "rewards" %>
+    </div>
+
+    <% if campaign_needs&.any? %>
+      <div class="card extra">
+        <%= render "crowdsourcing" %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="columns mediumlarge-7 mediumlarge-pull-5">
+    <div class="responsive-embed widescreen">
+      <iframe src="<%= campaign_media_src %>" frameborder="0" style="max-width:none !important;" webkitallowfullscreen mozallowfullscreen>
+      </iframe>
+    </div>
+
+    <%= render partial: "decidim/social_crowdfunding/campaigns/description", locals: {
+      id: "costs",
+      title: t("costs.title", scope: "decidim.social_crowdfunding.campaigns"),
+      content: render("costs")
+    } %>
+
+    <%= render partial: "decidim/social_crowdfunding/campaigns/description", locals: {
+      id: "description-general",
+      title: t(".description.general"),
+      content: render_markdown(translated_attribute(current_campaign.description)),
+      options: { expanded: true },
+    } %>
+
+    <%= render partial: "decidim/social_crowdfunding/campaigns/description", locals: {
+      id: "description-about",
+      title: t(".description.about"),
+      content: render_markdown(current_campaign.data["about"])
+    } if current_campaign.data["about"] %>
+
+    <%= render partial: "decidim/social_crowdfunding/campaigns/description", locals: {
+      id: "description-motivation",
+      title: t(".description.motivation"),
+      content: render_markdown(current_campaign.data["motivation"])
+    } if current_campaign.data["motivation"] %>
+
+    <%= render partial: "decidim/social_crowdfunding/campaigns/description", locals: {
+      id: "description-goal",
+      title: t(".description.goal"),
+      content: render_markdown(current_campaign.data["goal"])
+    } if current_campaign.data["goal"] %>
+
+    <% if campaign_social_commitments.any? %>
+      <div class="row mt-m">
+        <%= render "social_commitment" %>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+<h2><%= t(".title") %></h2>
+
+<% campaign_rewards.each do |reward| %>
+  <div class="definition-data__item">
+    <span class="definition-data__number">
+      <%= t(".contributing", amount: campaign_money(reward["amount"])) %>
+    </span>
+
+    <span class="definition-data__title">
+      <%= reward["name"] %>
+    </span>
+
+    <span class="definition-data__text text-left">
+      <%= render_markdown reward["description"] %>
+    </span>
+
+    <% if current_campaign.can_donate? %>
+      <%= link_to t(".get"), Decidim::SocialCrowdfunding::Api::Goteo.base_url + "/invest/#{current_campaign.slug}/payment?reward=#{reward["id"]}", class: "button button--sc expanded" %>
+    <% end %>
+  </div>
+<% end %>

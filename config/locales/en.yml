@@ -1,0 +1,53 @@
+---
+en:
+  decidim:
+    components:
+      social_crowdfunding_campaign:
+        name: Social Crowdfunding Campaign
+        settings:
+          global:
+            announcement: Announcement
+            campaign_id: Campaign ID
+          step:
+            announcement: Announcement
+    social_crowdfunding:
+      admin:
+        campaigns:
+          edit:
+            manage: Please click <a href="%{link}">here</a> to manage this component.
+            title: Social Crowdfunding Campaign
+      campaigns:
+        costs:
+          material: Materials
+          minimum: Minimum
+          optimum: Optimum
+          task: Tasks
+          title: Costs
+          total: Total
+        crowdsourcing:
+          title: Crowdsourcing
+        rewards:
+          contributing: Contributing %{amount}
+          get: Get it!
+          title: Rewards
+        show:
+          description:
+            about: Description of the project. Main features, strengths and differentials.
+            general: General information
+            goal: Goals of the crowdfunding campaign
+            motivation: Why is this important
+          donate: Donate
+          money:
+            minimum: Minimum
+            optimum: Optimum
+            received: Received
+          view: Visit campaign
+        social_commitment:
+          title: Social commitment
+        statuses:
+          editing: Editing
+          fulfilled: Accomplished!
+          funded: Funded
+          in_campaign: In campaign
+          reviewing: Reviewing
+          unfunded: Unfunded

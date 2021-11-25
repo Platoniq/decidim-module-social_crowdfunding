@@ -1,0 +1,57 @@
+<table>
+  <% campaign_grouped_costs.each do |type, costs| %>
+    <thead>
+      <tr>
+        <td>
+          <%= t(".#{type}") %>
+        </td>
+        <td style="width: 15%;">
+          <%= t(".minimum") %>
+        </td>
+        <td style="width: 15%;">
+          <%= t(".optimum") %>
+        </td>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% costs.sort_by { |c| c["required"] }.reverse.each do |cost| %>
+        <tr>
+          <td>
+            <strong>
+              <%= cost["name"] %>
+            </strong>
+            <br>
+            <%= render_markdown cost["description"] %>
+          </td>
+
+          <td>
+            <% if cost["required"] == "True" %>
+              <%= campaign_money(cost["amount"]) %>
+            <% end %>
+          </td>
+
+          <td>
+            <% if cost["required"] == "False" %>
+              <%= campaign_money(cost["amount"]) %>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  <% end %>
+
+  <tfoot>
+    <tr>
+      <td>
+        <%= t(".total") %>
+      </td>
+      <td>
+        <%= campaign_money(campaign_total_minimum) %>
+      </td>
+      <td>
+        <%= campaign_money(campaign_total_optimum) %>
+      </td>
+    </tr>
+  </tfoot>
+</table>
