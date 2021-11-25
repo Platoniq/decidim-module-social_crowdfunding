@@ -1,0 +1,446 @@
+{
+  "about": "El sistema estar\u00e1 integrado por dos partes fundamentales: la estaci\u00f3n m\u00f3vil f\u00edsica (alimentaci\u00f3n, base, ruedas, m\u00e1stil, etc) y el firmware (el c\u00f3digo programable que la controla).\r\n\r\nSe trata de un dispositivo de altas prestaciones, para la transmisi\u00f3n de datos con un ancho de banda potente. Es un proyecto de gran flexibilidad que permitir\u00e1 posibilidades de interconexi\u00f3n con los dispositivos digitales que habitan las ciudades contempor\u00e1neas. \r\n\r\nNodo M\u00f3vil incorpora movilidad a la red inal\u00e1mbrica ciudadana guifi.net, extendi\u00e9ndola para provocar nuevas pr\u00e1cticas sociales en el entorno urbano, mezclando espacio p\u00fablico f\u00edsico y digital.\r\n\r\nM\u00e1s informaci\u00f3n: http://www.mobilitylab.net/nodomovil/",
+  "amount": 1744.0,
+  "categories": [
+    {
+      "description": "Proyectos con el objetivo de informar, denunciar, comunicar (por ejemplo periodismo ciudadano, documentales, blogs, programas de radio).",
+      "id": 6,
+      "name": "Comunicativo"
+    },
+    {
+      "description": "Desarrollos t\u00e9cnicos de software, hardware, herramientas etc. para solucionar problemas o necesidades concretas.",
+      "id": 7,
+      "name": "Tecnol\u00f3gico"
+    },
+    {
+      "description": "Proyectos con objetivos art\u00edsticos y culturales en un sentido amplio.",
+      "id": 11,
+      "name": "Cultural"
+    }
+  ],
+  "costs": [
+    {
+      "amount": 250.0,
+      "date-from": "Thu, 15 Dec 2011 00:00:00 +0100",
+      "date-to": "Mon, 30 Jan 2012 00:00:00 +0100",
+      "description": "Acciones de promoci\u00f3n del proyecto en entornos y comunidades. Difusi\u00f3n en medios de comunicaci\u00f3n.\r\n",
+      "id": 303,
+      "name": "Difusi\u00f3n y Comunicaci\u00f3n",
+      "required": "False",
+      "type": "task"
+    },
+    {
+      "amount": 600.0,
+      "date-from": "Thu, 15 Dec 2011 00:00:00 +0100",
+      "date-to": "Mon, 30 Jan 2012 00:00:00 +0100",
+      "description": "Compra de material para la estaci\u00f3n de Nodo M\u00f3vil.",
+      "id": 134,
+      "name": "Material",
+      "required": "True",
+      "type": "material"
+    },
+    {
+      "amount": 300.0,
+      "date-from": "Thu, 15 Dec 2011 00:00:00 +0100",
+      "date-to": "Mon, 30 Jan 2012 00:00:00 +0100",
+      "description": "Construcci\u00f3n y montaje del Nodo M\u00f3vil.",
+      "id": 135,
+      "name": "Construcci\u00f3n",
+      "required": "True",
+      "type": "task"
+    },
+    {
+      "amount": 350.0,
+      "date-from": "Thu, 15 Dec 2011 00:00:00 +0100",
+      "date-to": "Mon, 30 Jan 2012 00:00:00 +0100",
+      "description": "Configuraci\u00f3n del firmware.",
+      "id": 136,
+      "name": "Configuraci\u00f3n",
+      "required": "True",
+      "type": "task"
+    },
+    {
+      "amount": 250.0,
+      "date-from": "Thu, 15 Dec 2011 00:00:00 +0100",
+      "date-to": "Mon, 30 Jan 2012 00:00:00 +0100",
+      "description": "Pruebas de funcionamiento (incluyendo el segundo Nodo M\u00f3vil).",
+      "id": 137,
+      "name": "Testeo",
+      "required": "False",
+      "type": "task"
+    }
+  ],
+  "currency": "EUR",
+  "currency-rate": 1.0,
+  "date-closed": null,
+  "date-created": "Fri, 13 May 2011 00:00:00 +0200",
+  "date-passed": "Tue, 13 Dec 2011 00:00:00 +0100",
+  "date-published": "Thu, 03 Nov 2011 00:00:00 +0100",
+  "date-succeeded": "Mon, 23 Jan 2012 00:00:00 +0100",
+  "date-updated": "Thu, 17 Nov 2011 00:00:00 +0100",
+  "description": "Con Nodo M\u00f3vil proponemos una estaci\u00f3n de transmisi\u00f3n libre, una infraestructura de telecomunicaci\u00f3n inal\u00e1mbrica m\u00f3vil, que se puede usar en el entorno urbano y permite el mallado digital a trav\u00e9s de redes ciudadanas. \r\n\r\nActualmente tenemos un Nodo M\u00f3vil en pruebas y queremos construir con la cofinanciaci\u00f3n y apoyos a trav\u00e9s de Goteo un segundo dispositivo mejorado. \r\n\r\nContar\u00e1 con una capacidad de autonom\u00eda y configuraci\u00f3n propias, pudiendo interconectar m\u00faltiples ordenadores y perif\u00e9ricos (LAN: Local Area Network) en diferentes espacios, conect\u00e1ndose entre s\u00ed de forma independiente a las empresas de telecomunicaci\u00f3n.",
+  "description-short": "Una unidad itinerante de conexi\u00f3n wifi para movimientos sociales y espacios p\u00fablicos",
+  "goal": "Lo importante ahora es mejorar el dise\u00f1o y su rendimiento, as\u00ed como el testeo, la documentaci\u00f3n y acciones formativas, para que de esta forma se pueda replicar m\u00e1s f\u00e1cilmente, y a medio plazo las ciudadanas puedan acceder a esta tecnolog\u00eda a bajo costo con r\u00e9ditos sociales importantes.\r\n\r\nEl proyecto tiene varias fases de implementaci\u00f3n. Tambi\u00e9n pretendemos incorporar sistemas diversos de mallado como tecnolog\u00eda GPS, microcontroladores, Bluetooth, etc.\r\n\r\nActualmente se dise\u00f1a en Barcelona, pero su conectividad es posible en casi todo el territorio donde se encuentre un nodo accesible de la red guifi.net.",
+  "id": "nodo-movil",
+  "image-gallery": null,
+  "image-url": "https://goteo.org/img/medium/esquema-3.png",
+  "image-url-big": "https://goteo.org/img/big/esquema-3.png",
+  "lang": "es",
+  "location": null,
+  "minimum": 1250.0,
+  "motivation": "Nodo M\u00f3vil se orienta a personas y colectivos interesados en sistemas de comunicaci\u00f3n digital independientes, autogestionados y que est\u00e9n construidos con protocolos abiertos.\r\n\r\nEs un proyecto I+D en el cual se est\u00e1n involucrando colectivos e instituciones de diferente naturaleza. Sus aplicaciones pueden ser de diferente tipo: educaci\u00f3n, activismo, arte, primeros auxilios, etc. ",
+  "name": "Nodo M\u00f3vil",
+  "needs": [
+    {
+      "description": "Asesoramiento para optimizaci\u00f3n de desarrolladores de Exo.cat, grupo Manet. Tambi\u00e9n expertos en streaming y/o telefon\u00eda m\u00f3vil.",
+      "id": 65,
+      "name": "Desarrolladores",
+      "type": "task"
+    },
+    {
+      "description": "Sala de hackeo / trabajo / reuni\u00f3n para unas 10 personas.",
+      "id": 66,
+      "name": "Espacio de trabajo",
+      "type": "lend"
+    },
+    {
+      "description": "Espacio p\u00fablico o cercano a una plaza, parque o similar, accesible para pruebas.",
+      "id": 67,
+      "name": "Espacio p\u00fablico",
+      "type": "lend"
+    },
+    {
+      "description": "Pruebas en impresora 3D para optimizar el modelado de la unidad m\u00f3vil.",
+      "id": 124,
+      "name": "Impresi\u00f3n 3D",
+      "type": "task"
+    },
+    {
+      "description": "Experimentos para conectar el Nodo M\u00f3vil con sistemas Arduino, Xbee, Android y GPS.",
+      "id": 363,
+      "name": "Investigaci\u00f3n para amplificar las posibilidades del proyecto.",
+      "type": "task"
+    }
+  ],
+  "node": "barcelona",
+  "optimum": 1750.0,
+  "owner": "efoglia",
+  "owner-name": "Efra\u00edn Foglia",
+  "project-url": "https://goteo.org/project/nodo-movil",
+  "rewards": [
+    {
+      "amount": 0,
+      "available-units": 0,
+      "description": "Se publicar\u00e1n los dise\u00f1os e instrucciones del proyecto para que \u00e9ste pueda ser f\u00e1cilmente duplicado.",
+      "icon-url": "https://goteo.org/api/svg/icons/manual.svg",
+      "id": 266,
+      "license": "ccbyncsa",
+      "license-description": "Licencia Creative Commons (bienes comunes creativos) con reconocimiento de autor\u00eda, sin que se pueda hacer uso comercial y a compartir en id\u00e9nticas condiciones",
+      "license-name": "CC - Reconocimiento - NoComercial - CompartirIgual",
+      "license-svg-url": "https://goteo.org/api/svg/licenses/ccbyncsa.svg",
+      "license-url": "http://creativecommons.org/licenses/by-nc-sa/3.0/deed.es_ES",
+      "name": "Documentaci\u00f3n para la fabricaci\u00f3n",
+      "type": "social",
+      "units": 0
+    },
+    {
+      "amount": 0,
+      "available-units": 0,
+      "description": "El Firmware est\u00e1 a cargo de los desarrolladores de qmp.cat \r\nEs una adaptaci\u00f3n (costumizaci\u00f3n) de la distribuci\u00f3n de\r\nOpenWRT que es una distribuci\u00f3n de GNU/Linux orientada a\r\ndispositivos empotrados (embedded) integrada solamente por software\r\nlibre. \r\nTodo el software desarrollado en qmp.cat se distribuye bajo\r\nlicencia GLPv2\r\n\r\n\r\n",
+      "icon-url": "https://goteo.org/api/svg/icons/code.svg",
+      "id": 382,
+      "license": "gpl2",
+      "license-description": "Licencia P\u00fablica General de GNU para la libre distribuci\u00f3n, modificaci\u00f3n y uso de software",
+      "license-name": "General Public License (v.2)",
+      "license-svg-url": "https://goteo.org/api/svg/licenses/gpl2.svg",
+      "license-url": "http://www.gnu.org/licenses/gpl-2.0.html",
+      "name": "Firmware: qmp.cat",
+      "type": "social",
+      "units": 0
+    },
+    {
+      "amount": 0,
+      "available-units": 0,
+      "description": "Producci\u00f3n de tutoriales en v\u00eddeo basados en las sesiones de formaci\u00f3n online y presencial sobre el dise\u00f1o, montaje y funcionamiento de una unidad de Nodo M\u00f3vil.",
+      "icon-url": "https://goteo.org/api/svg/icons/file.svg",
+      "id": 148,
+      "license": "ccbyncsa",
+      "license-description": "Licencia Creative Commons (bienes comunes creativos) con reconocimiento de autor\u00eda, sin que se pueda hacer uso comercial y a compartir en id\u00e9nticas condiciones",
+      "license-name": "CC - Reconocimiento - NoComercial - CompartirIgual",
+      "license-svg-url": "https://goteo.org/api/svg/licenses/ccbyncsa.svg",
+      "license-url": "http://creativecommons.org/licenses/by-nc-sa/3.0/deed.es_ES",
+      "name": "Videotutorial",
+      "type": "social",
+      "units": 0
+    },
+    {
+      "amount": 5,
+      "available-units": 0,
+      "description": "Tu nombre aparecer\u00e1 en el apartado de agradecimientos de la documentaci\u00f3n generada con el proyecto.",
+      "icon-url": "https://goteo.org/api/svg/icons/other.svg",
+      "id": 397,
+      "name": "Acreditaci\u00f3n de mecenazgo",
+      "type": "individual",
+      "units": 0
+    },
+    {
+      "amount": 20,
+      "available-units": 0,
+      "description": "Sesiones de asesor\u00eda personalizada para explicar c\u00f3mo est\u00e1 dise\u00f1ado, construido y funciona el Nodo M\u00f3vil. Las tutor\u00edas se pueden realizar en formato online o presencialmente en los talleres guifilab (reuniones semanales los jueves por la tarde en Barcelona).",
+      "icon-url": "https://goteo.org/api/svg/icons/service.svg",
+      "id": 264,
+      "name": "Tutor\u00edas para entender el sistema de funcionamiento",
+      "type": "individual",
+      "units": 10
+    },
+    {
+      "amount": 250,
+      "available-units": 1,
+      "description": "Adem\u00e1s de lo anterior se ofrece un testeo de pruebas de transmisi\u00f3n de voz y v\u00eddeo por streaming con el Nodo M\u00f3vil en un entorno concreto (festival, congreso o reuni\u00f3n en el espacio p\u00fablico) ense\u00f1ando sus posibilidades de uso.",
+      "icon-url": "https://goteo.org/api/svg/icons/service.svg",
+      "id": 263,
+      "name": "Testing de transmisiones",
+      "type": "individual",
+      "units": 1
+    },
+    {
+      "amount": 2500,
+      "available-units": 1,
+      "description": "Adem\u00e1s de producir la unidad especificada en este proyecto, se fabricar\u00e1 un Nodo M\u00f3vil adicional que se entregar\u00e1 construido y configurado a la persona, instituci\u00f3n o colectivo que cofinancie con este importe, para que lo destine a su propio uso y necesidades.",
+      "icon-url": "https://goteo.org/api/svg/icons/product.svg",
+      "id": 389,
+      "name": "Nodo M\u00f3vil adicional",
+      "type": "individual",
+      "units": 1
+    }
+  ],
+  "scope": "global",
+  "social-commitment": {
+    "description": null,
+    "icon-url": null,
+    "id": 0,
+    "name": null
+  },
+  "social-commitment-description": null,
+  "social-commitment-id": null,
+  "status": "fulfilled",
+  "time-elapsed": 0.8741698265075684,
+  "translations": {
+    "ca": {
+      "about": "El sistema estar\u00e0 integrat per dues parts fonamentals: l'estaci\u00f3 m\u00f2bil f\u00edsica (alimentaci\u00f3, base, rodes, masteler, etc) i el firmware (el codi programable que la controla).\r\n\r\nEs tracta d'un dispositiu d'altes prestacions, per a la transmissi\u00f3 de dades amb un ample de banda potent. \u00c9s un projecte de gran flexibilitat que permetr\u00e0 possibilitats d'interconnexi\u00f3 amb els dispositius digitals que habiten les ciutats contempor\u00e0nies.\r\n\r\nNode M\u00f2bil incorpora mobilitat a la xarxa sense fil ciutadana guifi.net, estenent-la per provocar noves pr\u00e0ctiques socials dins l'entorn urb\u00e0, barrejant espai p\u00fablic f\u00edsic i digital.\r\n\r\nM\u00e9s informaci\u00f3: http://www.mobilitylab.net/nodomovil/",
+      "categories": {
+        "11": {
+          "description": "Projectes amb objectius art\u00edstics i culturals en un sentit ampli.",
+          "name": "Cultural"
+        },
+        "6": {
+          "description": "Projectes amb l'objectiu d'informar, denunciar, comunicar (per exemple periodisme ciutad\u00e0, documentals, blogs, programes de r\u00e0dio).",
+          "name": "Comunicatiu"
+        },
+        "7": {
+          "description": "Desenvolupaments t\u00e8cnics de programari, maquinari, eines etc. per solucionar problemes o necessitats concretes. ",
+          "name": "Tecnol\u00f2gic"
+        }
+      },
+      "costs": {
+        "134": {
+          "description": "Compra de material para l'estaci\u00f3 de Node M\u00f2bil.",
+          "name": "Material"
+        },
+        "135": {
+          "description": "Construcci\u00f3 i muntatge del Node M\u00f2bil.",
+          "name": "Construcci\u00f3"
+        },
+        "136": {
+          "description": "Configuraci\u00f3 del firmware.",
+          "name": "Configuraci\u00f3"
+        },
+        "137": {
+          "description": "Proves de funcionament (incloent el segon Node M\u00f2bil).",
+          "name": "Testeig"
+        },
+        "303": {
+          "description": "Accions de promoci\u00f3 del projecte en entorns i comunitats. Difusi\u00f3 en mitjans de comunicaci\u00f3.\r\n",
+          "name": "Difusi\u00f3 y comunicaci\u00f3"
+        }
+      },
+      "description": "Amb Node M\u00f2bil proposem una estaci\u00f3 de transmissi\u00f3 lliure, una infraestructura de telecomunicaci\u00f3 sense fil m\u00f2bil, que es pot fer servir en l'entorn urb\u00e0 i permet el mallatge digital a trav\u00e9s de xarxes ciutadanes.\r\n\r\nActualment tenim un Node M\u00f2bil en proves i volem construir amb el cofinan\u00e7ament i suports a trav\u00e9s de Goteo un segon dispositiu millorat.\r\n\r\nComptar\u00e0 amb una capacitat d'autonomia i configuraci\u00f3 pr\u00f2pies, podent interconnectar m\u00faltiples ordinadors i perif\u00e8rics (LAN: Local Area Network) en diferents espais, connectant-se entre ells de forma independent a les empreses de telecomunicaci\u00f3.",
+      "description-short": "Una unitat itinerant de connexi\u00f3 wifi per a moviments socials i espais p\u00fablics",
+      "motivation": "Node M\u00f2bil s'orienta a persones i col\u00b7lectius interessats en sistemes de comunicaci\u00f3 digital independents, autogestionats i que estiguin constru\u00efts amb protocols oberts.\r\n\r\n\u00c9s un projecte R+D on s'hi estan involucrant col\u00b7lectius i institucions diverses. Les seves aplicacions poden ser de diferent tipus: educaci\u00f3, activisme, art, primers auxilis, etc. ",
+      "needs": {
+        "124": {
+          "description": "Proves en impressora 3D per optimitzar el modelatge de la unitat m\u00f2bil.",
+          "name": "Impressi\u00f3 3D"
+        },
+        "65": {
+          "description": "Assessorament per a optimitzaci\u00f3 de desenvolupadors d'Exo.cat, grup Manet. Tamb\u00e9 experts en streaming i/o telefonia m\u00f2bil.",
+          "name": "Desenvolupadors"
+        },
+        "66": {
+          "description": "Sala de hackeig / treball / reuni\u00f3 per unes 10 persones.",
+          "name": "Espai de treball"
+        },
+        "67": {
+          "description": "Espai p\u00fablic o proper a una pla\u00e7a, parc o similar, accessible per a proves.",
+          "name": "Espai p\u00fablic"
+        }
+      },
+      "rewards": {
+        "148": {
+          "available-units": 0,
+          "description": "Producci\u00f3 de tutorials en v\u00eddeo basats en les sessions de formaci\u00f3 online i presencial sobre el disseny, muntatge i funcionament d'una unitat de Node M\u00f2bil.",
+          "license-description": "Llic\u00e8ncia Creative Commons (b\u00e9ns comuns creatius) amb reconeixement d'autoria, sense que es pugui fer \u00fas comercial i a compartir en id\u00e8ntiques condicions",
+          "license-name": "CC - Reconeixement - NoComercial - CompartirIgual",
+          "license-url": "http://creativecommons.org/licenses/by-nc-sa/3.0/deed.ca",
+          "name": "Videotutorial",
+          "units": 0
+        },
+        "263": {
+          "available-units": 0,
+          "description": "A m\u00e9s de la recompensa anterior s'ofereix un testeig de proves de transmissi\u00f3 de veu i v\u00eddeo per streaming amb el Node M\u00f2bil en un entorn concret (festival, congr\u00e9s o reuni\u00f3 en l'espai p\u00fablic) ensenyant les seves possibilitats d'\u00fas.",
+          "name": "Testei de transmissions",
+          "units": 0
+        },
+        "264": {
+          "available-units": 0,
+          "description": "Sessions d'assessoria personalitzada per explicar com est\u00e0 dissenyat, constru\u00eft i funciona el Node M\u00f2bil. Les tutories es poden realitzar en format online o presencialment en els tallers guifilab (reunions setmanals els dijous a la tarda a Barcelona).",
+          "name": "Tutories per entendre el sistema de funcionament",
+          "units": 0
+        },
+        "266": {
+          "available-units": 0,
+          "description": "Es publicaran els dissenys i instruccions del projecte perqu\u00e8 aquest pugui ser f\u00e0cilment duplicat.",
+          "license-description": "Llic\u00e8ncia Creative Commons (b\u00e9ns comuns creatius) amb reconeixement d'autoria, sense que es pugui fer \u00fas comercial i a compartir en id\u00e8ntiques condicions",
+          "license-name": "CC - Reconeixement - NoComercial - CompartirIgual",
+          "license-url": "http://creativecommons.org/licenses/by-nc-sa/3.0/deed.ca",
+          "name": "Documentaci\u00f3 per a la fabricaci\u00f3",
+          "units": 0
+        },
+        "382": {
+          "available-units": 0,
+          "description": "El Firmware est\u00e0 a c\u00e0rrec dels desenvolupadors de qmp.cat. \u00c9s una adaptaci\u00f3 (costumitzaci\u00f3) de la distribuci\u00f3 d'OpenWRT que \u00e9s una distribuci\u00f3 de GNU/Linux orientada a dispositius encastats (embedded) integrada \u00fanicament per programari lliure. Tot el programari desenvolupat en qmp.cat es distribueix sota llic\u00e8ncia GLPv2.\r\n",
+          "license-description": "Llic\u00e8ncia P\u00fablica General de GNU per a la lliure distribuci\u00f3, modificaci\u00f3 i \u00fas de programari",
+          "license-name": "General Public License (v.2)",
+          "license-url": "http://www.gnu.org/licenses/gpl-2.0.html",
+          "name": "Firmware: qmp.cat",
+          "units": 0
+        },
+        "389": {
+          "available-units": 0,
+          "description": "A m\u00e9s de produir la unitat especificada en aquest projecte, es fabricar\u00e0 un Node M\u00f2bil addicional que es lliurar\u00e0 constru\u00eft i configurat a la persona, instituci\u00f3 o col\u00b7lectiu que cofinanci amb aquest import, per a que ho destini al seu propi \u00fas i necessitats.",
+          "name": "Node M\u00f2bil addicional",
+          "units": 0
+        },
+        "397": {
+          "available-units": 0,
+          "description": "El teu nom apareixer\u00e0 en l'apartat d'agra\u00efments de la documentaci\u00f3 generada amb el projecte. ",
+          "name": "Acreditaci\u00f3 de mecenatge",
+          "units": 0
+        }
+      },
+      "social-commitment-description": null
+    },
+    "en": {
+      "about": "The system will consist of two main parts: the mobile physical station (supply, structure, wheels, pole, etc.) and the firmware (the programable code which controls it).\r\n\r\nIt is a high-performance device able to transfer data with a powerful bandwidth; a highly flexible project which raises possibilities of interconnection with digital devices located in the city of today.\r\n\r\nThe Mobile Node adds mobility to the citizens' wireless network guifi.net by expanding it so as to generate new social practices weithin the urban space and mixing the physical and digital spheres.\r\n\r\nMore info: www.mobilitylab.net/nodomovil/",
+      "categories": {
+        "11": {
+          "description": "Projects with artistic or cultural objectives.",
+          "name": "Cultural"
+        },
+        "6": {
+          "description": "Projects whose objective is to inform, denounce and/or communicate (for example, civic journalism, documentaries, blogs, radio programs).",
+          "name": "Communications"
+        },
+        "7": {
+          "description": "Technical development of software, hardware, tools, etc in order to solve concrete problems or needs.",
+          "name": "Technological"
+        }
+      },
+      "description": "With the mobile Node we propose a free transmission workstation, a mobile wireless  telecommunications infrastructure which can be used in the urban space contributing to the digital mess across citizens' networks.\r\n\r\nCurrently, we have a Mobile Node on trial and we intend to build another improved node with the financial support of Goteo.\r\n\r\nIt will be automonous and self-configurable and will be able to interconnect multiple computers and peripherals (LAN: Local Area Network) in different spaces and without the need of any telecommunications company.  ",
+      "description-short": "A travelling wifi connection unity for social movements and the public space.",
+      "motivation": "The Mobile Node is addressed to people and groups interested independent digital communication systems built with open protocols.\r\n\r\nIt is a R+D project in which different groups and institutions are involved. It may be used for education, activism, art, first-adis, etc. ",
+      "needs": {
+        "124": {
+          "description": "Possibility to make 3D models to design the Mobile Node.",
+          "name": "3D printer"
+        },
+        "65": {
+          "description": "qmp.cat + streaming + mobile devices.",
+          "name": "Developers"
+        },
+        "66": {
+          "description": "hacking lab  (10 people) Internet connection, tables, etc. Barcelona.",
+          "name": "Work Space"
+        },
+        "67": {
+          "description": "Public space, square, parks, etc..",
+          "name": "Public Space"
+        }
+      },
+      "rewards": {
+        "148": {
+          "available-units": 0,
+          "description": "Video tutorials based on the online and on-site training sessions on the design of the Mobile Node.",
+          "license-description": "Creative Commons License with attribution, that does not allow commercial use, and only allows sharing under identical licensing conditions",
+          "license-name": "CC - Attribution - NonCommercial - ShareAlike",
+          "license-url": "http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en",
+          "name": "Video tutorials",
+          "units": 0
+        },
+        "263": {
+          "available-units": 0,
+          "description": "Apart from the above mentioned aspects, the Mobile Node allows for voice and video transmission via streaming for specific purposes (festival, congress or meeting in the public space).",
+          "name": "Transmission Testing",
+          "units": 0
+        },
+        "264": {
+          "available-units": 0,
+          "description": "Personalized advising sessions to explain how the Node is designed, built and how it works. The tutorials can be done online or on-site in the guifilab facilities (weekly meetings in Barcelona on Thursdays afternoon).",
+          "name": "Tutorials for understanding how it works ",
+          "units": 0
+        },
+        "266": {
+          "available-units": 0,
+          "description": "The designs and instructions of the project will be published to allow an easy duplication of the Mobile Node.",
+          "license-description": "Creative Commons License with attribution, that does not allow commercial use, and only allows sharing under identical licensing conditions",
+          "license-name": "CC - Attribution - NonCommercial - ShareAlike",
+          "license-url": "http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en",
+          "name": "Documentation related to the manufacture",
+          "units": 0
+        },
+        "382": {
+          "available-units": 0,
+          "description": "qmp.cat developers are in charge of the firmware.\r\nIt is an adaptation (customization) of the OpenWRT distribution which is a GNU/Linux distribution for free software embedded devices. \r\nAll the software developed in qmp.cat is distributed under GLPv2  license.\r\n",
+          "license-description": "GNU General Public License for the free distribution, modification, and use of software",
+          "license-name": "General Public License (v.2)",
+          "license-url": "http://www.gnu.org/licenses/gpl-2.0.html",
+          "name": "Firmware: qmp.cat",
+          "units": 0
+        },
+        "389": {
+          "available-units": 0,
+          "description": "As well as producing the node specific in the project, an additional Mobile Node will be built, configured and delivered to the person, institution or group providing such amount for their own use and needs.",
+          "name": "additional Mobile Node-Plus",
+          "units": 0
+        },
+        "397": {
+          "available-units": 0,
+          "description": "Your name willappear in the acknowledgement section of the project documentation.  \r\n",
+          "name": "sponsoring recognition",
+          "units": 0
+        }
+      },
+      "social-commitment-description": null
+    }
+  },
+  "user": {
+    "date-created": null,
+    "id": "efoglia",
+    "name": "Efra\u00edn Foglia",
+    "node": "barcelona",
+    "profile-image-url": "https://goteo.org/img/medium/corazon.jpg",
+    "profile-url": "https://goteo.org/user/profile/efoglia"
+  },
+  "video-url": "http://vimeo.com/30992804",
+  "widget-url": "https://goteo.org/widget/project/nodo-movil"
+}

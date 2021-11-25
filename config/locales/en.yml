@@ -1,0 +1,13 @@
+en:
+  decidim:
+    components:
+      social_crowdfunding_campaign:
+        name: Social Crowdfunding Campaign
+        settings:
+          global:
+            announcement: Announcement
+            campaign_id: Campaign ID
+          step:
+            announcement: Announcement
+            campaign_id: Campaign ID
+    social_crowdfunding:
