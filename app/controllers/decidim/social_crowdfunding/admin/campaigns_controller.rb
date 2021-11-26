@@ -3,9 +3,8 @@
 module Decidim
   module SocialCrowdfunding
     module Admin
-      # Custom helpers, scoped to the social_crowdfunding engine.
-      #
-      module ApplicationHelper
+      class CampaignsController < Decidim::Admin::ApplicationController
+        def show; end
       end
     end
   end

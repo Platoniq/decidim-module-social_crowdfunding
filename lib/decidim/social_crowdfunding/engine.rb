@@ -9,6 +9,11 @@ module Decidim
     class Engine < ::Rails::Engine
       isolate_namespace Decidim::SocialCrowdfunding
 
+      routes do
+        # Add engine routes here
+        root to: "campaigns#show"
+      end
+
       initializer "decidim_social_crowdfunding.snippets" do |app|
         app.config.enable_html_header_snippets = true
       end

@@ -7,7 +7,7 @@ Decidim.register_component(:social_crowdfunding_campaign) do |component|
   component.admin_engine = Decidim::SocialCrowdfunding::AdminEngine
   component.icon = "decidim/social_crowdfunding/icon.svg"
   component.permissions_class_name = "Decidim::SocialCrowdfunding::Permissions"
-  
+
   # These actions permissions can be configured in the admin panel
   # component.actions = %w()
 
@@ -15,12 +15,12 @@ Decidim.register_component(:social_crowdfunding_campaign) do |component|
     # Add your global settings
     # Available types: :integer, :boolean
     settings.attribute :announcement, type: :text, translated: true, editor: true
+    settings.attribute :campaign_id, type: :string
   end
-  
+
   component.settings(:step) do |settings|
     # Add your settings per step
     settings.attribute :announcement, type: :text, translated: true, editor: true
-    settings.attribute :campaign_id, type: :string
   end
 
   component.seeds do |participatory_space|

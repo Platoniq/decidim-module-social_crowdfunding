@@ -13,7 +13,9 @@ module Decidim
       private
 
       def current_campaign
-        @current_campaign ||= Decidim::SocialCrowdfunding::Campaign.find_by(slug: current_component)
+        # @current_campaign ||= Decidim::SocialCrowdfunding::Campaign.find_by(slug: current_component)
+
+        @current_campaign ||= Decidim::SocialCrowdfunding::Campaign.first
       end
     end
   end

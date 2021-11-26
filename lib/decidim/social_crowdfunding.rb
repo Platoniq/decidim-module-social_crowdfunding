@@ -2,6 +2,7 @@
 
 require "decidim/social_crowdfunding/admin"
 require "decidim/social_crowdfunding/admin_engine"
+require "decidim/social_crowdfunding/api"
 require "decidim/social_crowdfunding/engine"
 require "decidim/social_crowdfunding/component"
 

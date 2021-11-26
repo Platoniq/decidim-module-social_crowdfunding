@@ -20,8 +20,6 @@ module Decidim
         end
 
         attr_reader :campaign
-
-        private
       end
     end
   end

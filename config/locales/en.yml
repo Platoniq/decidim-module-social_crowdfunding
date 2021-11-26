@@ -1,3 +1,4 @@
+---
 en:
   decidim:
     components:
@@ -9,5 +10,19 @@ en:
             campaign_id: Campaign ID
           step:
             announcement: Announcement
-            campaign_id: Campaign ID
     social_crowdfunding:
+      campaigns:
+        show:
+          donate: Donate
+          money:
+            minimum: Minimum
+            optimum: Optimum
+            received: Received
+          view: Visit campaign
+        statuses:
+          editing: Editing
+          fulfilled: Accomplished!
+          funded: Funded
+          in-campaign: In campaign
+          reviewing: Reviewing
+          unfunded: Unfunded

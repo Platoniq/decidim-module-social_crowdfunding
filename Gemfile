@@ -34,3 +34,5 @@ end
 group :test do
   gem "codecov", require: false
 end
+
+gem "money-rails", "~> 1.15"
