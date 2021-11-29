@@ -7,6 +7,7 @@ module Decidim
       isolate_namespace Decidim::SocialCrowdfunding::Admin
 
       paths["lib/tasks"] = nil
+      paths["db/migrate"] = nil
 
       routes do
         # Add admin engine routes here

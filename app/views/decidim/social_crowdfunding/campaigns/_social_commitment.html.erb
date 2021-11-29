@@ -1,0 +1,12 @@
+<h2 class="section-heading"><%= t(".title") %></h2>
+
+<% current_campaign.data["rewards"].select { |r| r["type"] == "social" }.each do |need| %>
+  <div>
+    <h3>
+      <%= need["name"] %>
+    </h3>
+    <p>
+      <%= need["description"] %>
+    </p>
+  </div>
+<% end %>

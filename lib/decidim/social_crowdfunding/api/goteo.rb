@@ -5,15 +5,24 @@ module Decidim
     module Api
       module Goteo
         PROJECT_URL = "https://api.goteo.org/v1/projects/%{slug}"
+        PROJECTS_URL = "https://api.goteo.org/v1/projects"
 
         class << self
           def get_project(slug)
+            get format(PROJECT_URL, slug: slug)
+          end
+
+          def get_projects
+            get PROJECT_URL
+          end
+
+          def get(uri)
             verify_ssl = true
             connection ||= Faraday.new(ssl: { verify: verify_ssl }) do |conn|
               conn.request :basic_auth, "user", "pass"
             end
 
-            response = connection.get URI.join(format(PROJECT_URL, slug: slug))
+            response = connection.get uri
 
             raise Error, response.reason_phrase unless response.success?
 

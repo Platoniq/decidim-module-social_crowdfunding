@@ -3,10 +3,11 @@
 module Decidim
   module SocialCrowdfunding
     module Admin
-      # A command with all the business logic when creating a campaign
-      class CreateCampaign < Rectify::Command
-        def initialize(data)
-          @campaign = Decidim::SocialCrowdfunding::Campaign.new(data: data)
+      # A command with all the business logic when retrieving info from campaign
+      class FetchCampaign < Rectify::Command
+        def initialize(slug)
+          campaign_data = Decidim::SocialCrowdfunding::Api::Goteo.get_project(slug)
+          @campaign = Decidim::SocialCrowdfunding::Campaign.new(campaign_data)
         end
 
         def call

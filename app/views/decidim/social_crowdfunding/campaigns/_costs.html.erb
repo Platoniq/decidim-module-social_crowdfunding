@@ -1,0 +1,61 @@
+<h2 class="section-heading"><%= t(".title") %></h2>
+
+<table>
+  <% current_campaign.data["costs"].group_by { |c| c["type"] }.each do |type, costs| %>
+    <thead>
+      <tr>
+        <td>
+          <%= t(".#{type}") %>
+        </td>
+        <td style="width: 15%;">
+          <%= t(".minimum") %>
+        </td>
+        <td style="width: 15%;">
+          <%= t(".optimum") %>
+        </td>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% costs.sort_by { |c| c["required"] }.reverse.each do |cost| %>
+        <tr>
+          <td>
+            <strong>
+              <%= cost["name"] %>
+            </strong>
+            <br>
+            <%= cost["description"] %>
+          </td>
+          
+          <td>
+            <% if cost["required"] == "True" %>
+              <%= campaign_money(cost["amount"], current_campaign.data["currency"]) %>
+            <% end %>
+          </td>
+          
+          <td>
+            <% if cost["required"] == "False" %>
+              <%= campaign_money(cost["amount"], current_campaign.data["currency"]) %>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  <% end %>
+
+  <tfoot>
+    <tr>
+      <% minimum = current_campaign.data["costs"].select { |c| c["required"] == "True" }.sum { |c| c["amount"] } %>
+      <% optimum = current_campaign.data["costs"].select { |c| c["required"] == "False" }.sum { |c| c["amount"] } %>
+      <td>
+        <%= t(".total") %>
+      </td>
+      <td>
+        <%= campaign_money(minimum, current_campaign.data["currency"]) %>
+      </td>
+      <td>
+        <%= campaign_money(minimum + optimum, current_campaign.data["currency"]) %>
+      </td>
+    </tr>
+  </tfoot>
+</table>

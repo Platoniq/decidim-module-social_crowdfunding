@@ -1,0 +1,13 @@
+<h2><%= t(".title") %></h2>
+
+<% current_campaign.data["needs"].each do |reward| %>
+  <div class="definition-data__item">
+    <span class="definition-data__title">
+      <%= reward["name"] %>
+    </span>
+    
+    <span class="definition-data__text text-left">
+      <%= reward["description"] %>
+    </span>
+  </div>
+<% end %>

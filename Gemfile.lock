@@ -536,6 +536,7 @@ GEM
     mime-types-data (3.2021.1115)
     mini_magick (4.11.0)
     mini_mime (1.1.2)
+    mini_portile2 (2.5.3)
     minitest (5.14.4)
     mixlib-cli (2.1.8)
     mixlib-config (3.0.9)
@@ -559,6 +560,9 @@ GEM
     netrc (0.11.0)
     nio4r (2.5.8)
     nobspw (0.6.2)
+    nokogiri (1.11.7)
+      mini_portile2 (~> 2.5.0)
+      racc (~> 1.4)
     nokogiri (1.11.7-x86_64-linux)
       racc (~> 1.4)
     oauth (0.5.8)
@@ -844,6 +848,7 @@ GEM
       nokogiri (~> 1.8)
 
 PLATFORMS
+  ruby
   x86_64-linux
 
 DEPENDENCIES
@@ -865,7 +870,7 @@ DEPENDENCIES
   web-console (~> 3.5)
 
 RUBY VERSION
-   ruby 2.7.3p183
+   ruby 2.7.5p203
 
 BUNDLED WITH
    2.2.26

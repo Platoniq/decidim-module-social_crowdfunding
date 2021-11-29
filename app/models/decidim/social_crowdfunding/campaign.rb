@@ -40,7 +40,8 @@ module Decidim
         campaign = find_or_create_by(slug: slug, organization: organization)
 
         json = Api::Goteo.get_project(slug)
-        campaign.update!(params_from_json(json))
+
+        campaign.update!(params_from_json(json)) if campaign.updated_at.blank? || Time.now - campaign.updated_at > 1.day
 
         campaign
       end

@@ -3,7 +3,7 @@
 </div>
 
 <div class="row">
-  <div class="columns section view-side mediumlarge-4 mediumlarge-push-8 large-3 large-push-9">
+  <div class="columns section view-side mediumlarge-4 mediumlarge-push-8 large-4 large-push-8">
     <div class="card extra">
       <div class="card__content">
         <div class="campaign__date">
@@ -27,24 +27,66 @@
           <span class="definition-data__title"><%= t(".money.received") %></span>
           <span class="definition-data__number"> <%= campaign_money current_campaign.amount, current_campaign.data["currency"] %> </span>
         </div>
-        <div class="optimum definition-data__item">
-          <span class="definition-data__title"><%= t(".money.optimum") %></span>
-          <span class="definition-data__number"> <%= campaign_money current_campaign.optimum, current_campaign.data["currency"] %> </span>
-        </div>
-        <div class="minimum definition-data__item">
+        <div class="minimum definition-data__item definition-data__item--double">
           <span class="definition-data__title"><%= t(".money.minimum") %></span>
           <span class="definition-data__number"> <%= campaign_money current_campaign.minimum, current_campaign.data["currency"] %> </span>
         </div>
+        <div class="optimum definition-data__item definition-data__item--double">
+          <span class="definition-data__title"><%= t(".money.optimum") %></span>
+          <span class="definition-data__number"> <%= campaign_money current_campaign.optimum, current_campaign.data["currency"] %> </span>
+        </div>
       </div>
+    </div>
+
+    <div class="card extra">
+      <%= render "rewards" %>
+    </div>
+    
+    <div class="card extra">
+      <%= render "crowdsourcing" %>
     </div>
   </div>
 
-  <div class="columns mediumlarge-8 mediumlarge-pull-4">
+  <div class="columns mediumlarge-7 mediumlarge-pull-5">
     <div class="responsive-embed widescreen">
       <iframe src="<%= campaign_media(current_campaign.data["video-url"]) %>" frameborder="0" style="max-width:none !important;" webkitallowfullscreen mozallowfullscreen>
       </iframe>
     </div>
     
-    <%= translated_attribute current_campaign.description %>
+    <div class="row">
+      <%= render "costs" %>
+    </div>
+
+    <div class="row">
+      <h3 class="section-heading mt-s">
+        <%= t(".description.general") %>
+      </h3>
+      <%= translated_attribute current_campaign.description %>
+    </div>
+    
+    <div class="row">
+      <h3 class="section-heading mt-s">
+        <%= t(".description.about") %>
+      </h3>
+      <%= translated_attribute current_campaign.data["about"] %>
+    </div>
+    
+    <div class="row">
+      <h3 class="section-heading mt-s">
+        <%= t(".description.motivation") %>
+      </h3>
+      <%= translated_attribute current_campaign.data["motivation"] %>
+    </div>
+    
+    <div class="row">
+      <h3 class="section-heading mt-s">
+        <%= t(".description.goal") %>
+      </h3>
+      <%= translated_attribute current_campaign.data["goal"] %>
+    </div>
+    
+    <div class="row mt-m">
+      <%= render "social_commitment" %>
+    </div>
   </div>
 </div>

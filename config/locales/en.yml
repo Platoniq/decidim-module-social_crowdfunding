@@ -12,13 +12,32 @@ en:
             announcement: Announcement
     social_crowdfunding:
       campaigns:
+        costs:
+          material: Materials
+          minimum: Minimum
+          optimum: Optimum
+          task: Tasks
+          title: Costs
+          total: Total
+        crowdsourcing:
+          title: Crowdsourcing
+        rewards:
+          contributing: Contributing %{amount}
+          title: Rewards
         show:
+          description:
+            about: Description of the project. Main features, strengths and differentials.
+            general: General information
+            goal: Goals of the crowdfunding campaign
+            motivation: Why is this important
           donate: Donate
           money:
             minimum: Minimum
             optimum: Optimum
             received: Received
           view: Visit campaign
+        social_commitment:
+          title: Social commitment
         statuses:
           editing: Editing
           fulfilled: Accomplished!
