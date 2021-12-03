@@ -39,7 +39,7 @@ module Decidim
       def self.fetch(slug, organization, sync: false)
         campaign = find_or_create_by(slug: slug, organization: organization)
 
-        if sync || should_sync?
+        if sync || campaign.should_sync?
           json = Api::Goteo.project(slug)
           campaign.update!(params_from_json(json))
         end
@@ -52,7 +52,7 @@ module Decidim
       end
 
       def should_sync?
-        campaign.created_at < 1.minute.ago || campaign.updated_at > 1.day.ago
+        created_at < 1.minute.ago || updated_at > 1.day.ago
       end
     end
   end
