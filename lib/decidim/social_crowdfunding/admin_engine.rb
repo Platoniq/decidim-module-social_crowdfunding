@@ -11,6 +11,9 @@ module Decidim
 
       routes do
         # Add admin engine routes here
+
+        resources :campaigns, only: [:destroy]
+
         root to: "campaigns#edit"
       end
     end

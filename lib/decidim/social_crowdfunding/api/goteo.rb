@@ -5,7 +5,7 @@ module Decidim
     module Api
       module Goteo
         PROJECT_URL = "https://api.goteo.org/v1/projects/%{slug}"
-        PROJECTS_URL = "https://api.goteo.org/v1/projects"
+        PROJECTS_URL = "https://api.goteo.org/v1/projects/?limit=%{limit}&page=%{page}"
 
         class << self
           def base_url
@@ -16,14 +16,15 @@ module Decidim
             get format(PROJECT_URL, slug: slug)
           end
 
-          def projects
-            get PROJECT_URL
+          # UNUSED
+          def projects(limit = 10, page = 0)
+            get format(PROJECT_URL, limit: limit, page: page)
           end
 
           def get(uri)
             verify_ssl = true
             connection ||= Faraday.new(ssl: { verify: verify_ssl }) do |conn|
-              conn.request :basic_auth, "user", "pass"
+              conn.request :basic_auth, ENV["GOTEO_USERNAME"], ENV["GOTEO_PASSWORD"]
             end
 
             response = connection.get uri

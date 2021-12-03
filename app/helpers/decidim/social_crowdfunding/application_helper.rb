@@ -30,7 +30,7 @@ module Decidim
       end
 
       def days_remaining
-        "not implemented in api"
+        "days remaining: not implemented in api"
       end
 
       def campaign_grouped_costs
@@ -51,6 +51,16 @@ module Decidim
 
       def campaign_status
         I18n.t(current_campaign.data["status"], scope: "decidim.social_crowdfunding.campaigns.statuses")
+      end
+
+      def campaign_status_class
+        case current_campaign.data["status"]
+        when "editing", "reviewing" then "warning"
+        when "in_campaign" then "secondary"
+        when "funded", "fulfilled" then "success"
+        when "unfunded" then "error"
+        else "primary"
+        end
       end
 
       def campaign_total_minimum
