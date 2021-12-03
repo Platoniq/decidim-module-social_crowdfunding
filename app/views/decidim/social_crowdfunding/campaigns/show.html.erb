@@ -12,7 +12,7 @@
         <div class="campaign__status">
           <%= campaign_status %>
         </div>
-        
+
         <% if current_campaign.can_donate? %>
           <%= link_to t(".donate"), current_campaign.url, class: "button expanded button--sc", target: :blank %>
         <% else %>
@@ -41,7 +41,7 @@
     <div class="card extra">
       <%= render "rewards" %>
     </div>
-    
+
     <% if campaign_needs&.any? %>
       <div class="card extra">
         <%= render "crowdsourcing" %>
@@ -54,7 +54,7 @@
       <iframe src="<%= campaign_media_src %>" frameborder="0" style="max-width:none !important;" webkitallowfullscreen mozallowfullscreen>
       </iframe>
     </div>
-    
+
     <div class="row">
       <%= render "costs" %>
     </div>
@@ -65,7 +65,7 @@
       </h3>
       <%= render_markdown translated_attribute(current_campaign.description) %>
     </div>
-    
+
     <% if current_campaign.data["about"] %>
       <div class="row">
         <h3 class="section-heading mt-s">
@@ -74,7 +74,7 @@
         <%= render_markdown current_campaign.data["about"] %>
       </div>
     <% end %>
-    
+
     <% if current_campaign.data["motivation"] %>
       <div class="row">
         <h3 class="section-heading mt-s">
@@ -83,7 +83,7 @@
         <%= render_markdown current_campaign.data["motivation"] %>
       </div>
     <% end %>
-    
+
     <% if current_campaign.data["goal"] %>
       <div class="row">
         <h3 class="section-heading mt-s">
@@ -92,7 +92,7 @@
         <%= render_markdown current_campaign.data["goal"] %>
       </div>
     <% end %>
-    
+
     <% if campaign_social_commitments.any? %>
       <div class="row mt-m">
         <%= render "social_commitment" %>

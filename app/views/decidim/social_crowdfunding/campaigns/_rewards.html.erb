@@ -5,11 +5,11 @@
     <span class="definition-data__number">
       <%= t(".contributing", amount: campaign_money(reward["amount"])) %>
     </span>
-    
+
     <span class="definition-data__title">
       <%= reward["name"] %>
     </span>
-    
+
     <span class="definition-data__text text-left">
       <%= render_markdown reward["description"] %>
     </span>

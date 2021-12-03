@@ -26,13 +26,13 @@
             <br>
             <%= render_markdown cost["description"] %>
           </td>
-          
+
           <td>
             <% if cost["required"] == "True" %>
               <%= campaign_money(cost["amount"]) %>
             <% end %>
           </td>
-          
+
           <td>
             <% if cost["required"] == "False" %>
               <%= campaign_money(cost["amount"]) %>
