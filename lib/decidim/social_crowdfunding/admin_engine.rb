@@ -11,7 +11,7 @@ module Decidim
 
       routes do
         # Add admin engine routes here
-        root to: "campaigns#show"
+        root to: "campaigns#edit"
       end
     end
   end

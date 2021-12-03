@@ -11,6 +11,11 @@ en:
           step:
             announcement: Announcement
     social_crowdfunding:
+      admin:
+        campaigns:
+          edit:
+            manage: Please click <a href="%{link}">here</a> to manage this component.
+            title: Social Crowdfunding Campaign
       campaigns:
         costs:
           material: Materials

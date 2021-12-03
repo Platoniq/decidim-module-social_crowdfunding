@@ -3,8 +3,8 @@
 module Decidim
   module SocialCrowdfunding
     module Admin
-      class CampaignsController < Decidim::Admin::ApplicationController
-        def show; end
+      class CampaignsController < Decidim::Admin::Components::BaseController
+        def edit; end
       end
     end
   end
