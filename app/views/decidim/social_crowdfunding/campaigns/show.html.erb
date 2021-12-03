@@ -67,19 +67,19 @@
       content: render_markdown(translated_attribute(current_campaign.description)),
       options: { expanded: true },
     } %>
-    
+
     <%= render partial: "decidim/social_crowdfunding/campaigns/description", locals: {
       id: "description-about",
       title: t(".description.about"),
       content: render_markdown(current_campaign.data["about"])
     } if current_campaign.data["about"] %>
-    
+
     <%= render partial: "decidim/social_crowdfunding/campaigns/description", locals: {
       id: "description-motivation",
       title: t(".description.motivation"),
       content: render_markdown(current_campaign.data["motivation"])
     } if current_campaign.data["motivation"] %>
-    
+
     <%= render partial: "decidim/social_crowdfunding/campaigns/description", locals: {
       id: "description-goal",
       title: t(".description.goal"),
