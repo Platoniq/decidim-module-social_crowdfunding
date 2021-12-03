@@ -7,10 +7,10 @@
     <div class="card extra">
       <div class="card__content">
         <div class="campaign__date">
-          <%= l campaign_date(current_campaign.data), format: :decidim_short %>
+          <%= campaign_date %>
         </div>
         <div class="campaign__status">
-          <%= campaign_status(current_campaign.data) %>
+          <%= campaign_status %>
         </div>
         
         <% if current_campaign.can_donate? %>
@@ -25,15 +25,15 @@
       <div class="definition-data">
         <div class="reached definition-data__item">
           <span class="definition-data__title"><%= t(".money.received") %></span>
-          <span class="definition-data__number"> <%= campaign_money current_campaign.amount, current_campaign.data["currency"] %> </span>
+          <span class="definition-data__number"> <%= campaign_money current_campaign.amount %> </span>
         </div>
         <div class="minimum definition-data__item definition-data__item--double">
           <span class="definition-data__title"><%= t(".money.minimum") %></span>
-          <span class="definition-data__number"> <%= campaign_money current_campaign.minimum, current_campaign.data["currency"] %> </span>
+          <span class="definition-data__number"> <%= campaign_money current_campaign.minimum %> </span>
         </div>
         <div class="optimum definition-data__item definition-data__item--double">
           <span class="definition-data__title"><%= t(".money.optimum") %></span>
-          <span class="definition-data__number"> <%= campaign_money current_campaign.optimum, current_campaign.data["currency"] %> </span>
+          <span class="definition-data__number"> <%= campaign_money current_campaign.optimum %> </span>
         </div>
       </div>
     </div>
@@ -42,14 +42,16 @@
       <%= render "rewards" %>
     </div>
     
-    <div class="card extra">
-      <%= render "crowdsourcing" %>
-    </div>
+    <% if campaign_needs&.any? %>
+      <div class="card extra">
+        <%= render "crowdsourcing" %>
+      </div>
+    <% end %>
   </div>
 
   <div class="columns mediumlarge-7 mediumlarge-pull-5">
     <div class="responsive-embed widescreen">
-      <iframe src="<%= campaign_media(current_campaign.data["video-url"]) %>" frameborder="0" style="max-width:none !important;" webkitallowfullscreen mozallowfullscreen>
+      <iframe src="<%= campaign_media_src %>" frameborder="0" style="max-width:none !important;" webkitallowfullscreen mozallowfullscreen>
       </iframe>
     </div>
     
@@ -61,32 +63,40 @@
       <h3 class="section-heading mt-s">
         <%= t(".description.general") %>
       </h3>
-      <%= translated_attribute current_campaign.description %>
+      <%= render_markdown translated_attribute(current_campaign.description) %>
     </div>
     
-    <div class="row">
-      <h3 class="section-heading mt-s">
-        <%= t(".description.about") %>
-      </h3>
-      <%= translated_attribute current_campaign.data["about"] %>
-    </div>
+    <% if current_campaign.data["about"] %>
+      <div class="row">
+        <h3 class="section-heading mt-s">
+          <%= t(".description.about") %>
+        </h3>
+        <%= render_markdown current_campaign.data["about"] %>
+      </div>
+    <% end %>
     
-    <div class="row">
-      <h3 class="section-heading mt-s">
-        <%= t(".description.motivation") %>
-      </h3>
-      <%= translated_attribute current_campaign.data["motivation"] %>
-    </div>
+    <% if current_campaign.data["motivation"] %>
+      <div class="row">
+        <h3 class="section-heading mt-s">
+          <%= t(".description.motivation") %>
+        </h3>
+        <%= render_markdown current_campaign.data["motivation"] %>
+      </div>
+    <% end %>
     
-    <div class="row">
-      <h3 class="section-heading mt-s">
-        <%= t(".description.goal") %>
-      </h3>
-      <%= translated_attribute current_campaign.data["goal"] %>
-    </div>
+    <% if current_campaign.data["goal"] %>
+      <div class="row">
+        <h3 class="section-heading mt-s">
+          <%= t(".description.goal") %>
+        </h3>
+        <%= render_markdown current_campaign.data["goal"] %>
+      </div>
+    <% end %>
     
-    <div class="row mt-m">
-      <%= render "social_commitment" %>
-    </div>
+    <% if campaign_social_commitments.any? %>
+      <div class="row mt-m">
+        <%= render "social_commitment" %>
+      </div>
+    <% end %>
   </div>
 </div>

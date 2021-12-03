@@ -8,5 +8,6 @@ require "decidim/social_crowdfunding/component"
 
 module Decidim
   module SocialCrowdfunding
+    autoload :Markdown, "decidim/social_crowdfunding/markdown"
   end
 end

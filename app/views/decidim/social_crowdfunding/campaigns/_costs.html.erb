@@ -1,7 +1,7 @@
 <h2 class="section-heading"><%= t(".title") %></h2>
 
 <table>
-  <% current_campaign.data["costs"].group_by { |c| c["type"] }.each do |type, costs| %>
+  <% campaign_grouped_costs.each do |type, costs| %>
     <thead>
       <tr>
         <td>
@@ -24,18 +24,18 @@
               <%= cost["name"] %>
             </strong>
             <br>
-            <%= cost["description"] %>
+            <%= render_markdown cost["description"] %>
           </td>
           
           <td>
             <% if cost["required"] == "True" %>
-              <%= campaign_money(cost["amount"], current_campaign.data["currency"]) %>
+              <%= campaign_money(cost["amount"]) %>
             <% end %>
           </td>
           
           <td>
             <% if cost["required"] == "False" %>
-              <%= campaign_money(cost["amount"], current_campaign.data["currency"]) %>
+              <%= campaign_money(cost["amount"]) %>
             <% end %>
           </td>
         </tr>
@@ -45,16 +45,14 @@
 
   <tfoot>
     <tr>
-      <% minimum = current_campaign.data["costs"].select { |c| c["required"] == "True" }.sum { |c| c["amount"] } %>
-      <% optimum = current_campaign.data["costs"].select { |c| c["required"] == "False" }.sum { |c| c["amount"] } %>
       <td>
         <%= t(".total") %>
       </td>
       <td>
-        <%= campaign_money(minimum, current_campaign.data["currency"]) %>
+        <%= campaign_money(campaign_total_minimum) %>
       </td>
       <td>
-        <%= campaign_money(minimum + optimum, current_campaign.data["currency"]) %>
+        <%= campaign_money(campaign_total_optimum) %>
       </td>
     </tr>
   </tfoot>

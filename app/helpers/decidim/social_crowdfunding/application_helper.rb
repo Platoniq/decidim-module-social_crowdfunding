@@ -7,24 +7,72 @@ module Decidim
     module ApplicationHelper
       include Decidim::TranslatableAttributes
 
-      def campaign_date(data)
-        date = case data["status"]
-               when "editing" then data["date-created"]
-               when "reviewing" then data["date-updated"]
-               when "in-campaign" then days_remaining(data)
-               when "funded", "fulfilled" then data["date-created"]
-               when "unfunded" then data["date-closed"]
-        end
-
-        Date.parse(date)
+      # Private: Initializes the Markdown parser
+      def markdown
+        @markdown ||= Decidim::SocialCrowdfunding::Markdown.new
       end
 
-      def campaign_status(data)
-        I18n.t(data["status"], scope: "decidim.social_crowdfunding.campaigns.statuses")
+      # Private: converts the string from markdown to html
+      def render_markdown(string)
+        markdown.render(string).html_safe
       end
 
-      def campaign_media(video_url)
-        parsed_url = parse_video_url(video_url)
+      def campaign_date
+        date = case current_campaign.data["status"]
+               when "editing" then current_campaign.data["date-created"]
+               when "reviewing" then current_campaign.data["date-updated"]
+               when "in_campaign" then return days_remaining
+               when "funded", "fulfilled" then current_campaign.data["date-created"]
+               when "unfunded" then current_campaign.data["date-closed"]
+               end
+
+        I18n.l Date.parse(date), format: :decidim_short
+      end
+
+      def days_remaining
+        "not implemented in api"
+      end
+
+      def campaign_grouped_costs
+        current_campaign.data["costs"].group_by { |c| c["type"] }
+      end
+
+      def campaign_needs
+        current_campaign.data["needs"]
+      end
+
+      def campaign_rewards
+        current_campaign.data["rewards"].select { |r| r["type"] == "individual" }
+      end
+
+      def campaign_social_commitments
+        current_campaign.data["rewards"].select { |r| r["type"] == "social" }
+      end
+
+      def campaign_status
+        I18n.t(current_campaign.data["status"], scope: "decidim.social_crowdfunding.campaigns.statuses")
+      end
+
+      def campaign_total_minimum
+        current_campaign.data["costs"].select { |c| c["required"] == "True" }.sum { |c| c["amount"] }
+      end
+
+      def campaign_total_optimum
+        campaign_total_minimum + current_campaign.data["costs"].select { |c| c["required"] == "False" }.sum { |c| c["amount"] }
+      end
+
+      def campaign_money(amount)
+        unit = case current_campaign.data["currency"]
+               when "EUR" then "€"
+               when "USD" then "$"
+               when "GBP" then "£"
+               end
+
+        number_to_currency amount, unit: unit, precision: 0
+      end
+
+      def campaign_media_src
+        parsed_url = parse_video_url(current_campaign.data["video-url"])
 
         case parsed_url[:type]
         when :vimeo
@@ -32,16 +80,6 @@ module Decidim
         when :youtube
           campaign_media_youtube(parsed_url[:id], https: true, autoplay: false)
         end
-      end
-
-      def campaign_money(amount, currency)
-        unit = case currency
-               when "EUR" then "€"
-               when "USD" then "$"
-               when "GBP" then "£"
-        end
-
-        number_to_currency amount, unit: unit, precision: 0
       end
 
       # --- GOTEO METHODS

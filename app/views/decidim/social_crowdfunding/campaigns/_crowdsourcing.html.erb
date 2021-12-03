@@ -1,13 +1,13 @@
 <h2><%= t(".title") %></h2>
 
-<% current_campaign.data["needs"].each do |reward| %>
+<% campaign_needs.each do |need| %>
   <div class="definition-data__item">
     <span class="definition-data__title">
-      <%= reward["name"] %>
+      <%= need["name"] %>
     </span>
     
     <span class="definition-data__text text-left">
-      <%= reward["description"] %>
+      <%= render_markdown need["description"] %>
     </span>
   </div>
 <% end %>

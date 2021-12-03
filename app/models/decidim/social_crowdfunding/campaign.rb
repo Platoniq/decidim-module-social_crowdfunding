@@ -6,7 +6,7 @@ module Decidim
 
     # https://github.com/GoteoFoundation/goteo/blob/live/src/Goteo/Model/Project.php
     class Campaign < ApplicationRecord
-      # enum status: %i[editing reviewing in-campaign funded fulfilled unfunded]
+      # enum status: %i[editing reviewing in_campaign funded fulfilled unfunded]
 
       include Decidim::Traceable
       include Decidim::Loggable
@@ -41,13 +41,13 @@ module Decidim
 
         json = Api::Goteo.get_project(slug)
 
-        campaign.update!(params_from_json(json)) if campaign.updated_at.blank? || Time.now - campaign.updated_at > 1.day
+        campaign.update!(params_from_json(json)) if campaign.created_at < 1.minute.ago || campaign.updated_at > 1.day.ago
 
         campaign
       end
 
       def can_donate?
-        data["status"] == "in-campaign"
+        data["status"] == "in_campaign"
       end
     end
   end

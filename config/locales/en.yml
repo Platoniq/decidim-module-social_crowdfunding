@@ -23,6 +23,7 @@ en:
           title: Crowdsourcing
         rewards:
           contributing: Contributing %{amount}
+          get: Get it!
           title: Rewards
         show:
           description:
@@ -42,6 +43,6 @@ en:
           editing: Editing
           fulfilled: Accomplished!
           funded: Funded
-          in-campaign: In campaign
+          in_campaign: In campaign
           reviewing: Reviewing
           unfunded: Unfunded
