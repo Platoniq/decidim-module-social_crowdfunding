@@ -45,11 +45,5 @@ Decidim.register_component(:social_crowdfunding_campaign) do |component|
     ) do
       Decidim::Component.create!(params)
     end
-
-    campaign = Decidim::SocialCrowdfunding::Campaign.create!(
-      data: {
-        json: 1
-      }
-    )
   end
 end

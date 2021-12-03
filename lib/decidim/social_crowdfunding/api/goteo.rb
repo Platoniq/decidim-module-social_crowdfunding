@@ -12,11 +12,11 @@ module Decidim
             "https://goteo.org"
           end
 
-          def get_project(slug)
+          def project(slug)
             get format(PROJECT_URL, slug: slug)
           end
 
-          def get_projects
+          def projects
             get PROJECT_URL
           end
 

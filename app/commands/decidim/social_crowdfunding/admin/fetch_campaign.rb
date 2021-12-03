@@ -6,7 +6,7 @@ module Decidim
       # A command with all the business logic when retrieving info from campaign
       class FetchCampaign < Rectify::Command
         def initialize(slug)
-          campaign_data = Decidim::SocialCrowdfunding::Api::Goteo.get_project(slug)
+          campaign_data = Decidim::SocialCrowdfunding::Api::Goteo.project(slug)
           @campaign = Decidim::SocialCrowdfunding::Campaign.new(campaign_data)
         end
 

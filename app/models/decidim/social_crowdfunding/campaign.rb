@@ -39,7 +39,7 @@ module Decidim
       def self.fetch(slug, organization)
         campaign = find_or_create_by(slug: slug, organization: organization)
 
-        json = Api::Goteo.get_project(slug)
+        json = Api::Goteo.project(slug)
 
         campaign.update!(params_from_json(json)) if campaign.created_at < 1.minute.ago || campaign.updated_at > 1.day.ago
 
