@@ -11,9 +11,16 @@ en:
           step:
             announcement: Announcement
     social_crowdfunding:
+      actions:
+        confirm_destroy: Are you sure you want to delete this campaign? (It will only delete the Decidim copy of this campaign, not the original one)
+        destroy: Delete
+        title: Actions
       admin:
         campaigns:
+          destroy:
+            success: The campaign has been deleted
           edit:
+            campaigns: Stored campaigns
             manage: Please click <a href="%{link}">here</a> to manage this component.
             title: Social Crowdfunding Campaign
       campaigns:
@@ -51,3 +58,9 @@ en:
           in_campaign: In campaign
           reviewing: Reviewing
           unfunded: Unfunded
+      models:
+        campaign:
+          fields:
+            created_at: Created at
+            id: ID
+            title: Title

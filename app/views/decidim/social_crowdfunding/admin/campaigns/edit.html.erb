@@ -8,4 +8,49 @@
   <div class="card-section">
     <%== t(".manage", link: Decidim::EngineRouter.admin_proxy(current_component.participatory_space).edit_component_path(current_component.id)) %>
   </div>
+</div>
+
+<div class="card">
+  <div class="card-divider">
+    <h2 class="card-title">
+      <%= t(".campaigns") %>
+    </h2>
+  </div>
+
+  <div class="card-section">
+    <div class="table-scroll">
+      <table class="table-list">
+        <thead>
+          <tr>
+            <th><%= t("models.campaign.fields.id", scope: "decidim.social_crowdfunding") %></th>
+            <th><%= t("models.campaign.fields.title", scope: "decidim.social_crowdfunding") %></th>
+            <th><%= t("models.campaign.fields.created_at", scope: "decidim.social_crowdfunding") %></th>
+            <th class="actions"><%= t("actions.title", scope: "decidim.social_crowdfunding") %></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% campaigns.each do |campaign| %>
+
+            <tr data-id="<%= campaign.id %>">
+              <td>
+                <%= link_to campaign.slug, campaign.url, target: :blank %>
+              </td>
+              <td>
+                <%= translated_attribute(campaign.name) %><br>
+              </td>
+              <td>
+                <%= l campaign.created_at, format: "%d/%m/%Y - %H:%M" %>
+              </td>
+              <td class="table-list__actions">
+                <% if allowed_to? :destroy, :campaign, campaign: campaign %>
+                  <%= icon_link_to "circle-x", campaign_path(campaign), t("actions.destroy", scope: "decidim.social_crowdfunding"), method: :delete, class: "action-icon--remove", data: { confirm: t("actions.confirm_destroy", scope: "decidim.social_crowdfunding") } %>
+                <% end %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+      <%= paginate campaigns, theme: "decidim" %>
+    </div>
+  </div>
 <div>
