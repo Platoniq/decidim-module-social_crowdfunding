@@ -23,7 +23,7 @@ module Decidim
           def get(uri)
             verify_ssl = true
             connection ||= Faraday.new(ssl: { verify: verify_ssl }) do |conn|
-              conn.request :basic_auth, "user", "pass"
+              conn.request :basic_auth, ENV["GOTEO_USERNAME"], ENV["GOTEO_PASSWORD"]
             end
 
             response = connection.get uri
