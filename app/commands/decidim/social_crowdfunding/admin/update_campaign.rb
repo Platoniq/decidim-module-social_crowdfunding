@@ -3,8 +3,8 @@
 module Decidim
   module SocialCrowdfunding
     module Admin
-      # A command with all the business logic when destroying a campaign
-      class DestroyCampaign < Rectify::Command
+      # A command with all the business logic when retrieving info from campaign
+      class UpdateCampaign < Rectify::Command
         def initialize(campaign, user)
           @campaign = campaign
           @user = user
@@ -17,19 +17,26 @@ module Decidim
         #
         # Returns nothing.
         def call
-          destroy_campaign!
+          begin
+            update_campaign!
+          rescue StandardError
+            return broadcast(:invalid)
+          end
+
           broadcast(:ok)
         end
 
+        attr_reader :campaign
+
         private
 
-        def destroy_campaign!
+        def update_campaign!
           Decidim.traceability.perform_action!(
             :delete,
             @campaign,
             @user
           ) do
-            @campaign.destroy!
+            Campaign.fetch(@campaign.slug, @user.organization, sync: true)
           end
         end
       end
