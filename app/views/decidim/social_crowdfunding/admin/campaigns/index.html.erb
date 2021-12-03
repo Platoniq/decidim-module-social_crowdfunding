@@ -25,6 +25,7 @@
             <th><%= t("models.campaign.fields.id", scope: "decidim.social_crowdfunding") %></th>
             <th><%= t("models.campaign.fields.title", scope: "decidim.social_crowdfunding") %></th>
             <th><%= t("models.campaign.fields.created_at", scope: "decidim.social_crowdfunding") %></th>
+            <th><%= t("models.campaign.fields.updated_at", scope: "decidim.social_crowdfunding") %></th>
             <th class="actions"><%= t("actions.title", scope: "decidim.social_crowdfunding") %></th>
           </tr>
         </thead>
@@ -41,7 +42,14 @@
               <td>
                 <%= l campaign.created_at, format: "%d/%m/%Y - %H:%M" %>
               </td>
+              <td>
+                <%= l campaign.updated_at, format: "%d/%m/%Y - %H:%M" %>
+              </td>
               <td class="table-list__actions">
+                <% if allowed_to? :update, :campaign, campaign: campaign %>
+                  <%= icon_link_to "reload", campaign_path(campaign), t("actions.update", scope: "decidim.social_crowdfunding"), method: :put, class: "action-icon--reload" %>
+                <% end %>
+
                 <% if allowed_to? :destroy, :campaign, campaign: campaign %>
                   <%= icon_link_to "circle-x", campaign_path(campaign), t("actions.destroy", scope: "decidim.social_crowdfunding"), method: :delete, class: "action-icon--remove", data: { confirm: t("actions.confirm_destroy", scope: "decidim.social_crowdfunding") } %>
                 <% end %>

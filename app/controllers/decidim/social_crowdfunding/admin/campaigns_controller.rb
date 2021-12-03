@@ -8,7 +8,7 @@ module Decidim
 
         helper_method :campaigns
 
-        def edit; end
+        def index; end
 
         def destroy
           enforce_permission_to :destroy, :campaign, campaign: campaign
@@ -16,6 +16,24 @@ module Decidim
           DestroyCampaign.call(campaign, current_user) do
             on(:ok) do
               flash[:notice] = I18n.t("campaigns.destroy.success", scope: "decidim.social_crowdfunding.admin")
+
+              redirect_to root_url
+            end
+          end
+        end
+
+        def update
+          enforce_permission_to :destroy, :campaign, campaign: campaign
+
+          UpdateCampaign.call(campaign, current_user) do
+            on(:ok) do
+              flash[:notice] = I18n.t("campaigns.update.success", scope: "decidim.social_crowdfunding.admin")
+
+              redirect_to root_url
+            end
+
+            on(:error) do
+              flash[:alert] = I18n.t("campaigns.update.error", scope: "decidim.social_crowdfunding.admin")
 
               redirect_to root_url
             end
@@ -33,7 +51,7 @@ module Decidim
         end
 
         def collection
-          @collection ||= Decidim::SocialCrowdfunding::Campaign.all
+          @collection ||= Decidim::SocialCrowdfunding::Campaign.where(organization: current_organization)
         end
       end
     end

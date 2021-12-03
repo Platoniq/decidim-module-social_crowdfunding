@@ -36,18 +36,23 @@ module Decidim
         }
       end
 
-      def self.fetch(slug, organization)
+      def self.fetch(slug, organization, sync: false)
         campaign = find_or_create_by(slug: slug, organization: organization)
 
-        json = Api::Goteo.project(slug)
-
-        campaign.update!(params_from_json(json)) if campaign.created_at < 1.minute.ago || campaign.updated_at > 1.day.ago
+        if sync || should_sync?
+          json = Api::Goteo.project(slug)
+          campaign.update!(params_from_json(json))
+        end
 
         campaign
       end
 
       def can_donate?
         data["status"] == "in_campaign"
+      end
+
+      def should_sync?
+        campaign.created_at < 1.minute.ago || campaign.updated_at > 1.day.ago
       end
     end
   end
