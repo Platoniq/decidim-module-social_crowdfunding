@@ -55,43 +55,36 @@
       </iframe>
     </div>
 
-    <div class="row">
-      <%= render "costs" %>
-    </div>
+    <%= render partial: "decidim/social_crowdfunding/campaigns/description", locals: {
+      id: "costs",
+      title: t("costs.title", scope: "decidim.social_crowdfunding.campaigns"),
+      content: render("costs")
+    } %>
 
-    <div class="row">
-      <h3 class="section-heading mt-s">
-        <%= t(".description.general") %>
-      </h3>
-      <%= render_markdown translated_attribute(current_campaign.description) %>
-    </div>
-
-    <% if current_campaign.data["about"] %>
-      <div class="row">
-        <h3 class="section-heading mt-s">
-          <%= t(".description.about") %>
-        </h3>
-        <%= render_markdown current_campaign.data["about"] %>
-      </div>
-    <% end %>
-
-    <% if current_campaign.data["motivation"] %>
-      <div class="row">
-        <h3 class="section-heading mt-s">
-          <%= t(".description.motivation") %>
-        </h3>
-        <%= render_markdown current_campaign.data["motivation"] %>
-      </div>
-    <% end %>
-
-    <% if current_campaign.data["goal"] %>
-      <div class="row">
-        <h3 class="section-heading mt-s">
-          <%= t(".description.goal") %>
-        </h3>
-        <%= render_markdown current_campaign.data["goal"] %>
-      </div>
-    <% end %>
+    <%= render partial: "decidim/social_crowdfunding/campaigns/description", locals: {
+      id: "description-general",
+      title: t(".description.general"),
+      content: render_markdown(translated_attribute(current_campaign.description)),
+      options: { expanded: true },
+    } %>
+    
+    <%= render partial: "decidim/social_crowdfunding/campaigns/description", locals: {
+      id: "description-about",
+      title: t(".description.about"),
+      content: render_markdown(current_campaign.data["about"])
+    } if current_campaign.data["about"] %>
+    
+    <%= render partial: "decidim/social_crowdfunding/campaigns/description", locals: {
+      id: "description-motivation",
+      title: t(".description.motivation"),
+      content: render_markdown(current_campaign.data["motivation"])
+    } if current_campaign.data["motivation"] %>
+    
+    <%= render partial: "decidim/social_crowdfunding/campaigns/description", locals: {
+      id: "description-goal",
+      title: t(".description.goal"),
+      content: render_markdown(current_campaign.data["goal"])
+    } if current_campaign.data["goal"] %>
 
     <% if campaign_social_commitments.any? %>
       <div class="row mt-m">
