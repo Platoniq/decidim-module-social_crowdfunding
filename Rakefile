@@ -35,7 +35,7 @@ task :development_app do
       "--demo"
     )
   end
-  
+
   install_module("development_app")
   seed_db("development_app")
 end
