@@ -1,13 +1,13 @@
 <h2><%= t(".title") %></h2>
 
-<% campaign_needs.each do |need| %>
+<% current_campaign.needs.each do |need| %>
   <div class="definition-data__item">
     <span class="definition-data__title">
-      <%= need["name"] %>
+      <%= translated_attribute(need["name"]) %>
     </span>
 
     <span class="definition-data__text text-left">
-      <%= render_markdown need["description"] %>
+      <%= render_markdown translated_attribute(need["description"]) %>
     </span>
   </div>
 <% end %>

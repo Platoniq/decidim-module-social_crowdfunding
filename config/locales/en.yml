@@ -37,9 +37,12 @@ en:
           total: Total
         crowdsourcing:
           title: Crowdsourcing
-        rewards:
+        reward:
+          backers: "%{amount} backers"
           contributing: Contributing %{amount}
           get: Get it!
+        rewards:
+          see_all: See all rewards
           title: Rewards
         show:
           description:
