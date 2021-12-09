@@ -4,21 +4,21 @@ module Decidim
   module SocialCrowdfunding
     module Api
       module Goteo
-        PROJECT_URL = "https://api.goteo.org/v1/projects/%{slug}"
-        PROJECTS_URL = "https://api.goteo.org/v1/projects/?limit=%{limit}&page=%{page}"
+        PROJECT_URL = "%{base_url}/projects/%{slug}"
+        PROJECTS_URL = "%{base_url}/projects/?limit=%{limit}&page=%{page}"
 
         class << self
           def base_url
-            "https://goteo.org"
+            "https://api.goteo.org/v1"
           end
 
           def project(slug)
-            get format(PROJECT_URL, slug: slug)
+            get format(PROJECT_URL, base_url: base_url, slug: slug)
           end
 
           # UNUSED
           def projects(limit = 10, page = 0)
-            get format(PROJECT_URL, limit: limit, page: page)
+            get format(PROJECT_URL, base_url: base_url, limit: limit, page: page)
           end
 
           def get(uri)
