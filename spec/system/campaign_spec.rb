@@ -52,9 +52,10 @@ describe "Show campaign", type: :system do
   end
 
   it "displays campaign status" do
+    expect(page).to have_link("Visit campaign")
+
     within ".campaign__status" do
       expect(page).to have_content("Accomplished!")
-      expect(page).to have_link("VISIT CAMPAIGN")
     end
   end
 
