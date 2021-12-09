@@ -59,10 +59,10 @@ describe "Show campaign", type: :system do
   end
 
   it "displays description" do
-    expect(page).to have_selector(".section-heading + #costs", visible: false)
-    expect(page).to have_selector(".section-heading + #description-general", visible: false)
-    expect(page).to have_selector(".section-heading + #description-about", visible: false)
-    expect(page).to have_selector(".section-heading + #description-motivation", visible: false)
-    expect(page).to have_selector(".section-heading + #description-goal", visible: false)
+    expect(page).to have_selector(".section-heading + #costs", visible: :hidden)
+    expect(page).to have_selector(".section-heading + #description-general", visible: :all)
+    expect(page).to have_selector(".section-heading + #description-about", visible: :hidden)
+    expect(page).to have_selector(".section-heading + #description-motivation", visible: :hidden)
+    expect(page).to have_selector(".section-heading + #description-goal", visible: :hidden)
   end
 end
