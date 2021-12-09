@@ -74,9 +74,9 @@
   "currency-rate": 1.0,
   "date-closed": null,
   "date-created": "Fri, 13 May 2011 00:00:00 +0200",
-  "date-passed": "Tue, 13 Dec 2011 00:00:00 +0100",
+  "date-passed": "Tue, 13 Dec 2011 00:00:00 +0100", /* Pasa de ronda */
   "date-published": "Thu, 03 Nov 2011 00:00:00 +0100",
-  "date-succeeded": "Mon, 23 Jan 2012 00:00:00 +0100",
+  "date-succeeded": "Mon, 23 Jan 2012 00:00:00 +0100", /* Pasa las dos rondas o la primera si solo hay una ronda */
   "date-updated": "Thu, 17 Nov 2011 00:00:00 +0100",
   "description": "Con Nodo M\u00f3vil proponemos una estaci\u00f3n de transmisi\u00f3n libre, una infraestructura de telecomunicaci\u00f3n inal\u00e1mbrica m\u00f3vil, que se puede usar en el entorno urbano y permite el mallado digital a trav\u00e9s de redes ciudadanas. \r\n\r\nActualmente tenemos un Nodo M\u00f3vil en pruebas y queremos construir con la cofinanciaci\u00f3n y apoyos a trav\u00e9s de Goteo un segundo dispositivo mejorado. \r\n\r\nContar\u00e1 con una capacidad de autonom\u00eda y configuraci\u00f3n propias, pudiendo interconectar m\u00faltiples ordenadores y perif\u00e9ricos (LAN: Local Area Network) en diferentes espacios, conect\u00e1ndose entre s\u00ed de forma independiente a las empresas de telecomunicaci\u00f3n.",
   "description-short": "Una unidad itinerante de conexi\u00f3n wifi para movimientos sociales y espacios p\u00fablicos",
