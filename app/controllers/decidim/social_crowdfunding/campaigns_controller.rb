@@ -4,9 +4,11 @@ module Decidim
   module SocialCrowdfunding
     class CampaignsController < Decidim::SocialCrowdfunding::ApplicationController
       helper CampaignHelper
-      helper ThermometerHelper
+      include ThermometerHelper
 
-      def show; end
+      def show
+        @thermometer_params = thermometer_params
+      end
     end
   end
 end

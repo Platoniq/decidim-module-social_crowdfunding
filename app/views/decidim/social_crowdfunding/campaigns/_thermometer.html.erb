@@ -1,27 +1,27 @@
 <div class="column medium-3 small-4 thermometer-container">
   <div class="thermometer pull-left hidden-xs">
     <div class="thermometer-extra">
-      <div class="left <%= thermometer_params[:extra_done] != 100 ? "top-border-radius" : "" %>" style="height:<%= thermometer_params[:extra_left] %>%">
+      <div class="left <%= @thermometer_params[:extra_done] != 100 ? "top-border-radius" : "" %>" style="height:<%= @thermometer_params[:extra_left] %>%">
       </div>
-      <div class="done <%= thermometer_params[:extra_done] == 100 ? "top-border-radius" : "" %>" style="height:<%= thermometer_params[:extra_done] %>%">
-      </div>
-    </div>
-    <div class="optimum" style="height:<%= thermometer_params[:optimum_size] %>%">
-      <div class="left" style="height:<%= thermometer_params[:optimum_left] %>%">
-      </div>
-      <div class="done" style="height:<%= thermometer_params[:optimum_done] %>%">
+      <div class="done <%= @thermometer_params[:extra_done] == 100 ? "top-border-radius" : "" %>" style="height:<%= @thermometer_params[:extra_done] %>%">
       </div>
     </div>
-     <div class="minimum" style="height:<%= thermometer_params[:minimum_size] %>%">
-      <div class="left <%= !thermometer_params[:minimum_done] ? "bottom-border-radius" : "" %>" style="height:<%= thermometer_params[:minimum_left] %>%">
+    <div class="optimum" style="height:<%= @thermometer_params[:optimum_size] %>%">
+      <div class="left" style="height:<%= @thermometer_params[:optimum_left] %>%">
       </div>
-      <div class="done <%= thermometer_params[:minimum_done] ? "bottom-border-radius" : "" %>" style="height:<%= thermometer_params[:minimum_done] %>%">
+      <div class="done" style="height:<%= @thermometer_params[:optimum_done] %>%">
+      </div>
+    </div>
+     <div class="minimum" style="height:<%= @thermometer_params[:minimum_size] %>%">
+      <div class="left <%= !@thermometer_params[:minimum_done] ? "bottom-border-radius" : "" %>" style="height:<%= @thermometer_params[:minimum_left] %>%">
+      </div>
+      <div class="done <%= @thermometer_params[:minimum_done] ? "bottom-border-radius" : "" %>" style="height:<%= @thermometer_params[:minimum_done] %>%">
       </div>
     </div>
   </div>
 
   <div class="labels pull-left hidden-xs">
-    <div class="minimum-label" style="bottom:<%= thermometer_params[:minimum_label] %>%">
+    <div class="minimum-label" style="bottom:<%= @thermometer_params[:minimum_label] %>%">
       <%= icon "caret-left" %>
       <span class="text"><%= t(".minimum") %></span>
     </div>
@@ -31,8 +31,8 @@
       <span class="text"><%= t(".optimum") %></span>
     </div>
     <% end %>
-    <div class="percentage" style="bottom: <%= thermometer_params[:percentage_marker] %>%">
-      <%= thermometer_params[:percentage] %>%
+    <div class="percentage" style="bottom: <%= @thermometer_params[:percentage_marker] %>%">
+      <%= @thermometer_params[:percentage] %>%
     </div>
   </div>
 </div>

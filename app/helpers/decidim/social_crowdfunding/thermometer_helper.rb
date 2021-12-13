@@ -7,9 +7,8 @@ module Decidim
     module ThermometerHelper
       MAX = 85
       MARGIN = 8
-      def thermometer_params
-        return @params if @params.present?
 
+      def thermometer_params
         percentage = current_campaign.amount / current_campaign.minimum * 100
 
         minimum_size = current_campaign.minimum / current_campaign.optimum * MAX
@@ -50,7 +49,7 @@ module Decidim
                               [(MAX + (extra_done * 20) / 100) - MARGIN, 100 - MARGIN].min
                             end
 
-        @params = {
+        {
           extra_done: extra_done,
           extra_left: extra_left,
           minimum_done: minimum_done,
