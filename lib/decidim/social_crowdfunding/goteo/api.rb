@@ -2,8 +2,8 @@
 
 module Decidim
   module SocialCrowdfunding
-    module Api
-      module Goteo
+    module Goteo
+      module Api
         PROJECT_URL = "%{base_url}/projects/%{slug}"
         PROJECTS_URL = "%{base_url}/projects/?limit=%{limit}&page=%{page}"
 

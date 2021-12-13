@@ -25,39 +25,38 @@
           </div>
         </div>
       </div>
-    </div>
 
-    <div class="card extra">
-      <div class="card__content">
-        <div class="campaign__status callout <%= campaign_status_class %>">
-          <strong>
-            <%= campaign_status %>
-          </strong>
+      <div class="card__content m-s">
+        <div class="row">
+          <div class="campaign__status callout <%= campaign_status_class %>">
+            <strong>
+              <%= campaign_status %>
+            </strong>
+          </div>
+          <% if current_campaign.can_donate? %>
+            <%= link_to t(".donate"), current_campaign.url, class: "button expanded button--sc", target: :blank %>
+          <% else %>
+            <%= link_to t(".view"), current_campaign.url, class: "button expanded button--sc", target: :blank %>
+          <% end %>
         </div>
-
-        <% if current_campaign.can_donate? %>
-          <%= link_to t(".donate"), current_campaign.url, class: "button expanded button--sc", target: :blank %>
-        <% else %>
-          <%= link_to t(".view"), current_campaign.url, class: "button expanded button--sc", target: :blank %>
-        <% end %>
       </div>
     </div>
 
-    <div class="card extra">
-      <%= render "rewards" %>
-    </div>
+    <%= render "rewards" %>
 
-    <% if campaign_needs&.any? %>
+    <% if current_campaign.needs %>
       <div class="card extra">
         <%= render "crowdsourcing" %>
       </div>
     <% end %>
   </div>
 
-  <div class="columns mediumlarge-7 mediumlarge-pull-5">
-    <div class="responsive-embed widescreen">
-      <iframe src="<%= campaign_media_src %>" frameborder="0" style="max-width:none !important;" webkitallowfullscreen mozallowfullscreen>
-      </iframe>
+  <div class="columns mediumlarge-8 mediumlarge-pull-4">
+    <div class="section row collapse">
+      <div class="responsive-embed widescreen">
+        <iframe src="<%= campaign_media_src %>" frameborder="0" style="max-width:none !important;" webkitallowfullscreen mozallowfullscreen>
+        </iframe>
+      </div>
     </div>
 
     <%= render partial: "decidim/social_crowdfunding/campaigns/description", locals: {
@@ -92,7 +91,7 @@
     } if current_campaign.data["goal"] %>
 
     <% if campaign_social_commitments.any? %>
-      <div class="row mt-m">
+      <div class="section row collapse">
         <%= render "social_commitment" %>
       </div>
     <% end %>

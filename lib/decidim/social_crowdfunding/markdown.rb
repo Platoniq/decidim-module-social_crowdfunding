@@ -29,7 +29,7 @@ module Decidim
           filter_html: true,
           hard_wrap: true,
           lax_spacing: false,
-          no_images: true,
+          no_images: false,
           no_styles: true,
           link_attributes: {
             target: "_blank"
