@@ -1,0 +1,160 @@
+$width: 15px;
+$height: 290px;
+
+$bg-color: #d5d5d5;
+$fg-color: var(--secondary);
+
+$border-radius: 10px;
+
+$percentage-marker-url: url("https://goteo.org/assets/img/project/percentage-container.png");
+
+.thermometer {
+  width: $width;
+  height: $height;
+
+  .done {
+    background-color: $fg-color;
+  }
+
+  .left {
+    background-color: $bg-color;
+  }
+
+  .thermometer-extra {
+    height: 15%;
+
+    .left {
+      height: 100%;
+    }
+
+    .top-border-radius {
+      border-top-left-radius: $border-radius;
+      border-top-right-radius: $border-radius;
+    }
+  }
+
+  .optimum {
+    height: 55%;
+    margin-top: 2px;
+
+    .left {
+      height: 100%;
+    }
+  }
+
+  .minimum {
+    height: 30%;
+    margin-top: 2px;
+
+    .bottom-border-radius {
+      border-bottom-left-radius: $border-radius;
+      border-bottom-right-radius: $border-radius;
+    }
+  }
+}
+
+.thermometer-container {
+  position: relative;
+
+  .labels {
+    margin-left: 5px;
+    font-weight: 700;
+
+    .icon {
+      margin-bottom: -2px;
+    }
+
+    span.text {
+      margin-left: 5px;
+    }
+
+    .minimum-label {
+      bottom: 26%;
+      position: absolute;
+      font-size: 14px;
+    }
+
+    .optimum-label {
+      bottom: 82%;
+      position: absolute;
+      font-size: 14px;
+    }
+
+    .percentage {
+      bottom: 55%;
+      position: absolute;
+      color: #fff;
+      border-radius: 50%;
+      background-color: $fg-color;
+      height: $width * 3;
+      width: $width * 3;
+      font-size: 14px;
+      padding-top: 12px;
+      padding-left: 3px;
+      text-align: center;
+      right: 2px;
+
+      &::before {
+        content: "";
+        background-color: $fg-color;
+        clip-path: polygon(0% 50%, 100% 0%, 100% 100%);
+        width: 5px;
+        height: 10px;
+        position: absolute;
+        left: -4px;
+        top: 18px;
+      }
+    }
+  }
+}
+
+.thermometer-info {
+  text-align: right;
+  font-weight: 700;
+
+  .round {
+    font-size: 14px;
+    font-weight: 700;
+  }
+
+  .time-left {
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  .time-status {
+    border-bottom: 1px solid $bg-color;
+    padding-bottom: 10px;
+    width: 75%;
+  }
+
+  .status {
+    color: $fg-color;
+    font-size: 18px;
+    font-weight: 700;
+    width: 75% !important;
+  }
+
+  .reached-label,
+  .optimum-label,
+  .minimum-label {
+    padding-top: 10px;
+    font-weight: normal;
+    font-size: 85%;
+    text-transform: uppercase;
+    line-height: 1;
+  }
+
+  .reached {
+    font-size: 48px;
+    color: $fg-color;
+    font-weight: 700;
+    line-height: 1.1;
+  }
+
+  .optimum,
+  .minimum {
+    font-size: 24px;
+  }
+}

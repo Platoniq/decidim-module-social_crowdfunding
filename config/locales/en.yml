@@ -65,6 +65,9 @@ en:
           in_campaign: In campaign
           reviewing: Reviewing
           unfunded: Unfunded
+        thermometer:
+          minimum: Min.
+          optimum: Opt.
       models:
         campaign:
           fields:

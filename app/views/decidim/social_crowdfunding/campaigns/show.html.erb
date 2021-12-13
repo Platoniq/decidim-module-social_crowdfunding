@@ -1,3 +1,5 @@
+<%= stylesheet_link_tag "decidim/social_crowdfunding/social_crowdfunding" %>
+
 <div class="row column view-header">
   <h2 class="heading2"><%= translated_attribute current_campaign.name %></h2>
 </div>
@@ -90,7 +92,7 @@
       content: render_markdown(current_campaign.data["goal"])
     } if current_campaign.data["goal"] %>
 
-    <% if campaign_social_commitments.any? %>
+    <% if current_campaign.social_commitments.any? %>
       <div class="section row collapse">
         <%= render "social_commitment" %>
       </div>
