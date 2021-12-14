@@ -37,6 +37,12 @@ en:
           total: Total
         crowdsourcing:
           title: Crowdsourcing
+        date_label:
+          closed: Closed on
+          created: Created on
+          finished: Finished on
+          remaining: Remaining
+          updated: Updated on
         reward:
           backers: "%{amount} backers"
           contributing: Contributing %{amount}
@@ -50,12 +56,12 @@ en:
             general: General information
             goal: Goals of the crowdfunding campaign
             motivation: Why is this important
-          donate: Donate
+          donate: Donate in
           money:
             minimum: Minimum
             optimum: Optimum
             received: Received
-          view: Visit campaign
+          view: Visit in
         social_commitment:
           title: Social commitment
         statuses:

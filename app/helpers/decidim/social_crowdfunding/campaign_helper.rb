@@ -10,11 +10,23 @@ module Decidim
                when "editing" then current_campaign.data["date-created"]
                when "reviewing" then current_campaign.data["date-updated"]
                when "in_campaign" then return campaign_days_remaining
-               when "funded", "fulfilled" then current_campaign.data["date-created"]
+               when "funded", "fulfilled" then current_campaign.data["date-succeeded"]
                when "unfunded" then current_campaign.data["date-closed"]
                end
 
-        I18n.l Date.parse(date), format: :decidim_short
+        I18n.l(Date.parse(date), format: :decidim_short)
+      end
+
+      def campaign_date_label
+        date_label = case current_campaign.data["status"]
+                     when "editing" then "created"
+                     when "reviewing" then "updated"
+                     when "in_campaign" then "remaining"
+                     when "funded", "fulfilled" then "finished"
+                     when "unfunded" then "closed"
+                     end
+
+        t(date_label, scope: "decidim.social_crowdfunding.campaigns.date_label")
       end
 
       def campaign_days_remaining
