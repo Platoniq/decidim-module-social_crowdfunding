@@ -12,7 +12,9 @@ module Decidim
       routes do
         # Add admin engine routes here
 
-        resources :campaigns, only: [:destroy, :update]
+        resources :campaigns, only: [:destroy, :update] do
+          post :select, on: :collection
+        end
 
         root to: "campaigns#index"
       end

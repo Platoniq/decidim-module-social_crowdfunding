@@ -5,10 +5,31 @@ module Decidim
     module Admin
       class CampaignsController < Decidim::Admin::Components::BaseController
         include Decidim::Paginable
+        include Decidim::SocialCrowdfunding::HasCampaign
+
+        helper Decidim::SocialCrowdfunding::Admin::ApplicationHelper
 
         helper_method :campaigns
 
-        def index; end
+        def index
+          @form = SelectCampaignForm.new(slug: current_campaign&.slug)
+        end
+
+        def select
+          @form = form(SelectCampaignForm).from_params(params)
+
+          SelectCampaign.call(@form) do
+            on(:ok) do
+              flash[:notice] = I18n.t("campaigns.select.success", scope: "decidim.social_crowdfunding.admin")
+              redirect_to root_url
+            end
+            on(:error) do
+              flash[:alert] = I18n.t("campaigns.select.error", scope: "decidim.social_crowdfunding.admin")
+
+              render :index
+            end
+          end
+        end
 
         def destroy
           enforce_permission_to :destroy, :campaign, campaign: campaign

@@ -5,15 +5,23 @@ require "decidim/social_crowdfunding/goteo/api"
 module Decidim
   module SocialCrowdfunding
     module Goteo
-      REWARD_URL = "%{base_url}/invest/%{campaign_id}/payment?reward=%{reward_id}"
-
       class << self
         def base_url
-          "https://goteo.org"
+          "https://goteo.org/"
+        end
+
+        def build_url(path, params = {})
+          uri = URI.join(base_url, path)
+          uri.query = params.keys.map { |k| "#{k}=#{params[k]}" }.join("&")
+          uri.to_s
         end
 
         def reward_url(campaign, reward)
-          format(REWARD_URL, base_url: base_url, campaign_id: campaign.slug, reward_id: reward["id"])
+          build_url("/invest/#{campaign.slug}/payment", reward: reward["id"])
+        end
+
+        def create_campaign_url
+          build_url("https://goteo.org/project/create?lang=#{I18n.locale}")
         end
       end
     end
