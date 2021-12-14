@@ -12,6 +12,10 @@ $percentage-marker-url: url("https://goteo.org/assets/img/project/percentage-con
   width: $width;
   height: $height;
 
+  &-wrapper {
+    margin: 2rem 0;
+  }
+
   .done {
     background-color: $fg-color;
   }
