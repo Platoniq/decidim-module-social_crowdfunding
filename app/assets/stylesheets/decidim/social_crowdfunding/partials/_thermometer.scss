@@ -57,27 +57,35 @@ $percentage-marker-url: url("https://goteo.org/assets/img/project/percentage-con
   position: relative;
 
   .labels {
-    margin-left: 5px;
     font-weight: 700;
+    color: $bg-color;
 
     .icon {
-      margin-bottom: -2px;
+      margin-bottom: -5px;
+      height: 2px;
+      width: 67px;
+      border-bottom: 2px dotted $bg-color;
+      display: block;
     }
 
     span.text {
       margin-left: 5px;
     }
 
-    .minimum-label {
-      bottom: 26%;
+    .minimum-label,
+    .optimum-label {
       position: absolute;
       font-size: 14px;
+      display: flex;
+      align-items: center;
+    }
+
+    .minimum-label {
+      bottom: 26%;
     }
 
     .optimum-label {
       bottom: 82%;
-      position: absolute;
-      font-size: 14px;
     }
 
     .percentage {
@@ -136,25 +144,44 @@ $percentage-marker-url: url("https://goteo.org/assets/img/project/percentage-con
     width: 75% !important;
   }
 
+  .date-label,
   .reached-label,
   .optimum-label,
   .minimum-label {
-    padding-top: 10px;
+    margin-top: 0.5rem;
+    margin-bottom: 0.25rem;
     font-weight: normal;
     font-size: 85%;
     text-transform: uppercase;
     line-height: 1;
   }
 
+  .date,
+  .reached,
+  .optimum,
+  .minimum {
+    line-height: 1;
+  }
+
+  .date,
+  .optimum,
+  .minimum {
+    font-size: 24px;
+  }
+
   .reached {
     font-size: 48px;
     color: $fg-color;
     font-weight: 700;
-    line-height: 1.1;
   }
+}
 
-  .optimum,
-  .minimum {
-    font-size: 24px;
+.button--goteo {
+  margin: 1rem;
+
+  .goteo-logo {
+    height: 2em;
+    padding-bottom: 0.5rem;
+    margin-left: 0.5rem;
   }
 }

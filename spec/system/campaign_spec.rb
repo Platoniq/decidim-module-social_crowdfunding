@@ -36,8 +36,8 @@ describe "Show campaign", type: :system do
     expect(page).to have_selector(".thermometer-container")
 
     within ".thermometer-info" do
-      within ".campaign__date" do
-        expect(page).to have_content("13/05/2011")
+      within ".date" do
+        expect(page).to have_content("23/01/2012")
       end
       within ".reached" do
         expect(page).to have_content("€1,744")
@@ -52,7 +52,7 @@ describe "Show campaign", type: :system do
   end
 
   it "displays campaign status" do
-    expect(page).to have_link("Visit campaign")
+    expect(page).to have_link("Visit")
 
     within ".campaign__status" do
       expect(page).to have_content("Accomplished!")
