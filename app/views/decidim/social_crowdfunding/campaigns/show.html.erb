@@ -1,3 +1,5 @@
+<%= stylesheet_link_tag "decidim/social_crowdfunding/social_crowdfunding" %>
+
 <div class="row column view-header">
   <h2 class="heading2"><%= translated_attribute current_campaign.name %></h2>
 </div>
@@ -6,43 +8,42 @@
   <div class="columns section view-side mediumlarge-4 mediumlarge-push-8 large-4 large-push-8">
     <div class="card extra">
       <div class="card__content">
-        <div class="row">
+        <div class="campaign__status callout <%= campaign_status_class %>">
+          <strong>
+            <%= campaign_status %>
+          </strong>
+        </div>
+        <div class="row thermometer-wrapper">
+
           <%= render "thermometer" %>
 
           <div class="column medium-9 small-8 thermometer-info">
-            <%= image_tag "goteo.svg" %>
-
-            <div class="campaign__date">
-              <%= campaign_date %>
-            </div>
-
+            <div class="date-label"><%= campaign_date_label %></div>
+            <div class="date"><%= campaign_date %></div>
             <div class="reached-label"><%= t(".money.received") %></div>
-            <div class="reached"> <%= campaign_money current_campaign.amount %> </div>
+            <div class="reached"><%= campaign_money current_campaign.amount %></div>
             <div class="optimum-label"><%= t(".money.optimum") %></div>
-            <div class="optimum"> <%= campaign_money current_campaign.optimum %> </div>
+            <div class="optimum"><%= campaign_money current_campaign.optimum %></div>
             <div class="minimum-label"><%= t(".money.minimum") %></div>
-            <div class="minimum"> <%= campaign_money current_campaign.minimum %> </div>
+            <div class="minimum"><%= campaign_money current_campaign.minimum %></div>
           </div>
         </div>
-      </div>
 
-      <div class="card__content m-s">
-        <div class="row">
-          <div class="campaign__status callout <%= campaign_status_class %>">
-            <strong>
-              <%= campaign_status %>
-            </strong>
-          </div>
+        <%= link_to current_campaign.url, class: "button expanded button--sc button--goteo", target: :blank do %>
           <% if current_campaign.can_donate? %>
-            <%= link_to t(".donate"), current_campaign.url, class: "button expanded button--sc", target: :blank %>
+            <%= t(".donate") %>
           <% else %>
-            <%= link_to t(".view"), current_campaign.url, class: "button expanded button--sc", target: :blank %>
+            <%= t(".view") %>
           <% end %>
-        </div>
+
+          <%= image_tag "goteo.svg", class: "goteo-logo" %>
+        <% end %>
       </div>
     </div>
 
-    <%= render "rewards" %>
+    <div id="rewards" class="mt-s">
+      <%= render "rewards" %>
+    </div>
 
     <% if current_campaign.needs %>
       <div class="card extra">
@@ -90,7 +91,7 @@
       content: render_markdown(current_campaign.data["goal"])
     } if current_campaign.data["goal"] %>
 
-    <% if campaign_social_commitments.any? %>
+    <% if current_campaign.social_commitments.any? %>
       <div class="section row collapse">
         <%= render "social_commitment" %>
       </div>

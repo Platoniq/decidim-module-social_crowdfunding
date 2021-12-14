@@ -1,185 +1,38 @@
 <div class="column medium-3 small-4 thermometer-container">
   <div class="thermometer pull-left hidden-xs">
     <div class="thermometer-extra">
-      <div class="left top-border-radius" style="height:%">
+      <div class="left <%= @thermometer_params[:extra_done] != 100 ? "top-border-radius" : "" %>" style="height:<%= @thermometer_params[:extra_left] %>%">
       </div>
-      <div class="done" style="height:%"></div>
+      <div class="done <%= @thermometer_params[:extra_done] == 100 ? "top-border-radius" : "" %>" style="height:<%= @thermometer_params[:extra_done] %>%">
+      </div>
     </div>
-    <div class="optimum" style="height:60%">
-      <div class="left" style="height:35%"></div>
-      <div class="done" style="height:65%"></div>
+    <div class="optimum" style="height:<%= @thermometer_params[:optimum_size] %>%">
+      <div class="left" style="height:<%= @thermometer_params[:optimum_left] %>%">
+      </div>
+      <div class="done" style="height:<%= @thermometer_params[:optimum_done] %>%">
+      </div>
     </div>
-    <div class="minimum" style="height:25%">
-      <div class="left " style="height:0%"></div>
-      <div class="done bottom-border-radius" style="height:100%"></div>
+     <div class="minimum" style="height:<%= @thermometer_params[:minimum_size] %>%">
+      <div class="left <%= !@thermometer_params[:minimum_done] ? "bottom-border-radius" : "" %>" style="height:<%= @thermometer_params[:minimum_left] %>%">
+      </div>
+      <div class="done <%= @thermometer_params[:minimum_done] ? "bottom-border-radius" : "" %>" style="height:<%= @thermometer_params[:minimum_done] %>%">
+      </div>
     </div>
   </div>
 
   <div class="labels pull-left hidden-xs">
-    <div class="minimum-label" style="bottom:21%">
-      <img src="//goteo.org/assets/img/project/arrow-meter.png">
-      <span class="text">Min.</span>
+    <div class="minimum-label" style="bottom:<%= @thermometer_params[:minimum_label] %>%">
+      <%= icon "caret-left" %>
+      <span class="text"><%= t(".minimum") %></span>
     </div>
+    <% if current_campaign.minimum != current_campaign.optimum %>
     <div class="optimum-label">
-      <img src="//goteo.org/assets/img/project/arrow-meter.png">
-      <span class="text">Opt.</span>
+      <%= icon "caret-left" %>
+      <span class="text"><%= t(".optimum") %></span>
     </div>
-    <div class="percentage" style="bottom: 56%">
-        256%
+    <% end %>
+    <div class="percentage" style="bottom: <%= @thermometer_params[:percentage_marker] %>%">
+      <%= @thermometer_params[:percentage] %>%
     </div>
   </div>
 </div>
-
-<style>
-  div.thermometer-container {
-  position: relative
-}
-
-div.thermometer {
-  width: 15px;
-  height: 290px
-}
-
-div.thermometer div.thermometer-extra {
-  height: 15%
-}
-
-div.thermometer div.thermometer-extra div.left {
-  background-color: #d5d5d5;
-  height: 100%
-}
-
-div.thermometer div.thermometer-extra div.done {
-  background-color: var(--secondary);
-}
-
-div.thermometer div.thermometer-extra .top-border-radius {
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px
-}
-
-div.thermometer div.optimum {
-  height: 55%;
-  margin-top: 2px
-}
-
-div.thermometer div.optimum div.left {
-  background-color: #d5d5d5;
-  height: 100%
-}
-
-div.thermometer div.optimum div.done {
-  background-color: var(--secondary);
-}
-
-div.thermometer div.minimum {
-  height: 30%;
-  margin-top: 2px
-}
-
-div.thermometer div.minimum div.left {
-  background-color: #d5d5d5
-}
-
-div.thermometer div.minimum div.done {
-  background-color: var(--secondary);
-}
-
-div.thermometer div.minimum .bottom-border-radius {
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px
-}
-
-div.thermometer-container div.labels {
-  margin-left: 5px;
-  font-weight: 700
-}
-
-div.labels span.text {
-  margin-left: 5px
-}
-
-div.thermometer-container div.labels div.minimum-label {
-  bottom: 26%;
-  position: absolute;
-  font-size: 14px
-}
-
-div.thermometer-container div.labels div.optimum-label {
-  bottom: 82%;
-  position: absolute;
-  font-size: 14px
-}
-
-div.thermometer-container div.labels div.percentage {
-  bottom: 55%;
-  position: absolute;
-  color: #fff;
-  background-image: url("https://goteo.org/assets/img/project/percentage-container.png");
-  height: 45px;
-  width: 48px;
-  font-size: 14px;
-  padding-top: 12px;
-  padding-left: 3px;
-  text-align: center
-}
-
-div.thermometer-container div.labels div.percentage span.figure {
-  padding: 10px 10px
-}
-
-div.thermometer-info {
-  text-align: right;
-  font-weight: 700
-}
-
-div.thermometer-info div.round {
-  font-size: 14px;
-  font-weight: 700
-}
-
-div.thermometer-info div.time-left {
-  text-transform: uppercase;
-  font-size: 20px;
-  font-weight: 700
-}
-
-div.thermometer-info div.time-status {
-  border-bottom: 1px solid #d5d5d5;
-  padding-bottom: 10px;
-  width: 75%
-}
-
-div.thermometer-info div.status {
-  color: var(--secondary);
-  font-size: 18px;
-  font-weight: 700;
-  width: 75%!important
-}
-
-div.thermometer-info div.reached-label,
-div.thermometer-info div.optimum-label,
-div.thermometer-info div.minimum-label {
-  padding-top: 10px;
-  font-weight: normal;
-  font-size: 85%;
-  display: block;
-  letter-spacing: .01em;
-  text-transform: uppercase;
-  line-height: 1;
-  margin-bottom: .25rem;
-  color: #726a70;
-}
-
-div.thermometer-info div.reached {
-  font-size: 48px;
-  color: var(--secondary);
-  font-weight: 700;
-  line-height: 1.1
-}
-
-div.thermometer-info div.optimum,
-div.thermometer-info div.minimum {
-  font-size: 24px
-}
-</style>
