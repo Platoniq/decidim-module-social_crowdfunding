@@ -2,16 +2,18 @@ name: "[CI] Lint"
 
 on:
   push:
+    branches:
+      - main
   pull_request:
 
 env:
-  RUBY_VERSION: 2.7.1
+  RUBY_VERSION: 2.7.4
 
 jobs:
   lint-report:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2.0.0
+      - uses: actions/checkout@v2
         with:
           fetch-depth: 1
 
@@ -23,4 +25,4 @@ jobs:
       - name: Lint and Rubocop
         run: |
           bundle exec rubocop -P
-          bundle exec erblint app/views/**/*.erb
+          bundle exec erblint app/**/*.erb
