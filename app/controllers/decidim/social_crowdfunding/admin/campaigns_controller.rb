@@ -46,7 +46,7 @@ module Decidim
         def update
           enforce_permission_to :destroy, :campaign, campaign: campaign
 
-          UpdateCampaign.call(campaign, current_user) do
+          UpdateCampaign.call(campaign, current_component, current_user) do
             on(:ok) do
               flash[:notice] = I18n.t("campaigns.update.success", scope: "decidim.social_crowdfunding.admin")
 

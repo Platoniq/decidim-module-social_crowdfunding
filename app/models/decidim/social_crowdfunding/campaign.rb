@@ -40,20 +40,20 @@ module Decidim
         }
       end
 
-      def self.fetch(slug, organization, sync: false)
-        campaign = find_by(slug: slug, organization: organization)
+      def self.fetch(slug, component, sync: false)
+        campaign = find_by(slug: slug, organization: component.organization)
 
         fetch_api = campaign.blank? || sync || campaign.should_sync?
 
         if fetch_api
-          json = Goteo::Api.project(slug)
+          json = Goteo::Api.project(slug, component)
 
           return nil if json["error"] == 404
 
           if campaign.present?
             campaign.update!(params_from_json(json))
           else
-            campaign = create!(params_from_json(json).merge(slug: slug, organization: organization))
+            campaign = create!(params_from_json(json).merge(slug: slug, organization: component.organization))
           end
         end
 

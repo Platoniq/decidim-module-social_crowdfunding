@@ -15,7 +15,7 @@ module Decidim
         private
 
         def current_campaign
-          @current_campaign ||= Campaign.fetch(current_component.settings[:campaign_id], current_organization)
+          @current_campaign ||= Campaign.fetch(current_component.settings[:campaign_id], current_component)
 
           flash[:alert] = t("not_found", scope: "decidim.social_crowdfunding.admin.campaigns.fetch") if @current_campaign.blank?
 
