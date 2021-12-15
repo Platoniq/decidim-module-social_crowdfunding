@@ -1,0 +1,82 @@
+es:
+  decidim:
+    components:
+      social_crowdfunding_campaign:
+        name: Social Crowdfunding Campaign
+        settings:
+          global:
+            announcement: Announcement
+            campaign_id: Campaign ID
+          step:
+            announcement: Announcement
+    social_crowdfunding:
+      actions:
+        confirm_destroy: Are you sure you want to delete this campaign? (It will only delete the Decidim copy of this campaign, not the original one)
+        destroy: Delete
+        title: Actions
+        update: Update
+      admin:
+        campaigns:
+          destroy:
+            success: The campaign has been deleted
+          index:
+            campaigns: Stored campaigns
+            manage: Please click <a href="%{link}">here</a> to manage this component.
+            title: Social Crowdfunding Campaign
+          update:
+            error: There was an error updating the campaign
+            success: The campaign has been updated
+      campaigns:
+        costs:
+          material: Materials
+          minimum: Minimum
+          optimum: Optimum
+          task: Tasks
+          title: Costs
+          total: Total
+        crowdsourcing:
+          title: Crowdsourcing
+        date_label:
+          closed: Closed on
+          created: Created on
+          finished: Finished on
+          remaining: Remaining
+          updated: Updated on
+        reward:
+          backers: "%{amount} backers"
+          contributing: Contributing %{amount}
+          get: Get it!
+        rewards:
+          see_all: See all rewards
+          title: Rewards
+        show:
+          description:
+            about: Description of the project. Main features, strengths and differentials.
+            general: General information
+            goal: Goals of the crowdfunding campaign
+            motivation: Why is this important
+          donate: Donate in
+          money:
+            minimum: Minimum
+            optimum: Optimum
+            received: Received
+          view: Visit in
+        social_commitment:
+          title: Social commitment
+        statuses:
+          editing: Editing
+          fulfilled: Accomplished!
+          funded: Funded
+          in_campaign: In campaign
+          reviewing: Reviewing
+          unfunded: Unfunded
+        thermometer:
+          minimum: Min.
+          optimum: Opt.
+      models:
+        campaign:
+          fields:
+            created_at: Created at
+            id: ID
+            title: Title
+            updated_at: Updated at
