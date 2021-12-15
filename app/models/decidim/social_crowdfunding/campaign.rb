@@ -43,7 +43,7 @@ module Decidim
       def self.fetch(slug, component, sync: false)
         campaign = find_by(slug: slug, organization: component.organization)
 
-        fetch_api = campaign.blank? || sync || campaign.should_sync?
+        fetch_api = campaign.blank? || sync || should_sync?(campaign, component)
 
         if fetch_api
           json = Goteo::Api.project(slug, component)
@@ -58,6 +58,10 @@ module Decidim
         end
 
         campaign
+      end
+
+      def self.should_sync?(campaign, component)
+        campaign.created_at < 1.minute.ago || campaign.updated_at > component.settings.goteo_api_update_hours.hours.ago
       end
 
       def costs
@@ -124,10 +128,6 @@ module Decidim
 
       def can_donate?
         data["status"] == "in_campaign"
-      end
-
-      def should_sync?
-        created_at < 1.minute.ago || updated_at > 1.day.ago
       end
     end
   end
