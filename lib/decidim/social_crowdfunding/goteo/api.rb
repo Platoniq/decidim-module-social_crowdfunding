@@ -29,7 +29,7 @@ module Decidim
 
             response = connection.get uri
 
-            raise Error, response.reason_phrase unless response.success? && response.status == 404
+            raise Error, response.reason_phrase unless response.success? || response.status == 404
 
             JSON.parse(response.body).to_h
           end
