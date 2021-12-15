@@ -7,6 +7,10 @@ module Decidim
         PROJECT_URL = "%{base_url}/projects/%{slug}"
 
         class << self
+          def base_url
+            ENV.fetch("GOTEO_BASE_URL", "https://api.goteo.org/v1")
+          end
+
           def project(slug, component)
             get(format(PROJECT_URL, base_url: base_url, slug: slug), component)
           end
@@ -33,10 +37,6 @@ module Decidim
 
           def api_key(component)
             component.settings.goteo_api_key.presence || ENV["GOTEO_API_KEY"]
-          end
-
-          def base_url
-            ENV.fetch("GOTEO_BASE_URL", "https://api.goteo.org/v1")
           end
         end
 

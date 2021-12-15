@@ -4,27 +4,8 @@ require "spec_helper"
 require "decidim/social_crowdfunding/test/shared_contexts"
 
 describe "Show campaign", type: :system do
-  include_context "with a component"
   include_context "with stubs example api"
-
-  let(:manifest_name) { "social_crowdfunding_campaign" }
-
-  let(:campaign_slug) { "nodo-movil" }
-
-  let!(:data) { JSON.parse(file_fixture("goteo-project.json").read) }
-
-  let(:settings) do
-    {
-      campaign_id: campaign_slug
-    }
-  end
-
-  before do
-    component.settings = settings
-    component.save!
-
-    visit_component
-  end
+  include_context "with campaign component"
 
   it "displays campaign media embed" do
     within ".responsive-embed" do
