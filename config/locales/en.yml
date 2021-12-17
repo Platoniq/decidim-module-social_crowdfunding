@@ -6,24 +6,37 @@ en:
         name: Social Crowdfunding Campaign
         settings:
           global:
-            announcement: Announcement
             campaign_id: Campaign ID
-          step:
-            announcement: Announcement
+            goteo_api_key: Goteo API key
+            goteo_api_update_hours: Time interval (in hours) to update campaigns with Goteo API data
+            goteo_api_url: Goteo API URL
+            goteo_api_username: Goteo API username
     social_crowdfunding:
       actions:
         confirm_destroy: Are you sure you want to delete this campaign? (It will only delete the Decidim copy of this campaign, not the original one)
         destroy: Delete
+        select: Select
         title: Actions
         update: Update
       admin:
         campaigns:
           destroy:
             success: The campaign has been deleted
+          fetch:
+            not_found: The campaign could not be found
           index:
             campaigns: Stored campaigns
-            manage: Please click <a href="%{link}">here</a> to manage this component.
+            create: Create campaign in
+            manage: Manage settings
+            select: Select a campaign
+            selected: Selected campaign
+            slug: Campaign ID
+            slug_info: You can copy the last part of your campaign's public URL (https://goteo.org/project/<your-campaign-id>)
+            submit: Update campaign
             title: Social Crowdfunding Campaign
+          select:
+            error: There was an error updating the campaign
+            success: The campaign has been updated
           update:
             error: There was an error updating the campaign
             success: The campaign has been updated
@@ -32,6 +45,7 @@ en:
           material: Materials
           minimum: Minimum
           optimum: Optimum
+          structure: Structure
           task: Tasks
           title: Costs
           total: Total

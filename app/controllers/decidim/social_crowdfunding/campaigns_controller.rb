@@ -4,6 +4,7 @@ module Decidim
   module SocialCrowdfunding
     class CampaignsController < Decidim::SocialCrowdfunding::ApplicationController
       helper CampaignHelper
+
       include ThermometerHelper
 
       def show

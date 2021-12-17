@@ -4,34 +4,39 @@ module Decidim
   module SocialCrowdfunding
     module Goteo
       module Api
-        PROJECT_URL = "%{base_url}/projects/%{slug}"
-        PROJECTS_URL = "%{base_url}/projects/?limit=%{limit}&page=%{page}"
+        PROJECT_URL = "%{api_url}/projects/%{slug}"
 
         class << self
-          def base_url
-            "https://api.goteo.org/v1"
+          def project(slug, component)
+            get(format(PROJECT_URL, api_url: api_url(component), slug: slug), component)
           end
 
-          def project(slug)
-            get format(PROJECT_URL, base_url: base_url, slug: slug)
-          end
+          private
 
-          # UNUSED
-          def projects(limit = 10, page = 0)
-            get format(PROJECT_URL, base_url: base_url, limit: limit, page: page)
-          end
-
-          def get(uri)
+          def get(uri, component)
             verify_ssl = true
+
             connection ||= Faraday.new(ssl: { verify: verify_ssl }) do |conn|
-              conn.request :basic_auth, ENV["GOTEO_USERNAME"], ENV["GOTEO_PASSWORD"]
+              conn.request :basic_auth, api_username(component), api_key(component)
             end
 
-            response = connection.get uri
+            response = connection.get(uri)
 
-            raise Error, response.reason_phrase unless response.success?
+            raise Error, response.reason_phrase unless response.success? || response.status == 404
 
             JSON.parse(response.body).to_h
+          end
+
+          def api_username(component)
+            component.settings.goteo_api_username.presence || Goteo.api_credentials[:username]
+          end
+
+          def api_key(component)
+            component.settings.goteo_api_key.presence || Goteo.api_credentials[:key]
+          end
+
+          def api_url(component)
+            component.settings.goteo_api_url.presence || Goteo.api_url
           end
         end
 

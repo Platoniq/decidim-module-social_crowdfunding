@@ -5,8 +5,9 @@ module Decidim
     module Admin
       # A command with all the business logic when retrieving info from campaign
       class UpdateCampaign < Rectify::Command
-        def initialize(campaign, user)
+        def initialize(campaign, component, user)
           @campaign = campaign
+          @component = component
           @user = user
         end
 
@@ -36,7 +37,7 @@ module Decidim
             @campaign,
             @user
           ) do
-            Campaign.fetch(@campaign.slug, @user.organization, sync: true)
+            Campaign.fetch(@campaign.slug, @component, sync: true)
           end
         end
       end

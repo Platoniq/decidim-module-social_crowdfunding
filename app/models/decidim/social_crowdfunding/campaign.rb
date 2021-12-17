@@ -40,15 +40,28 @@ module Decidim
         }
       end
 
-      def self.fetch(slug, organization, sync: false)
-        campaign = find_or_create_by(slug: slug, organization: organization)
+      def self.fetch(slug, component, sync: false)
+        campaign = find_by(slug: slug, organization: component.organization)
 
-        if sync || campaign.should_sync?
-          json = Goteo::Api.project(slug)
-          campaign.update!(params_from_json(json))
+        fetch_api = campaign.blank? || sync || should_sync?(campaign, component)
+
+        if fetch_api
+          json = Goteo::Api.project(slug, component)
+
+          return nil if json["error"] == 404
+
+          if campaign.present?
+            campaign.update!(params_from_json(json))
+          else
+            campaign = create!(params_from_json(json).merge(slug: slug, organization: component.organization))
+          end
         end
 
         campaign
+      end
+
+      def self.should_sync?(campaign, component)
+        campaign.updated_at > component.settings.goteo_api_update_hours.hours.ago
       end
 
       def costs
@@ -115,10 +128,6 @@ module Decidim
 
       def can_donate?
         data["status"] == "in_campaign"
-      end
-
-      def should_sync?
-        created_at < 1.minute.ago || updated_at > 1.day.ago
       end
     end
   end
