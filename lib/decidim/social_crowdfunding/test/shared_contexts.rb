@@ -8,7 +8,7 @@ shared_context "with stubs example api" do
   let(:params) { {} }
 
   before do
-    allow(Decidim::SocialCrowdfunding::Goteo::Api).to receive(:base_url).and_return(api_url)
+    allow(Decidim::SocialCrowdfunding::Goteo).to receive(:api_url).and_return(api_url)
     stub_request(http_method, /api\.example\.org/)
       .to_return(status: http_status, body: data.to_json, headers: {})
   end

@@ -5,11 +5,27 @@ require "decidim/social_crowdfunding/goteo/api"
 module Decidim
   module SocialCrowdfunding
     module Goteo
-      class << self
-        def base_url
-          "https://goteo.org/"
-        end
+      include ActiveSupport::Configurable
 
+      # setup default API credentials
+      config_accessor :api_credentials do
+        {
+          username: ENV.fetch("GOTEO_API_USERNAME", ""),
+          key: ENV.fetch("GOTEO_API_KEY", "")
+        }
+      end
+
+      # setup API base url
+      config_accessor :api_url do
+        ENV.fetch("GOTEO_API_URL", "https://api.goteo.org/v1")
+      end
+
+      # setup base url
+      config_accessor :base_url do
+        ENV.fetch("GOTEO_BASE_URL", "https://goteo.org/")
+      end
+
+      class << self
         def build_url(path, params = {})
           uri = URI.join(base_url, path)
           uri.query = params.keys.map { |k| "#{k}=#{params[k]}" }.join("&")

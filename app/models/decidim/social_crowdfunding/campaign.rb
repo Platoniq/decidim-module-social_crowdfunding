@@ -61,7 +61,7 @@ module Decidim
       end
 
       def self.should_sync?(campaign, component)
-        campaign.created_at < 1.minute.ago || campaign.updated_at > component.settings.goteo_api_update_hours.hours.ago
+        campaign.updated_at > component.settings.goteo_api_update_hours.hours.ago
       end
 
       def costs

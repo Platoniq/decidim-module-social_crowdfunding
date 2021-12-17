@@ -8,6 +8,8 @@ en:
           global:
             campaign_id: Campaign ID
             goteo_api_key: Goteo API key
+            goteo_api_update_hours: Time interval (in hours) to update campaigns with Goteo API data
+            goteo_api_url: Goteo API URL
             goteo_api_username: Goteo API username
     social_crowdfunding:
       actions:
@@ -25,6 +27,7 @@ en:
           index:
             campaigns: Stored campaigns
             create: Create campaign in
+            manage: Manage settings
             select: Select a campaign
             selected: Selected campaign
             slug: Campaign ID
