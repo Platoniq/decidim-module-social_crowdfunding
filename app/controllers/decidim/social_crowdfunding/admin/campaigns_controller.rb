@@ -18,7 +18,7 @@ module Decidim
         end
 
         def select
-          enforce_permission_to :update, :campaign
+          enforce_permission_to :update, :campaign, campaign: campaign
 
           @form = form(SelectCampaignForm).from_params(params)
 
@@ -48,7 +48,7 @@ module Decidim
         end
 
         def update
-          enforce_permission_to :destroy, :campaign, campaign: campaign
+          enforce_permission_to :update, :campaign, campaign: campaign
 
           UpdateCampaign.call(campaign, current_component, current_user) do
             on(:ok) do

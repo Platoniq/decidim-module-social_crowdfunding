@@ -46,7 +46,7 @@ module Decidim::SocialCrowdfunding::Admin
 
       context "when action is destroy" do
         let(:action) do
-          { scope: :admin, action: :destroy, subject: :campaigns }
+          { scope: :admin, action: :destroy, subject: :campaign }
         end
 
         it { is_expected.to eq true }
