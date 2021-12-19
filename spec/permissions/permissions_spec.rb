@@ -11,7 +11,7 @@ module Decidim::SocialCrowdfunding
     let(:context) do
       {
         current_organization: organization,
-        current_campaign: campaign
+        campaign: campaign
       }
     end
     let(:campaign) { create :campaign }

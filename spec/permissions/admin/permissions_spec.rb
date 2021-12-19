@@ -10,10 +10,11 @@ module Decidim::SocialCrowdfunding::Admin
     let(:user) { create :user, :admin, organization: organization }
     let(:context) do
       {
-        current_organization: organization
+        current_organization: organization,
+        current_campaign: campaign
       }
     end
-    let(:campaign) { :campaign }
+    let(:campaign) { create :campaign }
     let(:action) do
       { scope: :admin, action: :update, subject: campaign }
     end

@@ -18,7 +18,7 @@ module Decidim
         end
 
         def select
-          enforce_permission_to :update, :campaign, campaign: campaign
+          enforce_permission_to :update, :campaign
 
           @form = form(SelectCampaignForm).from_params(params)
 
