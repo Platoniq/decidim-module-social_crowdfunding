@@ -16,7 +16,7 @@ module Decidim
           return unless permission_action.subject.in? [:campaign, :campaigns]
 
           case permission_action.action
-          when :index, :create, :update, :destroy
+          when :index, :update, :destroy
             permission_action.allow!
           end
         end

@@ -12,10 +12,14 @@ module Decidim
         helper_method :campaigns
 
         def index
+          enforce_permission_to :index, :campaigns
+
           @form = SelectCampaignForm.new(slug: current_campaign&.slug)
         end
 
         def select
+          enforce_permission_to :update, :campaign
+
           @form = form(SelectCampaignForm).from_params(params)
 
           SelectCampaign.call(@form) do
@@ -44,7 +48,7 @@ module Decidim
         end
 
         def update
-          enforce_permission_to :destroy, :campaign, campaign: campaign
+          enforce_permission_to :update, :campaign, campaign: campaign
 
           UpdateCampaign.call(campaign, current_component, current_user) do
             on(:ok) do
