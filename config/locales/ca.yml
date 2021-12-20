@@ -2,7 +2,7 @@ ca:
   decidim:
     components:
       social_crowdfunding_campaign:
-        name: Nom
+        name: Campanya de Crowdfunding Social
         settings:
           global:
             campaign_id: ID de campanya
@@ -28,69 +28,69 @@ ca:
             create: Crear una campanya a
             manage: Gestionar configuració
             select: Seleccionar campanya
-            selected: Selected campaign
-            slug: Campaign ID
-            slug_info: You can copy the last part of your campaign's public URL (https://goteo.org/project/<your-campaign-id>)
-            submit: Update campaign
-            title: Social Crowdfunding Campaign
+            selected: Campanya seleccionada
+            slug: ID de campanya
+            slug_info: Pots copiar l'última part de la URL pública de la campanya (https://goteo.org/project/<id-de-campanya>)
+            submit: Actualitzar campanya
+            title: Campanya de Crowdfunding Social
           select:
-            error: There was an error updating the campaign
-            success: The campaign has been updated
+            error: S'ha produït un error en actualitzar la campanya
+            success: S'ha actualitzat la campanya
           update:
-            error: There was an error updating the campaign
-            success: The campaign has been updated
+            error: S'ha produït un error en actualitzar la campanya
+            success: S'ha actualitzat la campanya
       campaigns:
         costs:
           material: Materials
-          minimum: Minimum
-          optimum: Optimum
-          structure: Structure
-          task: Tasks
+          minimum: Mínim
+          optimum: Òptim
+          structure: Estructura
+          task: Tasques
           title: Costs
           total: Total
         crowdsourcing:
-          title: Crowdsourcing
+          title: Col·laboracions
         date_label:
-          closed: Closed on
-          created: Created on
-          finished: Finished on
-          remaining: Remaining
-          updated: Updated on
+          closed: Tancada el
+          created: Creada el
+          finished: Acabada el
+          remaining: Queden
+          updated: Actualitzada el
         reward:
-          backers: "%{amount} backers"
-          contributing: Contributing %{amount}
-          get: Get it!
+          backers: "%{amount} cofinançadores"
+          contributing: Aportant %{amount}
+          get: Aconsegueix-la!
         rewards:
-          see_all: See all rewards
-          title: Rewards
+          see_all: Veure més recompenses
+          title: Recompenses
         show:
           description:
-            about: Description of the project. Main features, strengths and differentials.
-            general: General information
-            goal: Goals of the crowdfunding campaign
-            motivation: Why is this important
-          donate: Donate in
+            about: Descripció del projecte. Característiques, fortaleses i diferencials.
+            general: Informació general
+            goal: Objectius de la campanya
+            motivation: Per què és important
+          donate: Fes la teva aportació a
           money:
-            minimum: Minimum
-            optimum: Optimum
-            received: Received
-          view: Visit in
+            minimum: Mínim
+            optimum: Òptim
+            received: Obtingut
+          view: Visitar a
         social_commitment:
-          title: Social commitment
+          title: Compromís social
         statuses:
-          editing: Editing
-          fulfilled: Accomplished!
-          funded: Funded
-          in_campaign: In campaign
-          reviewing: Reviewing
-          unfunded: Unfunded
+          editing: En edició
+          fulfilled: Aconseguit!
+          funded: Finançada
+          in_campaign: En campanya
+          reviewing: En revisió
+          unfunded: No finançada
         thermometer:
-          minimum: Min.
-          optimum: Opt.
+          minimum: Mín.
+          optimum: Òpt.
       models:
         campaign:
           fields:
-            created_at: Created at
+            created_at: Creada el
             id: ID
-            title: Title
-            updated_at: Updated at
+            title: Títol
+            updated_at: Actualitzada el
