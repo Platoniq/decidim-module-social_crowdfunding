@@ -18,14 +18,15 @@
           <%= render "thermometer" %>
 
           <div class="column medium-9 small-8 thermometer-info">
+            <div class="round thermometer-data"><%= campaign_round_label %></div>
             <div class="date-label"><%= campaign_date_label %></div>
-            <div class="date"><%= campaign_date %></div>
+            <div class="date thermometer-data"><%= campaign_date %></div>
             <div class="reached-label"><%= t(".money.received") %></div>
-            <div class="reached"><%= campaign_money current_campaign.amount %></div>
+            <div class="reached thermometer-data"><%= campaign_money current_campaign.amount %></div>
             <div class="optimum-label"><%= t(".money.optimum") %></div>
-            <div class="optimum"><%= campaign_money current_campaign.optimum %></div>
+            <div class="optimum thermometer-data"><%= campaign_money current_campaign.optimum %></div>
             <div class="minimum-label"><%= t(".money.minimum") %></div>
-            <div class="minimum"><%= campaign_money current_campaign.minimum %></div>
+            <div class="minimum thermometer-data"><%= campaign_money current_campaign.minimum %></div>
           </div>
         </div>
 

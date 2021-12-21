@@ -25,6 +25,7 @@ module Decidim
           SelectCampaign.call(@form) do
             on(:ok) do
               flash[:notice] = I18n.t("campaigns.select.success", scope: "decidim.social_crowdfunding.admin")
+
               redirect_to root_url
             end
             on(:error) do

@@ -29,8 +29,56 @@ module Decidim
         t(date_label, scope: "decidim.social_crowdfunding.campaigns.date_label")
       end
 
+      def campaign_days_passed
+        (Date.today - Date.parse(current_campaign.data["date-published"])).to_i
+      end
+
+      def campaign_rounds
+        published_at = Date.parse(current_campaign.data["date-published"])
+
+        rounds = current_campaign.data["rounds"]
+
+        r1 = rounds["round1"]
+        r2 = rounds["round2"]
+
+        [
+          { days: r1, ends_at: published_at + r1.days },
+          ({ days: r2, ends_at: published_at + r1 + r2.days } if r2 > 0)
+        ].compact
+      end
+
       def campaign_days_remaining
-        "days remaining: not implemented in api"
+        rounds = campaign_rounds
+
+        days_remaining = (rounds.first[:ends_at].to_date - Date.today).to_i
+        round_2_remaining = 0
+
+        if rounds.count > 1
+          days_remaining += rounds.last[:days]
+          round_2_remaining = rounds.first[:ends_at].past? ? rounds.last[:days] : days_remaining
+        end
+
+        if days_remaining <= 1
+          hours_remaining = ((Date.tomorrow.to_time - Time.now) / 3600).to_i
+
+          t("hours", hours: hours_remaining, scope: "decidim.social_crowdfunding.campaigns.date_remaining")
+        else
+          t("days", days: days_remaining, scope: "decidim.social_crowdfunding.campaigns.date_remaining")
+        end
+      end
+
+      def campaign_current_round
+        current_round = -1
+
+        campaign_rounds.each_with_index do |r, i|
+          current_round = i + 1 if r[:ends_at].future?
+        end
+
+        current_round
+      end
+
+      def campaign_round_label
+        t(campaign_current_round, scope: "decidim.social_crowdfunding.campaigns.round_label")
       end
 
       def campaign_grouped_costs
