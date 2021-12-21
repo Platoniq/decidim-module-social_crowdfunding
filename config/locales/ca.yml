@@ -1,0 +1,96 @@
+ca:
+  decidim:
+    components:
+      social_crowdfunding_campaign:
+        name: Campanya de Crowdfunding Social
+        settings:
+          global:
+            campaign_id: ID de campanya
+            goteo_api_key: API Key de Goteo
+            goteo_api_update_hours: Interval de temps (en hores) per actualitzar campanyes amb les dades de l'API de Goteo
+            goteo_api_url: URL de l'API de Goteo
+            goteo_api_username: Nom d'usuària de l'API de Goteo
+    social_crowdfunding:
+      actions:
+        confirm_destroy: Confirmes que vols eliminar aquesta campanya? (Només s'eliminarà la còpia que guarda Decidim, no l'original)
+        destroy: Eliminar
+        select: Seleccionar
+        title: Accions
+        update: Actualitzar
+      admin:
+        campaigns:
+          destroy:
+            success: La campanya s'ha eliminat
+          fetch:
+            not_found: No s'ha trobat la campanya
+          index:
+            campaigns: Campanyes emmagatzemades
+            create: Crear una campanya a
+            manage: Gestionar configuració
+            select: Seleccionar campanya
+            selected: Campanya seleccionada
+            slug: ID de campanya
+            slug_info: Pots copiar l'última part de la URL pública de la campanya (https://goteo.org/project/<id-de-campanya>)
+            submit: Actualitzar campanya
+            title: Campanya de Crowdfunding Social
+          select:
+            error: S'ha produït un error en actualitzar la campanya
+            success: S'ha actualitzat la campanya
+          update:
+            error: S'ha produït un error en actualitzar la campanya
+            success: S'ha actualitzat la campanya
+      campaigns:
+        costs:
+          material: Materials
+          minimum: Mínim
+          optimum: Òptim
+          structure: Estructura
+          task: Tasques
+          title: Costs
+          total: Total
+        crowdsourcing:
+          title: Col·laboracions
+        date_label:
+          closed: Tancada el
+          created: Creada el
+          finished: Acabada el
+          remaining: Queden
+          updated: Actualitzada el
+        reward:
+          backers: "%{amount} cofinançadores"
+          contributing: Aportant %{amount}
+          get: Aconsegueix-la!
+        rewards:
+          see_all: Veure més recompenses
+          title: Recompenses
+        show:
+          description:
+            about: Descripció del projecte. Característiques, fortaleses i diferencials.
+            general: Informació general
+            goal: Objectius de la campanya
+            motivation: Per què és important
+          donate: Fes la teva aportació a
+          money:
+            minimum: Mínim
+            optimum: Òptim
+            received: Obtingut
+          view: Visitar a
+        social_commitment:
+          title: Compromís social
+        statuses:
+          editing: En edició
+          fulfilled: Aconseguit!
+          funded: Finançada
+          in_campaign: En campanya
+          reviewing: En revisió
+          unfunded: No finançada
+        thermometer:
+          minimum: Mín.
+          optimum: Òpt.
+      models:
+        campaign:
+          fields:
+            created_at: Creada el
+            id: ID
+            title: Títol
+            updated_at: Actualitzada el
