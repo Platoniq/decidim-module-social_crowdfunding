@@ -140,6 +140,7 @@
       "license-svg-url": "https://goteo.org/api/svg/licenses/ccbyncsa.svg",
       "license-url": "http://creativecommons.org/licenses/by-nc-sa/3.0/deed.es_ES",
       "name": "Documentaci\u00f3n para la fabricaci\u00f3n",
+      "purchased-units": 0,
       "type": "social",
       "units": 0
     },
@@ -155,6 +156,7 @@
       "license-svg-url": "https://goteo.org/api/svg/licenses/gpl2.svg",
       "license-url": "http://www.gnu.org/licenses/gpl-2.0.html",
       "name": "Firmware: qmp.cat",
+      "purchased-units": 0,
       "type": "social",
       "units": 0
     },
@@ -170,6 +172,7 @@
       "license-svg-url": "https://goteo.org/api/svg/licenses/ccbyncsa.svg",
       "license-url": "http://creativecommons.org/licenses/by-nc-sa/3.0/deed.es_ES",
       "name": "Videotutorial",
+      "purchased-units": 0,
       "type": "social",
       "units": 0
     },
@@ -180,6 +183,7 @@
       "icon-url": "https://goteo.org/api/svg/icons/other.svg",
       "id": 397,
       "name": "Acreditaci\u00f3n de mecenazgo",
+      "purchased-units": 52,
       "type": "individual",
       "units": 0
     },
@@ -190,6 +194,7 @@
       "icon-url": "https://goteo.org/api/svg/icons/service.svg",
       "id": 264,
       "name": "Tutor\u00edas para entender el sistema de funcionamiento",
+      "purchased-units": 10,
       "type": "individual",
       "units": 10
     },
@@ -200,6 +205,7 @@
       "icon-url": "https://goteo.org/api/svg/icons/service.svg",
       "id": 263,
       "name": "Testing de transmisiones",
+      "purchased-units": 0,
       "type": "individual",
       "units": 1
     },
@@ -210,10 +216,18 @@
       "icon-url": "https://goteo.org/api/svg/icons/product.svg",
       "id": 389,
       "name": "Nodo M\u00f3vil adicional",
+      "purchased-units": 0,
       "type": "individual",
       "units": 1
     }
   ],
+  "rounds": {
+    "days-remaining": 0,
+    "round1": 40,
+    "round1-remaining": 0,
+    "round2": 40,
+    "round2-remaining": 0
+  },
   "scope": "global",
   "social-commitment": {
     "description": null,
@@ -224,7 +238,7 @@
   "social-commitment-description": null,
   "social-commitment-id": null,
   "status": "fulfilled",
-  "time-elapsed": 0.8741698265075684,
+  "time-elapsed": 1.098862648010254,
   "translations": {
     "ca": {
       "about": "El sistema estar\u00e0 integrat per dues parts fonamentals: l'estaci\u00f3 m\u00f2bil f\u00edsica (alimentaci\u00f3, base, rodes, masteler, etc) i el firmware (el codi programable que la controla).\r\n\r\nEs tracta d'un dispositiu d'altes prestacions, per a la transmissi\u00f3 de dades amb un ample de banda potent. \u00c9s un projecte de gran flexibilitat que permetr\u00e0 possibilitats d'interconnexi\u00f3 amb els dispositius digitals que habiten les ciutats contempor\u00e0nies.\r\n\r\nNode M\u00f2bil incorpora mobilitat a la xarxa sense fil ciutadana guifi.net, estenent-la per provocar noves pr\u00e0ctiques socials dins l'entorn urb\u00e0, barrejant espai p\u00fablic f\u00edsic i digital.\r\n\r\nM\u00e9s informaci\u00f3: http://www.mobilitylab.net/nodomovil/",
@@ -293,18 +307,21 @@
           "license-name": "CC - Reconeixement - NoComercial - CompartirIgual",
           "license-url": "http://creativecommons.org/licenses/by-nc-sa/3.0/deed.ca",
           "name": "Videotutorial",
+          "purchased-units": 0,
           "units": 0
         },
         "263": {
           "available-units": 0,
           "description": "A m\u00e9s de la recompensa anterior s'ofereix un testeig de proves de transmissi\u00f3 de veu i v\u00eddeo per streaming amb el Node M\u00f2bil en un entorn concret (festival, congr\u00e9s o reuni\u00f3 en l'espai p\u00fablic) ensenyant les seves possibilitats d'\u00fas.",
           "name": "Testei de transmissions",
+          "purchased-units": 0,
           "units": 0
         },
         "264": {
           "available-units": 0,
           "description": "Sessions d'assessoria personalitzada per explicar com est\u00e0 dissenyat, constru\u00eft i funciona el Node M\u00f2bil. Les tutories es poden realitzar en format online o presencialment en els tallers guifilab (reunions setmanals els dijous a la tarda a Barcelona).",
           "name": "Tutories per entendre el sistema de funcionament",
+          "purchased-units": 0,
           "units": 0
         },
         "266": {
@@ -314,6 +331,7 @@
           "license-name": "CC - Reconeixement - NoComercial - CompartirIgual",
           "license-url": "http://creativecommons.org/licenses/by-nc-sa/3.0/deed.ca",
           "name": "Documentaci\u00f3 per a la fabricaci\u00f3",
+          "purchased-units": 0,
           "units": 0
         },
         "382": {
@@ -323,18 +341,21 @@
           "license-name": "General Public License (v.2)",
           "license-url": "http://www.gnu.org/licenses/gpl-2.0.html",
           "name": "Firmware: qmp.cat",
+          "purchased-units": 0,
           "units": 0
         },
         "389": {
           "available-units": 0,
           "description": "A m\u00e9s de produir la unitat especificada en aquest projecte, es fabricar\u00e0 un Node M\u00f2bil addicional que es lliurar\u00e0 constru\u00eft i configurat a la persona, instituci\u00f3 o col\u00b7lectiu que cofinanci amb aquest import, per a que ho destini al seu propi \u00fas i necessitats.",
           "name": "Node M\u00f2bil addicional",
+          "purchased-units": 0,
           "units": 0
         },
         "397": {
           "available-units": 0,
           "description": "El teu nom apareixer\u00e0 en l'apartat d'agra\u00efments de la documentaci\u00f3 generada amb el projecte. ",
           "name": "Acreditaci\u00f3 de mecenatge",
+          "purchased-units": 0,
           "units": 0
         }
       },
@@ -385,18 +406,21 @@
           "license-name": "CC - Attribution - NonCommercial - ShareAlike",
           "license-url": "http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en",
           "name": "Video tutorials",
+          "purchased-units": 0,
           "units": 0
         },
         "263": {
           "available-units": 0,
           "description": "Apart from the above mentioned aspects, the Mobile Node allows for voice and video transmission via streaming for specific purposes (festival, congress or meeting in the public space).",
           "name": "Transmission Testing",
+          "purchased-units": 0,
           "units": 0
         },
         "264": {
           "available-units": 0,
           "description": "Personalized advising sessions to explain how the Node is designed, built and how it works. The tutorials can be done online or on-site in the guifilab facilities (weekly meetings in Barcelona on Thursdays afternoon).",
           "name": "Tutorials for understanding how it works ",
+          "purchased-units": 0,
           "units": 0
         },
         "266": {
@@ -406,6 +430,7 @@
           "license-name": "CC - Attribution - NonCommercial - ShareAlike",
           "license-url": "http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en",
           "name": "Documentation related to the manufacture",
+          "purchased-units": 0,
           "units": 0
         },
         "382": {
@@ -415,18 +440,21 @@
           "license-name": "General Public License (v.2)",
           "license-url": "http://www.gnu.org/licenses/gpl-2.0.html",
           "name": "Firmware: qmp.cat",
+          "purchased-units": 0,
           "units": 0
         },
         "389": {
           "available-units": 0,
           "description": "As well as producing the node specific in the project, an additional Mobile Node will be built, configured and delivered to the person, institution or group providing such amount for their own use and needs.",
           "name": "additional Mobile Node-Plus",
+          "purchased-units": 0,
           "units": 0
         },
         "397": {
           "available-units": 0,
           "description": "Your name willappear in the acknowledgement section of the project documentation.  \r\n",
           "name": "sponsoring recognition",
+          "purchased-units": 0,
           "units": 0
         }
       },

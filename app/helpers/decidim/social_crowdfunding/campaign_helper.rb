@@ -73,7 +73,7 @@ module Decidim
       end
 
       def campaign_round_label
-        t(campaign_current_round, scope: "decidim.social_crowdfunding.campaigns.round_label")
+        t(campaign_current_round, scope: "decidim.social_crowdfunding.campaigns.round_label") if campaign_current_round.positive?
       end
 
       def campaign_grouped_costs
