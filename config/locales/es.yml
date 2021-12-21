@@ -1,0 +1,96 @@
+es:
+  decidim:
+    components:
+      social_crowdfunding_campaign:
+        name: Campaña de Crowdfunding Social
+        settings:
+          global:
+            campaign_id: ID de campaña
+            goteo_api_key: Clave de la API de Goteo
+            goteo_api_update_hours: Intervalo de tiempo (en horas) para actualizar campañas con datos de la API de Goteo
+            goteo_api_url: URL de la API de Goteo
+            goteo_api_username: Nombre de usuaria de la API de Goteo
+    social_crowdfunding:
+      actions:
+        confirm_destroy: '¿Confirmas que deseas eliminar esta campaña? (Solo se eliminará la copia de Decidim de la campaña, no la original)'
+        destroy: Eliminar
+        select: Seleccionar
+        title: Acciones
+        update: Actualizar
+      admin:
+        campaigns:
+          destroy:
+            success: La campaña ha sido eliminada
+          fetch:
+            not_found: No se ha encontrado la campaña
+          index:
+            campaigns: Campañas almacenadas
+            create: Crear una campaña en
+            manage: Administrar la configuración
+            select: Seleccionar campaña
+            selected: Campaña seleccionada
+            slug: ID de campaña
+            slug_info: Puedes copiar la última parte de la URL pública de la campaña (https://goteo.org/project/<id-de-campaña>)
+            submit: Actualizar campaña
+            title: Campaña de Crowdfunding Social
+          select:
+            error: Se produjo un error al actualizar la campaña
+            success: La campaña ha sido actualizada
+          update:
+            error: Se produjo un error al actualizar la campaña
+            success: La campaña ha sido actualizada
+      campaigns:
+        costs:
+          material: Materiales
+          minimum: Mínimo
+          optimum: Óptimo
+          structure: Estructura
+          task: Tareas
+          title: Costes
+          total: Total
+        crowdsourcing:
+          title: Colaboraciones
+        date_label:
+          closed: Cerrada el
+          created: Creada el
+          finished: Terminada el
+          remaining: Quedan
+          updated: Actualizada el
+        reward:
+          backers: "%{amount} cofinanciadoras"
+          contributing: Aportando %{amount}
+          get: '¡Consíguela!'
+        rewards:
+          see_all: Ver más recompensas
+          title: Recompensas
+        show:
+          description:
+            about: Descripción del proyecto. Características, fortalezas y diferenciales.
+            general: Información general
+            goal: Objetivos de la campaña de crowdfunding
+            motivation: '¿Por qué es importante?'
+          donate: Haz tu aportación en
+          money:
+            minimum: Mínimo
+            optimum: Óptimo
+            received: Obtenido
+          view: Visitar en
+        social_commitment:
+          title: Compromiso social
+        statuses:
+          editing: En edición
+          fulfilled: '¡Conseguido!'
+          funded: Financiada
+          in_campaign: En campaña
+          reviewing: En revisión
+          unfunded: No financiada
+        thermometer:
+          minimum: Mín.
+          optimum: Ópt.
+      models:
+        campaign:
+          fields:
+            created_at: Creada el
+            id: ID
+            title: Título
+            updated_at: Actualizada el
