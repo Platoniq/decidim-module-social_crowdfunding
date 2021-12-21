@@ -30,7 +30,7 @@ module Decidim
       end
 
       def campaign_days_passed
-        (Date.today - Date.parse(current_campaign.data["date-published"])).to_i
+        (Time.zone.today - Date.parse(current_campaign.data["date-published"])).to_i
       end
 
       def campaign_rounds
@@ -43,23 +43,18 @@ module Decidim
 
         [
           { days: r1, ends_at: published_at + r1.days },
-          ({ days: r2, ends_at: published_at + r1 + r2.days } if r2 > 0)
+          ({ days: r2, ends_at: published_at + r1 + r2.days } if r2.positive?)
         ].compact
       end
 
       def campaign_days_remaining
         rounds = campaign_rounds
 
-        days_remaining = (rounds.first[:ends_at].to_date - Date.today).to_i
-        round_2_remaining = 0
-
-        if rounds.count > 1
-          days_remaining += rounds.last[:days]
-          round_2_remaining = rounds.first[:ends_at].past? ? rounds.last[:days] : days_remaining
-        end
+        days_remaining = (rounds.first[:ends_at].to_date - Time.zone.today).to_i
+        days_remaining += rounds.last[:days] if rounds.count > 1
 
         if days_remaining <= 1
-          hours_remaining = ((Date.tomorrow.to_time - Time.now) / 3600).to_i
+          hours_remaining = ((Date.tomorrow.to_time - Time.zone.now) / 3600).to_i
 
           t("hours", hours: hours_remaining, scope: "decidim.social_crowdfunding.campaigns.date_remaining")
         else
