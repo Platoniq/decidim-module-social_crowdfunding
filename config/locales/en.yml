@@ -50,6 +50,7 @@ en:
           title: Costs
           total: Total
         crowdsourcing:
+          collaborate: Collaborate
           title: Crowdsourcing
         date_label:
           closed: Closed on

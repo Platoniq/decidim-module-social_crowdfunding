@@ -37,7 +37,7 @@
             <%= t(".view") %>
           <% end %>
 
-          <%= image_tag "goteo.svg", class: "goteo-logo" %>
+          <%= image_tag "goteo-white.svg", class: "goteo-logo" %>
           <%= icon "external-link" %>
         <% end %>
       </div>
@@ -48,7 +48,7 @@
     </div>
 
     <% if current_campaign.needs %>
-      <div class="card extra">
+      <div id="crowdsourcing" class="mt-s">
         <%= render "crowdsourcing" %>
       </div>
     <% end %>

@@ -169,7 +169,11 @@ $percentage-marker-url: url("https://goteo.org/assets/img/project/percentage-con
       font-size: 24px;
     }
 
-    &.date,
+    &.date {
+      font-size: 36px;
+      font-weight: 700;
+    }
+
     &.reached {
       font-size: 48px;
       font-weight: 700;
