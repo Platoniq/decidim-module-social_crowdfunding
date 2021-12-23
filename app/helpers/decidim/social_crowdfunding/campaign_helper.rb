@@ -54,7 +54,7 @@ module Decidim
         days_remaining += rounds.last[:days] if rounds.count > 1
 
         if days_remaining <= 1
-          hours_remaining = ((Date.tomorrow.to_time - Time.zone.now) / 3600).to_i
+          hours_remaining = ((Time.zone.tomorrow.to_time - Time.zone.now) / 3600).to_i
 
           t("hours", hours: hours_remaining, scope: "decidim.social_crowdfunding.campaigns.date_remaining")
         else

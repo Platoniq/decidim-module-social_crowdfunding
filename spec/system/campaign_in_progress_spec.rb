@@ -50,13 +50,13 @@ describe "Show campaign", type: :system do
 
   context "when less than 1 day left" do
     before do
-      Timecop.freeze(Date.parse(data["date-published"]) + 64.days)
+      Timecop.freeze(Date.parse(data["date-published"]) + 64.days + 6.hours)
       visit_component
     end
 
     it "displays the hours left" do
       within ".thermometer-info .date" do
-        expect(page).to have_content("Only 23 hours!")
+        expect(page).to have_content("Only 18 hours!")
       end
     end
   end
