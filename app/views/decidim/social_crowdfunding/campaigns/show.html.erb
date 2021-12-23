@@ -48,7 +48,7 @@
     </div>
 
     <% if current_campaign.needs %>
-      <div id="crowdsourcing" class="mt-s">
+      <div id="crowdsourcing" class="mt-m">
         <%= render "crowdsourcing" %>
       </div>
     <% end %>
@@ -93,10 +93,10 @@
       content: render_markdown(current_campaign.data["goal"])
     } if current_campaign.data["goal"] %>
 
-    <% if current_campaign.social_commitments.any? %>
-      <div class="section row collapse">
-        <%= render "social_commitment" %>
-      </div>
-    <% end %>
+    <%= render partial: "decidim/social_crowdfunding/campaigns/description", locals: {
+      id: "social-commitment",
+      title: t("social_commitment.title", scope: "decidim.social_crowdfunding.campaigns"),
+      content: render("social_commitment")
+    } if current_campaign.social_commitments.any? %>
   </div>
 </div>

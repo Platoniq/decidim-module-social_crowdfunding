@@ -30,21 +30,67 @@ describe "Show campaign", type: :system do
         expect(page).to have_content("€1,250")
       end
     end
+
+    within ".thermometer-container .percentage" do
+      expect(page).to have_content("139%")
+    end
+  end
+
+  it "show a link with the logo of Goteo" do
+    within ".button--goteo" do
+      expect(page).to have_content("VISIT IN")
+      expect(page).to have_selector("img.goteo-logo")
+    end
   end
 
   it "displays campaign status" do
-    expect(page).to have_link("Visit")
-
     within ".campaign__status" do
       expect(page).to have_content("Accomplished!")
     end
   end
 
-  it "displays description" do
+  it "displays project description sections" do
     expect(page).to have_selector(".section-heading + #costs", visible: :hidden)
     expect(page).to have_selector(".section-heading + #description-general", visible: :all)
     expect(page).to have_selector(".section-heading + #description-about", visible: :hidden)
     expect(page).to have_selector(".section-heading + #description-motivation", visible: :hidden)
     expect(page).to have_selector(".section-heading + #description-goal", visible: :hidden)
+  end
+
+  it "displays social commitment section" do
+    expect(page).to have_selector(".section-heading + #social-commitment", visible: :hidden)
+  end
+
+  it "shows a list of rewards" do
+    expect(page).to have_link "See all rewards"
+
+    within "#rewards .card-grid .column:first-of-type" do
+      within ".card__content" do
+        within ".card__header" do
+          expect(page).to have_content "Contributing €5"
+          expect(page).to have_content "Acreditación de mecenazgo"
+        end
+
+        within ".card__text" do
+          expect(page).to have_content "Tu nombre aparecerá en el apartado de agradecimientos de la documentación generada con el proyecto."
+        end
+      end
+
+      within ".card__icondata:nth-child(2)" do
+        expect(page).to have_selector "svg.icon--info.icon"
+        expect(page).to have_content "ACREDITACIÓN DE MECENAZGO"
+      end
+
+      within ".card__icondata:nth-child(3)" do
+        expect(page).to have_selector "svg.icon--tag.icon"
+        expect(page).to have_content "CONTRIBUTING €5"
+      end
+
+      within ".card__footer" do
+        within ".backers" do
+          expect(page).to have_content("52 backers")
+        end
+      end
+    end
   end
 end

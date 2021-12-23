@@ -1,14 +1,19 @@
-<h3 class="section-heading">
-  <%= t(".title") %>
-</h3>
-
 <% current_campaign.social_commitments.each do |commitment| %>
-  <div>
-    <h3>
-      <%= translated_attribute(commitment["name"]) %>
-    </h3>
-    <p>
-      <%= render_markdown translated_attribute(commitment["description"]) %>
-    </p>
+  <div class="card">
+    <div class="card__content">
+      <div class="card__header">
+        <span class="card__title">
+          <strong>
+            <%= translated_attribute(commitment["name"]) %>
+          </strong>
+        </span>
+      </div>
+
+      <div class="card__text">
+        <div class="card__text--paragraph">
+          <%= render_markdown translated_attribute(commitment["description"]) %>
+        </div>
+      </div>
+    </div>
   </div>
 <% end %>
