@@ -5,7 +5,7 @@ require "decidim/social_crowdfunding/test/shared_contexts"
 
 describe "Show campaign", type: :system do
   include_context "with stubs example api"
-  include_context "with campaign component"
+  include_context "with finished campaign component"
 
   it "displays campaign media embed" do
     within ".responsive-embed" do
@@ -36,7 +36,7 @@ describe "Show campaign", type: :system do
     end
   end
 
-  it "show a link with the logo of Goteo" do
+  it "shows a link with the Goteo logo" do
     within ".button--goteo" do
       expect(page).to have_content("VISIT IN")
       expect(page).to have_selector("img.goteo-logo")

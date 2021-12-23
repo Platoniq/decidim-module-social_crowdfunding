@@ -5,7 +5,7 @@ require "decidim/social_crowdfunding/test/shared_contexts"
 
 describe "Visit the admin page", type: :system do
   include_context "with stubs example api"
-  include_context "with campaign component"
+  include_context "with finished campaign component"
 
   let(:campaign) { create(:campaign) }
   let(:campaign_name) { "Nodo Móvil" }
