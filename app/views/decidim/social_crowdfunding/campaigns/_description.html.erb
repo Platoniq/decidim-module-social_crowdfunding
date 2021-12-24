@@ -6,7 +6,7 @@
     <%= icon "caret-right", class: "icon--small", role: "img", "aria-hidden": true %>&nbsp;
   </h3>
 
-  <div id="<%= id %>" class="<%= "hide" unless options[:expanded] %>" data-toggler=".hide">
+  <div id="<%= id %>" class="mt-m <%= "hide" unless options[:expanded] %>" data-toggler=".hide">
     <%= content %>
   </div>
 </div>

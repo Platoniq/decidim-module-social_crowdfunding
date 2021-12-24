@@ -32,6 +32,10 @@ module Decidim
           uri.to_s
         end
 
+        def participate_url(campaign)
+          build_url("/project/#{campaign.slug}/participate#collapseOne")
+        end
+
         def reward_url(campaign, reward)
           build_url("/invest/#{campaign.slug}/payment", reward: reward["id"])
         end

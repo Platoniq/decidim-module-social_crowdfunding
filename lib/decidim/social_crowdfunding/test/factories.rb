@@ -9,7 +9,7 @@ FactoryBot.define do
     url { "https://goteo.org/project/nodo-movil" }
 
     data do
-      JSON.parse(File.read("spec/fixtures/files/goteo-project.json"))
+      JSON.parse(File.read("spec/fixtures/files/goteo-project-finished.json"))
     end
   end
 end
