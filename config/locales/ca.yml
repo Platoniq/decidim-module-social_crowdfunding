@@ -49,7 +49,7 @@ ca:
           title: Costs
           total: Total
         crowdsourcing:
-          collaborate: Collaborate
+          collaborate: Col·labora
           title: Col·laboracions
         date_label:
           closed: Tancada el
@@ -58,8 +58,8 @@ ca:
           remaining: Queden
           updated: Actualitzada el
         date_remaining:
-          days: "%{days} days"
-          hours: Only %{hours} hours!
+          days: "%{days} dies"
+          hours: Només %{hours} hores!
         reward:
           backers: "%{amount} cofinançadores"
           contributing: Aportant %{amount}
@@ -68,8 +68,8 @@ ca:
           see_all: Veure més recompenses
           title: Recompenses
         round_label:
-          '1': First round
-          '2': Second round
+          '1': Primera ronda
+          '2': Segona ronda
         show:
           description:
             about: Descripció del projecte. Característiques, fortaleses i diferencials.
