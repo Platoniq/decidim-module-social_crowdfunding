@@ -1,0 +1,850 @@
+{
+  "about": "La nave de ***La Ben\u00e9fica*** ha tenido muchas vidas. Nuestro objetivo es rehabilitar y recuperarla para que vuelva a ser, en parte, lo que ya fue en el pasado. Construida en **1926**, la nave fue la sede de **La Ben\u00e9fica de Pilo\u00f1a, Sociedad de Socorro Mutuo**. El fin de la sociedad, como muchas otras de su \u00e9poca, era que los socios y socias (vecinos/as del pueblo), se auxiliaran mutuamente en sus problemas: enfermedades, viudedad, liquidez... Con las aportaciones de los asociados atend\u00edan necesidades que el estado, o otras instituciones, no cubr\u00edan. La Sociedad de La Ben\u00e9fica **lleg\u00f3 a tener tanto \u00e9xito que construyeron una nave rectangular de unos 400m2** y que funcion\u00f3 como **teatro, sal\u00f3n de baile, lugar de encuentro social y cine todos los domingos**.  \r\n![](https://www.goteo.org/img/700x0/whatsapp-image-2021-10-25-at-11.25.26.jpeg)\r\n\r\nEsta peque\u00f1a utop\u00eda art\u00edstica y solidaria finaliz\u00f3 en 1946, y la nave pas\u00f3 a ser una f\u00e1brica de dulce, luego un parking y luego se abandon\u00f3. Nosotros **queremos reconstruir la nave, recuperar el esp\u00edritu con el que se construy\u00f3** y que, dentro de poco, **podamos socorrernos mutuamente a trav\u00e9s de las artes y de la cultura**. \r\n\r\nDesde que comenzamos con la idea hasta que compramos la nave, el apoyo y el entusiasmo de las vecinas y vecinos de Pilo\u00f1a ha sido lo m\u00e1s importante. Vemos que el Espaciu Cultural es una necesidad que no s\u00f3lo tenemos nosotras, y que realmente se puede convertir en un revulsivo para las que vivimos aqu\u00ed y para las que nos visitan, ya que en el oriente de Asturias no hay ning\u00fan espacio parecido que cumpla con esta misi\u00f3n. \r\n\r\nEl siguiente paso, y por el que organizamos esta campa\u00f1a de financiaci\u00f3n colectiva, **es reconstruir las partes b\u00e1sicas de la nave** para poder obtener una licencia de apertura y empezar a programar actividades lo antes posible. Para ello hay que, realizar demoliciones y movimientos de tierras, reconstruir la cubierta, realizar un plan de seguridad, fontaner\u00eda, electricidad, etc.",
+  "amount": 126563.0,
+  "categories": [
+    {
+      "description": "Proyectos con objetivos art\u00edsticos y culturales en un sentido amplio.",
+      "id": 11,
+      "name": "Cultural"
+    }
+  ],
+  "costs": [
+    {
+      "amount": 1280.0,
+      "description": "Bajantes Zinc",
+      "id": 61159,
+      "name": "CUBIERTA",
+      "required": "True",
+      "type": "structure"
+    },
+    {
+      "amount": 3230.0,
+      "description": "Canal\u00f3n cubierta de teja",
+      "id": 61160,
+      "name": "CUBIERTA",
+      "required": "True",
+      "type": "structure"
+    },
+    {
+      "amount": 525.0,
+      "description": "Remate Chimenea",
+      "id": 61161,
+      "name": "CUBIERTA",
+      "required": "True",
+      "type": "structure"
+    },
+    {
+      "amount": 20900.0,
+      "description": "Cobertura teja plana envejecida con rastriles",
+      "id": 61162,
+      "name": "CUBIERTA",
+      "required": "True",
+      "type": "structure"
+    },
+    {
+      "amount": 5150.0,
+      "description": "Membrana impermeable tipo TYVEC",
+      "id": 61163,
+      "name": "CUBIERTA",
+      "required": "True",
+      "type": "structure"
+    },
+    {
+      "amount": 29350.0,
+      "description": "Panel Sandwich",
+      "id": 61164,
+      "name": "CUBIERTA",
+      "required": "True",
+      "type": "structure"
+    },
+    {
+      "amount": 33750.0,
+      "description": "Reparaci\u00f3n forjado de madera de cubierta y alero",
+      "id": 61165,
+      "name": "CUBIERTA",
+      "required": "True",
+      "type": "task"
+    },
+    {
+      "amount": 7050.0,
+      "description": "Demoliciones",
+      "id": 61166,
+      "name": "DEMOLICIONES",
+      "required": "False",
+      "type": "task"
+    },
+    {
+      "amount": 2340.0,
+      "description": "Movimiento de tierras",
+      "id": 61167,
+      "name": "MOVIMIENTOS DE TIERRAS",
+      "required": "False",
+      "type": "task"
+    },
+    {
+      "amount": 2662.0,
+      "description": "Red Horizontal de Saneamiento",
+      "id": 61168,
+      "name": "RED HORIZONTAL DE SANEAMIENTO",
+      "required": "False",
+      "type": "structure"
+    },
+    {
+      "amount": 1334.0,
+      "description": "Cimentaciones y soleras",
+      "id": 61169,
+      "name": "CIMENTACIONES Y SOLERAS",
+      "required": "False",
+      "type": "structure"
+    },
+    {
+      "amount": 2340.0,
+      "description": "Instalaci\u00f3n de fontaner\u00eda",
+      "id": 61170,
+      "name": "INSTALACI\u00d3N DE FONTANER\u00cdA",
+      "required": "False",
+      "type": "structure"
+    },
+    {
+      "amount": 1450.0,
+      "description": "Plan de seguridad y salud",
+      "id": 61171,
+      "name": "PLAN DE SEGURIDAD Y SALUD",
+      "required": "False",
+      "type": "task"
+    },
+    {
+      "amount": 18750.0,
+      "description": "Iluminaci\u00f3n",
+      "id": 61172,
+      "name": "ILUMINACI\u00d3N",
+      "required": "False",
+      "type": "task"
+    }
+  ],
+  "currency": "EUR",
+  "currency-rate": 1.0,
+  "date-closed": null,
+  "date-created": "Mon, 25 Oct 2021 00:00:00 +0200",
+  "date-passed": "Tue, 07 Dec 2021 00:00:00 +0100",
+  "date-published": "Thu, 28 Oct 2021 00:00:00 +0200",
+  "date-succeeded": null,
+  "date-updated": "Thu, 28 Oct 2021 00:00:00 +0200",
+  "description": "**La Ben\u00e9fica - Espaciu Cultural** ahora mismo es un gran sue\u00f1o. El sue\u00f1o de tener en L\u2019Infiestu, Pilo\u00f1a, un espacio que combina cuatro inquietudes: la** expresi\u00f3n art\u00edstico cultural**, la **acci\u00f3n comunitaria**, la **lucha contra el abandono y la despoblaci\u00f3n de las zonas rurales** y la **trasmisi\u00f3n de conocimientos**. \r\n\r\nQueremos un espacio que d\u00e9 visibilidad a la expresi\u00f3n art\u00edstica contempor\u00e1nea y vanguardista, pero tambi\u00e9n a la cultura popular y tradicional, y que adem\u00e1s facilite la trasmisi\u00f3n de conocimiento entre las distintas generaciones. Un espacio totalmente entroncado en la comunidad, que estimule el ecosistema cultural del Conceyu de Pilo\u00f1a, y tambi\u00e9n un espacio de ocio para los j\u00f3venes y no tan j\u00f3venes.** Una raz\u00f3n por la que no irse del pueblo, un lugar donde crear y disfrutar de la cultura**. Pero, al mismo tiempo, La Ben\u00e9fica es un proyecto ambicioso, que pretende tener **impacto mucho m\u00e1s all\u00e1 de Asturias, tejiendo alianzas con proyectos art\u00edsticos de toda Europa**, y con una programaci\u00f3n que haga del centro una referencia a nivel nacional.",
+  "description-short": "Rehabilitaremos un antiguo teatro en un pueblo de Asturias para convertirlo en un centro de cultura y arte que a\u00fane vanguardia y tradici\u00f3n",
+  "goal": null,
+  "id": "la-benefica",
+  "image-gallery": null,
+  "image-url": "https://goteo.org/img/medium/pantalla-1.0.png",
+  "image-url-big": "https://goteo.org/img/big/pantalla-1.0.png",
+  "lang": "es",
+  "location": [
+    {
+      "city": "Infiesto",
+      "country": "Espa\u00f1a",
+      "country-code": "ES",
+      "latitude": 43.3471387,
+      "longitude": -5.3630233,
+      "radius": 0,
+      "region": "Asturias"
+    }
+  ],
+  "minimum": 94185.0,
+  "motivation": "La visi\u00f3n que tenemos de ***La Ben\u00e9fica*** es que sea un **espacio abierto** y que pertenezca, al mismo tiempo, a  muchas personas. Por eso, esta campa\u00f1a est\u00e1 dirigida a cualquier persona, empresa o entidad que quiera formar parte de un proyecto que pone en valor **la cultura, la comunidad, el arte y lo rural.** Tanto si vives en Asturias, como si te encanta venir aqu\u00ed, como si no tienes pensado venir jam\u00e1s. La Ben\u00e9fica es mucho m\u00e1s que un espacio f\u00edsico, es una **idea de c\u00f3mo vivir y promover la cultura y el arte en un medio no convencional, lejos de las capitales culturales y del gran p\u00fablico**. \r\n\r\nContamos ya con el apoyo del Ayuntamiento de Pilo\u00f1a, que siempre ha apoyado la idea, empresas locales como Ordum Cervezas Artesanas, Sidra Viuda de Angel\u00f3n o Asturcilla, y tambi\u00e9n nacionales como Filmin y Primavera Sound. Pero lo que m\u00e1s valoramos (y necesitamos) son personas de a pie que se unan a este proyecto. Hemos dise\u00f1ado unas recompensas para todos los gustos y esperamos que las disfrut\u00e9is. Si tienes alguna otra idea de colaboraci\u00f3n, \u00a1ponte en contacto con nosotras!",
+  "name": "La Ben\u00e9fica de Pilo\u00f1a - Espaciu Cultural",
+  "needs": null,
+  "node": "goteo",
+  "optimum": 130111.0,
+  "owner": "labenefica",
+  "owner-name": "La Ben\u00e9fica",
+  "project-url": "https://goteo.org/project/la-benefica",
+  "rewards": [
+    {
+      "amount": 10,
+      "available-units": 0,
+      "description": "Por s\u00f3lo 10\u20ac amadrinar\u00e1s una teja de La Ben\u00e9fica: patrocinas el derribo y construccion del tejado \r\n\r\n*Recuerda que esta aportaci\u00f3n desgrava! Calc\u00falalo ? [aqu\u00ed](https://www.goteo.org/calculadora-fiscal)\r\n![](https://www.goteo.org/img/700x0/goteo-165.jpg)",
+      "icon-url": "",
+      "id": 69794,
+      "name": "Amadrina una Teya",
+      "purchased-units": 263,
+      "type": "individual",
+      "units": 0
+    },
+    {
+      "amount": 25,
+      "available-units": 0,
+      "description": "Ahi estamos toes: les hermanes, les vecines, les amigues...\r\n\r\n*Recuerda que esta aportaci\u00f3n desgrava! Calc\u00falalo ? [aqu\u00ed](https://www.goteo.org/calculadora-fiscal)\r\n![](https://www.goteo.org/img/700x0/goteo-167.jpg)",
+      "icon-url": "",
+      "id": 69795,
+      "name": "Tu nombre en nuestra secci\u00f3n especial de agradecimientos",
+      "purchased-units": 282,
+      "type": "individual",
+      "units": 0
+    },
+    {
+      "amount": 35,
+      "available-units": 34,
+      "description": "Las amigas de [Filmin](https://www.filmin.es/) son tan majas que te regalan una suscripci\u00f3n de un mes de duraci\u00f3n por apoyar a La Ben\u00e9fica. \r\n\r\nRecibir\u00e1s un c\u00f3digo unipersonal v\u00e1lido hasta octubre de 2022. A tirarse al sof\u00e1 \u00a1y a disfrutar del buen cine!\r\n\r\n*Recuerda que esta aportaci\u00f3n desgrava! Calc\u00falalo ? [aqu\u00ed](https://www.goteo.org/calculadora-fiscal)\r\n![](https://www.goteo.org/img/700x0/goteo-02-a.jpg)",
+      "icon-url": "",
+      "id": 70328,
+      "name": "Suscripci\u00f3n de un mes a Filmin",
+      "purchased-units": 66,
+      "type": "individual",
+      "units": 100
+    },
+    {
+      "amount": 40,
+      "available-units": 0,
+      "description": "[Week-o](https://week-o.com/) es un precioso almanaque semanal, dibujado a mano, que incluye espacio para la planificacion semanal,  curiosidades, citas, las fases lunares y hasta los minutos que aumentan o disminuyen los d\u00edas de cada semana. \r\nHecho en Asturias, tiene nada menos que 108 p\u00e1ginas de 21 x 21 cent\u00edmetros impresas a dos tintas en un fabuloso papel cien por cien reciclado. \r\nAdem\u00e1s, si eliges esta recompensa antes del 6 de diciembre, te llegar\u00e1 a casa antes de Navidad. Un estupendo regal\u00edn para empezar el a\u00f1o ;) \r\n\r\n*Recuerda que esta aportaci\u00f3n desgrava! Calc\u00falalo ? [aqu\u00ed](https://www.goteo.org/calculadora-fiscal)\r\n![](https://www.goteo.org/img/700x0/goteo-02-b.jpg)",
+      "icon-url": "",
+      "id": 70429,
+      "name": "Almanaque 2022 de Week-o",
+      "purchased-units": 10,
+      "type": "individual",
+      "units": 10
+    },
+    {
+      "amount": 40,
+      "available-units": 0,
+      "description": "Nuestra amiga de [Ringo Rango ](https://ringorangoshop.com/)ha dise\u00f1ado y cosido estos monederos o neceseres (o pa meter lo que sea) especialmente para La Ben\u00e9fica, con nuestros colores y los detalles tan distintivos de Ringo Rango: cuando la tradici\u00f3n es inspiraci\u00f3n.\r\nSi eliges esta recompensa antes del 20 de diciembre \u00a1te llegar\u00e1 a casa para Reyes! Y si no, un poquito despu\u00e9s :) \r\n\r\n*Recuerda que esta aportaci\u00f3n desgrava! Calc\u00falalo ? aqu\u00ed\r\n\r\n![](https://www.goteo.org/img/700x0/goteo-02c-1.jpg)\r\n![](https://www.goteo.org/img/700x0/whatsapp-image-2021-11-29-at-10.51.-57.jpeg)",
+      "icon-url": "",
+      "id": 70712,
+      "name": "Monedero (o neceser) con dise\u00f1o especial para La Ben\u00e9fica",
+      "purchased-units": 7,
+      "type": "individual",
+      "units": 7
+    },
+    {
+      "amount": 40,
+      "available-units": 0,
+      "description": "Nuestra amiga de [Ringo Rango](https://ringorangoshop.com/nosotros/) ha dise\u00f1ado y cosido estos monederos o neceseres (o pa meter lo que sea) especialmente para La Ben\u00e9fica, con nuestros colores y los detalles tan distintivos de Ringo Rango: cuando la tradici\u00f3n es inspiraci\u00f3n.\r\nSi eliges esta recompensa antes del 15 de diciembre \u00a1te llegar\u00e1 a casa para Reyes!\r\n\r\n*Recuerda que esta aportaci\u00f3n desgrava! Calc\u00falalo ? [aqu\u00ed](https://www.goteo.org/calculadora-fiscal)\r\n![](https://www.goteo.org/img/700x0/goteo-02c.jpg)\r\n![](https://www.goteo.org/img/700x0/whatsapp-image-2021-11-29-at-10.51.55.jpeg)",
+      "icon-url": "",
+      "id": 70495,
+      "name": "Monedero (o neceser) con dise\u00f1o especial para La Ben\u00e9fica",
+      "purchased-units": 10,
+      "type": "individual",
+      "units": 10
+    },
+    {
+      "amount": 40,
+      "available-units": 0,
+      "description": "En Cabranes, Asturias, se esconde el \u00fanico cultivo de setas ecol\u00f3gicas de la regi\u00f3n, que adem\u00e1s recupera una t\u00e9cnica ancestral japonesa para cultivar Shitake y otros hongos en troncos de roble y casta\u00f1o. [Funginatur](https://www.funginatur.com/) es magia. Y adem\u00e1s, son maj\u00edsimos. Tanto, que si eliges esta recompensa realizar\u00e1n un tour-degutaci\u00f3n especial s\u00f3lo para Las Ben\u00e9ficas. \r\n\r\n*Recuerda que esta aportaci\u00f3n desgrava! Calc\u00falalo ? [aqu\u00ed](https://www.goteo.org/calculadora-fiscal)\r\n![](https://www.goteo.org/img/700x0/goteo-04a.jpg)",
+      "icon-url": "",
+      "id": 70242,
+      "name": "Tour-degustaci\u00f3n por el bosque de Funginatur",
+      "purchased-units": 30,
+      "type": "individual",
+      "units": 30
+    },
+    {
+      "amount": 40,
+      "available-units": 0,
+      "description": "Con gran concurso de playbacks que clasifica para los mundiales - En Pilo\u00f1a, Asturias, y en cuanto tengamos licencia para organizar saraos y, por supuesto, tu nombre en nuestra secci\u00f3n especial de agradecimientos\r\n\r\n*Recuerda que esta aportaci\u00f3n desgrava! Calc\u00falalo ? [aqu\u00ed](https://www.goteo.org/calculadora-fiscal)\r\n![](https://www.goteo.org/img/700x0/goteo-168.jpg)",
+      "icon-url": "",
+      "id": 69796,
+      "name": "Invitaci\u00f3n a la Fiesta de Inauguraci\u00f3n de La Ben\u00e9fica",
+      "purchased-units": 444,
+      "type": "individual",
+      "units": 444
+    },
+    {
+      "amount": 45,
+      "available-units": 16,
+      "description": "Los amigos de Vetusta Morla te regalan su nuevo disco eligiendo esta genial recompensa . Recibir\u00e1s un link para su descarga y \u00a1a disfrutar del music\u00f3n! \r\n\r\n*Recuerda que esta aportaci\u00f3n desgrava! Calc\u00falalo ? [aqu\u00ed](https://www.goteo.org/calculadora-fiscal)\r\n![](https://www.goteo.org/img/700x0/goteo-03d.jpg)",
+      "icon-url": "",
+      "id": 70707,
+      "name": "Nuevo \u00e1lbum de Vestusta Morla ?Con Cable a Tierra",
+      "purchased-units": 4,
+      "type": "individual",
+      "units": 20
+    },
+    {
+      "amount": 50,
+      "available-units": 0,
+      "description": "\u00bfSabes qu\u00e9 ye el remangu? Las amigas de [Puru Remangu ](https://pururemangu.com/mas-quuna-marca-de-ropa/)te lo explican con todo detalle, de nuestras g\u00fcelas hasta nosotras :) \r\nAdem\u00e1s colaboran con La Ben\u00e9fica con esta preciosa camiseta, de color arena y disponible en todas las tallas (XS-S-M-L-XL-XXL)\r\nSi eliges esta recompensa antes del 6 de diciembre \u00a1te llegar\u00e1 a casa para Reyes!\r\n\r\n*Recuerda que esta aportaci\u00f3n desgrava! Calc\u00falalo ? [aqu\u00ed](https://www.goteo.org/calculadora-fiscal)\r\n![](https://www.goteo.org/img/700x0/goteo-04c.jpg)",
+      "icon-url": "",
+      "id": 70446,
+      "name": "Camiseta De Pueblu",
+      "purchased-units": 38,
+      "type": "individual",
+      "units": 38
+    },
+    {
+      "amount": 50,
+      "available-units": 16,
+      "description": "La Fonte Baxa en Luarca (Asturias) son 10 hectareas de bosque-jard\u00edn, entre los jard\u00ednes \"particulares\" m\u00e1s grandes de Europa. Colgando al Cant\u00e1brico, en \u00e9l crecen especies que nunca antes se hab\u00edan desarrollado fuera de su h\u00e1bitat. Si eliges esta recompensa, tendr\u00e1s una visita guiada para 2 personas por nuestro amigo Nike Garc\u00eda. La mejor fecha se convendr\u00e1 con el gu\u00eda una vez haya fianlizado esta campa\u00f1a de financiaci\u00f3n.\r\n\r\n*Recuerda que esta aportaci\u00f3n desgrava! Calc\u00falalo ? [aqu\u00ed](https://www.goteo.org/calculadora-fiscal)\r\n![](https://www.goteo.org/img/700x0/goteo-03e-1-.jpg)",
+      "icon-url": "",
+      "id": 70713,
+      "name": "Visita guiada para 2 personas por el Bosque-Jard\u00edn de la Fonte Baxa, Luarca",
+      "purchased-units": 9,
+      "type": "individual",
+      "units": 25
+    },
+    {
+      "amount": 50,
+      "available-units": 0,
+      "description": "S\u00ed, suena raro, pero es genial. Gracias a nuestros vecinos de Funginatur, un precioso proyecto de cultivo de setas ecol\u00f3gicas en los bosques de Cabranes,  te enviamos a casa un [tronco productor ](https://www.funginatur.com/productos/troncos-productores/)de setas shitake para que cultives setas ecologicas en casa sin necesidad de un espacio particular, \u00a1ocupa lo mismo que una planta!\r\n\r\nUn estupendo regalo navide\u00f1o que puedes recibir en casa si eliges esta recompensa antes del 6 de diciembre. \r\n\r\n*Recuerda que esta aportaci\u00f3n desgrava! Calc\u00falalo ? [aqu\u00ed](https://www.goteo.org/calculadora-fiscal)\r\n![](https://www.goteo.org/img/700x0/goteo-03b.jpg)",
+      "icon-url": "",
+      "id": 70241,
+      "name": "Tronco productor de setas Shitake: de Cabranes, Asturias a tu casa",
+      "purchased-units": 30,
+      "type": "individual",
+      "units": 30
+    },
+    {
+      "amount": 50,
+      "available-units": 0,
+      "description": "Nuestra amiga de [Woodic](www.woodic.es ), ceramista y dise\u00f1adora creando desde un puebl\u00edn en un valle asturiano, hace estas peque\u00f1as joyas. Un pin/imperdible para adornarte en cualquier ocasi\u00f3n. Est\u00e1n hechos de loza blanca de baja temperatura, horneados tres veces, con esmalte y lustre oro de 14k. \r\n\r\nUn estupendo regalo navide\u00f1o que puedes recibir en casa si eliges esta recompensa antes del 6 de diciembre.\r\n\r\n*Recuerda que esta aportaci\u00f3n desgrava! Calc\u00falalo ? [aqu\u00ed](https://www.goteo.org/calculadora-fiscal)\r\n![](https://www.goteo.org/img/700x0/goteo-03a-1.jpg)",
+      "icon-url": "",
+      "id": 70269,
+      "name": "Imperdible de loza y lustre de oro: una peque\u00f1a joya cer\u00e1mica",
+      "purchased-units": 26,
+      "type": "individual",
+      "units": 26
+    },
+    {
+      "amount": 60,
+      "available-units": 4,
+      "description": "Si todavia no conoces [Salvaje](https://revistasalvaje.com/), la revista que quiere sacarte al campo, esta es tu oportunidad. \r\nGracias a su colaboraci\u00f3n, te enviamos a casa la revista num.8 (con Sergio del Molino, Elisa Victoria, Rodrigo Cuevas, Adara S\u00e1nchez, Xavi Bou, Carmen Pacheco, Miguel Bustos ... entre otros) y un bonito bolso de tela. El pueblu en casa ;) \r\n\r\n*Recuerda que esta aportaci\u00f3n desgrava! Calc\u00falalo ? [aqu\u00ed](https://www.goteo.org/calculadora-fiscal)\r\n![](https://www.goteo.org/img/700x0/goteo-03c.jpg)",
+      "icon-url": "",
+      "id": 70406,
+      "name": "Revista Salvaje + Bolso de Tela",
+      "purchased-units": 26,
+      "type": "individual",
+      "units": 30
+    },
+    {
+      "amount": 60,
+      "available-units": 0,
+      "description": "Si te encantan todas las creatividades de La Benefica es porque est\u00e1n hechas por [Studio LLunik](https://studiollunik.com/) que, adem\u00e1s, ha dise\u00f1ado esta l\u00e1mina tan bonita para s\u00f3lo para nosotras. Detalles: \r\nDimensiones: 40x50cm, papel fotogr\u00e1fico. Gramaje: 170 grs. Acabado: Mate\r\nEnviadas en tubo de cart\u00f3n r\u00edgido y resistente (no incluye marco). Si eliges esta recompensa antes del 15 de diciembre \u00a1te llegar\u00e1 a casa para Reyes!\r\n\r\n*Recuerda que esta aportaci\u00f3n desgrava! Calc\u00falalo ? [aqu\u00ed](https://www.goteo.org/calculadora-fiscal)\r\n![](https://www.goteo.org/img/700x0/goteo-04d-v1.jpg)\r\n![](https://www.goteo.org/img/700x0/goteo-04d-v3.jpg)",
+      "icon-url": "",
+      "id": 70494,
+      "name": "L\u00e1mina Llun\u00e1tika ?",
+      "purchased-units": 5,
+      "type": "individual",
+      "units": 5
+    },
+    {
+      "amount": 60,
+      "available-units": 0,
+      "description": "Ahora que se acercan las comilonas y las farturas, la dise\u00f1adora Celia B, te regala estas coloridas servilletas con bolsita de tela a conjunto para adornar tu mesa. Dos servilletas de mesa 100% algod\u00f3n. \r\n\r\n*Recuerda que esta aportaci\u00f3n desgrava! Calc\u00falalo ? [aqu\u00ed](https://www.goteo.org/calculadora-fiscal)\r\n![](https://www.goteo.org/img/700x0/goteo-04e.jpg)\r\n![](https://www.goteo.org/img/700x0/whatsapp-image-2021-11-30-at-17.16.13.jpeg)",
+      "icon-url": "",
+      "id": 70544,
+      "name": "Servilletas de mesa  para una bonita mesa",
+      "purchased-units": 10,
+      "type": "individual",
+      "units": 10
+    },
+    {
+      "amount": 60,
+      "available-units": 0,
+      "description": "En Pilo\u00f1a, Asturias, a principio de 2022, y todo anterior:\r\n - Invitaci\u00f3n a la Fiesta de Inauguraci\u00f3n de La Ben\u00e9fica \r\n - Tu nombre en nuestra secci\u00f3n especial de agradecimientos\r\n \r\n*Recuerda que esta aportaci\u00f3n desgrava! Calc\u00falalo ? [aqu\u00ed](https://www.goteo.org/calculadora-fiscal)\r\n![](https://www.goteo.org/img/700x0/goteo-169.jpg)",
+      "icon-url": "",
+      "id": 69797,
+      "name": "Taller de m\u00fasica y folklore para los m\u00e1s peques",
+      "purchased-units": 30,
+      "type": "individual",
+      "units": 30
+    },
+    {
+      "amount": 75,
+      "available-units": 14,
+      "description": "De nuestras queridas amigas de Kikiricoop, porque viva la resistencia neopaisana, y adem\u00e1s: \r\n - Invitaci\u00f3n a la Fiesta de Inauguraci\u00f3n de La Ben\u00e9fica \r\n - Tu nombre en nuestra secci\u00f3n especial de agradecimientos\r\n \r\n*Recuerda que esta aportaci\u00f3n desgrava! Calc\u00falalo ? [aqu\u00ed](https://www.goteo.org/calculadora-fiscal)\r\n![](https://www.goteo.org/img/700x0/goteo-170.jpg)",
+      "icon-url": "",
+      "id": 69798,
+      "name": "Tarro de Asturcilla en tu casa, crema de cacao hecha en Asturias",
+      "purchased-units": 86,
+      "type": "individual",
+      "units": 100
+    },
+    {
+      "amount": 100,
+      "available-units": 0,
+      "description": "Descubre el m\u00e9todo de elaboraci\u00f3n de sidra con nuestros vecinos en Nava, y adem\u00e1s:\r\n- Invitaci\u00f3n a la Fiesta de Inauguraci\u00f3n de La Ben\u00e9fica \r\n- Tu nombre en nuestra secci\u00f3n especial de agradecimientos\r\n\r\n*Recuerda que esta aportaci\u00f3n desgrava! Calc\u00falalo ? [aqu\u00ed](https://www.goteo.org/calculadora-fiscal)\r\n![](https://www.goteo.org/img/700x0/goteo-171.jpg)",
+      "icon-url": "",
+      "id": 69799,
+      "name": "Tour degustaci\u00f3n en el lagar de Sidra Natural Viuda Angel\u00f3n y una caja de sidra de autor de regalo, en Nava, Asturias",
+      "purchased-units": 10,
+      "type": "individual",
+      "units": 10
+    },
+    {
+      "amount": 100,
+      "available-units": 0,
+      "description": "Adem\u00e1s participar\u00e1s en una rifa donde podr\u00e1s ganar \u00a1\u00a1tu peso en cerveza Ordum!, adem\u00e1s:\r\n+ Invitaci\u00f3n a la Fiesta de Inauguraci\u00f3n de La Ben\u00e9fica \r\n+ Tu nombre en nuestra secci\u00f3n especial de agradecimiento\r\n\r\n*Recuerda que esta aportaci\u00f3n desgrava! Calc\u00falalo ? [aqu\u00ed](https://www.goteo.org/calculadora-fiscal)\r\n![](https://www.goteo.org/img/700x0/goteo-172.jpg)",
+      "icon-url": "",
+      "id": 69800,
+      "name": "Tour degustaci\u00f3n a la f\u00e1brica de ORDUM, cerveza artesanal hecha con mucho amor en Borines, Asturias",
+      "purchased-units": 20,
+      "type": "individual",
+      "units": 20
+    },
+    {
+      "amount": 130,
+      "available-units": 0,
+      "description": "Los dise\u00f1os de [Made by K\u00f6S](https://www.instagram.com/madebykos/?hl=en) son \u00fanicos y  este taller tambi\u00e9n. De 5 horas de duraci\u00f3n,  podr\u00e1s llevarte una prenda confeccionada a medida. \r\n\r\nLog\u00edstica: se realizar\u00e1 en Pillarno, Castrill\u00f3n, Asturias. Un s\u00e1bado por la ma\u00f1ana (9.30 a 14.30), fecha a convenir. \r\n\r\n*Recuerda que esta aportaci\u00f3n desgrava! Calc\u00falalo ? [aqu\u00ed](https://www.goteo.org/calculadora-fiscal)\r\n\r\n![](https://www.goteo.org/img/700x0/photo-2021-11-23-15-47-04.jpg)",
+      "icon-url": "",
+      "id": 70240,
+      "name": "Taller de costura con el maravillo Made by K\u00f6s: Elaboraci\u00f3n de una prenda a medida",
+      "purchased-units": 10,
+      "type": "individual",
+      "units": 10
+    },
+    {
+      "amount": 150,
+      "available-units": 0,
+      "description": "Tu logo en la web de La Ben\u00e9fica y reconocimiento eterno \u2764\ufe0f Escr\u00edbenos a colabora@labenefica.org cuando hayas hecho la donaci\u00f3n  \r\n\r\n*Recuerda que esta aportaci\u00f3n desgrava! Calc\u00falalo ? [aqu\u00ed](https://www.goteo.org/calculadora-fiscal)",
+      "icon-url": "",
+      "id": 70160,
+      "name": "Especial para comercio local de Pilo\u00f1a y concejos vecinos",
+      "purchased-units": 32,
+      "type": "individual",
+      "units": 0
+    },
+    {
+      "amount": 150,
+      "available-units": 0,
+      "description": "Y adem\u00e1s:\r\n+ Invitaci\u00f3n a la Fiesta de Inauguraci\u00f3n de La Ben\u00e9fica\r\n+ Tu nombre en nuestra secci\u00f3n especial de agradecimientos\r\n\r\n*Recuerda que esta aportaci\u00f3n desgrava! Calc\u00falalo ? [aqu\u00ed](https://www.goteo.org/calculadora-fiscal)\r\n![](https://www.goteo.org/img/700x0/goteo-08.jpg)",
+      "icon-url": "",
+      "id": 69801,
+      "name": "Tour personalizado por La Ben\u00e9fica de Pilo\u00f1a",
+      "purchased-units": 50,
+      "type": "individual",
+      "units": 50
+    },
+    {
+      "amount": 250,
+      "available-units": 26,
+      "description": "[Bomarzo](https://bomarzo.es/) es una agencia de viajes especializada en visitas a jardines de todos los rincones del mundo. Si eliges esta recompensa, Bomarzo te regala 100\u20ac de descuento en cualquiera de los viajes programados para 2022. \u00a1An\u00edmate!\r\n\r\n*Recuerda que esta aportaci\u00f3n desgrava! Calc\u00falalo ? [aqu\u00ed](https://www.goteo.org/calculadora-fiscal)\r\n![](https://www.goteo.org/img/700x0/goteo-09b.jpg)",
+      "icon-url": "",
+      "id": 70435,
+      "name": "Viaja por bonitos jardines en 2022 ?",
+      "purchased-units": 4,
+      "type": "individual",
+      "units": 30
+    },
+    {
+      "amount": 250,
+      "available-units": 0,
+      "description": "Ser\u00e1 en enero de 2022, y adem\u00e1s:\r\n- Invitaci\u00f3n a la Fiesta de Inauguraci\u00f3n de La Ben\u00e9fica \r\n- Tu nombre en nuestra secci\u00f3n especial de agradecimientos\r\n\r\n*Recuerda que esta aportaci\u00f3n desgrava! Calc\u00falalo ? [aqu\u00ed](https://www.goteo.org/calculadora-fiscal)\r\n![](https://www.goteo.org/img/700x0/goteo-173.jpg)",
+      "icon-url": "",
+      "id": 69802,
+      "name": "2 Invitaciones fiesta fin de gira Tr\u00f3pico de Covadonga en Madrid",
+      "purchased-units": 20,
+      "type": "individual",
+      "units": 20
+    },
+    {
+      "amount": 500,
+      "available-units": 7,
+      "description": "Desde donde se te ver\u00e1 mejor que a nadie, incluye mon\u00f3culo. Adem\u00e1s:\r\n- 4 invitaciones Fiesta de Inauguraci\u00f3n de La Ben\u00e9fica \r\n- Tu nombre en nuestra secci\u00f3n especial de agradecimientos\r\n\r\n*Recuerda que esta aportaci\u00f3n desgrava! Calc\u00falalo ? [aqu\u00ed](https://www.goteo.org/calculadora-fiscal)\r\n![](https://www.goteo.org/img/700x0/goteo-174.jpg)",
+      "icon-url": "",
+      "id": 69803,
+      "name": "Mesa para 4 en la Fiesta de Inauguraci\u00f3n de La Ben\u00e9fica",
+      "purchased-units": 13,
+      "type": "individual",
+      "units": 20
+    },
+    {
+      "amount": 1000,
+      "available-units": 3,
+      "description": "Una Se\u00f1ora Fiesta es el festival rural del que todo el mundo habla. Con esta donaci\u00f3s obtendr\u00e1s: \r\n - 2 invitaciones al festival completo\r\n - Meet&greet con las artistas  \r\n - Alojamiento de 2 noches para dos personas en una casina rural  en julio de 2022, en Pilo\u00f1a, Asturias. \r\n - Tu nombre en nuestra secci\u00f3n especial de agradecimientos\r\n \r\n*Recuerda que esta aportaci\u00f3n desgrava! Calc\u00falalo ? [aqu\u00ed](https://www.goteo.org/calculadora-fiscal)\r\n![](https://www.goteo.org/img/700x0/goteo-175.jpg)",
+      "icon-url": "",
+      "id": 69804,
+      "name": "Una Se\u00f1ora Fiesta -\u00a1paquete completo!",
+      "purchased-units": 2,
+      "type": "individual",
+      "units": 5
+    },
+    {
+      "amount": 1000,
+      "available-units": 0,
+      "description": "* Un a\u00f1o de invitaciones para todos los eventos de La Ben\u00e9fica, tambi\u00e9n para los que se realicen fuera de ella hasta que est\u00e9 listo el espacio \r\n* 2 invitaciones abono festival Una Se\u00f1ora Fiesta, julio de 2022, en Pilo\u00f1a, Asturias \r\n* Tu nombre en nuestra secci\u00f3n especial de agradecimientos\r\n\r\n*Recuerda que esta aportaci\u00f3n desgrava! Calc\u00falalo ? [aqu\u00ed](https://www.goteo.org/calculadora-fiscal)\r\n![](https://www.goteo.org/img/700x0/goteo-176.jpg)",
+      "icon-url": "",
+      "id": 69805,
+      "name": "Mecenas",
+      "purchased-units": 4,
+      "type": "individual",
+      "units": 0
+    },
+    {
+      "amount": 2000,
+      "available-units": 0,
+      "description": "* **Un a\u00f1o de invitaciones para todos los eventos de La Ben\u00e9fica**, tambi\u00e9n para los que se realicen fuera de ella hasta que est\u00e9 listo el espacio \r\n* **Dos invitaciones abono  festival Una Se\u00f1ora Fiesta**, julio de 2022, en Pilo\u00f1a, Asturias \r\n* Tu **nombre o logo en el Palcu d'Honor de nuestra web**\r\n \r\n*Recuerda que esta aportaci\u00f3n desgrava! Calc\u00falalo ? [aqu\u00ed](https://www.goteo.org/calculadora-fiscal)\r\n![](https://www.goteo.org/img/700x0/goteo-177.jpg)",
+      "icon-url": "",
+      "id": 69806,
+      "name": "Mecenas, pero m\u00e1s",
+      "purchased-units": 1,
+      "type": "individual",
+      "units": 0
+    },
+    {
+      "amount": 4000,
+      "available-units": 0,
+      "description": "* Tu **nombre o logo** en Las Grandes Ben\u00e9ficas de nuestra **web y en lona f\u00edsica en La B\u00e9n\u00e9fica **\r\n* **Dos a\u00f1os de invitaciones para todos los eventos de La Ben\u00e9fica**, tambi\u00e9n para los que se realicen fuera de ella hasta que est\u00e9 listo el espacio \r\n* **Cinco invitaciones abono festival Una Se\u00f1ora Fiesta**,  julio de 2022, en Pilo\u00f1a, Asturias\r\n \r\n*Recuerda que esta aportaci\u00f3n desgrava! Calc\u00falalo ? [aqu\u00ed](https://www.goteo.org/calculadora-fiscal)\r\n![](https://www.goteo.org/img/700x0/goteo-178.jpg)",
+      "icon-url": "",
+      "id": 69807,
+      "name": "Grandes Ben\u00e9ficas",
+      "purchased-units": 0,
+      "type": "individual",
+      "units": 0
+    }
+  ],
+  "rounds": {
+    "days-remaining": 9,
+    "round1": 40,
+    "round1-remaining": 0,
+    "round2": 25,
+    "round2-remaining": 9
+  },
+  "scope": "global",
+  "social-commitment": {
+    "description": "Crear cultura",
+    "icon-url": "https://goteo.org/img/medium/7--crear-cultura-1.png",
+    "id": 7,
+    "name": "Crear cultura"
+  },
+  "social-commitment-description": "La recuperaci\u00f3n del edificio hist\u00f3rico de La Ben\u00e9fica de Pilo\u00f1a, supone no solamente una  restauraci\u00f3n de un bien material hist\u00f3rico-art\u00edstico, sino tambi\u00e9n la reconstrucci\u00f3n de una parte de la histora de l'Infiestu y de Pilo\u00f1a. Una peque\u00f1a historia de organizaci\u00f3n social y hermanamiento entre vecinos y vecinas vectoriada por la cultura y al arte. \r\n\r\nEn el edificio, fundado en el a\u00f1o 1926 como teatro y sala de fiestas, hab\u00eda tambi\u00e9n formaciones profesionales, cursos y cine los domingos. Fue, junto con el casino de l'Infiestu, el lugar a trav\u00e9s del cual lleg\u00f3 la modernidad a la villa. La modernidad cultural y t\u00e9cnica. El primer teatro propiamente dicho y el primer lugar donde se proyectaban pel\u00edculas de forma regular.\r\n\r\nEsta peque\u00f1a utop\u00eda cultural se desarrollaba en un contexto socio-cultural muy diferente al panorama pilo\u00f1\u00e9s actual. Pilo\u00f1a en el a\u00f1o 1926 ten\u00eda 18.000 habitantes en una \u00e9poca en la que Xix\u00f3n ten\u00eda 60.000. La mayor\u00eda de los pueblos del conceyu no ten\u00edan carretera ni siquiera, por lo que la villa de L'Infiestu funcionaba como una verdadera capital cultural y social.\r\n\r\nCon la Ben\u00e9fica queremos recuperar aqu\u00e9l esp\u00edritu comunitario de la antigua Sociedad Ben\u00e9fica y devolver al conceyu un espacio en el que impulsar toda la actividad cultural que ya existe en el territorio, y a su vez conectarla con otros lugares a nivel nacional e internacional.",
+  "social-commitment-id": "7",
+  "status": "in_campaign",
+  "time-elapsed": 1.981011152267456,
+  "translations": {
+    "ast": {
+      "about": "La nave de La Ben\u00e9fica tuvo munches vides. El nuesu oxetivu ye rehabilitar y recuperala pa que vuelva ser, en parte, lo que y\u00e1 foi nel pas\u00e1u. Construyida en **1926**, la nave foi el llar de **La Ben\u00e9fica de Pilo\u00f1a, Sociedad de Socorro Mutuo**. El fin de la socied\u00e1, como munches otres de la so d\u00f3mina, yera que los socios y socies (vecinos/es del pueblu), aid\u00e1rense mutuamente nos sos problemes: enfermedaes, vilbed\u00e1, lliquidez... Coles aportaciones de los asociaos atend\u00eden necesidaes que l'est\u00e1u, o otres instituciones, nun pod\u00eden cubrir. La Socied\u00e1 de La Ben\u00e9fica **lleg\u00f3 a tener tanto \u00e9situ que construyeron una nave rectangular d'unos 400m2 y que funcion\u00f3 como teatru, sal\u00f3n de baille, llugar d'alcuentru social y cine tolos domingos**.  \r\n\r\nEsta pequena utop\u00eda art\u00edstica y solidaria remat\u00f3 en 1946, y la nave pas\u00f3 a ser una f\u00e1brica de dulce, depu\u00e9s un parking y depu\u00e9s abandon\u00f3se. N\u00f3s, **queremos reconstruyir la nave, recuperar l'esp\u00edritu col que se construy\u00f3 y, darr\u00e9u, socorremos es unes a les otres, mutuamente, al travi\u00e9s de les artes y de la cultura.**\r\n\r\nDesque entamamos cola idea hasta que mercamos la nave, el sofitu y l'entusiasmu de les vecines y vecinos de Pilo\u00f1a foi lo m\u00e1s importante. Vemos qu'el Espaciu Cultural ye una necesid\u00e1 que non solo tenemos n\u00f3s, y que realmente se puede convertir n'un revulsivo pa les que vivimos equ\u00ed y pa les que mos visiten, y\u00e1 que nel oriente d'Asturies nun hai neng\u00fan espaciu asemey\u00e1u que cumpla con esta misi\u00f3n.\r\n\r\nEl siguiente pasu, y pol qu'entamamos esta campa\u00f1a de financiamientu colectivu,** ye reconstruyir les partes b\u00e1siques de la nave** pa poder llograr una llicencia d'apertura y entamar a programar actividaes lo antes posible. Pa ello hai que realizar baltaderes y movimientos de tierres, reconstruyir la cubierta, facer un plan de segurid\u00e1, etc.",
+      "categories": {
+        "11": {
+          "description": "Proyectos con objetivos art\u00edsticos y culturales en un sentido amplio.",
+          "name": "Cultural"
+        }
+      },
+      "description": "**La Ben\u00e9fica - Espaciu Cultural **agora mesmu ye un gran sua\u00f1u. El sua\u00f1u de tener en L\u2019Infiestu, Pilo\u00f1a, un espaciu que combina cuatro inquietudes: la **espresi\u00f3n art\u00edsticu cultural**,** l'acci\u00f3n comu\u00f1al**, **la llucha contra l'abandonu y la despoblaci\u00f3n de les zones rurales **y la **trasmisi\u00f3n de conocencies**.\r\n\r\nQueremos algamar un espaciu que dea visibilid\u00e1 a la espresi\u00f3n art\u00edstica contemporanea y vanguardista, pero tami\u00e9n a la cultura popular y tradicional, y qu'am\u00e1s facilite la tresmisi\u00f3n de conocencia ente les distintes xeneraciones. Un espaciu totalmente entroncado na comunid\u00e1, qu'estimule l'ecosistema cultural del Conceyu de Pilo\u00f1a, y tami\u00e9n un espaciu d'ociu pa los mozos y non tan mozos.** Una raz\u00f3n pola que nun colar del pueblu, un llugar onde crear y esfrutar de la cultura**. Pero, coles mesmes, La Ben\u00e9fica ye un proyectu ambiciosu, que pretende tener **impactu munchu m\u00e1s all\u00e1 d'Asturies, texendo aliances con proyectos art\u00edsticos de toa Europa**, y con una programaci\u00f3n que faga del centru una referencia a nivel nacional.",
+      "description-short": "Queremos remocicar un antiguu teatru y sala de fiestes nun pueblu del Oriente d'Asturies, L\u2019Infiestu, para convertilo nun centru de cultura y arte de referencia que a\u00fane vanguardia y tradici\u00f3n",
+      "motivation": "La visi\u00f3n que tenemos de La Ben\u00e9fica ye que s\u00eda un **espaciu abiertu** y que perteneza, coles mesmes, a munches  persones. Por eso, esta campa\u00f1a ta dirix\u00eda a cualesquier persona, empresa o entid\u00e1 que quiera formar parte d'un proyectu que pon en valor **la cultura, la comunid\u00e1, l'arte y lo rural**. Tanto si vives n'Asturies, como si te encanta venir equ\u00ed, como si nun tienes pens\u00e1u venir enxam\u00e1s. La Ben\u00e9fica ye munchu m\u00e1s qu'un espaciu f\u00edsicu, ye una **idea de c\u00f3mo vivir y promover la cultura y l'arte nun mediu non convencional, llue\u00f1e de les capitales culturales y del gran p\u00fablicu**.\r\n\r\nCuntamos y\u00e1 col sofitu del Conceyu de Pilo\u00f1a, que siempres sofit\u00f3 la idea, empreses locales como Ordum Cerveces Artesanes, Sidra Viuda de Angel\u00f3n o Asturcilla, y tami\u00e9n nacionales como Filmin y Primavera Sound. Pero lo que m\u00e1s valoramos (y precisamos) son persones d'a pie que se xunan a esti proyectu. Dise\u00f1emos unes recompenses pa tolos gustos y esperamos que les esfrut\u00e9is. Si tienes dalguna otra idea de collaboraci\u00f3n, \u00a1ponte en contactu con n\u00f3s!",
+      "rewards": {
+        "69794": {
+          "available-units": 0,
+          "description": "Por nam\u00e1s 10\u20ac podr\u00e1s amadrinar una teya de La Ben\u00e9fica; patrocines el derribu y construcci\u00f3n del tey\u00e1u\r\n\r\n*Recuerda que esta aportaci\u00f3n desgrava! Calc\u00falalo ? [aqu\u00ed](https://www.goteo.org/calculadora-fiscal)\r\n![](https://www.goteo.org/img/700x0/goteo-165.jpg)",
+          "name": "Amadrina una Teya",
+          "purchased-units": 0,
+          "units": 0
+        },
+        "69795": {
+          "available-units": 0,
+          "description": "Eh\u00ed tamos toes: les hermanes, les vecines, les amigues... \r\n\r\n*Recuerda que esta aportaci\u00f3n desgrava! Calc\u00falalo ? [aqu\u00ed](https://www.goteo.org/calculadora-fiscal)\r\n![](https://www.goteo.org/img/700x0/goteo-167.jpg)",
+          "name": "El to nome na nuesa secci\u00f3n especial d'agradecimientos",
+          "purchased-units": 0,
+          "units": 0
+        },
+        "69796": {
+          "available-units": 0,
+          "description": "Con gran concursu de playbacks que clasifica pa los mundiales- En Pilo\u00f1a, Asturies, y en cuantu tengamos llicencia pa entamar saraos, y  el to nome na nuesa secci\u00f3n especial d'agradecimientos.\r\n\r\n*Recuerda que esta aportaci\u00f3n desgrava! Calc\u00falalo ? [aqu\u00ed](https://www.goteo.org/calculadora-fiscal)\r\n![](https://www.goteo.org/img/700x0/goteo-168.jpg)",
+          "name": "Convid\u00e1moste a la Folixa d'Inauguraci\u00f3n de La Ben\u00e9fica",
+          "purchased-units": 0,
+          "units": 0
+        },
+        "69797": {
+          "available-units": 0,
+          "description": "En Pilo\u00f1a, Asturies, a comienzos de 2022, y am\u00e1s:\r\n - Invitaci\u00f3n a la Folixa d'Inauguraci\u00f3n de La Ben\u00e9fica\r\n - El to nome na nuesa secci\u00f3n especial d'agradecimientos\r\n \r\n*Recuerda que esta aportaci\u00f3n desgrava! Calc\u00falalo ? [aqu\u00ed](https://www.goteo.org/calculadora-fiscal)\r\n![](https://www.goteo.org/img/700x0/goteo-169.jpg)",
+          "name": "Taller de m\u00fasica y folklore pa los m\u00e1s peques",
+          "purchased-units": 0,
+          "units": 0
+        },
+        "69798": {
+          "available-units": 0,
+          "description": "De les nuestres quir\u00edes collacies de Kikiricoop, porque viva la resistencia neopaisana, y am\u00e1s:\r\n - Invitaci\u00f3n a la Folixa d'Inauguraci\u00f3n de La Ben\u00e9fica\r\n - El to nome na nuesa secci\u00f3n especial d'agradecimientos\r\n \r\n*Recuerda que esta aportaci\u00f3n desgrava! Calc\u00falalo ? [aqu\u00ed](https://www.goteo.org/calculadora-fiscal)\r\n![](https://www.goteo.org/img/700x0/goteo-170.jpg)",
+          "name": "Tarru d'Asturcilla, la crema de cacao de Asturies",
+          "purchased-units": 0,
+          "units": 0
+        },
+        "69799": {
+          "available-units": 0,
+          "description": "Descubrir\u00e1s el m\u00e9todo d'ellaboraci\u00f3n de la sidra, y una caxa de sidres d'autor de regalu, en Nava, Asturies y am\u00e1s:\r\n- Invitaci\u00f3n a la Folixa d'Inauguraci\u00f3n de La Ben\u00e9fica \r\n- El to nome na nuesa secci\u00f3n especial d'agradecimientos\r\n\r\n*Recuerda que esta aportaci\u00f3n desgrava! Calc\u00falalo ? [aqu\u00ed](https://www.goteo.org/calculadora-fiscal)\r\n![](https://www.goteo.org/img/700x0/goteo-171.jpg)",
+          "name": "Xira degustaci\u00f3n nel llagar de Sidra Natural Viuda de Angel\u00f3n y una caxa de sidres d'autor de regalu, en Nava, Asturies",
+          "purchased-units": 0,
+          "units": 0
+        },
+        "69800": {
+          "available-units": 0,
+          "description": "Am\u00e1s participar\u00e1s n'una rifa onde podr\u00e1s ganar \u00a1\u00a1el to pesu en cerveza Ordum!!, y am\u00e1s:\r\n- Invitaci\u00f3n a la Folixa d'Inauguraci\u00f3n de La Ben\u00e9fica \r\n- El to nome na nuesa secci\u00f3n especial d'agradecimientos\r\n\r\n*Recuerda que esta aportaci\u00f3n desgrava! Calc\u00falalo ? [aqu\u00ed](https://www.goteo.org/calculadora-fiscal)\r\n![](https://www.goteo.org/img/700x0/goteo-172.jpg)",
+          "name": "Xira degustaci\u00f3n na f\u00e1brica de Ordum, cerveza artesanal fecha con munchu amor en Borines, Asturies",
+          "purchased-units": 0,
+          "units": 0
+        },
+        "69801": {
+          "available-units": 0,
+          "description": "Y am\u00e1s:\r\n- Invitaci\u00f3n a la Folixa d'Inauguraci\u00f3n de La Ben\u00e9fica \r\n- El to nome na nuesa secci\u00f3n especial d'agradecimientos\r\n\r\n*Recuerda que esta aportaci\u00f3n desgrava! Calc\u00falalo ? [aqu\u00ed](https://www.goteo.org/calculadora-fiscal)\r\n![](https://www.goteo.org/img/700x0/goteo-08.jpg)",
+          "name": "Xira personalizada pela Ben\u00e9fica de Pilo\u00f1a",
+          "purchased-units": 0,
+          "units": 0
+        },
+        "69802": {
+          "available-units": 0,
+          "description": "Ser\u00e1 en xineru de 2022, y am\u00e1s:\r\n- Invitaci\u00f3n a la Folixa d'Inauguraci\u00f3n de La Ben\u00e9fica \r\n- El to nome na nuesa secci\u00f3n especial d'agradecimientos\r\n\r\n*Recuerda que esta aportaci\u00f3n desgrava! Calc\u00falalo ? [aqu\u00ed](https://www.goteo.org/calculadora-fiscal)\r\n![](https://www.goteo.org/img/700x0/goteo-173.jpg)",
+          "name": "2 invitaciones Folixa Fin de XIra Tr\u00f3pico de Covadonga en Madrid",
+          "purchased-units": 0,
+          "units": 0
+        },
+        "69803": {
+          "available-units": 0,
+          "description": "E'onde va vete tol mundu, mon\u00f3culu incluy\u00edu. Am\u00e1s:\r\n- 4 invitacionesa Folixa d'Inauguraci\u00f3n de La Ben\u00e9fica \r\n- El to nome na nuesa secci\u00f3n especial d'agradecimientos\r\n\r\n*Recuerda que esta aportaci\u00f3n desgrava! Calc\u00falalo ? [aqu\u00ed](https://www.goteo.org/calculadora-fiscal)\r\n![](https://www.goteo.org/img/700x0/goteo-174.jpg)",
+          "name": "Mesa pa 4 na Folixa d'Inauguraci\u00f3n de La Ben\u00e9fica",
+          "purchased-units": 0,
+          "units": 0
+        },
+        "69804": {
+          "available-units": 0,
+          "description": "Una Se\u00f1ora Fiesta ye'l festival rural del que tol mundu fala. Con esta donaci\u00f3n, tendr\u00e1s:\r\n- 2 invitaciones al festival completu\r\n- Pases a camerinos pa conocer a les artistes \r\n- Agospiu de 2 nueches pa 2 persones n\u00fana casina rural en xunetu de 2022 en Pilo\u00f1a, Asturies\r\n- El to nome na nuesa secci\u00f3n especial d'agradecimientos\r\n\r\n*Recuerda que esta aportaci\u00f3n desgrava! Calc\u00falalo ? [aqu\u00ed](https://www.goteo.org/calculadora-fiscal)\r\n![](https://www.goteo.org/img/700x0/goteo-175.jpg)",
+          "name": "Una Se\u00f1ora Fiesta -\u00a1paquete completu!",
+          "purchased-units": 0,
+          "units": 0
+        },
+        "69805": {
+          "available-units": 0,
+          "description": "* **Un a\u00f1u d'invitaciones pa tolos eventos de la Ben\u00e9fica;** tami\u00e9n pa los que se fagan fuera d'ella hasta qu'est\u00e9 remocic\u00e1u l'espaciu \r\n* **2 invitaciones abono festival Una Se\u00f1ora Fiesta**, xunetu de 2022 en Pilo\u00f1a, Asturies \r\n* **El to nome na nuesa secci\u00f3n especial d'agradecimientos**\r\n\r\n*Recuerda que esta aportaci\u00f3n desgrava! Calc\u00falalo ? [aqu\u00ed](https://www.goteo.org/calculadora-fiscal)\r\n![](https://www.goteo.org/img/700x0/goteo-176.jpg)",
+          "name": "Mecenas",
+          "purchased-units": 0,
+          "units": 0
+        },
+        "69806": {
+          "available-units": 0,
+          "description": "* **Un a\u00f1u de invitaciones pa tolos eventos de La Ben\u00e9fica,** tami\u00e9n pa lso que se fagan fuera d'ella hasta que tea remocic\u00e1u l'espaciu \r\n* **Dos invitaciones abono festival Una Se\u00f1ora Fiesta,** xunetu de 2022 en Pilo\u00f1a, Asturies \r\n* El to **nome o logo nel Palcu d'Honor de la nuesa web **\r\n\r\n*Recuerda que esta aportaci\u00f3n desgrava! Calc\u00falalo ? [aqu\u00ed](https://www.goteo.org/calculadora-fiscal)\r\n![](https://www.goteo.org/img/700x0/goteo-177.jpg)",
+          "name": "Mecenas, pero m\u00e1s",
+          "purchased-units": 0,
+          "units": 0
+        },
+        "69807": {
+          "available-units": 0,
+          "description": "* El to **nome o logo **en Les Grandes Ben\u00e9fiques de la nuesa **web y na lona f\u00edsica en La Ben\u00e9fica** \r\n* **Dos a\u00f1os d'invitaciones pa tolos eventos de La Ben\u00e9fica**, tami\u00e9n pa los que se fagan fuera d'ella hasta que tea remocic\u00e1u l'espaciu \r\n* **Cinco invitaciones abono festival Una Se\u00f1ora Fiesta**, xunetu de 2022 en Pilo\u00f1a, Asturies \r\n\r\n*Recuerda que esta aportaci\u00f3n desgrava! Calc\u00falalo ? [aqu\u00ed](https://www.goteo.org/calculadora-fiscal)\r\n![](https://www.goteo.org/img/700x0/goteo-178.jpg)",
+          "name": "Grandes Ben\u00e9fiques",
+          "purchased-units": 0,
+          "units": 0
+        }
+      },
+      "social-commitment": {
+        "description": "Crear cultura",
+        "name": "Crear cultura"
+      },
+      "social-commitment-description": "La recuperaci\u00f3n del edificiu hist\u00f3ricu de La Ben\u00e9fica de Pilo\u00f1a, supon non nam\u00e1s una  restauraci\u00f3n d'un bien material hest\u00f3ricu-art\u00edsticu, sin\u00f3n tami\u00e9n la reconstrucci\u00f3n d'una parte de la hestora de l'Infiestu y de Pilo\u00f1a. Una peque\u00f1a hestoria d'organizaci\u00f3n social y hermanamiento ente vecinos y vecines vectoriada pola cultura y al arte. \r\n\r\nNel edificiu, fund\u00e1u nel a\u00f1u 1926 como teatru y sala de fiestes, hab\u00eda tami\u00e9n formaciones profesionales, cursos y cine los domingos. Foi, xuntu col casinu de l'Infiestu, el llugar al travi\u00e9s del cual lleg\u00f3 la modernid\u00e1 a la villa. La modernid\u00e1 cultural y t\u00e9cnica. El primer teatru puramente dichu y el primer llugar onde se proxectaben pel\u00edcules de forma regular.\r\n\r\nEsta peque\u00f1a utop\u00eda cultural desenvu\u00e9lvese nun contestu sociu-cultural bien distintu al panorama pilo\u00f1\u00e9s actual. Pilo\u00f1a nel a\u00f1u 1926 ten\u00eda 18.000 habitantes nuna d\u00f3mina na que Xix\u00f3n ten\u00eda 60.000. La mayor\u00eda de los pueblos del conceyu nun ten\u00eden carretera nin siquier, polo que la villa de l'Infiestu funcionaba como una verdadera capital cultural y social.\r\n\r\nCola Ben\u00e9fica queremos recuperar aqu\u00e9l esp\u00edritu comu\u00f1al de l'antigua Sociedad Ben\u00e9fica y devolver al conceyu un espaciu nel qu'impulsar tola activid\u00e1 cultural que y\u00e1 esiste nel territoriu, y de la mesma conectala con otros llugares."
+    },
+    "en": {
+      "about": "**La Ben\u00e9fica**'s building has had many lives. Our goal is to rehabilitate and recover it so that it returns to being, in part, what it already was in the past. Built in **1926**, the hall was the headquarters of **La Ben\u00e9fica de Pilo\u00f1a, Sociedad de Socorro Mutuo**. The aim of the company, like many others of its time, was that the partners (neighbors of the town), helped each other in their problems: illnesses, widowhood, liquidity... With the contributions of the associates they met needs that the state, or other institutions, did not cover. The Sociedad de La Ben\u00e9fica **became so successful that they built a rectangular warehouse of about 400m2 which functioned as a theater, a dance hall, a social meeting place and a cinema every Sunday.**\r\n![](https://www.goteo.org/img/700x0/whatsapp-image-2021-10-25-at-11.25.26.jpeg)\r\n\r\nThis small artistic and supportive utopia ended in 1946, and the warehouse became a candy factory, then a parking lot and then it was abandoned. From the moment we started with the idea until we bought the Building, the support and enthusiasm of the residents of Pilo\u00f1a has been the most important thing.\r\n\r\nThe next step, and why we organize this crowdfunding campaign, is **to rebuild the basic parts of the building** in order to obtain an opening license and start programming activities as soon as possible. To do this, you have to carry out demolitions and earthworks, rebuild the roof, carry out a safety plan, plumbing, electricity, etc.",
+      "categories": {
+        "11": {
+          "description": "Projects with artistic or cultural objectives.",
+          "name": "Cultural"
+        }
+      },
+      "costs": {
+        "61159": {
+          "description": "Zinc downspouts",
+          "name": "COVER"
+        },
+        "61160": {
+          "description": "Roof tiled gutter",
+          "name": "COVER"
+        },
+        "61161": {
+          "description": "Chimney Finish",
+          "name": "COVER"
+        },
+        "61162": {
+          "description": "Aged flat roof tile with rakes",
+          "name": "COVER"
+        },
+        "61163": {
+          "description": "TYVEK type waterproof membrane",
+          "name": "COVER"
+        },
+        "61164": {
+          "description": "Sandwich panel",
+          "name": "COVER"
+        },
+        "61165": {
+          "description": "Deck and eaves forged timber repair",
+          "name": "COVER"
+        },
+        "61166": {
+          "description": "Demolirions",
+          "name": "DEMOLITIONS"
+        },
+        "61167": {
+          "description": "Sand removal",
+          "name": "SAND REMOVAL"
+        },
+        "61168": {
+          "description": "Horizontal sanitation network",
+          "name": "HORIZONTAL SANITATION NETWORK"
+        },
+        "61169": {
+          "description": "Foundations and floors",
+          "name": "FOUNDATIONS AND FLOORS"
+        },
+        "61170": {
+          "description": "Plumbing Installation",
+          "name": "PLUMBING INSTALLATION"
+        },
+        "61171": {
+          "description": "Safety and health plan",
+          "name": "SAFETY AND HEALTH PLAN"
+        },
+        "61172": {
+          "description": "Illumination",
+          "name": "ILLUMINATION"
+        }
+      },
+      "description": "**La Ben\u00e9fica - Espaciu Cultural** right now is a big dream. The dream of having in L'Infiestu, Pilo\u00f1a, a space that combines four priorities: **cultural artistic expression, community action, the fight against the abandonment and depopulation of rural areas and the transmission of knowledge.**\r\n\r\nWe want a space that gives visibility to contemporary and avant-garde artistic expression, but also to popular and traditional culture, and that also facilitates the transmission of knowledge between different generations. A space totally rooted in the community.",
+      "description-short": "We will rehabilitate an old theater in a town in Asturias to turn it into a center of culture and art that combines avant-garde and tradition",
+      "motivation": "Our vision of ***La Ben\u00e9fica*** is that it be an **open space** and that it belongs, at the same time, to many people. Therefore, this campaign is aimed at any person, company or entity that wants to be part of a project that values **culture, community, art and rural areas.** Whether you live in Asturias, or if you love coming here, as if you never plan to come. La Ben\u00e9fica is much more than a physical space, it is an **idea of how to live and promote culture and art in an unconventional environment, far from the cultural capitals and the general public**.\r\n\r\nWe already have the support of the Pilo\u00f1a City Council, which has always supported the idea, local companies such as Ordum Cervezas Artesanas, Sidra Viuda de Angel\u00f3n or Asturcilla, and also national companies such as Filmin and Primavera Sound. But what we value most (and need) are ordinary people to join this project. We have designed rewards for all tastes and we hope you enjoy them. If you have any other collaboration ideas, get in touch with us!",
+      "rewards": {
+        "69794": {
+          "available-units": 0,
+          "description": "For only \u20ac 10 you will sponsor a La Ben\u00e9fica tile: you sponsor the demolition and construction of the roof  * *Remember that this contribution is tax deductible! ? [here](https://www.goteo.org/calculadora-fiscal)\r\n![](https://www.goteo.org/img/700x0/goteo-165.jpg)",
+          "name": "Sponsor a tile",
+          "purchased-units": 0,
+          "units": 0
+        },
+        "69795": {
+          "available-units": 0,
+          "description": "There we are all: sisters, neighbors, friends ...\r\n\r\n*Remember that this contribution is tax deductible! ? [here](https://www.goteo.org/calculadora-fiscal)\r\n![](https://www.goteo.org/img/700x0/goteo-167.jpg)",
+          "name": "Your name in our special thank you section",
+          "purchased-units": 0,
+          "units": 0
+        },
+        "69796": {
+          "available-units": 0,
+          "description": "With a great playback contest that qualifies for the World Cups - In Pilo\u00f1a, Asturias, and as soon as we have a license to organize saraos and, of course, your name in our special thanks section\r\n\r\n*Remember that this contribution is tax deductible! ? [here](https://www.goteo.org/calculadora-fiscal)![](https://www.goteo.org/img/700x0/goteo-168.jpg)",
+          "name": "Invitation to the La Ben\u00e9fica Inauguration Party",
+          "purchased-units": 0,
+          "units": 0
+        },
+        "69797": {
+          "available-units": 0,
+          "description": "In Pilo\u00f1a, Asturias, at the beginning of 2022, and everything before:\r\n  - Invitation to the La Ben\u00e9fica Inauguration Party\r\n  - Your name in our special thank you section\r\n \r\n*Remember that this contribution is tax deductible! Calculate it ? [here](https://www.goteo.org/calculadora-fiscal)\r\n![](https://www.goteo.org/img/700x0/goteo-169.jpg)",
+          "name": "Music and folklore workshop for the little ones",
+          "purchased-units": 0,
+          "units": 0
+        },
+        "69798": {
+          "available-units": 0,
+          "description": "From our dear friends from Kikiricoop, long live the neo-Paisan resistance, and also:\r\n  - Invitation to the La Ben\u00e9fica Inauguration Party\r\n  - Your name in our special thank you section\r\n \r\n* Remember that this contribution is tax deductible! Calculate it ? [here](https://www.goteo.org/calculadora-fiscal)\r\n![](https://www.goteo.org/img/700x0/goteo-170.jpg)",
+          "name": "Jar of Asturcilla at home, cocoa cream made in Asturias",
+          "purchased-units": 0,
+          "units": 0
+        },
+        "69799": {
+          "available-units": 0,
+          "description": "Discover the method of making cider with our neighbors in Nava, and also:\r\n- Invitation to the La Ben\u00e9fica Inauguration Party\r\n- Your name in our special thank you section\r\n\r\n* Remember that this contribution is tax deductible! Calculate it ? [here](https://www.goteo.org/calculadora-fiscal)\r\n![](https://www.goteo.org/img/700x0/goteo-171.jpg)",
+          "name": "Tasting tour at the Viuda Angel\u00f3n Natural Cider winery and a gift box of signature cider, in Nava, Asturias",
+          "purchased-units": 0,
+          "units": 0
+        },
+        "69800": {
+          "available-units": 0,
+          "description": "You will also participate in a raffle where you can win your weight in Ordum beer! In addition:\r\n+ Invitation to the La Ben\u00e9fica Inauguration Party\r\n+ Your name in our special thank you section\r\n\r\n*Remember that this contribution is tax deductible! Calculate it ? [here](https://www.goteo.org/calculadora-fiscal)\r\n![](https://www.goteo.org/img/700x0/goteo-172.jpg)",
+          "name": "Tasting tour to the ORDUM factory, craft beer made with a lot of love in Borines, Asturias",
+          "purchased-units": 0,
+          "units": 0
+        },
+        "69801": {
+          "available-units": 0,
+          "description": "Plus:\r\n+ Invitation to the La Ben\u00e9fica Inauguration Party\r\n+ Your name in our special thank you section\r\n\r\n*Remember that this contribution is tax deductible! Calculate it ? [here](https://www.goteo.org/calculadora-fiscal)\r\n![](https://www.goteo.org/img/700x0/goteo-08.jpg)",
+          "name": "Personalized tour of La Ben\u00e9fica de Pilo\u00f1a",
+          "purchased-units": 0,
+          "units": 0
+        },
+        "69802": {
+          "available-units": 0,
+          "description": "It will be in January 2022, and also:\r\n- Invitation to the La Ben\u00e9fica Inauguration Party\r\n- Your name in our special thank you section\r\n\r\n*Remember that this contribution is tax deductible! Calculate it ? [here](https://www.goteo.org/calculadora-fiscal)\r\n![](https://www.goteo.org/img/700x0/goteo-173.jpg)",
+          "name": "2 End of tour party invitations Tropico de Covadonga in Madrid",
+          "purchased-units": 0,
+          "units": 0
+        },
+        "69803": {
+          "available-units": 0,
+          "description": "From where you will be seen better than anyone else, it includes a monocle. What's more:\r\n- 4 invitations to La Ben\u00e9fica Inauguration Party\r\n- Your name in our special thank you section\r\n\r\n*Remember that this contribution is tax deductible! Calculate it ? [here](https://www.goteo.org/calculadora-fiscal)\r\n![](https://www.goteo.org/img/700x0/goteo-174.jpg)",
+          "name": "Table for 4 at the La Ben\u00e9fica Inauguration Party",
+          "purchased-units": 0,
+          "units": 0
+        },
+        "69804": {
+          "available-units": 0,
+          "description": "\"Una Se\u00f1ora Fiesta\" is the rural festival that everyone talks about. With this donation you will get:\r\n  - 2 invitations to the entire festival\r\n  - Meet & greet with the artists\r\n  - Accommodation for 2 nights for two people in a rural casina in July 2022, in Pilo\u00f1a, Asturias.\r\n  - Your name in our special thank you section\r\n \r\n* Remember that this contribution is tax deductible! Calculate it ? [here](https://www.goteo.org/calculadora-fiscal)\r\n![](https://www.goteo.org/img/700x0/goteo-175.jpg)",
+          "name": "\"Una Se\u00f1ora Fiesta\" Big Party - complete package!",
+          "purchased-units": 0,
+          "units": 0
+        },
+        "69805": {
+          "available-units": 0,
+          "description": "* One year of invitations to all La Ben\u00e9fica events, also for those that take place outside of it until the space is ready\r\n* 2 invitations to pay the Una Se\u00f1ora Fiesta festival, July 2022, in Pilo\u00f1a, Asturias\r\n* Your name in our special thank you section\r\n\r\n* Remember that this contribution is tax deductible! Calculate it ? [here](https://www.goteo.org/calculadora-fiscal)\r\n![](https://www.goteo.org/img/700x0/goteo-176.jpg)",
+          "name": "Patron",
+          "purchased-units": 0,
+          "units": 0
+        },
+        "69806": {
+          "available-units": 0,
+          "description": "* **One year of invitations to all La Benefica events**, also for those that take place outside of it until the space is ready\r\n* **Two invitations to pay the Una Se\u00f1ora Fiesta festival**, July 2022, in Pilo\u00f1a, Asturias\r\n* Your **name or logo in the Palcu d'Honor of our website**\r\n \r\n* Remember that this contribution is tax deductible! Calculate it ? [here](https://www.goteo.org/calculadora-fiscal)\r\n![](https://www.goteo.org/img/700x0/goteo-177.jpg)",
+          "name": "Patrons, but more",
+          "purchased-units": 0,
+          "units": 0
+        },
+        "69807": {
+          "available-units": 0,
+          "description": "* Your **name or logo** in the Golden Charities of our **website and on a physical canvas in La B\u00e9n\u00e9fica**\r\n* **Two years of invitations for all La Ben\u00e9fica events**, also for those that take place outside of it until the space is ready\r\n* **Five invitations to pay the Una Se\u00f1ora Fiesta festival**, July 2022, in Pilo\u00f1a, Asturias\r\n \r\n*Remember that this contribution is tax deductible! Calculate it ? [here](https://www.goteo.org/calculadora-fiscal)\r\n![](https://www.goteo.org/img/700x0/goteo-178.jpg)",
+          "name": "Charities",
+          "purchased-units": 0,
+          "units": 0
+        },
+        "70160": {
+          "available-units": 0,
+          "description": "Your logo on the La Ben\u00e9fica website and eternal recognition \u2764\ufe0f Write to us at colabora@labenefica.org when you have made the donation\r\n\r\n*Remember that this contribution is tax deductible! Calculate it ? [here](https://www.goteo.org/calculadora-fiscal)",
+          "name": "Special for local businesses in Pilo\u00f1a and neighboring councils",
+          "purchased-units": 0,
+          "units": 0
+        },
+        "70240": {
+          "available-units": 0,
+          "description": "The designs of [Made by K\u00f6S](https://www.instagram.com/madebykos/?hl=en) are unique and so is this workshop. Lasting 5 hours, you can take a garment made to measure.\r\n\r\nLogistics: it will take place in Pillarno, Castrill\u00f3n, Asturias. One Saturday morning (9.30 a.m. to 2.30 p.m.), date to be agreed.\r\n\r\n*Remember that this contribution is tax deductible! Calculate it ? [here](https://www.goteo.org/calculadora-fiscal)\r\n![](https://www.goteo.org/img/700x0/goteo-06-v2.jpg)",
+          "name": "Sewing workshop with the wonder Made in K\u00f6s:",
+          "purchased-units": 0,
+          "units": 0
+        },
+        "70241": {
+          "available-units": 0,
+          "description": "Yes, it sounds weird, but it's great. Thanks to our neighbors from Funginatur, a beautiful project to grow organic mushrooms in the Cabranes forests, we sent you a [producer log](https://www.funginatur.com/productos/truncos-productores/) of mushrooms shitake so you can grow organic mushrooms at home without the need for a particular space, it occupies the same size as a plant!\r\n\r\nA great Christmas gift that you can receive at home if you choose this reward before December 6.\r\n\r\n*Remember that this contribution is tax deductible! Calculate it ? [here](https://www.goteo.org/calculadora-fiscal)\r\n![](https://www.goteo.org/img/700x0/goteo-03b.jpg)",
+          "name": "Shitake mushroom growing trunk: from Cabranes, Asturias to your home",
+          "purchased-units": 0,
+          "units": 0
+        },
+        "70242": {
+          "available-units": 0,
+          "description": "In Cabranes, Asturias, the only organic mushroom cultivation in the region is hidden, which also recovers an ancestral Japanese technique to cultivate Shitake and other mushrooms in oak and chestnut trunks. Funginatur is magic. \r\n\r\n*Remember that this contribution is tax deductible! ? [here](https://www.goteo.org/calculadora-fiscal)\r\n![](https://www.goteo.org/img/700x0/goteo-04a.jpg)",
+          "name": "Funginatur forest tasting tour",
+          "purchased-units": 0,
+          "units": 0
+        },
+        "70269": {
+          "available-units": 0,
+          "description": "Our friend from [Woodic](www.woodic.es), a ceramist and designer creating from a town in an Asturian valley, makes these little jewels. A pin / safety pin to decorate yourself on any occasion. They are made of low temperature white earthenware, three times fired, with enamel and 14k gold luster.\r\n\r\nA great Christmas gift that you can receive at home if you choose this reward before December 6.\r\n\r\n* Remember that this contribution is tax deductible! Calculate it ? [here](https://www.goteo.org/calculadora-fiscal)\r\n![](https://www.goteo.org/img/700x0/goteo-03a-1.jpg)",
+          "name": "Earthenware and gold luster safety pin: a small ceramic jewel",
+          "purchased-units": 0,
+          "units": 0
+        }
+      },
+      "social-commitment": {
+        "description": "Creating culture",
+        "name": "Creating culture"
+      },
+      "social-commitment-description": "The recovery of the historic building of La Ben\u00e9fica de Pilo\u00f1a involves not only a restoration of a historical-artistic material asset, but also the reconstruction of a part of the history of l'Infiestu and Pilo\u00f1a. A small story of social organization and brotherhood between neighbors vectorized by culture and art.\r\n\r\nIn the building, founded in 1926 as a theater and party hall, there were also professional trainings, courses and cinema on Sundays. It was, together with the Casino de l'Infiestu, the place through which modernity came to the town. The cultural and technical modernity. The first proper theater and the first place where movies were shown on a regular basis.\r\n\r\nThis small cultural utopia was developed in a socio-cultural context very different from the current scene in Pilo\u00f1\u00e9s. Pilo\u00f1a in 1926 had 18,000 inhabitants at a time when Xix\u00f3n had 60,000. Most of the towns in the council did not even have a road, so the town of L'Infiestu functioned as a true cultural and social capital.\r\n\r\nWith the Charity we want to recover that community spirit of the old Charity Society and return to the council a space in which to promote all the cultural activity that already exists in the territory, and in turn connect it with other places at a national and international level."
+    }
+  },
+  "user": {
+    "date-created": "Mon, 25 Oct 2021 21:14:54 +0200",
+    "id": "labenefica",
+    "name": "La Ben\u00e9fica",
+    "node": "goteo",
+    "profile-image-url": "https://goteo.org/img/medium/la-benefica-logo-final.png",
+    "profile-url": "https://goteo.org/user/profile/labenefica"
+  },
+  "video-url": "https://vimeo.com/639727785",
+  "widget-url": "https://goteo.org/widget/project/la-benefica"
+}

@@ -50,6 +50,7 @@ en:
           title: Costs
           total: Total
         crowdsourcing:
+          collaborate: Collaborate
           title: Crowdsourcing
         date_label:
           closed: Closed on
@@ -57,6 +58,9 @@ en:
           finished: Finished on
           remaining: Remaining
           updated: Updated on
+        date_remaining:
+          days: "%{days} days"
+          hours: Only %{hours} hours!
         reward:
           backers: "%{amount} backers"
           contributing: Contributing %{amount}
@@ -64,6 +68,9 @@ en:
         rewards:
           see_all: See all rewards
           title: Rewards
+        round_label:
+          '1': First round
+          '2': Second round
         show:
           description:
             about: Description of the project. Main features, strengths and differentials.

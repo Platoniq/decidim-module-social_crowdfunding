@@ -160,22 +160,27 @@ $percentage-marker-url: url("https://goteo.org/assets/img/project/percentage-con
     line-height: 1;
   }
 
-  .date,
-  .reached,
-  .optimum,
-  .minimum {
+  .thermometer-data {
     line-height: 1;
-  }
 
-  .date,
-  .optimum,
-  .minimum {
-    font-size: 24px;
-  }
+    &.round,
+    &.optimum,
+    &.minimum {
+      font-size: 24px;
+    }
 
-  .reached {
-    font-size: 48px;
-    color: $fg-color;
-    font-weight: 700;
+    &.date {
+      font-size: 36px;
+      font-weight: 700;
+    }
+
+    &.reached {
+      font-size: 48px;
+      font-weight: 700;
+    }
+
+    &.reached {
+      color: $fg-color;
+    }
   }
 }

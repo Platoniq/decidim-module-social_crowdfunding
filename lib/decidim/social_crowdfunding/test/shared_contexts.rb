@@ -21,12 +21,34 @@ shared_examples "returns an object" do |property|
   end
 end
 
-shared_context "with campaign component" do
+shared_context "with finished campaign component" do
   include_context "with a component" do
     let(:manifest_name) { "social_crowdfunding_campaign" }
     let(:campaign_slug) { "nodo-movil" }
 
-    let!(:data) { JSON.parse(file_fixture("goteo-project.json").read) }
+    let!(:data) { JSON.parse(file_fixture("goteo-project-finished.json").read) }
+
+    let(:settings) do
+      {
+        campaign_id: campaign_slug
+      }
+    end
+
+    before do
+      component.settings = settings
+      component.save!
+
+      visit_component
+    end
+  end
+end
+
+shared_context "with in progress campaign component" do
+  include_context "with a component" do
+    let(:manifest_name) { "social_crowdfunding_campaign" }
+    let(:campaign_slug) { "la-benefica" }
+
+    let!(:data) { JSON.parse(file_fixture("goteo-project-in-progress.json").read) }
 
     let(:settings) do
       {
