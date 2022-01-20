@@ -5,6 +5,8 @@ module Decidim
     # Custom helpers, scoped to the social_crowdfunding engine.
     #
     module CampaignHelper
+      GOTEO_ALLOWED_PEERTUBE_INSTANCES = ["peertube\.plataformess\.org", "framatube\.org"].freeze
+
       def campaign_date
         date = case current_campaign.data["status"]
                when "editing" then current_campaign.data["date-created"]
@@ -116,6 +118,8 @@ module Decidim
         parsed_url = parse_video_url(current_campaign.data["video-url"])
 
         case parsed_url[:type]
+        when :peertube
+          campaign_media_peertube(parsed_url[:id], parsed_url[:host], https: true, autoplay: false)
         when :vimeo
           campaign_media_vimeo(parsed_url[:id], https: true, autoplay: false)
         when :youtube
@@ -151,6 +155,18 @@ module Decidim
         format("%{protocol}://www.youtube.com/embed/%{video}?wmode=Opaque%{autoplay_code}", params)
       end
 
+      # https://github.com/GoteoFoundation/goteo/blob/live/src/Goteo/Model/Project/Media.php
+      def campaign_media_peertube(video, host, https: false, autoplay: false)
+        autoplay_code = "&autoplay=1" if autoplay
+        params = {
+          protocol: https ? "https" : "http",
+          video: video,
+          host: host,
+          autoplay_code: autoplay_code
+        }
+        format("%{protocol}://%{host}/videos/embed/%{video}?warningTitle=0%{autoplay_code}", params)
+      end
+
       # https://github.com/GoteoFoundation/goteo/blob/live/public/assets/js/forms.js
       def parse_video_url(url)
         # - Supported YouTube URL formats:
@@ -161,18 +177,31 @@ module Decidim
         # - Supported Vimeo URL formats:
         #   - http://vimeo.com/25451551
         #   - http://player.vimeo.com/video/25451551
+        # - Supported Peertube URL formats:
+        #   - https://peertube.plataformess.org/videos/embed/ab236f8a-d17c-4ccf-b2dd-757ab4324dde
+        #   - https://framatube.org/videos/embed/ab236f8a-d17c-4ccf-b2dd-757ab4324dde
         # - Also supports relative URLs:
         #   - //player.vimeo.com/video/25451551
 
-        regex = url.match(%r{(http:|https:|)//(player.|www.|m.)?(vimeo\.com|youtu(be\.com|\.be|be\.googleapis\.com))/(video/|embed/|watch\?v=|v/)?([A-Za-z0-9._%-]*)(&\S+)?})
+        if url.match?(/(#{GOTEO_ALLOWED_PEERTUBE_INSTANCES.join("|")})/)
+          type = :peertube
+          regex = url.match(%{(http:|https:|)//(#{GOTEO_ALLOWED_PEERTUBE_INSTANCES.join("|")})/videos/embed/([A-Za-z0-9._%-]*)(&\S+)?})
+          id = regex[3]
+          host = regex[2]
+        else
+          regex = url.match(%r{(http:|https:|)//(player.|www.|m.)?(vimeo\.com|youtu(be\.com|\.be|be\.googleapis\.com))/(video/|embed/|watch\?v=|v/)?([A-Za-z0-9._%-]*)(&\S+)?})
+          id = regex[6]
 
-        if regex[3].match?("youtu")
-          type = :youtube
-        elsif regex[3].match?("vimeo")
-          type = :vimeo
+          if regex[3].match?("youtu")
+            type = :youtube
+            host = regex[3]
+          elsif regex[3].match?("vimeo")
+            type = :vimeo
+            host = regex[3]
+          end
         end
 
-        { type: type, id: regex[6] }
+        { type: type, id: id, host: host }
       end
     end
   end
