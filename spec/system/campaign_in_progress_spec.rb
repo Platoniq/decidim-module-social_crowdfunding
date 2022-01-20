@@ -10,6 +10,7 @@ describe "Show campaign", type: :system do
   it "displays campaign media embed" do
     within ".responsive-embed" do
       expect(page).to have_selector("iframe")
+      expect(page.find("iframe")[:src]).to match("vimeo")
     end
   end
 
