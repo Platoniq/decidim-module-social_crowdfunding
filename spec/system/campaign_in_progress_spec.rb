@@ -13,32 +13,32 @@ describe "Show campaign", type: :system do
     end
   end
 
-  it "displays campaign thermometer" do
-    expect(page).to have_selector(".thermometer-container")
-
-    within ".thermometer-info" do
-      expect(page).to have_content("Second round")
-
-      within ".reached" do
-        expect(page).to have_content("€126,563")
-      end
-      within ".optimum" do
-        expect(page).to have_content("€130,111")
-      end
-      within ".minimum" do
-        expect(page).to have_content("€94,185")
-      end
-    end
-
-    within ".thermometer-container .percentage" do
-      expect(page).to have_content("134%")
-    end
-  end
-
   context "when more than 1 day left" do
     before do
       Timecop.freeze(Date.parse(data["date-published"]) + 55.days)
       visit_component
+    end
+
+    it "displays campaign thermometer" do
+      expect(page).to have_selector(".thermometer-container")
+
+      within ".thermometer-info" do
+        expect(page).to have_content("Second round")
+
+        within ".reached" do
+          expect(page).to have_content("€126,563")
+        end
+        within ".optimum" do
+          expect(page).to have_content("€130,111")
+        end
+        within ".minimum" do
+          expect(page).to have_content("€94,185")
+        end
+      end
+
+      within ".thermometer-container .percentage" do
+        expect(page).to have_content("134%")
+      end
     end
 
     it "displays the hours left" do
@@ -64,7 +64,7 @@ describe "Show campaign", type: :system do
   it "shows a link with the Goteo logo" do
     within ".button--goteo" do
       expect(page).to have_content("DONATE IN")
-      expect(page).to have_selector("img.goteo-logo")
+      expect(page).to have_selector(".goteo-logo")
     end
   end
 

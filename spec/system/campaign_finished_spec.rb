@@ -39,7 +39,7 @@ describe "Show campaign", type: :system do
   it "shows a link with the Goteo logo" do
     within ".button--goteo" do
       expect(page).to have_content("VISIT IN")
-      expect(page).to have_selector("img.goteo-logo")
+      expect(page).to have_selector(".goteo-logo")
     end
   end
 
