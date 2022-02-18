@@ -2,25 +2,25 @@ cs:
   decidim:
     components:
       social_crowdfunding_campaign:
-        name: Social Crowdfunding Campaign
+        name: Sociální Crowdfunding kampaň
         settings:
           global:
-            campaign_id: Campaign ID
-            goteo_api_key: Goteo API key
-            goteo_api_update_hours: Time interval (in hours) to update campaigns with Goteo API data
+            campaign_id: ID kampaně
+            goteo_api_key: Goteo API klíč
+            goteo_api_update_hours: Časový interval (v hodinách) pro aktualizaci kampaní pomocí Goteo API
             goteo_api_url: Goteo API URL
-            goteo_api_username: Goteo API username
+            goteo_api_username: Goteo API uživatelské jméno
     social_crowdfunding:
       actions:
-        confirm_destroy: Are you sure you want to delete this campaign? (It will only delete the Decidim copy of this campaign, not the original one)
-        destroy: Delete
-        select: Select
-        title: Actions
-        update: Update
+        confirm_destroy: Opravdu chcete odstranit tuto kampaň? (Odstraní pouze kopii této kampaně v Decidim, nikoliv původní kampaň)
+        destroy: Smazat
+        select: Vybrat
+        title: Akce
+        update: Aktualizovat
       admin:
         campaigns:
           destroy:
-            success: The campaign has been deleted
+            success: Kampaň byla smazána
           fetch:
             not_found: The campaign could not be found
           index:
