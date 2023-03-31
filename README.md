@@ -26,7 +26,7 @@ curl -i --basic --user "user:key" https://api.goteo.org/v1/projects/
 Add this line to your application's Gemfile:
 
 ```ruby
-gem "decidim-social_crowdfunding", git: "https://github.com/Platoniq/decidim-module-social_crowdfunding",
+gem "decidim-social_crowdfunding", git: "https://github.com/Platoniq/decidim-module-social_crowdfunding", branch: "main"
 ```
 
 And then execute:
