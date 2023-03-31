@@ -1,0 +1,103 @@
+cs:
+  decidim:
+    components:
+      social_crowdfunding_campaign:
+        name: Sociální Crowdfunding kampaň
+        settings:
+          global:
+            campaign_id: ID kampaně
+            goteo_api_key: Goteo API klíč
+            goteo_api_update_hours: Časový interval (v hodinách) pro aktualizaci kampaní pomocí Goteo API
+            goteo_api_url: Goteo API URL
+            goteo_api_username: Goteo API uživatelské jméno
+    social_crowdfunding:
+      actions:
+        confirm_destroy: Opravdu chcete odstranit tuto kampaň? (Odstraní pouze kopii této kampaně v Decidim, nikoliv původní kampaň)
+        destroy: Smazat
+        select: Vybrat
+        title: Akce
+        update: Aktualizovat
+      admin:
+        campaigns:
+          destroy:
+            success: Kampaň byla smazána
+          fetch:
+            not_found: Kampaň nebyla nalezena
+          index:
+            campaigns: Uložené kampaně
+            create: Vytvořit kampaň v
+            manage: Spravovat nastavení
+            select: Vybrat kampaň
+            selected: Vybraná kampaň
+            slug: ID kampaně
+            slug_info: Můžete zkopírovat poslední část veřejné URL vaší kampaně (https://goteo.org/project/<your-campaign-id>)
+            submit: Aktualizovat kampaň
+            title: Sociální Crowdfunding kampaň
+          select:
+            error: Při aktualizaci kampaně se vyskytla chyba
+            success: Kampaň byla aktualizována
+          update:
+            error: Při aktualizaci kampaně se vyskytla chyba
+            success: Kampaň byla aktualizována
+      campaigns:
+        costs:
+          material: Materiály
+          minimum: Nejméně
+          optimum: Optimálně
+          structure: Struktura
+          task: Úlohy
+          title: Náklady
+          total: Celkem
+        crowdsourcing:
+          collaborate: Spolupráce
+          title: Crowdsourcing
+        date_label:
+          closed: Uzavřeno
+          created: Vytvořeno
+          finished: Dokončeno
+          remaining: Zbývá
+          updated: Aktualizováno
+        date_remaining:
+          days: "%{days} dnů"
+          hours: Pouze %{hours} hodin!
+        reward:
+          backers: "%{amount} podporovatelů"
+          contributing: Přispějte %{amount}
+          get: Získat!
+        rewards:
+          see_all: Zobrazit všechny odměny
+          title: Odměny
+        round_label:
+          '1': První kolo
+          '2': Druhé kolo
+        show:
+          description:
+            about: Popis projektu. Hlavní vlastnosti, silné vlastnosti a odlišení.
+            general: Obecné informace
+            goal: Cíle crowdfundingové kampaně
+            motivation: Proč je to důležité
+          donate: Přispět
+          money:
+            minimum: Nejméně
+            optimum: Optimálně
+            received: Přijato
+          view: Navštívit
+        social_commitment:
+          title: Sociální závazek
+        statuses:
+          editing: Úprava
+          fulfilled: Dokončeno!
+          funded: Financováno
+          in_campaign: V kampani
+          reviewing: Přezkoumání
+          unfunded: Nefinancováno
+        thermometer:
+          minimum: Min.
+          optimum: Opt.
+      models:
+        campaign:
+          fields:
+            created_at: Vytvořeno v
+            id: ID
+            title: Název
+            updated_at: Aktualizováno
