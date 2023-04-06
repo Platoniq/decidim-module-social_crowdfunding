@@ -33,8 +33,9 @@ And then execute:
 
 ```bash
 bundle
-bundle exec rake decidim_social_crowdfunding:install:migrations
-rails db:migrate
+bundle exec rails decidim_social_crowdfunding:install:migrations
+bundle exec rails decidim_decidim_awesome:webpacker:install
+bundle exec rails db:migrate
 ```
 
 * TODO: initializator required?
