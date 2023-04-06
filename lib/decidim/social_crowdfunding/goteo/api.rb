@@ -17,7 +17,7 @@ module Decidim
             verify_ssl = true
 
             connection ||= Faraday.new(ssl: { verify: verify_ssl }) do |conn|
-              conn.request :basic_auth, api_username(component), api_key(component)
+              conn.request :authorization, :basic, api_username(component), api_key(component)
             end
 
             response = connection.get(uri)

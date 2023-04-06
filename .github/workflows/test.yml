@@ -7,11 +7,11 @@ on:
   pull_request:
 
 env:
-  RUBY_VERSION: 2.7.4
+  RUBY_VERSION: 2.7.5
 
 jobs:
   test-report:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
 
     services:
       postgres:
