@@ -15,7 +15,7 @@ module Decidim::SocialCrowdfunding
       }
     end
     let(:campaign) { create :campaign }
-    let(:permission_action) { Decidim::PermissionAction.new(action) }
+    let(:permission_action) { Decidim::PermissionAction.new(**action) }
     let(:action) do
       { scope: :public, action: :show, subject: :campaign }
     end
@@ -31,17 +31,17 @@ module Decidim::SocialCrowdfunding
     context "when no user present" do
       let(:user) { nil }
 
-      it { is_expected.to eq true }
+      it { is_expected.to be true }
     end
 
     context "when user is not an admin" do
-      it { is_expected.to eq true }
+      it { is_expected.to be true }
     end
 
     context "when user is an admin" do
       let(:user) { create :user, :admin, organization: organization }
 
-      it { is_expected.to eq true }
+      it { is_expected.to be true }
     end
   end
 end

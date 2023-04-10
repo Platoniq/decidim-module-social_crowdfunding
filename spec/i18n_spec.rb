@@ -2,7 +2,6 @@
 
 require "i18n/tasks"
 
-# rubocop:disable RSpec/EmptyExampleGroup
 describe "I18n sanity" do
   let(:locales) do
     ENV["ENFORCED_LOCALES"].presence || "en"
@@ -31,4 +30,3 @@ describe "I18n sanity" do
     end
   end
 end
-# rubocop:enable RSpec/EmptyExampleGroup

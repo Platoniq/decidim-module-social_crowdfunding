@@ -14,7 +14,7 @@ module Decidim
         minimum_size = current_campaign.minimum / current_campaign.optimum * MAX
         minimum_done = [percentage, 100].min
 
-        minimum_label = minimum_size - MARGIN / 2
+        minimum_label = minimum_size - (MARGIN / 2)
 
         optimum_size = MAX - minimum_size # For the separator between optimum + minimum
 
@@ -42,11 +42,11 @@ module Decidim
 
         # Percentage marker (calculated with margins)
         percentage_marker = if minimum_done < 100
-                              minimum_done * minimum_size / 100 - MARGIN
+                              (minimum_done * minimum_size / 100) - MARGIN
                             elsif optimum_done < 100
-                              minimum_size + optimum_done * optimum_size / 100 - MARGIN
+                              minimum_size + (optimum_done * optimum_size / 100) - MARGIN
                             else
-                              [(MAX + (extra_done * 20) / 100) - MARGIN, 100 - MARGIN].min
+                              [(MAX + ((extra_done * 20) / 100)) - MARGIN, 100 - MARGIN].min
                             end
 
         {
