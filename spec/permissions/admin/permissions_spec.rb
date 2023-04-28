@@ -18,7 +18,7 @@ module Decidim::SocialCrowdfunding::Admin
     let(:action) do
       { scope: :admin, action: :update, subject: campaign }
     end
-    let(:permission_action) { Decidim::PermissionAction.new(action) }
+    let(:permission_action) { Decidim::PermissionAction.new(**action) }
 
     context "when scope is not admin" do
       let(:action) do
@@ -34,7 +34,7 @@ module Decidim::SocialCrowdfunding::Admin
           { scope: :admin, action: :index, subject: :campaigns }
         end
 
-        it { is_expected.to eq true }
+        it { is_expected.to be true }
       end
 
       context "when action is update" do
@@ -42,7 +42,7 @@ module Decidim::SocialCrowdfunding::Admin
           { scope: :admin, action: :update, subject: :campaign }
         end
 
-        it { is_expected.to eq true }
+        it { is_expected.to be true }
       end
 
       context "when action is destroy" do
@@ -50,7 +50,7 @@ module Decidim::SocialCrowdfunding::Admin
           { scope: :admin, action: :destroy, subject: :campaign }
         end
 
-        it { is_expected.to eq true }
+        it { is_expected.to be true }
       end
     end
   end

@@ -40,6 +40,8 @@ shared_context "with finished campaign component" do
 
       visit_component
     end
+
+    include_context "with cookies accepted"
   end
 end
 
@@ -61,6 +63,17 @@ shared_context "with in progress campaign component" do
       component.save!
 
       visit_component
+    end
+
+    include_context "with cookies accepted"
+  end
+end
+
+shared_context "with cookies accepted" do
+  before do
+    click_link "Cookie settings"
+    within "#dc-modal" do
+      click_button "Accept all"
     end
   end
 end
