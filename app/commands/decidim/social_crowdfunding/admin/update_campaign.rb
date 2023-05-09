@@ -4,7 +4,7 @@ module Decidim
   module SocialCrowdfunding
     module Admin
       # A command with all the business logic when retrieving info from campaign
-      class UpdateCampaign < Rectify::Command
+      class UpdateCampaign < Decidim::Command
         def initialize(campaign, component, user)
           @campaign = campaign
           @component = component

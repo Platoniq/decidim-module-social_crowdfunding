@@ -4,7 +4,7 @@ module Decidim
   module SocialCrowdfunding
     module Admin
       # A command with all the business logic when selecting a campaign for a component
-      class SelectCampaign < Rectify::Command
+      class SelectCampaign < Decidim::Command
         # Public: Initializes the command.
         #
         # form - A form object with the params.
