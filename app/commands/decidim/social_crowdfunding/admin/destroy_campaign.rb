@@ -4,7 +4,7 @@ module Decidim
   module SocialCrowdfunding
     module Admin
       # A command with all the business logic when destroying a campaign
-      class DestroyCampaign < Rectify::Command
+      class DestroyCampaign < Decidim::Command
         def initialize(campaign, user)
           @campaign = campaign
           @user = user
