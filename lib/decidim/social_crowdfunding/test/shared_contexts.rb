@@ -71,9 +71,9 @@ end
 
 shared_context "with cookies accepted" do
   before do
-    click_link "Cookie settings"
+    click_on "Cookie settings"
     within "#dc-modal" do
-      click_button "Accept all"
+      click_on "Accept all"
     end
   end
 end

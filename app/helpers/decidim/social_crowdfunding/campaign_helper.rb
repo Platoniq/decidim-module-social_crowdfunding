@@ -5,7 +5,7 @@ module Decidim
     # Custom helpers, scoped to the social_crowdfunding engine.
     #
     module CampaignHelper
-      GOTEO_ALLOWED_PEERTUBE_INSTANCES = ["peertube\.plataformess\.org", "framatube\.org"].freeze
+      GOTEO_ALLOWED_PEERTUBE_INSTANCES = ["peertube.plataformess.org", "framatube.org"].freeze
 
       def campaign_date
         date = case current_campaign.data["status"]
@@ -111,7 +111,7 @@ module Decidim
                when "GBP" then "£"
                end
 
-        number_to_currency amount, unit: unit, precision: 0
+        number_to_currency amount, unit:, precision: 0
       end
 
       def campaign_media_src
@@ -136,8 +136,8 @@ module Decidim
         autoplay_code = ";autoplay=1" if autoplay
         params = {
           protocol: https ? "https" : "http",
-          video: video,
-          autoplay_code: autoplay_code
+          video:,
+          autoplay_code:
         }
 
         format("%{protocol}://player.vimeo.com/video/%{video}?title=0&byline=0&portrait=0%{autoplay_code}", params)
@@ -148,8 +148,8 @@ module Decidim
         autoplay_code = "&autoplay=1" if autoplay
         params = {
           protocol: https ? "https" : "http",
-          video: video,
-          autoplay_code: autoplay_code
+          video:,
+          autoplay_code:
         }
 
         format("%{protocol}://www.youtube.com/embed/%{video}?wmode=Opaque%{autoplay_code}", params)
@@ -160,9 +160,9 @@ module Decidim
         autoplay_code = "&autoplay=1" if autoplay
         params = {
           protocol: https ? "https" : "http",
-          video: video,
-          host: host,
-          autoplay_code: autoplay_code
+          video:,
+          host:,
+          autoplay_code:
         }
         format("%{protocol}://%{host}/videos/embed/%{video}?warningTitle=0%{autoplay_code}", params)
       end
@@ -201,7 +201,7 @@ module Decidim
           end
         end
 
-        { type: type, id: id, host: host }
+        { type:, id:, host: }
       end
     end
   end

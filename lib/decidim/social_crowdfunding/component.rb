@@ -32,7 +32,7 @@ Decidim.register_component(:social_crowdfunding_campaign) do |component|
       name: Decidim::Components::Namer.new(participatory_space.organization.available_locales, :social_crowdfunding_campaign).i18n_name,
       manifest_name: :social_crowdfunding_campaign,
       published_at: Time.current,
-      participatory_space: participatory_space
+      participatory_space:
     }
 
     component = Decidim.traceability.perform_action!(

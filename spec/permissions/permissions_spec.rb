@@ -6,15 +6,15 @@ module Decidim::SocialCrowdfunding
   describe Permissions do
     subject { described_class.new(user, permission_action, context).permissions.allowed? }
 
-    let(:organization) { create :organization }
-    let(:user) { create :user, organization: organization }
+    let(:organization) { create(:organization) }
+    let(:user) { create(:user, organization:) }
     let(:context) do
       {
         current_organization: organization,
-        campaign: campaign
+        campaign:
       }
     end
-    let(:campaign) { create :campaign }
+    let(:campaign) { create(:campaign) }
     let(:permission_action) { Decidim::PermissionAction.new(**action) }
     let(:action) do
       { scope: :public, action: :show, subject: :campaign }
@@ -39,7 +39,7 @@ module Decidim::SocialCrowdfunding
     end
 
     context "when user is an admin" do
-      let(:user) { create :user, :admin, organization: organization }
+      let(:user) { create(:user, :admin, organization:) }
 
       it { is_expected.to be true }
     end

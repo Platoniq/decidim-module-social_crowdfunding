@@ -36,20 +36,8 @@ module Decidim
           end
         end
 
-        def destroy
-          enforce_permission_to :destroy, :campaign, campaign: campaign
-
-          DestroyCampaign.call(campaign, current_user) do
-            on(:ok) do
-              flash[:notice] = I18n.t("campaigns.destroy.success", scope: "decidim.social_crowdfunding.admin")
-
-              redirect_to root_url
-            end
-          end
-        end
-
         def update
-          enforce_permission_to :update, :campaign, campaign: campaign
+          enforce_permission_to(:update, :campaign, campaign:)
 
           UpdateCampaign.call(campaign, current_component, current_user) do
             on(:ok) do
@@ -60,6 +48,18 @@ module Decidim
 
             on(:error) do
               flash[:alert] = I18n.t("campaigns.update.error", scope: "decidim.social_crowdfunding.admin")
+
+              redirect_to root_url
+            end
+          end
+        end
+
+        def destroy
+          enforce_permission_to(:destroy, :campaign, campaign:)
+
+          DestroyCampaign.call(campaign, current_user) do
+            on(:ok) do
+              flash[:notice] = I18n.t("campaigns.destroy.success", scope: "decidim.social_crowdfunding.admin")
 
               redirect_to root_url
             end

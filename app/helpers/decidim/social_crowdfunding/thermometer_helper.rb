@@ -50,16 +50,16 @@ module Decidim
                             end
 
         {
-          extra_done: extra_done,
-          extra_left: extra_left,
-          minimum_done: minimum_done,
-          minimum_label: minimum_label,
-          minimum_left: minimum_left,
-          minimum_size: minimum_size,
-          optimum_done: optimum_done,
-          optimum_left: optimum_left,
-          optimum_size: optimum_size,
-          percentage_marker: percentage_marker,
+          extra_done:,
+          extra_left:,
+          minimum_done:,
+          minimum_label:,
+          minimum_left:,
+          minimum_size:,
+          optimum_done:,
+          optimum_left:,
+          optimum_size:,
+          percentage_marker:,
           percentage: percentage.to_i
         }
       end

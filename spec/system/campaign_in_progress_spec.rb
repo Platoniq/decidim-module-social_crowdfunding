@@ -3,13 +3,13 @@
 require "spec_helper"
 require "decidim/social_crowdfunding/test/shared_contexts"
 
-describe "Show campaign", type: :system do
+describe "Show campaign" do
   include_context "with stubs example api"
   include_context "with in progress campaign component"
 
   it "displays campaign media embed" do
     within ".responsive-embed" do
-      expect(page).to have_selector("iframe")
+      expect(page).to have_css("iframe")
       expect(page.find("iframe")[:src]).to match("vimeo")
     end
   end
@@ -21,7 +21,7 @@ describe "Show campaign", type: :system do
     end
 
     it "displays campaign thermometer" do
-      expect(page).to have_selector(".thermometer-container")
+      expect(page).to have_css(".thermometer-container")
 
       within ".thermometer-info" do
         expect(page).to have_content("Second round")
@@ -65,7 +65,7 @@ describe "Show campaign", type: :system do
   it "shows a link with the Goteo logo" do
     within ".button--goteo" do
       expect(page).to have_content("DONATE IN")
-      expect(page).to have_selector(".goteo-logo")
+      expect(page).to have_css(".goteo-logo")
     end
   end
 
@@ -76,18 +76,18 @@ describe "Show campaign", type: :system do
   end
 
   it "displays project description sections" do
-    expect(page).to have_selector(".section-heading + #costs", visible: :hidden)
-    expect(page).to have_selector(".section-heading + #description-general", visible: :all)
-    expect(page).to have_selector(".section-heading + #description-about", visible: :hidden)
-    expect(page).to have_selector(".section-heading + #description-motivation", visible: :hidden)
+    expect(page).to have_css(".section-heading + #costs", visible: :hidden)
+    expect(page).to have_css(".section-heading + #description-general", visible: :all)
+    expect(page).to have_css(".section-heading + #description-about", visible: :hidden)
+    expect(page).to have_css(".section-heading + #description-motivation", visible: :hidden)
   end
 
   it "does not display goal section (because project doesn't have it)" do
-    expect(page).not_to have_selector(".section-heading + #description-goal", visible: :hidden)
+    expect(page).to have_no_css(".section-heading + #description-goal", visible: :hidden)
   end
 
   it "does not display social commitment section (because project doesn't have it)" do
-    expect(page).not_to have_selector(".section-heading + #social-commitment", visible: :hidden)
+    expect(page).to have_no_css(".section-heading + #social-commitment", visible: :hidden)
   end
 
   it "shows a list of rewards" do
@@ -106,12 +106,12 @@ describe "Show campaign", type: :system do
       end
 
       within ".card__icondata:nth-child(2)" do
-        expect(page).to have_selector "svg.icon--info.icon"
+        expect(page).to have_css "svg.icon--info.icon"
         expect(page).to have_content "AMADRINA UNA TEYA"
       end
 
       within ".card__icondata:nth-child(3)" do
-        expect(page).to have_selector "svg.icon--tag.icon"
+        expect(page).to have_css "svg.icon--tag.icon"
         expect(page).to have_content "CONTRIBUTING €10"
       end
 

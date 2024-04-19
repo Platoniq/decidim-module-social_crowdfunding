@@ -8,7 +8,7 @@ module Decidim
 
         class << self
           def project(slug, component)
-            get(format(PROJECT_URL, api_url: api_url(component), slug: slug), component)
+            get(format(PROJECT_URL, api_url: api_url(component), slug:), component)
           end
 
           private

@@ -3,7 +3,7 @@
 require "spec_helper"
 require "decidim/social_crowdfunding/test/shared_contexts"
 
-describe "Visit the admin page", type: :system do
+describe "Visit the admin page" do
   include_context "with stubs example api"
   include_context "with finished campaign component"
 
@@ -11,8 +11,8 @@ describe "Visit the admin page", type: :system do
   let(:campaign_name) { "Nodo Móvil" }
   let(:campaign_slug) { "nodo-movil" }
 
-  let(:organization) { create :organization }
-  let!(:admin) { create(:user, :admin, :confirmed, organization: organization) }
+  let(:organization) { create(:organization) }
+  let!(:admin) { create(:user, :admin, :confirmed, organization:) }
 
   let(:edit_component_path) { Decidim::EngineRouter.admin_proxy(component.participatory_space).edit_component_path(component.id) }
 
@@ -40,7 +40,7 @@ describe "Visit the admin page", type: :system do
     expect(page).to have_content("Select a campaign")
 
     within "form.new_select_campaign" do
-      expect(page).to have_selector("input#select_campaign_slug")
+      expect(page).to have_field("input#select_campaign_slug")
       expect(page).to have_button("Update campaign")
     end
   end
