@@ -1,87 +1,90 @@
 <%= append_stylesheet_pack_tag "decidim_social_crowdfunding" %>
-<div class="row column view-header">
-  <h2 class="heading2"><%= translated_attribute current_campaign.name %></h2>
-</div>
-<div class="row">
-  <div class="columns section view-side mediumlarge-4 mediumlarge-push-8 large-4 large-push-8">
-    <div class="card extra">
-      <div class="card__content">
-        <div class="campaign__status callout <%= campaign_status_class %>">
-          <strong>
-            <%= campaign_status %>
-          </strong>
-        </div>
-        <div class="row thermometer-wrapper">
-          <%= render "thermometer" %>
-          <div class="column medium-9 small-8 thermometer-info">
-            <div class="round thermometer-data"><%= campaign_round_label %></div>
-            <div class="date-label"><%= campaign_date_label %></div>
-            <div class="date thermometer-data"><%= campaign_date %></div>
-            <div class="reached-label"><%= t(".money.received") %></div>
-            <div class="reached thermometer-data"><%= campaign_money current_campaign.amount %></div>
-            <div class="optimum-label"><%= t(".money.optimum") %></div>
-            <div class="optimum thermometer-data"><%= campaign_money current_campaign.optimum %></div>
-            <div class="minimum-label"><%= t(".money.minimum") %></div>
-            <div class="minimum thermometer-data"><%= campaign_money current_campaign.minimum %></div>
+
+<div class="participatory-space__container">
+  <section class="content-block participatory-space__content-block">
+    <div class="space-y-8">
+      <h2 class="h2 decorator"><%= translated_attribute current_campaign.name %></h2>
+      <div class="columns">
+        <div class="section row">
+          <div class="responsive-embed widescreen">
+            <iframe src="<%= campaign_media_src %>" frameborder="0" style="width: 100%; height: 500px; max-width:none !important;" webkitallowfullscreen mozallowfullscreen>
+            </iframe>
           </div>
         </div>
-        <%= link_to current_campaign.url, class: "button expanded button--sc button--goteo", target: :blank do %>
-          <% if current_campaign.can_donate? %>
-            <%= t(".donate") %>
-          <% else %>
-            <%= t(".view") %>
+        <%= render partial: "decidim/social_crowdfunding/campaigns/description", locals: {
+          id: "costs",
+          title: t("costs.title", scope: "decidim.social_crowdfunding.campaigns"),
+          content: render("costs"),
+        } %>
+        <%= render partial: "decidim/social_crowdfunding/campaigns/description", locals: {
+          id: "description-general",
+          title: t(".description.general"),
+          content: render_markdown(translated_attribute(current_campaign.description)),
+          options: { expanded: true },
+        } %>
+        <%= render partial: "decidim/social_crowdfunding/campaigns/description", locals: {
+          id: "description-about",
+          title: t(".description.about"),
+          content: render_markdown(current_campaign.data["about"])
+        } if current_campaign.data["about"] %>
+        <%= render partial: "decidim/social_crowdfunding/campaigns/description", locals: {
+          id: "description-motivation",
+          title: t(".description.motivation"),
+          content: render_markdown(current_campaign.data["motivation"])
+        } if current_campaign.data["motivation"] %>
+        <%= render partial: "decidim/social_crowdfunding/campaigns/description", locals: {
+          id: "description-goal",
+          title: t(".description.goal"),
+          content: render_markdown(current_campaign.data["goal"])
+        } if current_campaign.data["goal"] %>
+        <%= render partial: "decidim/social_crowdfunding/campaigns/description", locals: {
+          id: "social-commitment",
+          title: t("social_commitment.title", scope: "decidim.social_crowdfunding.campaigns"),
+          content: render("social_commitment")
+        } if current_campaign.social_commitments.any? %>
+      </div>
+    </div>
+    <div class="aside__section">
+      <div class="card__container status">
+        <div class="card__content">
+          <div class="callout <%= campaign_status_class %>">
+            <strong>
+              <%= campaign_status %>
+            </strong>
+          </div>
+          <div class="thermometer-wrapper">
+            <%= render "thermometer" %>
+            <div class="thermometer-info">
+              <div class="round thermometer-data"><%= campaign_round_label %></div>
+              <div class="date-label"><%= campaign_date_label %></div>
+              <div class="date thermometer-data"><%= campaign_date %></div>
+              <div class="reached-label"><%= t(".money.received") %></div>
+              <div class="reached thermometer-data"><%= campaign_money current_campaign.amount %></div>
+              <div class="optimum-label"><%= t(".money.optimum") %></div>
+              <div class="optimum thermometer-data"><%= campaign_money current_campaign.optimum %></div>
+              <div class="minimum-label"><%= t(".money.minimum") %></div>
+              <div class="minimum thermometer-data"><%= campaign_money current_campaign.minimum %></div>
+            </div>
+          </div>
+          <%= link_to current_campaign.url, class: "button button__sm md:button__lg button__secondary no-underline mt-4 button--goteo", target: :blank do %>
+            <% if current_campaign.can_donate? %>
+              <%= t(".donate") %>
+            <% else %>
+              <%= t(".view") %>
+            <% end %>
+            <%= render partial: "decidim/social_crowdfunding/goteo_logo" %>
+            <%= icon "external-link-line" %>
           <% end %>
-          <%= render partial: "decidim/social_crowdfunding/goteo_logo" %>
-          <%= icon "external-link" %>
-        <% end %>
+        </div>
       </div>
+          <div id="rewards" class="data">
+            <%= render "rewards" %>
+          </div>
+          <% if current_campaign.needs %>
+            <div id="crowdsourcing" class="data">
+              <%= render "crowdsourcing" %>
+            </div>
+          <% end %>
     </div>
-    <div id="rewards" class="mt-s">
-      <%= render "rewards" %>
-    </div>
-    <% if current_campaign.needs %>
-      <div id="crowdsourcing" class="mt-m">
-        <%= render "crowdsourcing" %>
-      </div>
-    <% end %>
-  </div>
-  <div class="columns mediumlarge-8 mediumlarge-pull-4">
-    <div class="section row collapse">
-      <div class="responsive-embed widescreen">
-        <iframe src="<%= campaign_media_src %>" frameborder="0" style="max-width:none !important;" webkitallowfullscreen mozallowfullscreen>
-        </iframe>
-      </div>
-    </div>
-    <%= render partial: "decidim/social_crowdfunding/campaigns/description", locals: {
-      id: "costs",
-      title: t("costs.title", scope: "decidim.social_crowdfunding.campaigns"),
-      content: render("costs")
-    } %>
-    <%= render partial: "decidim/social_crowdfunding/campaigns/description", locals: {
-      id: "description-general",
-      title: t(".description.general"),
-      content: render_markdown(translated_attribute(current_campaign.description)),
-      options: { expanded: true },
-    } %>
-    <%= render partial: "decidim/social_crowdfunding/campaigns/description", locals: {
-      id: "description-about",
-      title: t(".description.about"),
-      content: render_markdown(current_campaign.data["about"])
-    } if current_campaign.data["about"] %>
-    <%= render partial: "decidim/social_crowdfunding/campaigns/description", locals: {
-      id: "description-motivation",
-      title: t(".description.motivation"),
-      content: render_markdown(current_campaign.data["motivation"])
-    } if current_campaign.data["motivation"] %>
-    <%= render partial: "decidim/social_crowdfunding/campaigns/description", locals: {
-      id: "description-goal",
-      title: t(".description.goal"),
-      content: render_markdown(current_campaign.data["goal"])
-    } if current_campaign.data["goal"] %>
-    <%= render partial: "decidim/social_crowdfunding/campaigns/description", locals: {
-      id: "social-commitment",
-      title: t("social_commitment.title", scope: "decidim.social_crowdfunding.campaigns"),
-      content: render("social_commitment")
-    } if current_campaign.social_commitments.any? %>
-  </div>
+  </section>
 </div>

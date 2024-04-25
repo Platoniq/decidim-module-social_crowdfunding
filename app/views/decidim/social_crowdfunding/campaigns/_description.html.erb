@@ -1,12 +1,12 @@
 <% options ||= {} %>
 
-<div class="section row collapse">
-  <h3 class="section-heading mt-s" data-toggle="<%= id %>">
+<div class="section row data">
+  <h3 class="h3 decorator flex items-center cursor-pointer" data-toggle="<%= id %>">
     <%= title %>
-    <%= icon "caret-right", class: "icon--small", role: "img", "aria-hidden": true %>&nbsp;
+    <%= icon "arrow-right-s-line", class: "icon--small", role: "img", "aria-hidden": true %>&nbsp;
   </h3>
 
-  <div id="<%= id %>" class="mt-m <%= "hide" unless options[:expanded] %>" data-toggler=".hide">
+  <div id="<%= id %>" class="data-text" <%= "hidden" unless options[:expanded] %>>
     <%= content %>
   </div>
 </div>

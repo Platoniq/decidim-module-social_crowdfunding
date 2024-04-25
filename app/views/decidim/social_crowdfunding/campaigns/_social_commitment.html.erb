@@ -1,19 +1,17 @@
-<% current_campaign.social_commitments.each do |commitment| %>
-  <div class="card">
-    <div class="card__content">
-      <div class="card__header">
+<div class="card__list-list">
+  <% current_campaign.social_commitments.each do |commitment| %>
+    <div class="card__container">
+      <div class="card__social">
         <span class="card__title">
           <strong>
             <%= translated_attribute(commitment["name"]) %>
           </strong>
         </span>
-      </div>
 
-      <div class="card__text">
         <div class="card__text--paragraph">
           <%= render_markdown translated_attribute(commitment["description"]) %>
         </div>
       </div>
     </div>
-  </div>
-<% end %>
+  <% end %>
+</div>

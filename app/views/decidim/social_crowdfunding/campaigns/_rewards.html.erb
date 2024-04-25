@@ -1,8 +1,8 @@
-<h3 class="section-heading">
+<h3 class="h3 decorator">
   <%= t(".title") %>
 </h3>
 
-<div class="collapsible-list row small-up-1 card-grid">
+<div class="card__list-list aside__list">
   <% rewards = current_campaign.rewards %>
 
   <% rewards.slice!(0, 3).each do |reward| %>
@@ -10,11 +10,13 @@
   <% end %>
 </div>
 
-<a id="more-rewards-button" href="#more-rewards" class="button button--sc hollow expanded" data-toggle="more-rewards more-rewards-button" data-toggler=".hide">
-  <%= t(".see_all") %>
-</a>
+<div class="more__rewards">
+  <a id="more-rewards-button" href="#more-rewards" class="button button__sm md:button__lg" data-toggle="more-rewards more-rewards-button" data-toggler=".hide">
+    <%= t(".see_all") %>
+  </a>
+</div>
 
-<div data-toggler=".hide" id="more-rewards" class="hide collapsible-list row small-up-1 card-grid">
+<div data-toggler=".hide" id="more-rewards" class="hide collapsible-list row small-up-1 card-grid" hidden>
   <% rewards.each do |reward| %>
     <%= render partial: "decidim/social_crowdfunding/campaigns/reward", locals: { reward: reward } %>
   <% end %>

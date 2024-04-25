@@ -3,13 +3,13 @@
     <thead>
       <tr>
         <td>
-          <%= t(".#{type}") %>
+          <b><%= t(".#{type}") %></b>
         </td>
         <td style="width: 15%;">
-          <%= t(".minimum") %>
+          <b><%= t(".minimum") %></b>
         </td>
         <td style="width: 15%;">
-          <%= t(".optimum") %>
+          <b><%= t(".optimum") %></b>
         </td>
       </tr>
     </thead>
@@ -44,13 +44,13 @@
   <tfoot>
     <tr>
       <td>
-        <%= t(".total") %>
+        <b><%= t(".total") %></b>
       </td>
       <td>
-        <%= campaign_money(campaign_total_minimum) %>
+        <b><%= campaign_money(campaign_total_minimum) %></b>
       </td>
       <td>
-        <%= campaign_money(campaign_total_optimum) %>
+        <b><%= campaign_money(campaign_total_optimum) %></b>
       </td>
     </tr>
   </tfoot>

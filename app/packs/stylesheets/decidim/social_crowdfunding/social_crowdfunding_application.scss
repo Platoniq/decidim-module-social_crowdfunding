@@ -1,8 +1,37 @@
 @import "stylesheets/decidim/social_crowdfunding/partials/goteo";
 @import "stylesheets/decidim/social_crowdfunding/partials/thermometer";
+@import "stylesheets/decidim/social_crowdfunding/partials/card";
+@import "stylesheets/decidim/social_crowdfunding/partials/reward";
+@import "stylesheets/decidim/social_crowdfunding/partials/table";
 
 .admin.social-crowdfunding-campaign {
   .button {
     padding: .65rem;
   }
+}
+
+.participatory-space__container {
+  background-color: #fafafa;
+}
+
+.aside__section {
+  word-wrap: break-word;
+  padding-top: 5%;
+}
+
+.callout {
+  text-align: center;
+}
+
+.icon--small {
+  padding-top: .5%;
+}
+
+.data,
+.data-text {
+  padding-top: 5%;
+}
+
+.aside__list {
+  padding-top: 8%;
 }

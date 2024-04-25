@@ -13,6 +13,7 @@ $percentage-marker-url: url("https://goteo.org/assets/img/project/percentage-con
   height: $height;
 
   &-wrapper {
+    display: flex;
     margin: 2rem 0;
   }
 
@@ -59,6 +60,7 @@ $percentage-marker-url: url("https://goteo.org/assets/img/project/percentage-con
 
 .thermometer-container {
   position: relative;
+  width: 30%;
 
   .labels {
     font-weight: 700;
@@ -68,7 +70,6 @@ $percentage-marker-url: url("https://goteo.org/assets/img/project/percentage-con
       margin-bottom: -5px;
       height: 2px;
       width: 67px;
-      border-bottom: 2px dotted $bg-color;
       display: block;
     }
 
@@ -82,6 +83,7 @@ $percentage-marker-url: url("https://goteo.org/assets/img/project/percentage-con
       font-size: 14px;
       display: flex;
       align-items: center;
+      margin-left: 12%;
     }
 
     .minimum-label {
@@ -104,7 +106,7 @@ $percentage-marker-url: url("https://goteo.org/assets/img/project/percentage-con
       padding-top: 12px;
       padding-left: 3px;
       text-align: center;
-      right: 2px;
+      left: 18%;
 
       &::before {
         content: "";
@@ -123,6 +125,7 @@ $percentage-marker-url: url("https://goteo.org/assets/img/project/percentage-con
 .thermometer-info {
   text-align: right;
   font-weight: 700;
+  width: 70%;
 
   .round {
     font-size: 14px;

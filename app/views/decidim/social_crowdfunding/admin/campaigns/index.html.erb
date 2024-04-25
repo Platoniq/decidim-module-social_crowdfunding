@@ -7,12 +7,12 @@
         <%= link_to create_campaign_path, class: "button tiny button--title button--goteo", target: :blank do %>
           <%= t(".create") %>
           <%= render partial: "decidim/social_crowdfunding/goteo_logo" %>
-          <%= icon "external-link" %>
+          <%= icon "external-link-line" %>
         <% end %>
       </div>
       <div class="button--title">
         <%= link_to manage_campaign_path, class: "button tiny button--title" do %>
-          <%= icon "cog" %>
+          <%= icon "settings-4-line" %>
           <%= t(".manage") %>
         <% end %>
       </div>
@@ -76,13 +76,13 @@
               </td>
               <td class="table-list__actions">
                 <% if allowed_to? :update, :campaign, campaign: campaign %>
-                  <%= icon_link_to "check", select_campaigns_path(slug: campaign.slug), t("actions.select", scope: "decidim.social_crowdfunding"), method: :post, class: "action-icon--select" %>
+                  <%= icon_link_to "check-line", select_campaigns_path(slug: campaign.slug), t("actions.select", scope: "decidim.social_crowdfunding"), method: :post, class: "action-icon--select" %>
                 <% end %>
                 <% if allowed_to? :update, :campaign, campaign: campaign %>
-                  <%= icon_link_to "reload", campaign_path(campaign), t("actions.update", scope: "decidim.social_crowdfunding"), method: :put, class: "action-icon--reload" %>
+                  <%= icon_link_to "refresh-line", campaign_path(campaign), t("actions.update", scope: "decidim.social_crowdfunding"), method: :put, class: "action-icon--reload" %>
                 <% end %>
                 <% if allowed_to? :destroy, :campaign, campaign: campaign %>
-                  <%= icon_link_to "circle-x", campaign_path(campaign), t("actions.destroy", scope: "decidim.social_crowdfunding"), method: :delete, class: "action-icon--remove", data: { confirm: t("actions.confirm_destroy", scope: "decidim.social_crowdfunding") } %>
+                  <%= icon_link_to "close-circle-line", campaign_path(campaign), t("actions.destroy", scope: "decidim.social_crowdfunding"), method: :delete, class: "action-icon--remove", data: { confirm: t("actions.confirm_destroy", scope: "decidim.social_crowdfunding") } %>
                 <% end %>
               </td>
             </tr>
