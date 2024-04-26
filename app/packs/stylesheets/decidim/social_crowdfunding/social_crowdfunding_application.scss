@@ -6,7 +6,16 @@
 
 .admin.social-crowdfunding-campaign {
   .button {
-    padding: .65rem;
+    margin-top: 4%;
+  }
+
+  input {
+    border: 1px solid #155abf;
+    margin-left: 1%;
+  }
+
+  .campaign {
+    padding-top: 1%;
   }
 }
 
