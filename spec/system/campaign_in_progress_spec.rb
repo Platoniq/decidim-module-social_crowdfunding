@@ -76,10 +76,10 @@ describe "Show campaign" do
   end
 
   it "displays project description sections" do
-    expect(page).to have_css(".section-heading + #costs", visible: :hidden)
-    expect(page).to have_css(".section-heading + #description-general", visible: :all)
-    expect(page).to have_css(".section-heading + #description-about", visible: :hidden)
-    expect(page).to have_css(".section-heading + #description-motivation", visible: :hidden)
+    expect(page).to have_css(".h3.decorator + #costs", visible: :hidden)
+    expect(page).to have_css(".h3.decorator + #description-general", visible: :all)
+    expect(page).to have_css(".h3.decorator + #description-about", visible: :hidden)
+    expect(page).to have_css(".h3.decorator + #description-motivation", visible: :hidden)
   end
 
   it "does not display goal section (because project doesn't have it)" do
@@ -93,29 +93,25 @@ describe "Show campaign" do
   it "shows a list of rewards" do
     expect(page).to have_link "See all rewards"
 
-    within "#rewards .card-grid .column:first-of-type" do
+    within "#rewards .card__list-list .card__container:first-of-type" do
       within ".card__content" do
-        within ".card__header" do
-          expect(page).to have_content "Contributing €10"
-          expect(page).to have_content "Amadrina una Teya"
-        end
+        expect(page).to have_content "Contributing €10"
+        expect(page).to have_content "Amadrina una Teya"
 
         within ".card__text" do
           expect(page).to have_content "Por sólo 10€ amadrinarás una teja de La Benéfica: patrocinas el derribo y construccion del tejado"
         end
+        within ".card__grid-metadata .card__icondata:nth-child(1)" do
+          expect(page).to have_css "svg"
+          expect(page).to have_content "AMADRINA UNA TEYA"
+        end
+        within ".card__grid-metadata .card__icondata:nth-child(2)" do
+          expect(page).to have_css "svg"
+          expect(page).to have_content "CONTRIBUTING €10"
+        end
       end
 
-      within ".card__icondata:nth-child(2)" do
-        expect(page).to have_css "svg.icon--info.icon"
-        expect(page).to have_content "AMADRINA UNA TEYA"
-      end
-
-      within ".card__icondata:nth-child(3)" do
-        expect(page).to have_css "svg.icon--tag.icon"
-        expect(page).to have_content "CONTRIBUTING €10"
-      end
-
-      within ".card__footer" do
+      within ".footer__content" do
         within ".backers" do
           expect(page).to have_content("263 backers")
         end

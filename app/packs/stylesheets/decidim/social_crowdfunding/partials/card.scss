@@ -32,6 +32,7 @@
   display: flex;
   flex-direction: row;
   max-width: fit-content;
+  text-transform: uppercase;
 }
 
 .card__support {
@@ -49,7 +50,7 @@ li {
   padding: 0;
 }
 
-.backers__content {
+.footer__content {
   padding: 5%;
   display: flex;
   flex-direction: column;

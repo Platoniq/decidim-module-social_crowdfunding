@@ -33,9 +33,7 @@
       <b><%= t(".select") %></b>
     </h3>
     <%= decidim_form_for @form do |f| %>
-      <div class="campaign">
-        <%= f.text_field :slug, label: t(".slug") %>
-      </div>
+      <%= f.text_field :slug, label: t(".slug") %>
       <div class="help-text mb-s">
         <%= t(".slug_info") %>
       </div>

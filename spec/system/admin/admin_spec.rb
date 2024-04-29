@@ -33,14 +33,16 @@ describe "Visit the admin page" do
 
   it "shows the selected campaign" do
     expect(page).to have_content("Selected campaign")
-    expect(page).to have_link(campaign_name, href: campaign.url)
+    expect(page).to have_link(campaign_name, href: "/link?external_url=https%3A%2F%2Fgoteo.org%2Fproject%2Fnodo-movil")
   end
 
   it "allows selecting a different campaign" do
     expect(page).to have_content("Select a campaign")
 
     within "form.new_select_campaign" do
-      expect(page).to have_field("input#select_campaign_slug")
+      within "label" do
+        expect(page).to have_field("select_campaign[slug]")
+      end
       expect(page).to have_button("Update campaign")
     end
   end

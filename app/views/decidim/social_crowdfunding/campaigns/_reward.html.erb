@@ -15,28 +15,20 @@
 
     <div class="card__grid-metadata">
         <div class="card__icondata">
-          <li class="card-data__item">
-            <%= icon "information-line" %>
-          </li>
-          <li class="card-data__item">
-            <strong class="text-left">
-              <%= translated_attribute reward["name"] %>
-            </strong>
-          </li>
+          <%= icon "information-line" %>
+          <strong class="text-left">
+            <%= translated_attribute reward["name"] %>
+          </strong>
         </div>
         <div class="card__icondata">
-          <li class="card-data__item">
-            <%= icon "price-tag-3-line" %>
-          </li>
-          <li class="card-data__item">
-            <strong>
-              <%= t(".contributing", amount: campaign_money(reward["amount"])) %>
-            </strong>
-          </li>
+          <%= icon "price-tag-3-line" %>
+          <strong>
+            <%= t(".contributing", amount: campaign_money(reward["amount"])) %>
+          </strong>
         </div>
     </div>
   </div>
-    <div class="backers__content">
+    <div class="footer__content">
       <% if reward["purchased-units"] > 0 %>
         <span class="backers">
           <strong><%= t(".backers", amount: reward["purchased-units"]) %></strong>
