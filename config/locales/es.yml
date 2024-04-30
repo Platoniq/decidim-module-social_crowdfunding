@@ -1,4 +1,3 @@
----
 es:
   decidim:
     components:
@@ -13,7 +12,7 @@ es:
             goteo_api_username: Nombre de usuaria de la API de Goteo
     social_crowdfunding:
       actions:
-        confirm_destroy: "¿Confirmas que deseas eliminar esta campaña? (Solo se eliminará la copia de Decidim de la campaña, no la original)"
+        confirm_destroy: '¿Confirmas que deseas eliminar esta campaña? (Solo se eliminará la copia de Decidim de la campaña, no la original)'
         destroy: Eliminar
         select: Seleccionar
         title: Acciones
@@ -60,11 +59,11 @@ es:
           updated: Actualizada el
         date_remaining:
           days: "%{days} días"
-          hours: "¡Solo %{hours} horas!"
+          hours: '¡Solo %{hours} horas!'
         reward:
           backers: "%{amount} cofinanciadoras"
           contributing: Aportando %{amount}
-          get: "¡Consíguela!"
+          get: '¡Consíguela!'
         rewards:
           see_all: Ver más recompensas
           title: Recompensas
@@ -76,7 +75,7 @@ es:
             about: Descripción del proyecto. Características, fortalezas y diferenciales.
             general: Información general
             goal: Objetivos de la campaña de crowdfunding
-            motivation: "¿Por qué es importante?"
+            motivation: '¿Por qué es importante?'
           donate: Haz tu aportación en
           money:
             minimum: Mínimo
@@ -87,7 +86,7 @@ es:
           title: Compromiso social
         statuses:
           editing: En edición
-          fulfilled: "¡Conseguido!"
+          fulfilled: '¡Conseguido!'
           funded: Financiada
           in_campaign: En campaña
           reviewing: En revisión
