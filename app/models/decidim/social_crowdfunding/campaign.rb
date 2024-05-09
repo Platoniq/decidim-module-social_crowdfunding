@@ -41,7 +41,7 @@ module Decidim
       end
 
       def self.fetch(slug, component, sync: false)
-        campaign = find_by(slug: slug, organization: component.organization)
+        campaign = find_by(slug:, organization: component.organization)
 
         fetch_api = campaign.blank? || sync || should_sync?(campaign, component)
 
@@ -53,7 +53,7 @@ module Decidim
           if campaign.present?
             campaign.update!(params_from_json(json))
           else
-            campaign = create!(params_from_json(json).merge(slug: slug, organization: component.organization))
+            campaign = create!(params_from_json(json).merge(slug:, organization: component.organization))
           end
         end
 

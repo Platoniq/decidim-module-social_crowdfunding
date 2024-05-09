@@ -1,32 +1,30 @@
 
-<h3 class="section-heading">
+<h3 class="h3 decorator">
   <%= t(".title") %>
 </h3>
 
-<div class="collapsible-list row small-up-1 card-grid">
+<div class="card__list-list aside__list">
   <% current_campaign.needs.each do |need| %>
-    <div class="column">
-      <div class="card card--process">
-        <div class="card__content">
-          <div class="card__header">
-            <span class="card__title">
-              <strong>
-                <%= translated_attribute(need["name"]) %>
-              </strong>
-            </span>
-          </div>
-
-          <div class="card__text">
-            <div class="card__text--paragraph">
-              <%= render_markdown translated_attribute(need["description"]) %>
-            </div>
-          </div>
+    <div class="card__container">
+      <div class="card__content">
+        <div class="card__header">
+          <span class="card__title">
+            <strong>
+              <%= translated_attribute(need["name"]) %>
+            </strong>
+          </span>
         </div>
 
-        <div class="card__footer">
-          <div class="card__support">
-            <%= link_to t(".collaborate"), Decidim::SocialCrowdfunding::Goteo.participate_url(current_campaign), class: "card__button button--sc light button small", target: "_blank" %>
+        <div class="card__text">
+          <div class="card__text--paragraph">
+            <%= render_markdown translated_attribute(need["description"]) %>
           </div>
+        </div>
+      </div>
+
+      <div class="card__footer">
+        <div class="card__support">
+          <%= link_to t(".collaborate"), Decidim::SocialCrowdfunding::Goteo.participate_url(current_campaign), class: "button button__sm button__secondary", target: "_blank" %>
         </div>
       </div>
     </div>

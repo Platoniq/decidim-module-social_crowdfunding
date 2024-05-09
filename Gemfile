@@ -4,22 +4,21 @@ source "https://rubygems.org"
 
 ruby RUBY_VERSION
 
-DECIDIM_VERSION = "0.27.2"
+DECIDIM_VERSION = "0.28.0"
 
 gem "decidim", DECIDIM_VERSION
 gem "decidim-social_crowdfunding", path: "."
 
 gem "bootsnap", "~> 1.4"
 
-gem "puma", ">= 5.0.0"
-gem "uglifier", "~> 4.1"
+gem "puma", ">= 6.3.1"
 
-gem "faker", "~> 2.14"
+gem "faker"
 
 group :development, :test do
   gem "byebug", "~> 11.0", platform: :mri
-
   gem "decidim-dev", DECIDIM_VERSION
+  gem "mdl"
 end
 
 group :development do
@@ -28,7 +27,7 @@ group :development do
   gem "rubocop-faker"
   gem "spring", "~> 2.0"
   gem "spring-watcher-listen", "~> 2.0"
-  gem "web-console", "~> 3.5"
+  gem "web-console", "~> 4.2"
 end
 
 group :test do

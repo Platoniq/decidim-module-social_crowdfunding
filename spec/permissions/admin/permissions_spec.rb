@@ -6,15 +6,15 @@ module Decidim::SocialCrowdfunding::Admin
   describe Permissions do
     subject { described_class.new(user, permission_action, context).permissions.allowed? }
 
-    let(:organization) { create :organization }
-    let(:user) { create :user, :admin, organization: organization }
+    let(:organization) { create(:organization) }
+    let(:user) { create(:user, :admin, organization:) }
     let(:context) do
       {
         current_organization: organization,
         current_campaign: campaign
       }
     end
-    let(:campaign) { create :campaign }
+    let(:campaign) { create(:campaign) }
     let(:action) do
       { scope: :admin, action: :update, subject: campaign }
     end

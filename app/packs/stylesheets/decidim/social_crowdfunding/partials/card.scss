@@ -1,0 +1,58 @@
+.card__container {
+  background-color: #fafafa;
+  border: 1px solid #e8e8e8;
+  border-radius: 2%;
+}
+
+.card__content {
+  padding: 8%;
+}
+
+.card__social {
+  padding: 2%;
+}
+
+.card__text {
+  padding-top: 6%;
+}
+
+.status {
+  background-color: #f3f4f7;
+}
+
+.card__text--paragraph {
+  padding-top: 2%;
+}
+
+.card__grid-metadata {
+  padding-top: 12%;
+}
+
+.card__icondata {
+  display: flex;
+  flex-direction: row;
+  max-width: fit-content;
+  text-transform: uppercase;
+}
+
+.card__support {
+  text-transform: uppercase;
+  padding: 5%;
+}
+
+.card__footer {
+  text-align: right;
+}
+
+li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer__content {
+  padding: 5%;
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+}

@@ -1,0 +1,3 @@
+FactoryBot/FactoryAssociationWithStrategy:
+  Exclude:
+    - "lib/decidim/social_crowdfunding/test/factories.rb"

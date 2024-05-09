@@ -1,65 +1,41 @@
-<div class="column">
-  <div class="card card--process">
-    <div class="card__content">
-      <div class="card__header">
-        <span class="card__title">
-          <strong>
-            <%= t(".contributing", amount: campaign_money(reward["amount"])) %>
-          </strong>
-          <br>
-          <span class="text-small">
-            <%= translated_attribute reward["name"] %>
-          </span>
-        </span>
+<div class="card__container">
+  <div class="card__content">
+    <h3 class="h4 text-secondary">
+      <%= t(".contributing", amount: campaign_money(reward["amount"])) %>
+    </h3>
+    <br>
+    <span class="h6 text-small">
+      <%= translated_attribute reward["name"] %>
+    </span>
+    <div class="card__text">
+      <div class="card__text--paragraph">
+        <%= render_markdown translated_attribute(reward["description"]) %>
       </div>
-
-      <div class="card__text">
-        <div class="card__text--paragraph">
-          <%= render_markdown translated_attribute(reward["description"]) %>
-        </div>
-      </div>
-
     </div>
 
-    <div class="card__icondata">
-      <ul class="card-data">
-        <li class="card-data__item">
-          <%= icon "info" %>
-        </li>
-
-        <li class="card-data__item">
+    <div class="card__grid-metadata">
+        <div class="card__icondata">
+          <%= icon "information-line" %>
           <strong class="text-left">
             <%= translated_attribute reward["name"] %>
           </strong>
-        </li>
-      </ul>
-    </div>
-
-    <div class="card__icondata">
-      <ul class="card-data">
-        <li class="card-data__item">
-          <%= icon "tag" %>
-        </li>
-
-        <li class="card-data__item">
+        </div>
+        <div class="card__icondata">
+          <%= icon "price-tag-3-line" %>
           <strong>
             <%= t(".contributing", amount: campaign_money(reward["amount"])) %>
           </strong>
-        </li>
-      </ul>
-    </div>
-
-    <div class="card__footer">
-      <div class="card__support">
-        <% if reward["purchased-units"] > 0 %>
-          <span class="backers">
-            <%= t(".backers", amount: reward["purchased-units"]) %>
-          </span>
-        <% end %>
-        <% if current_campaign.can_donate? %>
-          <%= link_to t(".get"), Decidim::SocialCrowdfunding::Goteo.reward_url(current_campaign, reward), class: "card__button button--sc light button small" %>
-        <% end %>
-      </div>
+        </div>
     </div>
   </div>
+    <div class="footer__content">
+      <% if reward["purchased-units"] > 0 %>
+        <span class="backers">
+          <strong><%= t(".backers", amount: reward["purchased-units"]) %></strong>
+        </span>
+      <% end %>
+      <% if current_campaign.can_donate? %>
+        <%= link_to t(".get"), Decidim::SocialCrowdfunding::Goteo.reward_url(current_campaign, reward), class: "button button__sm md:button__lg button__secondary no-underline mt-4" %>
+      <% end %>
+    </div>
 </div>

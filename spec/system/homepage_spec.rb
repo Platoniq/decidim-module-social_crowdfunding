@@ -2,8 +2,8 @@
 
 require "spec_helper"
 
-describe "Visit the home page", type: :system, perform_enqueued: true do
-  let(:organization) { create :organization, available_locales: [:en] }
+describe "Visit the home page", :perform_enqueued do
+  let(:organization) { create(:organization, available_locales: [:en]) }
 
   before do
     switch_to_host(organization.host)

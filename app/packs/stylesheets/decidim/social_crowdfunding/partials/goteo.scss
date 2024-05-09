@@ -1,4 +1,8 @@
 .button--goteo {
+  width: 100%;
+  word-wrap: break-word;
+  text-transform: uppercase;
+
   .goteo-logo {
     display: inline-block;
   }
@@ -8,7 +12,7 @@
   }
 
   .goteo-logo svg,
-  .icon--external-link {
+  .icon--external-link-line {
     margin-left: .35rem;
   }
 }

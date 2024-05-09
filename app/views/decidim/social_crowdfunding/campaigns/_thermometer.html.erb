@@ -1,4 +1,4 @@
-<div class="column medium-3 small-4 thermometer-container">
+<div class="thermometer-container">
   <div class="thermometer pull-left hidden-xs">
     <div class="thermometer-extra">
       <div class="left <%= @thermometer_params[:extra_done] != 100 ? "top-border-radius" : "" %>" style="height:<%= @thermometer_params[:extra_left] %>%">
@@ -22,12 +22,12 @@
 
   <div class="labels pull-left hidden-xs">
     <div class="minimum-label" style="bottom:<%= @thermometer_params[:minimum_label] %>%">
-      <%= icon "caret-left" %>
+      <%= icon "arrow-left-s-line" %>
       <span class="text"><%= t(".minimum") %></span>
     </div>
     <% if current_campaign.minimum != current_campaign.optimum %>
     <div class="optimum-label">
-      <%= icon "caret-left" %>
+      <%= icon "arrow-left-s-line" %>
       <span class="text"><%= t(".optimum") %></span>
     </div>
     <% end %>

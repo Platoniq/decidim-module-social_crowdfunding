@@ -1,5 +1,4 @@
 name: "[CI] Lint"
-
 on:
   push:
     branches:
@@ -7,11 +6,13 @@ on:
   pull_request:
 
 env:
-  RUBY_VERSION: 3.0.2
+  RUBY_VERSION: 3.1.1
+  NODE_VERSION: 18.17.1
 
 jobs:
   lint-report:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v2
         with:
@@ -22,7 +23,24 @@ jobs:
           ruby-version: ${{ env.RUBY_VERSION }}
           bundler-cache: true
 
-      - name: Lint and Rubocop
-        run: |
-          bundle exec rubocop -P
-          bundle exec erblint app/**/*.erb
+      - uses: actions/setup-node@master
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          
+      - run: npm ci
+        name: Install JS deps
+
+      - run: bundle exec rubocop -P
+        name: Lint Ruby files
+
+      - run: bundle exec mdl *.md
+        name: Lint Markdown files
+
+      - run: bundle exec erblint app/**/*.erb
+        name: Lint ERB files 
+
+      - run: npm run stylelint
+        name: Lint SCSS files
+
+      - run: npm run lint
+        name: Lint JS files

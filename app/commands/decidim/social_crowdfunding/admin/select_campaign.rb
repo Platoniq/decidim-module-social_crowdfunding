@@ -30,7 +30,7 @@ module Decidim
           settings = current_component.settings
           settings[:campaign_id] = @form.slug
 
-          current_component.update(settings: settings)
+          current_component.update(settings:)
 
           Campaign.fetch(@form.slug, current_component, sync: true)
         end
