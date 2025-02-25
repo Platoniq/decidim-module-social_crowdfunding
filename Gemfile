@@ -4,7 +4,7 @@ source "https://rubygems.org"
 
 ruby RUBY_VERSION
 
-DECIDIM_VERSION = "0.29.0"
+DECIDIM_VERSION = "0.29.2"
 
 gem "decidim", DECIDIM_VERSION
 gem "decidim-social_crowdfunding", path: "."
