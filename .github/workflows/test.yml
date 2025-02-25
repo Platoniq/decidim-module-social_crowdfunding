@@ -36,6 +36,9 @@ jobs:
         with:
           fetch-depth: 1
 
+      - run: |
+          sudo apt install imagemagick
+
       - uses: ruby/setup-ruby@v1
         with:
           ruby-version: ${{ env.RUBY_VERSION }}
