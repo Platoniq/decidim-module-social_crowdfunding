@@ -1,7 +1,7 @@
 # Decidim ♥ Goteo :: Integrate OpenSource Social Crowdfunding with OpenSource Digital Democracy
 
 [![[CI] Test](https://github.com/Platoniq/decidim-module-social_crowdfunding/actions/workflows/test.yml/badge.svg)](https://github.com/Platoniq/decidim-module-social_crowdfunding/actions/workflows/test.yml)
-[![codecov](https://codecov.io/gh/Platoniq/decidim-module-social_crowdfunding/branch/main/graph/badge.svg?token=KVPfyFtkMZ)](https://codecov.io/gh/Platoniq/decidim-module-social_crowdfunding)
+[![Coverage Status](https://coveralls.io/repos/github/Platoniq/decidim-module-social_crowdfunding/badge.svg?branch=main)](https://coveralls.io/github/Platoniq/decidim-module-social_crowdfunding?branch=main)
 [![Maintainability](https://api.codeclimate.com/v1/badges/1b039308fdce8a423faf/maintainability)](https://codeclimate.com/github/Platoniq/decidim-module-social_crowdfunding/maintainability)
 
 ## Goteo Api
