@@ -17,7 +17,7 @@ module Decidim
       end
 
       def campaign_date_label
-        date_label = case current_campaign.data["status"]
+        date_label = case current_campaign.data["status"] # rubocop:disable Style/HashLikeCase
                      when "in_editing" then "created"
                      when "in_review" then "updated"
                      when "in_campaign" then "remaining"
@@ -29,7 +29,6 @@ module Decidim
       end
 
       def campaign_days_remaining
-
         days_remaining = (current_campaign.data["calendar"]["optimum"].to_date - Time.zone.today).to_i
 
         if days_remaining <= 1
