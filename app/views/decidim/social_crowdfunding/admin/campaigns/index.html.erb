@@ -13,10 +13,14 @@
           <%= icon "settings-4-line" %>
           <%= t(".manage") %>
         <% end %>
+        <%= link_to goteo_configurations_path, class: "button button__sm button__secondary" do %>
+          <%= icon "account-circle-line" %>
+          <%= t(".manage_configurations") %>
+        <% end %>
       </div>
     </h2>
   </div>
-  <% if current_campaign %>
+  <% if current_goteo_config_valid? && current_campaign  %>
     <div class="card-section">
       <h3>
         <b><%= t(".selected") %></b>
@@ -78,7 +82,7 @@
                 <%= icon_link_to "refresh-line", campaign_path(campaign), t("actions.update", scope: "decidim.social_crowdfunding"), method: :put, class: "action-icon--reload" %>
               <% end %>
               <% if allowed_to? :destroy, :campaign, campaign: campaign %>
-                <%= icon_link_to "close-circle-line", campaign_path(campaign), t("actions.destroy", scope: "decidim.social_crowdfunding"), method: :delete, class: "action-icon--remove", data: { confirm: t("actions.confirm_destroy", scope: "decidim.social_crowdfunding") } %>
+                <%= icon_link_to "close-circle-line", campaign_path(campaign), t("actions.destroy", scope: "decidim.social_crowdfunding"), method: :delete, class: "action-icon--remove", data: { confirm: t("actions.confirm_campaign_destroy", scope: "decidim.social_crowdfunding") } %>
               <% end %>
             </td>
           </tr>

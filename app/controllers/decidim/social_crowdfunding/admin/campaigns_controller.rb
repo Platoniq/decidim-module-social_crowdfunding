@@ -5,16 +5,19 @@ module Decidim
     module Admin
       class CampaignsController < Decidim::Admin::Components::BaseController
         include Decidim::Paginable
-        include Decidim::SocialCrowdfunding::HasCampaign
+        include HasCampaign
+        include HasGoteoConfiguration
 
         helper Decidim::SocialCrowdfunding::Admin::ApplicationHelper
 
         helper_method :campaigns
 
+        before_action :check_goteo_config
+
         def index
           enforce_permission_to :index, :campaigns
 
-          @form = SelectCampaignForm.new(slug: current_campaign&.slug)
+          @form = current_goteo_config ? SelectCampaignForm.new(slug: current_campaign&.slug) : SelectCampaignForm.new(slug: "")
         end
 
         def select

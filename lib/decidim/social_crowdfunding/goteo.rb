@@ -17,7 +17,7 @@ module Decidim
 
       # setup API base url
       config_accessor :api_url do
-        ENV.fetch("GOTEO_API_URL", "https://api.goteo.org/v1")
+        ENV.fetch("GOTEO_API_URL", "https://v4.goteo.org/v4")
       end
 
       # setup base url

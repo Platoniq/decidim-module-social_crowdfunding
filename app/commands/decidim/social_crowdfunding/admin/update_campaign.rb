@@ -37,7 +37,7 @@ module Decidim
             @campaign,
             @user
           ) do
-            Campaign.fetch(@campaign.slug, @component, sync: true)
+            Campaign.fetch(@campaign.id, @component, sync: true)
           end
         end
       end

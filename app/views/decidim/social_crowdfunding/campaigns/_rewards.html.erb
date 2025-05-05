@@ -5,7 +5,7 @@
 <div class="card__list-list aside__list">
   <% rewards = current_campaign.rewards %>
 
-  <% rewards.slice!(0, 3).each do |reward| %>
+  <% (rewards[I18n.locale.to_s] || rewards.values.first).slice!(0, 3).each do |reward| %>
     <%= render partial: "decidim/social_crowdfunding/campaigns/reward", locals: { reward: reward } %>
   <% end %>
 </div>
@@ -17,7 +17,7 @@
 </div>
 
 <div data-toggler=".hide" id="more-rewards" class="hide collapsible-list row small-up-1 card-grid" hidden>
-  <% rewards.each do |reward| %>
+  <% (rewards[I18n.locale.to_s] || rewards.values.first).each do |reward| %>
     <%= render partial: "decidim/social_crowdfunding/campaigns/reward", locals: { reward: reward } %>
   <% end %>
 </div>

@@ -9,11 +9,8 @@ module Decidim
 
       def campaign_date
         date = case current_campaign.data["status"]
-               when "editing" then current_campaign.data["date-created"]
-               when "reviewing" then current_campaign.data["date-updated"]
                when "in_campaign" then return campaign_days_remaining
-               when "funded", "fulfilled" then current_campaign.data["date-succeeded"]
-               when "unfunded" then current_campaign.data["date-closed"]
+               else return current_campaign.data["calendar"]["optimum"]
                end
 
         I18n.l(Date.parse(date), format: :decidim_short)
@@ -21,39 +18,19 @@ module Decidim
 
       def campaign_date_label
         date_label = case current_campaign.data["status"]
-                     when "editing" then "created"
-                     when "reviewing" then "updated"
+                     when "in_editing" then "created"
+                     when "in_review" then "updated"
                      when "in_campaign" then "remaining"
-                     when "funded", "fulfilled" then "finished"
+                     when "funded" then "finished"
                      when "unfunded" then "closed"
                      end
 
         t(date_label, scope: "decidim.social_crowdfunding.campaigns.date_label")
       end
 
-      def campaign_days_passed
-        (Time.zone.today - Date.parse(current_campaign.data["date-published"])).to_i
-      end
-
-      def campaign_rounds
-        published_at = Date.parse(current_campaign.data["date-published"])
-
-        rounds = current_campaign.data["rounds"]
-
-        r1 = rounds["round1"]
-        r2 = rounds["round2"]
-
-        [
-          { days: r1, ends_at: published_at + r1.days },
-          ({ days: r2, ends_at: published_at + r1 + r2.days } if r2.positive?)
-        ].compact
-      end
-
       def campaign_days_remaining
-        rounds = campaign_rounds
 
-        days_remaining = (rounds.first[:ends_at].to_date - Time.zone.today).to_i
-        days_remaining += rounds.last[:days] if rounds.count > 1
+        days_remaining = (current_campaign.data["calendar"]["optimum"].to_date - Time.zone.today).to_i
 
         if days_remaining <= 1
           hours_remaining = ((Time.zone.tomorrow.to_time - Time.zone.now) / 3600).to_i
@@ -64,22 +41,8 @@ module Decidim
         end
       end
 
-      def campaign_current_round
-        current_round = -1
-
-        campaign_rounds.each_with_index do |r, i|
-          current_round = i + 1 if r[:ends_at].future?
-        end
-
-        current_round
-      end
-
-      def campaign_round_label
-        t(campaign_current_round, scope: "decidim.social_crowdfunding.campaigns.round_label") if campaign_current_round.positive?
-      end
-
       def campaign_grouped_costs
-        current_campaign.data["costs"].group_by { |c| c["type"] }
+        (current_campaign.costs[I18n.locale.to_s] || current_campaign.costs.values.first).group_by { |c| c["type"] }
       end
 
       def campaign_status
@@ -88,7 +51,7 @@ module Decidim
 
       def campaign_status_class
         case current_campaign.data["status"]
-        when "editing", "reviewing" then "warning"
+        when "in_editing", "in_review" then "warning"
         when "in_campaign" then "secondary"
         when "funded", "fulfilled" then "success"
         when "unfunded" then "error"
@@ -97,15 +60,15 @@ module Decidim
       end
 
       def campaign_total_minimum
-        current_campaign.data["costs"].select { |c| c["required"] == "True" }.sum { |c| c["amount"] }
+        (current_campaign.costs[I18n.locale.to_s] || current_campaign.costs.values.first).sum { |c| c["money"]["amount"] }
       end
 
       def campaign_total_optimum
-        campaign_total_minimum + current_campaign.data["costs"].select { |c| c["required"] == "False" }.sum { |c| c["amount"] }
+        campaign_total_minimum + current_campaign.costs.select { |c| c["required"] == "False" }.sum { |c| c["amount"] }
       end
 
       def campaign_money(amount)
-        unit = case current_campaign.data["currency"]
+        unit = case current_campaign.data["balance"]["currency"]
                when "EUR" then "€"
                when "USD" then "$"
                when "GBP" then "£"
@@ -115,7 +78,9 @@ module Decidim
       end
 
       def campaign_media_src
-        parsed_url = parse_video_url(current_campaign.data["video-url"])
+        return if current_campaign.data["video"]["src"].blank?
+
+        parsed_url = parse_video_url(current_campaign.data["video"]["src"])
 
         case parsed_url[:type]
         when :peertube

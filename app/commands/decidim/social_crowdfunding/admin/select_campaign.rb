@@ -32,7 +32,7 @@ module Decidim
 
           current_component.update(settings:)
 
-          Campaign.fetch(@form.slug, current_component, sync: true)
+          Campaign.fetch(@form.id, current_goteo_user, current_component, sync: true)
         end
       end
     end

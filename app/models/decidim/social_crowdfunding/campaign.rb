@@ -15,45 +15,49 @@ module Decidim
 
       belongs_to :organization, foreign_key: :decidim_organization_id, class_name: "Decidim::Organization"
 
-      def self.translate_attribute(json, key)
-        translated = { json["lang"] => json[key] }
-
-        json["translations"].keys.each do |lang|
-          translated[lang] = json["translations"][lang][key]
-        end
-
-        translated
-      end
-
-      def self.params_from_json(json)
+      def self.params_from_json(json, costs, rewards)
         {
-          name: translate_attribute(json, "name"),
-          description: translate_attribute(json, "description"),
-          url: json["project-url"],
-          thumbnail_url: json["image-url"],
+          name: json["title"],
+          description: json["description"],
 
-          amount: json["amount"],
-          minimum: json["minimum"],
-          optimum: json["optimum"],
+          amount: json["balance"]["amount"],
+          minimum: json["budget"]["minimum"]["money"]["amount"],
+          optimum: json["budget"]["optimum"]["money"]["amount"],
 
+          costs:,
+          rewards:,
           data: json
         }
       end
 
-      def self.fetch(slug, component, sync: false)
-        campaign = find_by(slug:, organization: component.organization)
+      def self.fetch(id, goteo_config, component, sync: false)
+        campaign = find_by(id:, organization: component.organization)
 
         fetch_api = campaign.blank? || sync || should_sync?(campaign, component)
 
         if fetch_api
-          json = Goteo::Api.project(slug, component)
+          project = Goteo::Api.get_project(id, goteo_config)
 
-          return nil if json["error"] == 404
+          return nil if project["error"] == 404
+
+          project_info = fetch_project_translations(project, goteo_config)
+
+          accounting_id = extract_id(project_info["accounting"])
+
+          project_balance = Goteo::Api.get_accounting(accounting_id, goteo_config)
+
+          return nil if project_balance["error"] == 404
+
+          project_info["balance"] = project_balance["balance"]
+
+          costs = fetch_costs(project_info["locales"], project_info["budgetItems"], goteo_config)
+
+          rewards = fetch_rewards(project_info["locales"], project_info["rewards"], goteo_config)
 
           if campaign.present?
-            campaign.update!(params_from_json(json))
+            campaign.update!(params_from_json(project_info, costs, rewards))
           else
-            campaign = create!(params_from_json(json).merge(slug:, organization: component.organization))
+            campaign = create!(params_from_json(project_info, costs, rewards).merge(organization: component.organization))
           end
         end
 
@@ -64,70 +68,42 @@ module Decidim
         campaign.updated_at > component.settings.goteo_api_update_hours.hours.ago
       end
 
-      def costs
-        @costs ||= translated_array("costs")
-      end
-
-      def needs
-        @needs ||= translated_array("needs")
-      end
-
-      def rewards
-        @rewards ||= translated_array("rewards").select { |r| r["type"] == "individual" }
-      end
-
-      def social_commitments
-        @social_commitments ||= translated_array("rewards").select { |r| r["type"] == "social" }
-      end
-
-      def base_language
-        @base_language ||= data["lang"]
-      end
-
-      def translations
-        @translations ||= data["translations"]
-      end
-
-      def translated_languages
-        @translated_languages ||= translations.keys
-      end
-
-      def translated_attribute(key)
-        translated_attribute = { base_language => value }
-
-        translated_languages.each do |lang|
-          translated_attribute[lang] = translations[lang][key]
+      def self.fetch_costs(locales, costs_urls, goteo_config)
+        locales.index_with do |locale|
+          costs_urls.map { |url| Goteo::Api.get_cost(extract_id(url), goteo_config, locale) }
         end
       end
 
-      def translated_array(array_name)
-        return if data[array_name].blank?
+      def self.fetch_rewards(locales, rewards_urls, goteo_config)
+        locales.index_with do |locale|
+          rewards_urls.map { |url| Goteo::Api.get_reward(extract_id(url), goteo_config, locale) }
+        end
+      end
 
-        data[array_name].map do |object|
-          id = object["id"]
+      def self.fetch_project_translations(project, goteo_config)
+        fields = %w(title subtitle description)
 
-          translated_object = {}
+        fields.each do |key|
+          project[key] = {}
+        end
 
-          object.each_pair do |key, value|
-            if value.is_a? String
-              translated_object[key] = { base_language => value }
+        project["locales"].each do |locale|
+          translated_info = Goteo::Api.get_project(project["id"], goteo_config, locale)
 
-              translated_languages.each do |lang|
-                value = translations.dig(lang, array_name, id.to_s, key)
-
-                next unless value
-
-                translated_object[key][lang] = value
-              end
-            else
-              translated_object[key] = value
-            end
+          fields.each do |key|
+            project[key][locale] = translated_info[key]
           end
         end
+
+        project
       end
 
       def can_donate?
         data["status"] == "in_campaign"
+      end
+
+      def self.extract_id(url)
+        url.match(%r{/(\d+)$})[1].to_i
       end
     end
   end
