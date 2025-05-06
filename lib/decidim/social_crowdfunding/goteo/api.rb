@@ -11,68 +11,25 @@ module Decidim
               conn.headers["Content-Type"] = "application/json"
             end
 
-            response = connection.post("#{Goteo.api_url}/user_tokens") do |req|
+            connection.post("#{Goteo.api_url}/user_tokens") do |req|
               req.body = credentials(email, password)
             end
-
-            raise Error, response.reason_phrase unless response.success? || response.status == 404
-
-            JSON.parse(response.body).to_h
           end
 
-          def get_project(id, goteo_config, locale = "en")
-            verify_ssl = true
-            connection ||= Faraday.new(ssl: { verify: verify_ssl }) do |conn|
-              conn.headers["Authorization"] = "Bearer #{goteo_config.token}"
-              conn.headers["Accept-Language"] = locale
-            end
-
-            response = connection.get("#{Goteo.api_url}/projects/#{id}")
-
-            raise Error, response.reason_phrase unless response.success? || response.status == 404
-
-            JSON.parse(response.body).to_h
+          def get_project(id, goteo_token, locale = "en")
+            get_request("projects", id, goteo_token, locale)
           end
 
-          def get_accounting(id, goteo_config)
-            verify_ssl = true
-            connection ||= Faraday.new(ssl: { verify: verify_ssl }) do |conn|
-              conn.headers["Authorization"] = "Bearer #{goteo_config.token}"
-            end
-
-            response = connection.get("#{Goteo.api_url}/accountings/#{id}")
-
-            raise Error, response.reason_phrase unless response.success? || response.status == 404
-
-            JSON.parse(response.body).to_h
+          def get_accounting(id, goteo_token)
+            get_request("accountings", id, goteo_token)
           end
 
-          def get_cost(id, goteo_config, locale)
-            verify_ssl = true
-            connection ||= Faraday.new(ssl: { verify: verify_ssl }) do |conn|
-              conn.headers["Authorization"] = "Bearer #{goteo_config.token}"
-              conn.headers["Accept-Language"] = locale
-            end
-
-            response = connection.get("#{Goteo.api_url}/project_budget_items/#{id}")
-
-            raise Error, response.reason_phrase unless response.success? || response.status == 404
-
-            JSON.parse(response.body).to_h
+          def get_cost(id, goteo_token, locale)
+            get_request("project_budget_items", id, goteo_token, locale)
           end
 
-          def get_reward(id, goteo_config, locale)
-            verify_ssl = true
-            connection ||= Faraday.new(ssl: { verify: verify_ssl }) do |conn|
-              conn.headers["Authorization"] = "Bearer #{goteo_config.token}"
-              conn.headers["Accept-Language"] = locale
-            end
-
-            response = connection.get("#{Goteo.api_url}/project_rewards/#{id}")
-
-            raise Error, response.reason_phrase unless response.success? || response.status == 404
-
-            JSON.parse(response.body).to_h
+          def get_reward(id, goteo_token, locale)
+            get_request("project_rewards", id, goteo_token, locale)
           end
 
           def validate_token(id, token)
@@ -85,6 +42,20 @@ module Decidim
           end
 
           private
+
+          def get_request(endpoint, id, goteo_token, locale = nil)
+            verify_ssl = true
+            connection ||= Faraday.new(ssl: { verify: verify_ssl }) do |conn|
+              conn.headers["Authorization"] = "Bearer #{goteo_token}"
+              conn.headers["Accept-Language"] = locale
+            end
+
+            response = connection.get("#{Goteo.api_url}/#{endpoint}/#{id}")
+
+            raise Error, response.reason_phrase unless response.success? || response.status == 404
+
+            JSON.parse(response.body).to_h
+          end
 
           def credentials(email, password)
             {

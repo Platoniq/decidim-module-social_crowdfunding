@@ -24,8 +24,6 @@ module Decidim
           return broadcast(:invalid) if form.invalid?
 
           authenticate!
-
-          broadcast(:ok)
         end
 
         private
@@ -35,14 +33,20 @@ module Decidim
         def authenticate!
           response = Goteo::Api.get_token(form.email, form.password)
 
-          @goteo_config = GoteoConfiguration.find_or_create_by(email: form.email)
+          if response.success?
+            @goteo_config = GoteoConfiguration.find_or_create_by(email: form.email)
 
-          @goteo_config.update!(
-            goteo_uid: response["id"],
-            password: form.password,
-            token: response["token"],
-            organization: current_organization
-          )
+            @goteo_config.update!(
+              goteo_uid: response["id"],
+              password: form.password,
+              token: response["token"],
+              organization: current_organization
+            )
+
+            broadcast(:ok)
+          else
+            broadcast(:invalid)
+          end
         end
       end
     end

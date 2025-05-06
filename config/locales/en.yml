@@ -43,7 +43,7 @@ en:
         goteo_configurations:
           create:
             success: Your Goteo configuration has been created successfully
-            invalid: There was a problem creating your Goteo configuration
+            invalid: There was a problem creating your Goteo configuration. Please check your email and password and try again
           destroy:
             success: Your Goteo configuration has been deleted
           fetch:

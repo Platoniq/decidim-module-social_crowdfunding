@@ -30,29 +30,29 @@ module Decidim
         }
       end
 
-      def self.fetch(id, goteo_config, component, sync: false)
+      def self.fetch(id, goteo_token, component, sync: false)
         campaign = find_by(id:, organization: component.organization)
 
         fetch_api = campaign.blank? || sync || should_sync?(campaign, component)
 
         if fetch_api
-          project = Goteo::Api.get_project(id, goteo_config)
+          project = Goteo::Api.get_project(id, goteo_token)
 
           return nil if project["error"] == 404
 
-          project_info = fetch_project_translations(project, goteo_config)
+          project_info = fetch_project_translations(project, goteo_token)
 
           accounting_id = extract_id(project_info["accounting"])
 
-          project_balance = Goteo::Api.get_accounting(accounting_id, goteo_config)
+          project_balance = Goteo::Api.get_accounting(accounting_id, goteo_token)
 
           return nil if project_balance["error"] == 404
 
           project_info["balance"] = project_balance["balance"]
 
-          costs = fetch_costs(project_info["locales"], project_info["budgetItems"], goteo_config)
+          costs = fetch_costs(project_info["locales"], project_info["budgetItems"], goteo_token)
 
-          rewards = fetch_rewards(project_info["locales"], project_info["rewards"], goteo_config)
+          rewards = fetch_rewards(project_info["locales"], project_info["rewards"], goteo_token)
 
           if campaign.present?
             campaign.update!(params_from_json(project_info, costs, rewards))
@@ -68,19 +68,19 @@ module Decidim
         campaign.updated_at > component.settings.goteo_api_update_hours.hours.ago
       end
 
-      def self.fetch_costs(locales, costs_urls, goteo_config)
+      def self.fetch_costs(locales, costs_urls, goteo_token)
         locales.index_with do |locale|
-          costs_urls.map { |url| Goteo::Api.get_cost(extract_id(url), goteo_config, locale) }
+          costs_urls.map { |url| Goteo::Api.get_cost(extract_id(url), goteo_token, locale) }
         end
       end
 
-      def self.fetch_rewards(locales, rewards_urls, goteo_config)
+      def self.fetch_rewards(locales, rewards_urls, goteo_token)
         locales.index_with do |locale|
-          rewards_urls.map { |url| Goteo::Api.get_reward(extract_id(url), goteo_config, locale) }
+          rewards_urls.map { |url| Goteo::Api.get_reward(extract_id(url), goteo_token, locale) }
         end
       end
 
-      def self.fetch_project_translations(project, goteo_config)
+      def self.fetch_project_translations(project, goteo_token)
         fields = %w(title subtitle description)
 
         fields.each do |key|
@@ -88,7 +88,7 @@ module Decidim
         end
 
         project["locales"].each do |locale|
-          translated_info = Goteo::Api.get_project(project["id"], goteo_config, locale)
+          translated_info = Goteo::Api.get_project(project["id"], goteo_token, locale)
 
           fields.each do |key|
             project[key][locale] = translated_info[key]
