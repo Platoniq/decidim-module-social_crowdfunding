@@ -1,0 +1,26 @@
+{
+   "@context": "/v4/contexts/Error",
+   "@id": "/v4/errors/404",
+   "@type": "Error",
+   "title": "An error occurred",
+   "detail": "The user 'user@example.m' does not exist.",
+   "status": 404,
+   "type": "/errors/404",
+   "trace": [
+       {
+           "file": "/app/vendor/api-platform/state/CallableProcessor.php",
+           "line": 52,
+           "function": "process",
+           "class": "App\\State\\User\\UserTokenLoginProcessor",
+           "type": "->"
+       },
+       {
+           "file": "/app/vendor/api-platform/state/Processor/WriteProcessor.php",
+           "line": 54,
+           "function": "process",
+           "class": "ApiPlatform\\State\\CallableProcessor",
+           "type": "->"
+       }
+   ],
+   "description": "The user 'user@example.m' does not exist."
+}

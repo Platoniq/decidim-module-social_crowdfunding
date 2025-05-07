@@ -12,4 +12,12 @@ FactoryBot.define do
       JSON.parse(File.read("spec/fixtures/files/goteo-project-finished.json"))
     end
   end
+
+  factory :goteo_configuration, class: "Decidim::SocialCrowdfunding::GoteoConfiguration" do
+    organization
+    email { "user@example.org" }
+    password { "123456" }
+    token { "abc123def" }
+    goteo_uid { 1 }
+  end
 end

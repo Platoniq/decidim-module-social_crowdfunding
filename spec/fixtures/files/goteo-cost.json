@@ -1,0 +1,15 @@
+{
+   "id": 1,
+   "project": "/v4/projects/1",
+   "type": "infrastructure",
+   "title": "Cost",
+   "description": "This is a cost",
+   "money": {
+       "amount": 5000,
+       "currency": "EUR"
+   },
+   "deadline": "minimum",
+   "locales": [
+       "en"
+   ]
+}

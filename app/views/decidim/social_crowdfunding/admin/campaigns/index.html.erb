@@ -63,7 +63,7 @@
         <% campaigns.each do |campaign| %>
           <tr data-id="<%= campaign.id %>">
             <td>
-              <%= link_to campaign.slug, campaign.url, target: :blank %>
+              <%= campaign.slug %>
             </td>
             <td>
               <%= translated_attribute(campaign.name) %><br>

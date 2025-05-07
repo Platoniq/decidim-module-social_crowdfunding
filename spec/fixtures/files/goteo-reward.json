@@ -1,0 +1,13 @@
+{
+   "id": 1,
+   "project": "/v4/projects/1",
+   "title": "First reward",
+   "description": "This is a reward",
+   "money": {
+       "amount": 50,
+       "currency": "EUR"
+   },
+   "hasUnits": true,
+   "unitsTotal": 10,
+   "unitsAvailable": 10
+}

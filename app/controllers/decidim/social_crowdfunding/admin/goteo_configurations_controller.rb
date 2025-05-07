@@ -38,7 +38,7 @@ module Decidim
 
           Decidim::SocialCrowdfunding::GoteoConfiguration.find_by(id: params[:id]).destroy!
 
-          flash.now[:notice] = I18n.t("goteo_configurations.destroy.success", scope: "decidim.social_crowdfunding.admin")
+          flash[:notice] = I18n.t("goteo_configurations.destroy.success", scope: "decidim.social_crowdfunding.admin")
 
           redirect_to goteo_configurations_path
         end

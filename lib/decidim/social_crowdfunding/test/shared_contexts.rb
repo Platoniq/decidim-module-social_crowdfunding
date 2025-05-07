@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 shared_context "with stubs example api" do
-  let(:api_url) { "https://api.example.org/" }
+  let(:api_url) { "https://api.example.org" }
   let(:http_method) { :get }
   let(:http_status) { 200 }
   let(:data) { {} }
@@ -9,8 +9,21 @@ shared_context "with stubs example api" do
 
   before do
     allow(Decidim::SocialCrowdfunding::Goteo).to receive(:api_url).and_return(api_url)
-    stub_request(http_method, /api\.example\.org/)
+
+    stub_request(http_method, %r{\A#{api_url}/projects/\d+\z})
       .to_return(status: http_status, body: data.to_json, headers: {})
+
+    stub_request(http_method, %r{\A#{api_url}/accountings/\d+\z})
+      .to_return(status: http_status, body: JSON.parse(file_fixture("goteo-accounting.json").read).to_json, headers: {})
+
+    stub_request(http_method, %r{\A#{api_url}/project_budget_items/\d+\z})
+      .to_return(status: http_status, body: JSON.parse(file_fixture("goteo-cost.json").read).to_json, headers: {})
+
+    stub_request(http_method, %r{\A#{api_url}/project_rewards/\d+\z})
+      .to_return(status: http_status, body: JSON.parse(file_fixture("goteo-reward.json").read).to_json, headers: {})
+
+    stub_request(http_method, %r{\A#{api_url}/user_tokens/\d+\z})
+      .to_return(status: http_status, body: JSON.parse(file_fixture("goteo-valid-token.json").read).to_json, headers: {})
   end
 end
 
