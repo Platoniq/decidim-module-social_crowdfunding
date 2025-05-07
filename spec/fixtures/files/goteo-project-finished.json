@@ -39,15 +39,15 @@
   "budget": {
       "minimum": {
           "money": {
-              "amount": 400000,
+              "amount": 40000,
               "currency": "EUR"
           },
           "task": {
-              "amount": 350000,
+              "amount": 35000,
               "currency": "EUR"
           },
           "material": {
-              "amount": 50000,
+              "amount": 5000,
               "currency": "EUR"
           },
           "infra": {
@@ -57,19 +57,19 @@
       },
       "optimum": {
           "money": {
-              "amount": 500000,
+              "amount": 50000,
               "currency": "EUR"
           },
           "task": {
-              "amount": 400000,
+              "amount": 40000,
               "currency": "EUR"
           },
           "material": {
-              "amount": 80000,
+              "amount": 8000,
               "currency": "EUR"
           },
           "infra": {
-              "amount": 20000,
+              "amount": 2000,
               "currency": "EUR"
           }
       }

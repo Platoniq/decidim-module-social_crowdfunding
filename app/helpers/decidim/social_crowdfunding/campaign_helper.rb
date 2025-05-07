@@ -10,7 +10,7 @@ module Decidim
       def campaign_date
         date = case current_campaign.data["status"]
                when "in_campaign" then return campaign_days_remaining
-               else return current_campaign.data["calendar"]["optimum"]
+               else return current_campaign.data["calendar"]["optimum"].to_date.strftime("%Y-%m-%d")
                end
 
         I18n.l(Date.parse(date), format: :decidim_short)

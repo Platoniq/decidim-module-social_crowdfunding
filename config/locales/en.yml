@@ -54,7 +54,7 @@ en:
             title: Goteo configurations
           new:
             configurations: Back to configurations
-            password: Goteo password
+            goteo_password: Goteo password
             submit: Create configuration
             title: Create Goteo configuration
             email: Goteo email
