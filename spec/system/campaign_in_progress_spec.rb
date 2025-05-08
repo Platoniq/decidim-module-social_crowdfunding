@@ -61,7 +61,7 @@ describe "Show campaign" do
 
     context "when less than 1 day left" do
       before do
-        Timecop.freeze(Time.zone.parse(data["calendar"]["optimum"]) - 12.hours)
+        Timecop.freeze(Time.zone.parse(data["calendar"]["optimum"]).utc - 12.hours)
         visit_component
       end
 
