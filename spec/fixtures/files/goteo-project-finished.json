@@ -2,8 +2,8 @@
   "id": 415,
   "accounting": "/v4/accountings/2954",
   "owner": "/v4/users/1871",
-  "title": "Cap dona LBT sense defensa",
-  "subtitle": "Garantim els drets de les dones lesbianes, bisexuals i trans*",
+  "title": "Goteeo API test project",
+  "subtitle": "This is a project to test the Goteo API",
   "deadline": "optimum",
   "calendar": {
       "release": "2022-03-03T00:00:00+00:00",
@@ -16,7 +16,7 @@
       "subLvl1": "ES-CT",
       "subLvl2": "ES-B"
   },
-  "description": "L’Observatori Contra l’Homofòbia (en endavant, OCH) és una entitat nascuda com a projecte dins el Front d’Alliberament Gai de Catalunya (FAGC) amb seu a Barcelona, que es va constituir com a entitat jurídica l’any 2008 amb l’objectiu de visibilitzar i denunciar la lesbofòbia, l’homofòbia, la transfòbia, la bifòbia i la interfòbia (LGTBIfòbia) a Catalunya. Des de l’aprovació de la Llei 11/2014, per garantir el dret de les persones lesbianes, gais, bisexuals, transgènere i intersexuals, i per eradicar l’homofòbia, la bifòbia i la transfòbia.\r\nL’objectiu principal de la campanya del Goteo de l’OCH de l’any 2022 és garantir els drets de les dones lesbianes, bisexuals i trans (LBT), així com respondre a les seves necessitats i acompanyar-les davant de possibles situacions de discriminació i/o victimització.\r\nL’OCH ha establert les seves bases en la prestació de serveis que implementen part de l’articulat del marc d’acció legal establert des de les següents tasques:\r\nAssessorar legalment i jurídicament.\r\n\r\n* Facilitar l'acusació particular.\r\n\r\n* Acompanyar psicosocialment les persones que han patit discriminació per la seva orientació sexual, identitat i/o expressió de gènere.\r\n\r\n* Informar sobre temàtiques relacionades amb la diversitat afectiva, sexual i de gènere.\r\n\r\n* Realitzar una tasca pedagògica en formacions i recerques.\r\n\r\n* Organitzar esdeveniments per crear xarxa al voltant d’alguna temàtica concreta que interpel·la al teixit associatiu, a les administracions públiques i a la ciutadania en general, tot contribuint a la incidència política.",
+  "description": "The Goteo API has been updated to v4. This project tests the integration of the Social Crowdfunding module with the API.",
   "video": {
       "src": ""
   },
@@ -112,6 +112,6 @@
       "/v4/project_updates/6744"
   ],
   "locales": [
-      "ca"
+      "en", "es"
   ]
 }

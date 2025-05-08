@@ -42,8 +42,8 @@ en:
             success: The campaign has been updated
         goteo_configurations:
           create:
-            success: Your Goteo configuration has been created successfully
             invalid: There was a problem creating your Goteo configuration. Please check your email and password and try again
+            success: Your Goteo configuration has been created successfully
           destroy:
             success: Your Goteo configuration has been deleted
           fetch:
@@ -54,10 +54,10 @@ en:
             title: Goteo configurations
           new:
             configurations: Back to configurations
+            email: Goteo email
             goteo_password: Goteo password
             submit: Create configuration
             title: Create Goteo configuration
-            email: Goteo email
       campaigns:
         costs:
           amount: Amount
@@ -130,7 +130,6 @@ en:
             updated_at: Updated at
         goteo_configuration:
           fields:
-            id: ID
             email: Email
+            id: ID
             updated_at: Updated at
-

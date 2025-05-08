@@ -1,0 +1,117 @@
+{
+   "id": 415,
+   "accounting": "/v4/accountings/2954",
+   "owner": "/v4/users/1871",
+   "title": "Proyecto de prueba API Goteo",
+   "subtitle": "Este es un proyecto para probar la API de Goteo",
+   "deadline": "optimum",
+   "calendar": {
+       "release": "2022-03-03T00:00:00+00:00",
+       "minimum": "2022-04-12T00:00:00+00:00",
+       "optimum": "2022-04-20T00:00:00+00:00"
+   },
+   "category": "solidary",
+   "territory": {
+       "country": "ES",
+       "subLvl1": "ES-CT",
+       "subLvl2": "ES-B"
+   },
+   "description": "La API de Goteo ha sido actualizada a la versión v4. Mediante este proyecto probamos la integración del módulo de Social Crowdfunding con dicha API",
+   "video": {
+       "src": ""
+   },
+   "status": "funded",
+   "rewards": [
+       "/v4/project_rewards/2580",
+       "/v4/project_rewards/2581",
+       "/v4/project_rewards/2582",
+       "/v4/project_rewards/2583",
+       "/v4/project_rewards/2584",
+       "/v4/project_rewards/2585",
+       "/v4/project_rewards/2586",
+       "/v4/project_rewards/2587",
+       "/v4/project_rewards/2588",
+       "/v4/project_rewards/2589",
+       "/v4/project_rewards/2590",
+       "/v4/project_rewards/2591",
+       "/v4/project_rewards/2592"
+   ],
+   "budget": {
+       "minimum": {
+           "money": {
+               "amount": 40000,
+               "currency": "EUR"
+           },
+           "task": {
+               "amount": 35000,
+               "currency": "EUR"
+           },
+           "material": {
+               "amount": 5000,
+               "currency": "EUR"
+           },
+           "infra": {
+               "amount": 0,
+               "currency": "EUR"
+           }
+       },
+       "optimum": {
+           "money": {
+               "amount": 50000,
+               "currency": "EUR"
+           },
+           "task": {
+               "amount": 40000,
+               "currency": "EUR"
+           },
+           "material": {
+               "amount": 8000,
+               "currency": "EUR"
+           },
+           "infra": {
+               "amount": 2000,
+               "currency": "EUR"
+           }
+       }
+   },
+   "budgetItems": [
+       "/v4/project_budget_items/2187",
+       "/v4/project_budget_items/2188",
+       "/v4/project_budget_items/2189",
+       "/v4/project_budget_items/2190",
+       "/v4/project_budget_items/2191",
+       "/v4/project_budget_items/2192",
+       "/v4/project_budget_items/2193",
+       "/v4/project_budget_items/2194",
+       "/v4/project_budget_items/2195"
+   ],
+   "updates": [
+       "/v4/project_updates/6721",
+       "/v4/project_updates/6722",
+       "/v4/project_updates/6723",
+       "/v4/project_updates/6724",
+       "/v4/project_updates/6725",
+       "/v4/project_updates/6726",
+       "/v4/project_updates/6727",
+       "/v4/project_updates/6728",
+       "/v4/project_updates/6729",
+       "/v4/project_updates/6730",
+       "/v4/project_updates/6731",
+       "/v4/project_updates/6732",
+       "/v4/project_updates/6733",
+       "/v4/project_updates/6734",
+       "/v4/project_updates/6735",
+       "/v4/project_updates/6736",
+       "/v4/project_updates/6737",
+       "/v4/project_updates/6738",
+       "/v4/project_updates/6739",
+       "/v4/project_updates/6740",
+       "/v4/project_updates/6741",
+       "/v4/project_updates/6742",
+       "/v4/project_updates/6743",
+       "/v4/project_updates/6744"
+   ],
+   "locales": [
+       "en", "es"
+   ]
+ }
