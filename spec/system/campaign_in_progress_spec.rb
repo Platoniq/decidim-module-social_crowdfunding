@@ -61,13 +61,13 @@ describe "Show campaign" do
 
     context "when less than 1 day left" do
       before do
-        Timecop.freeze(Time.zone.parse(data["calendar"]["optimum"]).utc - 12.hours)
+        Timecop.freeze(Time.zone.parse(data["calendar"]["optimum"]) - 14.hours)
         visit_component
       end
 
       it "displays the hours left" do
         within ".thermometer-info .date" do
-          expect(page).to have_content("Only 12 hours!")
+          expect(page).to have_content("Only 14 hours!")
         end
       end
     end
