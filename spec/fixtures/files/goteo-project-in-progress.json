@@ -6,9 +6,9 @@
     "subtitle": "This is a project to test the Goteo API",
     "deadline": "optimum",
     "calendar": {
-        "release": "2022-03-03T00:00:00+00:00",
-        "minimum": "2022-04-12T00:00:00+00:00",
-        "optimum": "2022-04-20T00:00:00+00:00"
+        "release": "2022-03-03T00:00:00+03:00",
+        "minimum": "2022-04-12T00:00:00+03:00",
+        "optimum": "2022-04-20T00:00:00+03:00"
     },
     "category": "solidary",
     "territory": {
