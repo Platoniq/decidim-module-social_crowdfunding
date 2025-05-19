@@ -6,7 +6,7 @@ en:
         name: Social Crowdfunding Campaign
         settings:
           global:
-            campaign_id: Campaign ID
+            campaign_slug: Campaign slug
             goteo_api_update_hours: Time interval (in hours) to update campaigns with Goteo API data
             goteo_configuration_id: Goteo configuration ID
     social_crowdfunding:
@@ -23,6 +23,7 @@ en:
             success: The campaign has been deleted
           fetch:
             not_found: The campaign could not be found
+            not_selected: This component doesn't have a Goteo campaign selected
           index:
             campaigns: Stored campaigns
             create: Create campaign in
@@ -30,8 +31,8 @@ en:
             manage_configurations: Manage Goteo configurations
             select: Select a campaign
             selected: Selected campaign
-            slug: Campaign ID
-            slug_info: You can copy the last part of your campaign's public URL (https://goteo.org/project/<your-campaign-id>)
+            slug: Campaign slug
+            slug_info: You can copy the last part of your campaign's public URL (https://goteo.org/project/<your-campaign-slug>)
             submit: Update campaign
             title: Social Crowdfunding Campaign
           select:
@@ -91,6 +92,8 @@ en:
           '1': First round
           '2': Second round
         show:
+          campaign:
+            not_found: This component doesn't have a Goteo campaign selected
           description:
             about: Description of the project. Main features, strengths and differentials.
             general: General information
@@ -127,6 +130,7 @@ en:
             created_at: Created at
             id: ID
             title: Title
+            slug: Slug
             updated_at: Updated at
         goteo_configuration:
           fields:

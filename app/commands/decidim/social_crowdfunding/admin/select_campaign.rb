@@ -28,11 +28,11 @@ module Decidim
 
         def select_campaign
           settings = current_component.settings
-          settings[:campaign_id] = @form.slug
+          settings[:campaign_slug] = @form.slug
 
           current_component.update(settings:)
 
-          Campaign.fetch(@form.id, current_goteo_user, current_component, sync: true)
+          Campaign.fetch(@form.slug, current_goteo_config.token, current_component, sync: true)
         end
       end
     end

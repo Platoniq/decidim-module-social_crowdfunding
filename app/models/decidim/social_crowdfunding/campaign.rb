@@ -19,6 +19,7 @@ module Decidim
         {
           name: json["title"],
           description: json["description"],
+          slug: json["slug"],
 
           amount: json["balance"]["amount"],
           minimum: json["budget"]["minimum"]["money"]["amount"],
@@ -30,15 +31,15 @@ module Decidim
         }
       end
 
-      def self.fetch(id, goteo_token, component, sync: false)
-        campaign = find_by(id:, organization: component.organization)
+      def self.fetch(slug, goteo_token, component, sync: false)
+        campaign = find_by(slug:, organization: component.organization)
 
         fetch_api = campaign.blank? || sync || should_sync?(campaign, component)
 
         if fetch_api
-          project = Goteo::Api.get_project(id, goteo_token)
+          project = Goteo::Api.get_project(slug, goteo_token)
 
-          return nil if project["error"] == 404
+          return nil if project["status"] == 404
 
           project_info = fetch_project_translations(project, goteo_token)
 
@@ -46,7 +47,7 @@ module Decidim
 
           project_balance = Goteo::Api.get_accounting(accounting_id, goteo_token)
 
-          return nil if project_balance["error"] == 404
+          return nil if project_balance["status"] == 404
 
           project_info["balance"] = project_balance["balance"]
 
@@ -88,7 +89,7 @@ module Decidim
         end
 
         project["locales"].each do |locale|
-          translated_info = Goteo::Api.get_project(project["id"], goteo_token, locale)
+          translated_info = Goteo::Api.get_project(project["slug"], goteo_token, locale)
 
           fields.each do |key|
             project[key][locale] = translated_info[key]

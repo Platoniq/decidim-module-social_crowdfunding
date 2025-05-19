@@ -43,7 +43,7 @@ shared_context "with finished campaign component" do
 
     let(:settings) do
       {
-        campaign_id: campaign_slug
+        campaign_slug: campaign_slug
       }
     end
 
@@ -67,7 +67,7 @@ shared_context "with in progress campaign component" do
 
     let(:settings) do
       {
-        campaign_id: campaign_slug
+        campaign_slug: campaign_slug
       }
     end
 

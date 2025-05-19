@@ -16,8 +16,8 @@ module Decidim
             end
           end
 
-          def get_project(id, goteo_token, locale = "en")
-            get_request("projects", id, goteo_token, locale)
+          def get_project(slug, goteo_token, locale = "en")
+            get_request("projects", slug, goteo_token, locale)
           end
 
           def get_accounting(id, goteo_token)

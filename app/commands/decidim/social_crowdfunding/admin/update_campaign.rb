@@ -37,7 +37,7 @@ module Decidim
             @campaign,
             @user
           ) do
-            Campaign.fetch(@campaign.id, @component, sync: true)
+            Campaign.fetch(@campaign.slug, current_goteo_config.token, @component, sync: true)
           end
         end
       end
