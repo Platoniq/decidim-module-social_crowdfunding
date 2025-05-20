@@ -10,6 +10,10 @@ describe "Show campaign" do
   let!(:user) { create(:user, :confirmed, organization:) }
 
   context "when the component has not a valid Goteo Configuration setted" do
+    before do
+      login_as user, scope: :user
+    end
+
     it "displays an alert" do
       expect(page).to have_content("This component doesn't have a valid Goteo configuration setted, so the campaign information can't be fetched.")
     end
