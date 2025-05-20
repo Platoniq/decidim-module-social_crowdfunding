@@ -7,10 +7,14 @@ describe "Show campaign" do
   include_context "with stubs example api"
   include_context "with in progress campaign component"
 
+  let!(:user) { create(:user, :confirmed, organization:) }
+
   context "when the component has a valid Goteo Configuration setted" do
     let!(:goteo_configuration) { create(:goteo_configuration, organization:) }
 
     before do
+      login_as user, scope: :user
+
       component.settings = { "goteo_configuration_id": goteo_configuration.id, "campaign_slug": campaign_slug }
       component.save!
 
