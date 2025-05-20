@@ -12,7 +12,14 @@ module Decidim
 
       def show
         if current_goteo_config.blank? || current_campaign.nil?
-          flash[:alert] = current_goteo_config.blank? ? I18n.t("goteo_configuration.not_found", scope: "decidim.social_crowdfunding.campaigns.show") : I18n.t("campaign.not_found", scope: "decidim.social_crowdfunding.campaigns.show")
+          flash[:alert] =
+            if current_goteo_config.blank?
+              I18n.t("goteo_configuration.not_found",
+                     scope: "decidim.social_crowdfunding.campaigns.show")
+            else
+              I18n.t("campaign.not_found",
+                     scope: "decidim.social_crowdfunding.campaigns.show")
+            end
           redirect_to ResourceLocatorPresenter.new(current_participatory_space).path
         else
           enforce_permission_to :show, :campaign, campaign: current_campaign

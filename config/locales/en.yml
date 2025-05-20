@@ -129,8 +129,8 @@ en:
           fields:
             created_at: Created at
             id: ID
-            title: Title
             slug: Slug
+            title: Title
             updated_at: Updated at
         goteo_configuration:
           fields:

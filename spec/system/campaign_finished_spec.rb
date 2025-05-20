@@ -17,7 +17,7 @@ describe "Show campaign" do
     let!(:goteo_configuration) { create(:goteo_configuration, organization:) }
 
     before do
-      component.settings = { "goteo_configuration_id": goteo_configuration.id }
+      component.settings = { "goteo_configuration_id": goteo_configuration.id, "campaign_slug": campaign_slug }
       component.save!
 
       visit_component

@@ -10,7 +10,7 @@ shared_context "with stubs example api" do
   before do
     allow(Decidim::SocialCrowdfunding::Goteo).to receive(:api_url).and_return(api_url)
 
-    stub_request(http_method, %r{\A#{api_url}/projects/\d+\z})
+    stub_request(http_method, %r{\A#{api_url}/projects/([\w-]+\z)?})
       .to_return(status: http_status, body: data.to_json, headers: {})
 
     stub_request(http_method, %r{\A#{api_url}/accountings/\d+\z})
@@ -43,7 +43,7 @@ shared_context "with finished campaign component" do
 
     let(:settings) do
       {
-        campaign_slug: campaign_slug
+        campaign_slug:
       }
     end
 
@@ -67,7 +67,7 @@ shared_context "with in progress campaign component" do
 
     let(:settings) do
       {
-        campaign_slug: campaign_slug
+        campaign_slug:
       }
     end
 

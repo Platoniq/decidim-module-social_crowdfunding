@@ -11,7 +11,7 @@ describe "Show campaign" do
     let!(:goteo_configuration) { create(:goteo_configuration, organization:) }
 
     before do
-      component.settings = { "goteo_configuration_id": goteo_configuration.id }
+      component.settings = { "goteo_configuration_id": goteo_configuration.id, "campaign_slug": campaign_slug }
       component.save!
 
       visit_component
@@ -121,7 +121,7 @@ describe "Show campaign" do
 
     context "when project has different locales" do
       before do
-        stub_request(http_method, %r{\A#{api_url}/projects/\d+\z})
+        stub_request(http_method, %r{\A#{api_url}/projects/([\w-]+\z)?})
           .with(headers: { "Accept-Language" => "es" })
           .to_return(status: http_status, body: JSON.parse(file_fixture("goteo-project-finished-translated.json").read).to_json, headers: {})
       end

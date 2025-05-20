@@ -7,14 +7,14 @@ describe "Visit the admin page" do
   include_context "with stubs example api"
   include_context "with finished campaign component"
 
-  let(:campaign) { create(:campaign) }
-  let(:campaign_name) { "Nodo Móvil" }
-  let(:campaign_slug) { "nodo-movil" }
+  let!(:campaign) { create(:campaign) }
+  let!(:campaign_name) { "Nodo Móvil" }
+  let!(:campaign_slug) { "nodo-movil" }
 
-  let(:organization) { create(:organization) }
+  let!(:organization) { create(:organization) }
   let!(:admin) { create(:user, :admin, :confirmed, organization:) }
 
-  let(:edit_component_path) { Decidim::EngineRouter.admin_proxy(component.participatory_space).edit_component_path(component.id) }
+  let!(:edit_component_path) { Decidim::EngineRouter.admin_proxy(component.participatory_space).edit_component_path(component.id) }
 
   before do
     switch_to_host(organization.host)
@@ -101,7 +101,7 @@ describe "Visit the admin page" do
     let!(:goteo_configuration) { create(:goteo_configuration, organization:) }
 
     before do
-      component.settings = { "goteo_configuration_id": goteo_configuration.id }
+      component.settings = { "goteo_configuration_id": goteo_configuration.id, "campaign_slug": campaign_slug }
       component.save!
       visit manage_component_path(component)
     end
