@@ -51,7 +51,7 @@ describe "Show campaign" do
 
   context "when less than 1 day left" do
     before do
-      Timecop.freeze(Date.parse(data["date-published"]) + 64.days + 6.hours)
+      Timecop.freeze(Date.parse(data["date-published"]) + 64.days + 5.hours)
       visit_component
     end
 

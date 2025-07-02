@@ -18,6 +18,7 @@ module Decidim
 
             connection ||= Faraday.new(ssl: { verify: verify_ssl }) do |conn|
               conn.request :authorization, :basic, api_username(component), api_key(component)
+              conn.headers['User-Agent'] = 'gir.cat'
             end
 
             response = connection.get(uri)

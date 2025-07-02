@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.email = ["ivan@platoniq.net", "vera@platoniq.net"]
   s.license = "AGPL-3.0"
   s.homepage = "https://github.com/Platoniq/decidim-module-social_crowdfunding"
-  s.required_ruby_version = ">= 3.1"
+  s.required_ruby_version = ">= 3.3.4"
 
   s.name = "decidim-social_crowdfunding"
   s.summary = "..."
