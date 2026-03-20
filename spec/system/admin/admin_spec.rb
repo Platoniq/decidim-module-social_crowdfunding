@@ -39,45 +39,33 @@ describe "Visit the admin page" do
     end
 
     context "when creating a new Goteo configuration" do
-      let!(:email) { "user@example.org" }
-      let!(:password) { "123456" }
-      let!(:valid_token_data) { JSON.parse(file_fixture("goteo-valid-token.json").read) }
-      let!(:invalid_token_data) { JSON.parse(file_fixture("goteo-invalid-token.json").read) }
+      let!(:client_id) { "test_client_id" }
+      let!(:client_secret) { "test_client_secret" }
 
       before do
         click_on "Manage Goteo configurations"
       end
 
-      it "allows to create a new configuration if the email and password introduced are correct" do
-        stub_request(:post, "#{api_url}/user_tokens")
-          .to_return(status: 200, body: valid_token_data.to_json, headers: {})
-
+      it "allows to create a new configuration with valid client credentials" do
         click_on "Create Goteo configuration"
 
-        fill_in "Goteo email", with: email
-        fill_in "Goteo password", with: password
+        fill_in "Client ID", with: client_id
+        fill_in "Client secret", with: client_secret
 
         click_on "Create configuration"
 
         expect(page).to have_content("Your Goteo configuration has been created successfully")
         within ".table-list" do
-          expect(page).to have_content(email)
+          expect(page).to have_content(client_id)
         end
       end
 
-      it "doesn't create a new configuration and displays an alert if the email or password introduced are incorrect" do
-        stub_request(:post, "#{api_url}/user_tokens")
-          .to_return(status: 404, body: invalid_token_data.to_json, headers: {})
-
+      it "doesn't create a new configuration if fields are blank" do
         click_on "Create Goteo configuration"
-
-        fill_in "Goteo email", with: "user@example.m"
-        fill_in "Goteo password", with: password
 
         click_on "Create configuration"
 
-        expect(page).to have_content("There was a problem creating your Goteo configuration. Please check your email and password and try again")
-        expect(page).to have_content("Create Goteo configuration")
+        expect(page).to have_content("There was a problem creating your Goteo configuration")
       end
     end
 

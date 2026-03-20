@@ -15,9 +15,9 @@ FactoryBot.define do
 
   factory :goteo_configuration, class: "Decidim::SocialCrowdfunding::GoteoConfiguration" do
     organization
-    email { "user@example.org" }
-    password { "123456" }
+    client_id { "test_client_id" }
+    client_secret { "test_client_secret" }
     token { "abc123def" }
-    goteo_uid { 1 }
+    token_expires_at { 1.hour.from_now }
   end
 end

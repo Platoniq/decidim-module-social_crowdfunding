@@ -20,17 +20,29 @@ module Decidim
 
           @form = form(Decidim::SocialCrowdfunding::Admin::GoteoConfigurationForm).from_params(params)
 
-          Decidim::SocialCrowdfunding::Admin::CreateGoteoConfiguration.call(@form, current_user) do
-            on(:ok) do
-              flash[:notice] = I18n.t("goteo_configurations.create.success", scope: "decidim.social_crowdfunding.admin")
-              redirect_to goteo_configurations_path
-            end
-
-            on(:invalid) do
-              flash.now[:alert] = I18n.t("goteo_configurations.create.invalid", scope: "decidim.social_crowdfunding.admin")
-              render action: "new"
-            end
+          if @form.invalid?
+            flash.now[:alert] = I18n.t("goteo_configurations.create.invalid", scope: "decidim.social_crowdfunding.admin")
+            return render action: "new"
           end
+
+          config = Decidim::SocialCrowdfunding::GoteoConfiguration.find_or_initialize_by(organization: current_organization)
+          config.update!(client_id: @form.client_id, client_secret: @form.client_secret)
+
+          flash[:notice] = I18n.t("goteo_configurations.create.success", scope: "decidim.social_crowdfunding.admin")
+          redirect_to goteo_configurations_path
+        end
+
+        def refresh
+          enforce_permission_to :create, :goteo_configuration
+
+          config = Decidim::SocialCrowdfunding::GoteoConfiguration.find(params[:id])
+          config.update_token
+
+          flash[:notice] = I18n.t("goteo_configurations.refresh.success", scope: "decidim.social_crowdfunding.admin")
+          redirect_to goteo_configurations_path
+        rescue Decidim::SocialCrowdfunding::Goteo::Api::Error => e
+          flash[:alert] = I18n.t("goteo_configurations.refresh.invalid", scope: "decidim.social_crowdfunding.admin", error: e.message)
+          redirect_to goteo_configurations_path
         end
 
         def destroy

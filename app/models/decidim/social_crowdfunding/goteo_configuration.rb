@@ -9,19 +9,26 @@ module Decidim
 
       belongs_to :organization, foreign_key: :decidim_organization_id, class_name: "Decidim::Organization"
 
-      encrypt_attribute :password, type: :string
+      encrypt_attribute :client_id, type: :string
+      encrypt_attribute :client_secret, type: :string
       encrypt_attribute :token, type: :string
 
       def token_valid?
-        response = Goteo::Api.validate_token(goteo_uid, token)
-
-        response.success?
+        token.present? && token_expires_at.present? && token_expires_at > Time.current + Goteo::TOKEN_EXPIRY_BUFFER
       end
 
       def update_token
-        response = Goteo::Api.get_token(email, password)
+        response = Goteo::Api.fetch_oauth_token(client_id, client_secret)
 
-        update(goteo_uid: response["id"], token: response["token"])
+        update!(
+          token: response["access_token"],
+          token_expires_at: response["expires_in"].to_i.seconds.from_now
+        )
+      end
+
+      def ensure_valid_token!
+        update_token unless token_valid?
+        token
       end
     end
   end

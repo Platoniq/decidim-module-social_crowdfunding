@@ -4,10 +4,10 @@ module Decidim
   module SocialCrowdfunding
     module Admin
       class GoteoConfigurationForm < Decidim::Form
-        attribute :email, String
-        attribute :password, String
+        attribute :client_id, String
+        attribute :client_secret, String
 
-        validates :email, :password, presence: true
+        validates :client_id, :client_secret, presence: true
       end
     end
   end

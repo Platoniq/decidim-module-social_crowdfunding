@@ -18,6 +18,7 @@ module Decidim
 
         resources :goteo_configurations, only: [:index, :new, :create, :destroy] do
           delete :destroy, on: :collection
+          post :refresh, on: :member
         end
 
         root to: "campaigns#index"

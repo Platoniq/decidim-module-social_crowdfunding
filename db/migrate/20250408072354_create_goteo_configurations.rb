@@ -3,11 +3,10 @@ class CreateGoteoConfigurations < ActiveRecord::Migration[7.0]
     create_table :goteo_configurations do |t|
       t.references :decidim_organization, foreign_key: { to_table: :decidim_organizations }, index: { name: "index_social_crowdfunding_goteo_configurations_on_organization" }
 
-      t.integer :goteo_uid
-
-      t.string :email
-      t.string :password
+      t.string :client_id
+      t.string :client_secret
       t.string :token
+      t.datetime :token_expires_at
 
       t.timestamps
     end

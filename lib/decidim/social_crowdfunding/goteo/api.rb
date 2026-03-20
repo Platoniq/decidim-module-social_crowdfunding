@@ -5,15 +5,21 @@ module Decidim
     module Goteo
       module Api
         class << self
-          def get_token(email, password)
-            verify_ssl = true
-            connection ||= Faraday.new(ssl: { verify: verify_ssl }) do |conn|
-              conn.headers["Content-Type"] = "application/json"
+          def fetch_oauth_token(client_id, client_secret)
+            connection = Faraday.new(ssl: { verify: true })
+
+            response = connection.post("#{Goteo.oauth_url}/oauth/token") do |req|
+              req.headers["Content-Type"] = "application/x-www-form-urlencoded"
+              req.body = URI.encode_www_form(
+                grant_type: "client_credentials",
+                client_id: client_id,
+                client_secret: client_secret
+              )
             end
 
-            connection.post("#{Goteo.api_url}/user_tokens") do |req|
-              req.body = credentials(email, password)
-            end
+            raise Error, response.reason_phrase unless response.success?
+
+            JSON.parse(response.body)
           end
 
           def get_project(slug, goteo_token, locale = "en")
@@ -32,20 +38,10 @@ module Decidim
             get_request("project_rewards", id, goteo_token, locale)
           end
 
-          def validate_token(id, token)
-            verify_ssl = true
-            connection ||= Faraday.new(ssl: { verify: verify_ssl }) do |conn|
-              conn.headers["Authorization"] = "Bearer #{token}"
-            end
-
-            connection.get("#{Goteo.api_url}/user_tokens/#{id}")
-          end
-
           private
 
           def get_request(endpoint, id, goteo_token, locale = nil)
-            verify_ssl = true
-            connection ||= Faraday.new(ssl: { verify: verify_ssl }) do |conn|
+            connection = Faraday.new(ssl: { verify: true }) do |conn|
               conn.headers["Authorization"] = "Bearer #{goteo_token}"
               conn.headers["Accept-Language"] = locale
             end
@@ -57,12 +53,6 @@ module Decidim
             JSON.parse(response.body).to_h
           end
 
-          def credentials(email, password)
-            {
-              identifier: email,
-              password:
-            }.to_json
-          end
         end
 
         class Error < StandardError; end

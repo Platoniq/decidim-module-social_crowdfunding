@@ -28,8 +28,9 @@
       <thead>
         <tr>
           <th><%= t("models.goteo_configuration.fields.id", scope: "decidim.social_crowdfunding") %></th>
-          <th><%= t("models.goteo_configuration.fields.email", scope: "decidim.social_crowdfunding") %></th>
-          <th><%= t("models.goteo_configuration.fields.updated_at", scope: "decidim.social_crowdfunding") %></th>
+          <th><%= t("models.goteo_configuration.fields.client_id", scope: "decidim.social_crowdfunding") %></th>
+          <th><%= t("models.goteo_configuration.fields.token_status", scope: "decidim.social_crowdfunding") %></th>
+          <th><%= t("models.goteo_configuration.fields.token_expires_at", scope: "decidim.social_crowdfunding") %></th>
           <th class="actions"><%= t("actions.title", scope: "decidim.social_crowdfunding") %></th>
         </tr>
       </thead>
@@ -37,15 +38,23 @@
         <% goteo_configurations.each do |goteo_configuration| %>
           <tr data-id="<%= goteo_configuration.id %>">
             <td>
-              <%= goteo_configuration.id %><br>
+              <%= goteo_configuration.id %>
             </td>
             <td>
-              <%= goteo_configuration.email %><br>
+              <%= goteo_configuration.client_id %>
             </td>
             <td>
-              <%= l goteo_configuration.updated_at, format: "%d/%m/%Y - %H:%M" %>
+              <% if goteo_configuration.token_valid? %>
+                <span class="text-success"><%= t("models.goteo_configuration.token_valid", scope: "decidim.social_crowdfunding") %></span>
+              <% else %>
+                <span class="text-alert"><%= t("models.goteo_configuration.token_expired", scope: "decidim.social_crowdfunding") %></span>
+              <% end %>
+            </td>
+            <td>
+              <%= goteo_configuration.token_expires_at.present? ? l(goteo_configuration.token_expires_at.localtime, format: "%d/%m/%Y - %H:%M") : "-" %>
             </td>
             <td class="table-list__actions">
+              <%= link_to t("actions.refresh", scope: "decidim.social_crowdfunding"), refresh_goteo_configuration_path(goteo_configuration), method: :post, class: "action-icon--refresh" %>
               <% if allowed_to? :destroy, :goteo_configuration, goteo_configuration: goteo_configuration %>
                 <%= icon_link_to "close-circle-line", goteo_configuration_path(goteo_configuration), t("actions.destroy", scope: "decidim.social_crowdfunding"), method: :delete, class: "action-icon--remove", data: { confirm: t("actions.confirm_config_destroy", scope: "decidim.social_crowdfunding") } %>
               <% end %>

@@ -7,8 +7,11 @@ shared_context "with stubs example api" do
   let(:data) { {} }
   let(:params) { {} }
 
+  let(:oauth_url) { "https://oauth.example.org" }
+
   before do
     allow(Decidim::SocialCrowdfunding::Goteo).to receive(:api_url).and_return(api_url)
+    allow(Decidim::SocialCrowdfunding::Goteo).to receive(:oauth_url).and_return(oauth_url)
 
     stub_request(http_method, %r{\A#{api_url}/projects/([\w-]+\z)?})
       .to_return(status: http_status, body: data.to_json, headers: {})
@@ -22,8 +25,8 @@ shared_context "with stubs example api" do
     stub_request(http_method, %r{\A#{api_url}/project_rewards/\d+\z})
       .to_return(status: http_status, body: JSON.parse(file_fixture("goteo-reward.json").read).to_json, headers: {})
 
-    stub_request(http_method, %r{\A#{api_url}/user_tokens/\d+\z})
-      .to_return(status: http_status, body: JSON.parse(file_fixture("goteo-valid-token.json").read).to_json, headers: {})
+    stub_request(:post, "#{oauth_url}/oauth/token")
+      .to_return(status: 200, body: JSON.parse(file_fixture("goteo-valid-token.json").read).to_json, headers: {})
   end
 end
 

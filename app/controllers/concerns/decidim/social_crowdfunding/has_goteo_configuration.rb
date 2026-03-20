@@ -17,7 +17,7 @@ module Decidim
         end
 
         def current_goteo_config
-          @current_config ||= GoteoConfiguration.find_by(id: current_component.settings.goteo_configuration_id)
+          @current_config ||= GoteoConfiguration.find_by(organization: current_organization)
 
           flash[:alert] = t("not_found", scope: "decidim.social_crowdfunding.admin.goteo_configurations.fetch") if @current_config.blank?
 
@@ -25,7 +25,7 @@ module Decidim
         end
 
         def check_goteo_config
-          current_goteo_config&.update_token unless current_goteo_config_valid?
+          current_goteo_config&.ensure_valid_token!
         end
       end
     end

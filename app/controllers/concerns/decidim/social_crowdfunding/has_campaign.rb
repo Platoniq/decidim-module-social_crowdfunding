@@ -19,7 +19,7 @@ module Decidim
           if current_component.settings[:campaign_slug].blank?
             flash[:alert] = t("not_selected", scope: "decidim.social_crowdfunding.admin.campaigns.fetch")
           else
-            @current_campaign ||= Campaign.fetch(current_component.settings[:campaign_slug], current_goteo_config.token, current_component)
+            @current_campaign ||= Campaign.fetch(current_component.settings[:campaign_slug], current_goteo_config.ensure_valid_token!, current_component)
 
             flash[:alert] = t("not_found", scope: "decidim.social_crowdfunding.admin.campaigns.fetch") if @current_campaign.blank?
           end
