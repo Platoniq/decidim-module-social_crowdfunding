@@ -23,18 +23,23 @@ en:
           destroy:
             success: The campaign has been deleted
           fetch:
+            error: The campaign could not be fetched
             not_found: The campaign could not be found
             not_selected: This component doesn't have a Goteo campaign selected
+            success: The campaign has been fetched successfully
           index:
+            active: "(Active)"
             campaigns: Stored campaigns
             create: Create campaign in
+            fetch: Fetch a campaign
+            fetch_submit: Fetch campaign
             manage: Manage settings
             manage_configurations: Manage Goteo configurations
+            see_component: See component
             select: Select a campaign
             selected: Selected campaign
             slug: Campaign slug
             slug_info: You can copy the last part of your campaign's public URL (https://goteo.org/project/<your-campaign-slug>)
-            submit: Update campaign
             title: Social Crowdfunding Campaign
           select:
             error: There was an error updating the campaign
@@ -46,9 +51,6 @@ en:
           create:
             invalid: There was a problem creating your Goteo configuration. Please check your client ID and client secret and try again
             success: Your Goteo configuration has been created successfully
-          refresh:
-            invalid: "There was a problem refreshing the token: %{error}"
-            success: The token has been refreshed successfully
           destroy:
             success: Your Goteo configuration has been deleted
           fetch:
@@ -58,11 +60,14 @@ en:
             create_configuration: Create Goteo configuration
             title: Goteo configurations
           new:
-            configurations: Back to configurations
             client_id: Client ID
             client_secret: Client secret
+            configurations: Back to configurations
             submit: Create configuration
             title: Create Goteo configuration
+          refresh:
+            invalid: 'There was a problem refreshing the token: %{error}'
+            success: The token has been refreshed successfully
       campaigns:
         costs:
           amount: Amount
@@ -114,11 +119,11 @@ en:
         social_commitment:
           title: Social commitment
         statuses:
+          campaign:
+            failed: Failed
           editing: Editing
           fulfilled: Accomplished!
           funded: Funded
-          campaign:
-            failed: Failed
           funding:
             paid: Funded
           in_campaign: In campaign

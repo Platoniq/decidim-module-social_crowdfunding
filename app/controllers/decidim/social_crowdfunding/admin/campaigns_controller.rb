@@ -17,7 +17,26 @@ module Decidim
         def index
           enforce_permission_to :index, :campaigns
 
-          @form = current_goteo_config ? SelectCampaignForm.new(slug: current_campaign&.slug) : SelectCampaignForm.new(slug: "")
+          @form = SelectCampaignForm.new
+        end
+
+        def fetch
+          enforce_permission_to :update, :campaign
+
+          @form = form(SelectCampaignForm).from_params(params)
+
+          if @form.invalid?
+            flash[:alert] = I18n.t("campaigns.fetch.error", scope: "decidim.social_crowdfunding.admin")
+            return redirect_to root_url
+          end
+
+          Campaign.fetch(@form.slug, current_goteo_config.ensure_valid_token!, current_component, sync: true)
+
+          flash[:notice] = I18n.t("campaigns.fetch.success", scope: "decidim.social_crowdfunding.admin")
+          redirect_to root_url
+        rescue Goteo::Api::Error => e
+          flash[:alert] = I18n.t("campaigns.fetch.error", scope: "decidim.social_crowdfunding.admin", error: e.message)
+          redirect_to root_url
         end
 
         def select

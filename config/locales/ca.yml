@@ -7,14 +7,19 @@ ca:
         settings:
           global:
             campaign_id: ID de campanya
+            campaign_slug: Slug de la campanya
             goteo_api_key: API Key de Goteo
             goteo_api_update_hours: Interval de temps (en hores) per actualitzar campanyes amb les dades de l'API de Goteo
             goteo_api_url: URL de l'API de Goteo
             goteo_api_username: Nom d'usuària de l'API de Goteo
+            goteo_configuration_id: ID de configuració de Goteo
     social_crowdfunding:
       actions:
+        confirm_campaign_destroy: Confirmes que vols eliminar aquesta campanya? (Només s'eliminarà la còpia que guarda Decidim, no l'original)
+        confirm_config_destroy: Confirmes que vols eliminar aquesta configuració de Goteo? (Només desvincularà el teu compte de Decidim)
         confirm_destroy: Confirmes que vols eliminar aquesta campanya? (Només s'eliminarà la còpia que guarda Decidim, no l'original)
         destroy: Eliminar
+        refresh: Refrescar token
         select: Seleccionar
         title: Accions
         update: Actualitzar
@@ -23,11 +28,19 @@ ca:
           destroy:
             success: La campanya s'ha eliminat
           fetch:
+            error: No s'ha pogut obtenir la campanya
             not_found: No s'ha trobat la campanya
+            not_selected: Aquest component no té cap campanya de Goteo seleccionada
+            success: La campanya s'ha obtingut correctament
           index:
+            active: "(Activa)"
             campaigns: Campanyes emmagatzemades
             create: Crear una campanya a
+            fetch: Obtenir una campanya
+            fetch_submit: Obtenir campanya
             manage: Gestionar configuració
+            manage_configurations: Gestionar configuracions de Goteo
+            see_component: Veure component
             select: Seleccionar campanya
             selected: Campanya seleccionada
             slug: ID de campanya
@@ -40,8 +53,32 @@ ca:
           update:
             error: S'ha produït un error en actualitzar la campanya
             success: S'ha actualitzat la campanya
+        goteo_configurations:
+          create:
+            invalid: Hi ha hagut un problema en crear la teva configuració de Goteo. Si us plau, verifica el teu ID de client i secret de client i torna-ho a intentar
+            success: La teva configuració de Goteo s'ha creat correctament
+          destroy:
+            success: La teva configuració de Goteo ha estat eliminada
+          fetch:
+            not_found: No s'ha trobat la configuració de Goteo seleccionada. Si us plau, crea una configuració de Goteo vàlida i selecciona el seu ID al camp 'ID de configuració de Goteo' de la configuració del component
+          index:
+            campaigns: Tornar a Campanyes
+            create_configuration: Crear configuració de Goteo
+            title: Configuracions de Goteo
+          new:
+            client_id: Client ID
+            client_secret: Client Secret
+            configurations: Tornar a configuracions
+            submit: Crear configuració
+            title: Crear configuració de Goteo
+          refresh:
+            invalid: 'Hi ha hagut un problema en refrescar el token: %{error}'
+            success: El token s'ha refrescat correctament
       campaigns:
         costs:
+          amount: Import
+          category: Categoria pressupostària
+          infrastructure: Infraestructura
           material: Materials
           minimum: Mínim
           optimum: Òptim
@@ -72,12 +109,16 @@ ca:
           '1': Primera ronda
           '2': Segona ronda
         show:
+          campaign:
+            not_found: Aquest component no té cap campanya de Goteo seleccionada
           description:
             about: Descripció del projecte. Característiques, fortaleses i diferencials.
             general: Informació general
             goal: Objectius de la campanya
             motivation: Per què és important
           donate: Fes la teva aportació a
+          goteo_configuration:
+            not_found: Aquest component no té una configuració de Goteo vàlida configurada, per la qual cosa no es pot obtenir la informació de la campanya.
           money:
             minimum: Mínim
             optimum: Òptim
@@ -86,10 +127,20 @@ ca:
         social_commitment:
           title: Compromís social
         statuses:
+          campaign:
+            failed: Fallida
           editing: En edició
           fulfilled: Aconseguit!
           funded: Finançada
+          funding:
+            paid: Finançada
           in_campaign: En campanya
+          in_draft: Esborrany
+          in_editing: En edició
+          in_funding: En finançament
+          in_pending: Pendent
+          in_review: En revisió
+          rejected: Rebutjada
           reviewing: En revisió
           unfunded: No finançada
         thermometer:
@@ -100,5 +151,14 @@ ca:
           fields:
             created_at: Creada el
             id: ID
+            slug: Slug
             title: Títol
             updated_at: Actualitzada el
+        goteo_configuration:
+          fields:
+            client_id: Client ID
+            id: ID
+            token_expires_at: Token expira el
+            token_status: Estat del token
+          token_expired: Expirat
+          token_valid: Vàlid

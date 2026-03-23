@@ -65,7 +65,7 @@ describe "Visit the admin page" do
 
         click_on "Create configuration"
 
-        expect(page).to have_content("There was a problem creating your Goteo configuration")
+        expect(page).to have_content("There are errors on the form, please correct them.")
       end
     end
 
@@ -101,13 +101,13 @@ describe "Visit the admin page" do
       end
 
       it "allows selecting a different campaign" do
-        expect(page).to have_content("Select a campaign")
+        expect(page).to have_content("Fetch a campaign")
 
         within "form.new_select_campaign" do
           within "label" do
             expect(page).to have_field("select_campaign[slug]")
           end
-          expect(page).to have_button("Update campaign")
+          expect(page).to have_button("Fetch campaign")
         end
       end
 

@@ -14,6 +14,7 @@ module Decidim
 
         resources :campaigns, only: [:index, :destroy, :update] do
           post :select, on: :collection
+          post :fetch, on: :collection
         end
 
         resources :goteo_configurations, only: [:index, :new, :create, :destroy] do

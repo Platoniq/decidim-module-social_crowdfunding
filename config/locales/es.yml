@@ -7,14 +7,19 @@ es:
         settings:
           global:
             campaign_id: ID de campaña
+            campaign_slug: Slug de la campaña
             goteo_api_key: Clave de la API de Goteo
             goteo_api_update_hours: Intervalo de tiempo (en horas) para actualizar campañas con datos de la API de Goteo
             goteo_api_url: URL de la API de Goteo
             goteo_api_username: Nombre de usuaria de la API de Goteo
+            goteo_configuration_id: ID de configuración de Goteo
     social_crowdfunding:
       actions:
+        confirm_campaign_destroy: "¿Confirmas que deseas eliminar esta campaña? (Solo se eliminará la copia de Decidim de la campaña, no la original)"
+        confirm_config_destroy: "¿Confirmas que deseas eliminar esta configuración de Goteo? (Solo desvinculará tu cuenta de Decidim)"
         confirm_destroy: "¿Confirmas que deseas eliminar esta campaña? (Solo se eliminará la copia de Decidim de la campaña, no la original)"
         destroy: Eliminar
+        refresh: Refrescar token
         select: Seleccionar
         title: Acciones
         update: Actualizar
@@ -23,11 +28,19 @@ es:
           destroy:
             success: La campaña ha sido eliminada
           fetch:
+            error: No se ha podido obtener la campaña
             not_found: No se ha encontrado la campaña
+            not_selected: Este componente no tiene ninguna campaña de Goteo seleccionada
+            success: La campaña se ha obtenido correctamente
           index:
+            active: "(Activa)"
             campaigns: Campañas almacenadas
             create: Crear una campaña en
+            fetch: Obtener una campaña
+            fetch_submit: Obtener campaña
             manage: Administrar la configuración
+            manage_configurations: Gestionar configuraciones de Goteo
+            see_component: Ver componente
             select: Seleccionar campaña
             selected: Campaña seleccionada
             slug: ID de campaña
@@ -40,8 +53,32 @@ es:
           update:
             error: Se produjo un error al actualizar la campaña
             success: La campaña ha sido actualizada
+        goteo_configurations:
+          create:
+            invalid: Hubo un problema al crear tu configuración de Goteo. Por favor, verifica tu ID de cliente y secret de cliente e inténtalo de nuevo
+            success: Tu configuración de Goteo ha sido creada correctamente
+          destroy:
+            success: Tu configuración de Goteo ha sido eliminada
+          fetch:
+            not_found: No se ha encontrado la configuración de Goteo seleccionada. Por favor, crea una configuración de Goteo válida y selecciona su ID en el campo 'ID de configuración de Goteo' de la configuración del componente
+          index:
+            campaigns: Volver a Campañas
+            create_configuration: Crear configuración de Goteo
+            title: Configuraciones de Goteo
+          new:
+            client_id: Client ID
+            client_secret: Client Secret
+            configurations: Volver a configuraciones
+            submit: Crear configuración
+            title: Crear configuración de Goteo
+          refresh:
+            invalid: 'Hubo un problema al refrescar el token: %{error}'
+            success: El token ha sido refrescado correctamente
       campaigns:
         costs:
+          amount: Importe
+          category: Categoría presupuestaria
+          infrastructure: Infraestructura
           material: Materiales
           minimum: Mínimo
           optimum: Óptimo
@@ -72,12 +109,16 @@ es:
           '1': Primera ronda
           '2': Segunda ronda
         show:
+          campaign:
+            not_found: Este componente no tiene ninguna campaña de Goteo seleccionada
           description:
             about: Descripción del proyecto. Características, fortalezas y diferenciales.
             general: Información general
             goal: Objetivos de la campaña de crowdfunding
             motivation: "¿Por qué es importante?"
           donate: Haz tu aportación en
+          goteo_configuration:
+            not_found: Este componente no tiene una configuración de Goteo válida configurada, por lo que no se puede obtener la información de la campaña.
           money:
             minimum: Mínimo
             optimum: Óptimo
@@ -86,10 +127,20 @@ es:
         social_commitment:
           title: Compromiso social
         statuses:
+          campaign:
+            failed: Fallida
           editing: En edición
           fulfilled: "¡Conseguido!"
           funded: Financiada
+          funding:
+            paid: Financiada
           in_campaign: En campaña
+          in_draft: Borrador
+          in_editing: En edición
+          in_funding: En financiación
+          in_pending: Pendiente
+          in_review: En revisión
+          rejected: Rechazada
           reviewing: En revisión
           unfunded: No financiada
         thermometer:
@@ -100,5 +151,14 @@ es:
           fields:
             created_at: Creada el
             id: ID
+            slug: Slug
             title: Título
             updated_at: Actualizada el
+        goteo_configuration:
+          fields:
+            client_id: Client ID
+            id: ID
+            token_expires_at: Token expira el
+            token_status: Estado del token
+          token_expired: Expirado
+          token_valid: Válido

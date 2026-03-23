@@ -8,12 +8,12 @@ module Decidim
           def fetch_oauth_token(client_id, client_secret)
             connection = Faraday.new(ssl: { verify: true })
 
-            response = connection.post("#{Goteo.oauth_url}/oauth/token") do |req|
+            response = connection.post("#{Goteo.api_url}/oauth/token") do |req|
               req.headers["Content-Type"] = "application/x-www-form-urlencoded"
               req.body = URI.encode_www_form(
                 grant_type: "client_credentials",
-                client_id: client_id,
-                client_secret: client_secret
+                client_id:,
+                client_secret:
               )
             end
 
@@ -46,13 +46,12 @@ module Decidim
               conn.headers["Accept-Language"] = locale
             end
 
-            response = connection.get("#{Goteo.api_url}/#{endpoint}/#{id}")
+            response = connection.get("#{Goteo.api_url}/v4/#{endpoint}/#{id}")
 
             raise Error, response.reason_phrase unless response.success? || response.status == 404
 
             JSON.parse(response.body).to_h
           end
-
         end
 
         class Error < StandardError; end

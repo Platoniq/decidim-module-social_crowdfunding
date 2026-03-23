@@ -125,7 +125,7 @@ describe "Show campaign" do
 
     context "when project has different locales" do
       before do
-        stub_request(http_method, %r{\A#{api_url}/projects/([\w-]+\z)?})
+        stub_request(http_method, %r{\A#{api_url}/v4/projects/([\w-]+\z)?})
           .with(headers: { "Accept-Language" => "es" })
           .to_return(status: http_status, body: JSON.parse(file_fixture("goteo-project-finished-translated.json").read).to_json, headers: {})
       end

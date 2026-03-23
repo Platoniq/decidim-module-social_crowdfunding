@@ -9,17 +9,10 @@ module Decidim
 
       TOKEN_EXPIRY_BUFFER = 5.minutes
 
-      # setup API base url
       config_accessor :api_url do
-        ENV.fetch("GOTEO_API_URL", "https://v4.goteo.org/v4")
+        ENV.fetch("GOTEO_API_URL", "https://v4.goteo.org")
       end
 
-      # setup OAuth base url (no /v4 prefix)
-      config_accessor :oauth_url do
-        ENV.fetch("GOTEO_OAUTH_URL", "https://v4.goteo.org")
-      end
-
-      # setup base url
       config_accessor :base_url do
         ENV.fetch("GOTEO_BASE_URL", "https://goteo.org/")
       end

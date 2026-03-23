@@ -11,12 +11,13 @@
 </div>
 
 <div class="more__rewards">
-  <a id="more-rewards-button" href="#more-rewards" class="button button__sm md:button__lg" data-toggle="more-rewards more-rewards-button" data-toggler=".hide">
+  <a id="more-rewards-button" href="#" class="button button__sm md:button__lg toggle-arrow" data-target="more-rewards">
     <%= t(".see_all") %>
+    <%= icon "arrow-right-s-line", class: "toggle-arrow__icon" %>
   </a>
 </div>
 
-<div data-toggler=".hide" id="more-rewards" class="hide collapsible-list row small-up-1 card-grid" hidden>
+<div id="more-rewards" class="collapsible-list row small-up-1 card-grid toggle-hidden">
   <% (rewards[I18n.locale.to_s] || rewards.values.first).each do |reward| %>
     <%= render partial: "decidim/social_crowdfunding/campaigns/reward", locals: { reward: reward } %>
   <% end %>

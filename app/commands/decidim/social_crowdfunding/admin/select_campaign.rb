@@ -27,10 +27,9 @@ module Decidim
         private
 
         def select_campaign
-          settings = current_component.settings
-          settings[:campaign_slug] = @form.slug
+          settings = current_component.settings.to_h.merge("campaign_slug" => @form.slug)
 
-          current_component.update(settings:)
+          current_component.update!(settings:)
 
           Campaign.fetch(@form.slug, current_goteo_config.ensure_valid_token!, current_component, sync: true)
         end
