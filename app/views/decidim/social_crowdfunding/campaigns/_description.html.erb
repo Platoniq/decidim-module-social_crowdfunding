@@ -1,12 +1,12 @@
 <% options ||= {} %>
 
 <div class="section row data">
-  <h3 class="h3 decorator flex items-center cursor-pointer" data-toggle="<%= id %>">
+  <h3 class="h3 decorator flex items-center cursor-pointer toggle-arrow" data-target="<%= id %>">
     <%= title %>
-    <%= icon "arrow-right-s-line", class: "icon--small", role: "img", "aria-hidden": true %>&nbsp;
+    <%= icon "arrow-right-s-line", class: "icon--small toggle-arrow__icon #{"toggle-arrow__icon--open" if options[:expanded]}", role: "img", "aria-hidden": true %>&nbsp;
   </h3>
 
-  <div id="<%= id %>" class="data-text" <%= "hidden" unless options[:expanded] %>>
+  <div id="<%= id %>" class="data-text<%= " toggle-hidden" unless options[:expanded] %>">
     <%= content %>
   </div>
 </div>

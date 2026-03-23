@@ -52,8 +52,8 @@ module Decidim
         case current_campaign.data["status"]
         when "in_editing", "in_review" then "warning"
         when "in_campaign" then "secondary"
-        when "funded", "fulfilled" then "success"
-        when "unfunded" then "error"
+        when "funded", "fulfilled", "funding.paid" then "success"
+        when "unfunded", "campaign.failed" then "alert"
         else "primary"
         end
       end

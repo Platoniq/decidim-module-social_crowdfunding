@@ -117,6 +117,10 @@ en:
           editing: Editing
           fulfilled: Accomplished!
           funded: Funded
+          campaign:
+            failed: Failed
+          funding:
+            paid: Funded
           in_campaign: In campaign
           in_draft: Draft
           in_editing: Editing

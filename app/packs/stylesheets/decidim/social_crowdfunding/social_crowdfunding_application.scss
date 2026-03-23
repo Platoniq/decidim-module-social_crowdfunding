@@ -36,6 +36,18 @@
   padding-top: .5%;
 }
 
+.toggle-hidden {
+  display: none;
+}
+
+.toggle-arrow__icon {
+  transition: transform 0.2s ease;
+}
+
+.toggle-arrow__icon--open {
+  transform: rotate(90deg);
+}
+
 .data,
 .data-text {
   padding-top: 5%;

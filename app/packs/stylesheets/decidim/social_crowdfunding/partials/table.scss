@@ -1,20 +1,35 @@
-.table__costs,
-th,
-td,
-tr:nth-child(even) {
-  border: 1px solid #f2f2f2;
-  padding: 2%;
+.table__costs {
+  width: 100%;
+  border-collapse: collapse;
+
+  thead td {
+    background-color: #e8e8e8;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85em;
+    letter-spacing: 0.03em;
+  }
+
+  tbody tr:nth-child(odd) {
+    background-color: #fff;
+  }
+
+  tbody tr:nth-child(even) {
+    background-color: #fafafa;
+  }
+
+  tfoot td {
+    background-color: #e8e8e8;
+    font-weight: 600;
+  }
+
+  td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #e0e0e0;
+    vertical-align: top;
+  }
 }
 
 .table-scroll {
   padding-top: 2%;
-}
-
-thead td,
-tfoot td {
-  background-color: #fafafa;
-}
-
-tr:nth-child(odd) {
-  background-color: #ffff;
 }
