@@ -1,5 +1,6 @@
 <%= append_stylesheet_pack_tag "decidim_social_crowdfunding" %>
-<div class="card admin social-crowdfunding-campaign">
+<%= append_javascript_pack_tag "decidim_social_crowdfunding" %>
+<div class="card admin social-crowdfunding-campaign goteo-configurations">
   <div class="item_show__header">
     <h2 class="item_show__header-title">
       <%= t(".title") %>
@@ -22,7 +23,6 @@
   <h2 class="card-title">
     <%= t(".title") %>
   </h2>
-  </div>
   <div class="table-scroll">
     <table class="table-list">
       <thead>
@@ -54,10 +54,16 @@
               <%= goteo_configuration.token_expires_at.present? ? l(goteo_configuration.token_expires_at.localtime, format: "%d/%m/%Y - %H:%M") : "-" %>
             </td>
             <td class="table-list__actions">
-              <%= link_to t("actions.refresh", scope: "decidim.social_crowdfunding"), refresh_goteo_configuration_path(goteo_configuration), method: :post, class: "action-icon--refresh" %>
-              <% if allowed_to? :destroy, :goteo_configuration, goteo_configuration: goteo_configuration %>
-                <%= icon_link_to "close-circle-line", goteo_configuration_path(goteo_configuration), t("actions.destroy", scope: "decidim.social_crowdfunding"), method: :delete, class: "action-icon--remove", data: { confirm: t("actions.confirm_config_destroy", scope: "decidim.social_crowdfunding") } %>
-              <% end %>
+              <div class="actions-wrapper">
+                <%= button_to refresh_goteo_configuration_path(goteo_configuration), method: :post, class: "action-icon action-icon--reload", title: t("actions.refresh", scope: "decidim.social_crowdfunding") do %>
+                  <%= icon "refresh-line" %>
+                <% end %>
+                <% if allowed_to? :destroy, :goteo_configuration, goteo_configuration: goteo_configuration %>
+                  <%= button_to goteo_configuration_path(goteo_configuration), method: :delete, class: "action-icon action-icon--remove", title: t("actions.destroy", scope: "decidim.social_crowdfunding"), onclick: "return confirm('#{j t("actions.confirm_config_destroy", scope: "decidim.social_crowdfunding")}');" do %>
+                    <%= icon "close-circle-line" %>
+                  <% end %>
+                <% end %>
+              </div>
             </td>
           </tr>
         <% end %>

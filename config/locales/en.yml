@@ -54,7 +54,7 @@ en:
           destroy:
             success: Your Goteo configuration has been deleted
           fetch:
-            not_found: The selected Goteo configuration could not be found. Please create a valid Goteo configuration and then select its ID on the field 'Goteo configuration ID' of the component settings
+            not_found: The selected Goteo configuration could not be found.
           index:
             campaigns: Back to Campaigns
             create_configuration: Create Goteo configuration
