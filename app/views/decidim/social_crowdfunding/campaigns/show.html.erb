@@ -1,4 +1,5 @@
 <%= append_stylesheet_pack_tag "decidim_social_crowdfunding" %>
+<%= append_javascript_pack_tag "decidim_social_crowdfunding" %>
 
 <div class="participatory-space__container">
   <section class="content-block participatory-space__content-block">
@@ -19,7 +20,7 @@
         <%= render partial: "decidim/social_crowdfunding/campaigns/description", locals: {
           id: "description-general",
           title: t(".description.general"),
-          content: render_markdown(translated_attribute(current_campaign.description)),
+          content: render_markdown(translated_attribute(current_campaign.data["description"])),
           options: { expanded: true },
         } %>
         <%= render partial: "decidim/social_crowdfunding/campaigns/description", locals: {
@@ -37,11 +38,6 @@
           title: t(".description.goal"),
           content: render_markdown(current_campaign.data["goal"])
         } if current_campaign.data["goal"] %>
-        <%= render partial: "decidim/social_crowdfunding/campaigns/description", locals: {
-          id: "social-commitment",
-          title: t("social_commitment.title", scope: "decidim.social_crowdfunding.campaigns"),
-          content: render("social_commitment")
-        } if current_campaign.social_commitments.any? %>
       </div>
     </div>
     <div class="aside__section">
@@ -55,7 +51,7 @@
           <div class="thermometer-wrapper">
             <%= render "thermometer" %>
             <div class="thermometer-info">
-              <div class="round thermometer-data"><%= campaign_round_label %></div>
+
               <div class="date-label"><%= campaign_date_label %></div>
               <div class="date thermometer-data"><%= campaign_date %></div>
               <div class="reached-label"><%= t(".money.received") %></div>
@@ -80,11 +76,6 @@
           <div id="rewards" class="data">
             <%= render "rewards" %>
           </div>
-          <% if current_campaign.needs %>
-            <div id="crowdsourcing" class="data">
-              <%= render "crowdsourcing" %>
-            </div>
-          <% end %>
     </div>
   </section>
 </div>

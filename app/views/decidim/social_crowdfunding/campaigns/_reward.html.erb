@@ -1,15 +1,15 @@
 <div class="card__container">
   <div class="card__content">
     <h3 class="h4 text-secondary">
-      <%= t(".contributing", amount: campaign_money(reward["amount"])) %>
+      <%= t(".contributing", amount: campaign_money(reward["money"]["amount"])) %>
     </h3>
     <br>
     <span class="h6 text-small">
-      <%= translated_attribute reward["name"] %>
+      <%= reward["title"] %>
     </span>
     <div class="card__text">
       <div class="card__text--paragraph">
-        <%= render_markdown translated_attribute(reward["description"]) %>
+        <%= render_markdown reward["description"] %>
       </div>
     </div>
 
@@ -17,21 +17,21 @@
         <div class="card__icondata">
           <%= icon "information-line" %>
           <strong class="text-left">
-            <%= translated_attribute reward["name"] %>
+            <%= reward["title"] %>
           </strong>
         </div>
         <div class="card__icondata">
           <%= icon "price-tag-3-line" %>
           <strong>
-            <%= t(".contributing", amount: campaign_money(reward["amount"])) %>
+            <%= t(".contributing", amount: campaign_money(reward["money"]["amount"])) %>
           </strong>
         </div>
     </div>
   </div>
     <div class="footer__content">
-      <% if reward["purchased-units"] > 0 %>
+      <% if reward["hasUnits"] %>
         <span class="backers">
-          <strong><%= t(".backers", amount: reward["purchased-units"]) %></strong>
+          <strong><%= t(".backers", amount: reward["unitsTotal"]-reward["unitsAvailable"]) %></strong>
         </span>
       <% end %>
       <% if current_campaign.can_donate? %>

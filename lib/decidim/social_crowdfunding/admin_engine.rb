@@ -12,8 +12,14 @@ module Decidim
       routes do
         # Add admin engine routes here
 
-        resources :campaigns, only: [:destroy, :update] do
+        resources :campaigns, only: [:index, :destroy, :update] do
           post :select, on: :collection
+          post :fetch, on: :collection
+        end
+
+        resources :goteo_configurations, only: [:index, :new, :create, :destroy] do
+          delete :destroy, on: :collection
+          post :refresh, on: :member
         end
 
         root to: "campaigns#index"

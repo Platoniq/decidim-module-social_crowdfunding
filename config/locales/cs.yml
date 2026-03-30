@@ -1,3 +1,4 @@
+---
 cs:
   decidim:
     components:
@@ -6,14 +7,18 @@ cs:
         settings:
           global:
             campaign_id: ID kampaně
+            campaign_slug: Slug kampaně
             goteo_api_key: Goteo API klíč
             goteo_api_update_hours: Časový interval (v hodinách) pro aktualizaci kampaní pomocí Goteo API
             goteo_api_url: Goteo API URL
             goteo_api_username: Goteo API uživatelské jméno
     social_crowdfunding:
       actions:
+        confirm_campaign_destroy: Opravdu chcete odstranit tuto kampaň? (Odstraní pouze kopii této kampaně v Decidim, nikoliv původní kampaň)
+        confirm_config_destroy: Opravdu chcete odstranit tuto konfiguraci Goteo? (Pouze odpojí váš účet od Decidim)
         confirm_destroy: Opravdu chcete odstranit tuto kampaň? (Odstraní pouze kopii této kampaně v Decidim, nikoliv původní kampaň)
         destroy: Smazat
+        refresh: Obnovit token
         select: Vybrat
         title: Akce
         update: Aktualizovat
@@ -22,11 +27,19 @@ cs:
           destroy:
             success: Kampaň byla smazána
           fetch:
+            error: Kampaň se nepodařilo načíst
             not_found: Kampaň nebyla nalezena
+            not_selected: Tato komponenta nemá vybranou žádnou kampaň Goteo
+            success: Kampaň byla úspěšně načtena
           index:
+            active: "(Aktivní)"
             campaigns: Uložené kampaně
             create: Vytvořit kampaň v
+            fetch: Načíst kampaň
+            fetch_submit: Načíst kampaň
             manage: Spravovat nastavení
+            manage_configurations: Spravovat konfigurace Goteo
+            see_component: Zobrazit komponentu
             select: Vybrat kampaň
             selected: Vybraná kampaň
             slug: ID kampaně
@@ -39,8 +52,32 @@ cs:
           update:
             error: Při aktualizaci kampaně se vyskytla chyba
             success: Kampaň byla aktualizována
+        goteo_configurations:
+          create:
+            invalid: Při vytváření konfigurace Goteo došlo k chybě. Zkontrolujte prosím své ID klienta a tajný klíč klienta a zkuste to znovu
+            success: Vaše konfigurace Goteo byla úspěšně vytvořena
+          refresh:
+            invalid: "Při obnovení tokenu došlo k chybě: %{error}"
+            success: Token byl úspěšně obnoven
+          destroy:
+            success: Vaše konfigurace Goteo byla odstraněna
+          fetch:
+            not_found: Vybraná konfigurace Goteo nebyla nalezena. Vytvořte prosím platnou konfiguraci Goteo a poté vyberte její ID v poli 'ID konfigurace Goteo' v nastavení komponenty
+          index:
+            campaigns: Zpět na kampaně
+            create_configuration: Vytvořit konfiguraci Goteo
+            title: Konfigurace Goteo
+          new:
+            configurations: Zpět na konfigurace
+            client_id: ID klienta
+            client_secret: Tajný klíč klienta
+            submit: Vytvořit konfiguraci
+            title: Vytvořit konfiguraci Goteo
       campaigns:
         costs:
+          amount: Částka
+          category: Rozpočtová kategorie
+          infrastructure: Infrastruktura
           material: Materiály
           minimum: Nejméně
           optimum: Optimálně
@@ -71,12 +108,16 @@ cs:
           '1': První kolo
           '2': Druhé kolo
         show:
+          campaign:
+            not_found: Tato komponenta nemá vybranou žádnou kampaň Goteo
           description:
             about: Popis projektu. Hlavní vlastnosti, silné vlastnosti a odlišení.
             general: Obecné informace
             goal: Cíle crowdfundingové kampaně
             motivation: Proč je to důležité
           donate: Přispět
+          goteo_configuration:
+            not_found: Tato komponenta nemá nastavenou platnou konfiguraci Goteo, takže informace o kampani nelze načíst.
           money:
             minimum: Nejméně
             optimum: Optimálně
@@ -85,10 +126,20 @@ cs:
         social_commitment:
           title: Sociální závazek
         statuses:
+          campaign:
+            failed: Neúspěšná
           editing: Úprava
           fulfilled: Dokončeno!
           funded: Financováno
+          funding:
+            paid: Financováno
           in_campaign: V kampani
+          in_draft: Návrh
+          in_editing: V úpravách
+          in_funding: Ve financování
+          in_pending: Čekající
+          in_review: V přezkumu
+          rejected: Zamítnuto
           reviewing: Přezkoumání
           unfunded: Nefinancováno
         thermometer:
@@ -99,5 +150,14 @@ cs:
           fields:
             created_at: Vytvořeno v
             id: ID
+            slug: Slug
             title: Název
             updated_at: Aktualizováno
+        goteo_configuration:
+          fields:
+            client_id: ID klienta
+            id: ID
+            token_expires_at: Token vyprší
+            token_status: Stav tokenu
+          token_expired: Vypršel
+          token_valid: Platný

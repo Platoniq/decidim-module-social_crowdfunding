@@ -9,9 +9,18 @@
     margin-top: 4%;
   }
 
-  input {
-    border: 1px solid #155abf;
-    margin-left: 1%;
+  .campaign__see-component {
+    margin-top: .5rem;
+  }
+
+  input.slug-input {
+    margin-left: .75rem;
+  }
+
+  input[type="text"] {
+    border: 1px solid #ccc;
+    margin-top: .4rem;
+    padding-left: .6rem;
   }
 
   .campaign {
@@ -21,6 +30,10 @@
 
 .participatory-space__container {
   background-color: #fafafa;
+}
+
+.participatory-space__content-block .space-y-8 > .columns {
+  max-width: 90%;
 }
 
 .aside__section {
@@ -36,6 +49,18 @@
   padding-top: .5%;
 }
 
+.toggle-hidden {
+  display: none;
+}
+
+.toggle-arrow__icon {
+  transition: transform .2s ease;
+}
+
+.toggle-arrow__icon--open {
+  transform: rotate(90deg);
+}
+
 .data,
 .data-text {
   padding-top: 5%;
@@ -43,4 +68,19 @@
 
 .aside__list {
   padding-top: 8%;
+}
+
+.fetch-spinner {
+  display: inline-block;
+  margin-top: 1rem;
+  width: 15px;
+  height: 15px;
+  border: 3px solid rgba(0, 0, 0, .15);
+  border-top-color: #155abf;
+  border-radius: 50%;
+  animation: spin .6s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
 }

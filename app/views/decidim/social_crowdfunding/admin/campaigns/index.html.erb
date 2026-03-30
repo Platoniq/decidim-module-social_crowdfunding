@@ -1,4 +1,5 @@
 <%= append_stylesheet_pack_tag "decidim_social_crowdfunding" %>
+<%= append_javascript_pack_tag "decidim_social_crowdfunding" %>
 <div class="card admin social-crowdfunding-campaign">
   <div class="item_show__header">
     <h2 class="item_show__header-title">
@@ -13,31 +14,34 @@
           <%= icon "settings-4-line" %>
           <%= t(".manage") %>
         <% end %>
+        <%= link_to goteo_configurations_path, class: "button button__sm button__secondary" do %>
+          <%= icon "account-circle-line" %>
+          <%= t(".manage_configurations") %>
+        <% end %>
       </div>
     </h2>
   </div>
-  <% if current_campaign %>
+  <% if current_goteo_config_valid? && current_campaign %>
     <div class="card-section">
       <h3>
-        <b><%= t(".selected") %></b>
+        <b><%= t(".selected") %>:</b> <span><%= translated_attribute(current_campaign.name) %></span>
       </h3>
-      <div class="campaign">
-        <%= link_to current_campaign.url, target: "_blank" do %>
-          <%= translated_attribute(current_campaign.name) %>
-        <% end %>
-      </div>
+      <%= link_to main_component_path(current_component), class: "button button__sm button__secondary button--simple campaign__see-component", target: "_blank", data: { "external-link": false } do %>
+        <%= icon "eye-line" %>
+        <span><%= t(".see_component") %></span>
+      <% end %>
     </div>
   <% end %>
   <div class="card-section">
     <h3>
-      <b><%= t(".select") %></b>
+      <b><%= t(".fetch") %></b>
     </h3>
-    <%= decidim_form_for @form do |f| %>
-      <%= f.text_field :slug, label: t(".slug") %>
+    <%= decidim_form_for @form, url: fetch_campaigns_path do |f| %>
+      <%= f.text_field :slug, label: t(".slug"), class: "slug-input" %>
       <div class="help-text mb-s">
         <%= t(".slug_info") %>
       </div>
-      <%= f.submit t(".submit"), class: "button button__sm button__secondary button--simple" %>
+      <%= f.submit t(".fetch_submit"), class: "button button__sm button__secondary button--simple", id: "fetch-campaign-btn" %>
     <% end %>
   </div>
   <h2 class="card-title">
@@ -48,18 +52,21 @@
     <table class="table-list">
       <thead>
         <tr>
-          <th><%= t("models.campaign.fields.id", scope: "decidim.social_crowdfunding") %></th>
+          <th><%= t("models.campaign.fields.slug", scope: "decidim.social_crowdfunding") %></th>
           <th><%= t("models.campaign.fields.title", scope: "decidim.social_crowdfunding") %></th>
           <th><%= t("models.campaign.fields.created_at", scope: "decidim.social_crowdfunding") %></th>
-          <th><%= t("models.campaign.fields.updated_at", scope: "decidim.social_crowdfunding") %></th>
           <th class="actions"><%= t("actions.title", scope: "decidim.social_crowdfunding") %></th>
         </tr>
       </thead>
       <tbody>
         <% campaigns.each do |campaign| %>
-          <tr data-id="<%= campaign.id %>">
+          <% selected = current_campaign&.slug == campaign.slug %>
+          <tr data-id="<%= campaign.id %>" style="<%= "background-color: rgba(0, 150, 80, 0.08);" if selected %>">
             <td>
-              <%= link_to campaign.slug, campaign.url, target: :blank %>
+              <%= campaign.slug %>
+              <% if selected %>
+                <span class="badge badge--success"><%= t(".active") %></span>
+              <% end %>
             </td>
             <td>
               <%= translated_attribute(campaign.name) %><br>
@@ -67,18 +74,15 @@
             <td>
               <%= l campaign.created_at, format: "%d/%m/%Y - %H:%M" %>
             </td>
-            <td>
-              <%= l campaign.updated_at, format: "%d/%m/%Y - %H:%M" %>
-            </td>
             <td class="table-list__actions">
-              <% if allowed_to? :update, :campaign, campaign: campaign %>
-                <%= icon_link_to "check-line", select_campaigns_path(slug: campaign.slug), t("actions.select", scope: "decidim.social_crowdfunding"), method: :post, class: "action-icon--select" %>
+              <% if allowed_to?(:update, :campaign, campaign: campaign) && !selected %>
+                <%= icon_link_to "check-line", select_campaigns_path(slug: campaign.slug), t("actions.select", scope: "decidim.social_crowdfunding"), method: :post, class: "action-icon--select action-icon--select-campaign" %>
               <% end %>
               <% if allowed_to? :update, :campaign, campaign: campaign %>
-                <%= icon_link_to "refresh-line", campaign_path(campaign), t("actions.update", scope: "decidim.social_crowdfunding"), method: :put, class: "action-icon--reload" %>
+                <%= icon_link_to "refresh-line", campaign_path(campaign), t("actions.update", scope: "decidim.social_crowdfunding"), method: :put, class: "action-icon--reload action-icon--reload-campaign" %>
               <% end %>
               <% if allowed_to? :destroy, :campaign, campaign: campaign %>
-                <%= icon_link_to "close-circle-line", campaign_path(campaign), t("actions.destroy", scope: "decidim.social_crowdfunding"), method: :delete, class: "action-icon--remove", data: { confirm: t("actions.confirm_destroy", scope: "decidim.social_crowdfunding") } %>
+                <%= icon_link_to "close-circle-line", campaign_path(campaign), t("actions.destroy", scope: "decidim.social_crowdfunding"), method: :delete, class: "action-icon--remove", data: { confirm: t("actions.confirm_campaign_destroy", scope: "decidim.social_crowdfunding") } %>
               <% end %>
             </td>
           </tr>

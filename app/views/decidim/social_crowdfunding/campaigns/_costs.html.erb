@@ -6,35 +6,31 @@
           <b><%= t(".#{type}") %></b>
         </td>
         <td style="width: 15%;">
-          <b><%= t(".minimum") %></b>
+          <b><%= t(".category") %></b>
         </td>
         <td style="width: 15%;">
-          <b><%= t(".optimum") %></b>
+          <b><%= t(".amount") %></b>
         </td>
       </tr>
     </thead>
 
     <tbody>
-      <% costs.sort_by { |c| c["required"] }.reverse.each do |cost| %>
+      <% costs.sort_by { |c| c["deadline"] }.each do |cost| %>
         <tr>
           <td>
             <strong>
-              <%= cost["name"] %>
+              <%= translated_attribute cost["title"] %>
             </strong>
             <br>
-            <%= render_markdown cost["description"] %>
+            <%= render_markdown translated_attribute cost["description"] %>
           </td>
 
           <td>
-            <% if cost["required"] == "True" %>
-              <%= campaign_money(cost["amount"]) %>
-            <% end %>
+              <%= cost["deadline"] %>
           </td>
 
           <td>
-            <% if cost["required"] == "False" %>
-              <%= campaign_money(cost["amount"]) %>
-            <% end %>
+              <%= campaign_money(translated_attribute cost["money"]["amount"]) %>
           </td>
         </tr>
       <% end %>
@@ -47,10 +43,9 @@
         <b><%= t(".total") %></b>
       </td>
       <td>
-        <b><%= campaign_money(campaign_total_minimum) %></b>
       </td>
       <td>
-        <b><%= campaign_money(campaign_total_optimum) %></b>
+        <b><%= campaign_money(campaign_total_minimum) %></b>
       </td>
     </tr>
   </tfoot>

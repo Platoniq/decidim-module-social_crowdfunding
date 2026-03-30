@@ -15,3 +15,10 @@ Decidim::Dev.dummy_app_path =
   File.expand_path(File.join(__dir__, "decidim_dummy_app"))
 
 require "decidim/dev/test/base_spec_helper"
+
+RSpec.configure do |config|
+  config.before(:suite) do
+    Time.zone = "UTC" # rubocop:disable Rails/TimeZoneAssignment
+    ENV["TZ"] = "UTC"
+  end
+end

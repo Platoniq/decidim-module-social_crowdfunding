@@ -1,0 +1,37 @@
+<div class="card admin social-crowdfunding-campaign">
+  <div class="item_show__header">
+    <h2 class="item_show__header-title">
+      <%= t(".title") %>
+      <div class="flex align-left gap-x-4">
+        <%= link_to goteo_configurations_path, class: "button button__sm button__secondary" do %>
+          <%= icon "account-circle-line" %>
+          <%= t(".configurations") %>
+        <% end %>
+      </div>
+    </h2>
+  </div>
+</div>
+<div class="item__edit-form">
+  <%= decidim_form_for @form, html: { class: "form-defaults form" } do |f| %>
+    <div class="card">
+      <div class="card-section">
+        <div class="form__wrapper">
+          <div class="card-divider">
+            <h2 class="card-title"><%= t(".title") %></h2>
+          </div>
+          <div class="card-section">
+            <div class="row column">
+              <%= f.text_field :client_id, label: t(".client_id") %>
+            </div>
+            <div class="row column">
+              <%= f.password_field :client_secret, label: t(".client_secret") %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row column pt-4 pb-4">
+        <%= f.submit t(".submit"), class: "button button__sm button__secondary" %>
+      </div>
+    </div>
+  <% end %>
+</div>

@@ -1,0 +1,72 @@
+<%= append_stylesheet_pack_tag "decidim_social_crowdfunding" %>
+<%= append_javascript_pack_tag "decidim_social_crowdfunding" %>
+<div class="card admin social-crowdfunding-campaign goteo-configurations">
+  <div class="item_show__header">
+    <h2 class="item_show__header-title">
+      <%= t(".title") %>
+      <div class="flex align-left gap-x-4">
+
+          <%= link_to campaigns_path, class: "button button__sm button__secondary" do %>
+            <%= icon "account-circle-line" %>
+            <%= t(".campaigns") %>
+          <% end %>
+
+          <%= link_to new_goteo_configuration_path, class: "button button__sm button__secondary" do %>
+            <%= icon "account-circle-line" %>
+            <%= t(".create_configuration") %>
+          <% end %>
+
+      </div>
+    </h2>
+  </div>
+
+  <h2 class="card-title">
+    <%= t(".title") %>
+  </h2>
+  <div class="table-scroll">
+    <table class="table-list">
+      <thead>
+        <tr>
+          <th><%= t("models.goteo_configuration.fields.id", scope: "decidim.social_crowdfunding") %></th>
+          <th><%= t("models.goteo_configuration.fields.client_id", scope: "decidim.social_crowdfunding") %></th>
+          <th><%= t("models.goteo_configuration.fields.token_status", scope: "decidim.social_crowdfunding") %></th>
+          <th><%= t("models.goteo_configuration.fields.token_expires_at", scope: "decidim.social_crowdfunding") %></th>
+          <th class="actions"><%= t("actions.title", scope: "decidim.social_crowdfunding") %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% goteo_configurations.each do |goteo_configuration| %>
+          <tr data-id="<%= goteo_configuration.id %>">
+            <td>
+              <%= goteo_configuration.id %>
+            </td>
+            <td>
+              <%= goteo_configuration.client_id %>
+            </td>
+            <td>
+              <% if goteo_configuration.token_valid? %>
+                <span class="text-success"><%= t("models.goteo_configuration.token_valid", scope: "decidim.social_crowdfunding") %></span>
+              <% else %>
+                <span class="text-alert"><%= t("models.goteo_configuration.token_expired", scope: "decidim.social_crowdfunding") %></span>
+              <% end %>
+            </td>
+            <td>
+              <%= goteo_configuration.token_expires_at.present? ? l(goteo_configuration.token_expires_at.localtime, format: "%d/%m/%Y - %H:%M") : "-" %>
+            </td>
+            <td class="table-list__actions">
+              <div class="actions-wrapper">
+                <%= button_to refresh_goteo_configuration_path(goteo_configuration), method: :post, class: "action-icon action-icon--reload", title: t("actions.refresh", scope: "decidim.social_crowdfunding") do %>
+                  <%= icon "refresh-line" %>
+                <% end %>
+                <% if allowed_to? :destroy, :goteo_configuration, goteo_configuration: goteo_configuration %>
+                  <%= icon_link_to "close-circle-line", goteo_configuration_path(goteo_configuration), t("actions.destroy", scope: "decidim.social_crowdfunding"), method: :delete, class: "action-icon--remove", data: { confirm: t("actions.confirm_config_destroy", scope: "decidim.social_crowdfunding") } %>
+                <% end %>
+              </div>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <%= paginate goteo_configurations, theme: "decidim" %>
+  </div>
+</div>

@@ -7,20 +7,12 @@ module Decidim
     module Goteo
       include ActiveSupport::Configurable
 
-      # setup default API credentials
-      config_accessor :api_credentials do
-        {
-          username: ENV.fetch("GOTEO_API_USERNAME", ""),
-          key: ENV.fetch("GOTEO_API_KEY", "")
-        }
-      end
+      TOKEN_EXPIRY_BUFFER = 5.minutes
 
-      # setup API base url
       config_accessor :api_url do
-        ENV.fetch("GOTEO_API_URL", "https://api.goteo.org/v1")
+        ENV.fetch("GOTEO_API_URL", "https://v4.goteo.org")
       end
 
-      # setup base url
       config_accessor :base_url do
         ENV.fetch("GOTEO_BASE_URL", "https://goteo.org/")
       end

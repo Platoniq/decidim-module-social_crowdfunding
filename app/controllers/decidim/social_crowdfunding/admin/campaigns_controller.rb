@@ -5,16 +5,38 @@ module Decidim
     module Admin
       class CampaignsController < Decidim::Admin::Components::BaseController
         include Decidim::Paginable
-        include Decidim::SocialCrowdfunding::HasCampaign
+        include HasCampaign
+        include HasGoteoConfiguration
 
         helper Decidim::SocialCrowdfunding::Admin::ApplicationHelper
 
         helper_method :campaigns
 
+        before_action :check_goteo_config
+
         def index
           enforce_permission_to :index, :campaigns
 
-          @form = SelectCampaignForm.new(slug: current_campaign&.slug)
+          @form = SelectCampaignForm.new
+        end
+
+        def fetch
+          enforce_permission_to :update, :campaign
+
+          @form = form(SelectCampaignForm).from_params(params)
+
+          if @form.invalid?
+            flash[:alert] = I18n.t("campaigns.fetch.error", scope: "decidim.social_crowdfunding.admin")
+            return redirect_to root_url
+          end
+
+          Campaign.fetch(@form.slug, current_goteo_config.ensure_valid_token!, current_component, sync: true)
+
+          flash[:notice] = I18n.t("campaigns.fetch.success", scope: "decidim.social_crowdfunding.admin")
+          redirect_to root_url
+        rescue Goteo::Api::Error => e
+          flash[:alert] = I18n.t("campaigns.fetch.error", scope: "decidim.social_crowdfunding.admin", error: e.message)
+          redirect_to root_url
         end
 
         def select
@@ -57,6 +79,8 @@ module Decidim
         def destroy
           enforce_permission_to(:destroy, :campaign, campaign:)
 
+          clear_selected_campaign if campaign.slug == current_component.settings[:campaign_slug]
+
           DestroyCampaign.call(campaign, current_user) do
             on(:ok) do
               flash[:notice] = I18n.t("campaigns.destroy.success", scope: "decidim.social_crowdfunding.admin")
@@ -78,6 +102,11 @@ module Decidim
 
         def collection
           @collection ||= Decidim::SocialCrowdfunding::Campaign.where(organization: current_organization)
+        end
+
+        def clear_selected_campaign
+          current_component.settings = current_component.settings.to_h.merge("campaign_slug" => "")
+          current_component.save!
         end
       end
     end

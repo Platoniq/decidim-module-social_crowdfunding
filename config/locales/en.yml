@@ -6,15 +6,14 @@ en:
         name: Social Crowdfunding Campaign
         settings:
           global:
-            campaign_id: Campaign ID
-            goteo_api_key: Goteo API key
+            campaign_slug: Campaign slug
             goteo_api_update_hours: Time interval (in hours) to update campaigns with Goteo API data
-            goteo_api_url: Goteo API URL
-            goteo_api_username: Goteo API username
     social_crowdfunding:
       actions:
-        confirm_destroy: Are you sure you want to delete this campaign? (It will only delete the Decidim copy of this campaign, not the original one)
+        confirm_campaign_destroy: Are you sure you want to delete this campaign? (It will only delete the Decidim copy of this campaign, not the original one)
+        confirm_config_destroy: Are you sure you want to delete this Goteo configuration? (It will only unlink your account from Decidim)
         destroy: Delete
+        refresh: Refresh token
         select: Select
         title: Actions
         update: Update
@@ -23,16 +22,23 @@ en:
           destroy:
             success: The campaign has been deleted
           fetch:
+            error: The campaign could not be fetched
             not_found: The campaign could not be found
+            not_selected: This component doesn't have a Goteo campaign selected
+            success: The campaign has been fetched successfully
           index:
+            active: "(Active)"
             campaigns: Stored campaigns
             create: Create campaign in
+            fetch: Fetch a campaign
+            fetch_submit: Fetch campaign
             manage: Manage settings
+            manage_configurations: Manage Goteo configurations
+            see_component: See component
             select: Select a campaign
             selected: Selected campaign
-            slug: Campaign ID
-            slug_info: You can copy the last part of your campaign's public URL (https://goteo.org/project/<your-campaign-id>)
-            submit: Update campaign
+            slug: Campaign slug
+            slug_info: You can copy the last part of your campaign's public URL (https://goteo.org/project/<your-campaign-slug>)
             title: Social Crowdfunding Campaign
           select:
             error: There was an error updating the campaign
@@ -40,11 +46,33 @@ en:
           update:
             error: There was an error updating the campaign
             success: The campaign has been updated
+        goteo_configurations:
+          create:
+            invalid: There was a problem creating your Goteo configuration. Please check your client ID and client secret and try again
+            success: Your Goteo configuration has been created successfully
+          destroy:
+            success: Your Goteo configuration has been deleted
+          fetch:
+            not_found: The selected Goteo configuration could not be found.
+          index:
+            campaigns: Back to Campaigns
+            create_configuration: Create Goteo configuration
+            title: Goteo configurations
+          new:
+            client_id: Client ID
+            client_secret: Client secret
+            configurations: Back to configurations
+            submit: Create configuration
+            title: Create Goteo configuration
+          refresh:
+            invalid: 'There was a problem refreshing the token: %{error}'
+            success: The token has been refreshed successfully
       campaigns:
         costs:
+          amount: Amount
+          category: Budget category
+          infrastructure: Infrastructure
           material: Materials
-          minimum: Minimum
-          optimum: Optimum
           structure: Structure
           task: Tasks
           title: Costs
@@ -72,12 +100,16 @@ en:
           '1': First round
           '2': Second round
         show:
+          campaign:
+            not_found: This component doesn't have a Goteo campaign selected
           description:
             about: Description of the project. Main features, strengths and differentials.
             general: General information
             goal: Goals of the crowdfunding campaign
             motivation: Why is this important
           donate: Donate in
+          goteo_configuration:
+            not_found: This component doesn't have a valid Goteo configuration setted, so the campaign information can't be fetched.
           money:
             minimum: Minimum
             optimum: Optimum
@@ -86,11 +118,20 @@ en:
         social_commitment:
           title: Social commitment
         statuses:
+          campaign:
+            failed: Failed
           editing: Editing
           fulfilled: Accomplished!
           funded: Funded
+          funding:
+            paid: Funded
           in_campaign: In campaign
-          reviewing: Reviewing
+          in_draft: Draft
+          in_editing: Editing
+          in_funding: In funding
+          in_pending: Pending
+          in_review: Reviewing
+          rejected: Rejected
           unfunded: Unfunded
         thermometer:
           minimum: Min.
@@ -100,5 +141,14 @@ en:
           fields:
             created_at: Created at
             id: ID
+            slug: Slug
             title: Title
             updated_at: Updated at
+        goteo_configuration:
+          fields:
+            client_id: Client ID
+            id: ID
+            token_expires_at: Token expires at
+            token_status: Token status
+          token_expired: Expired
+          token_valid: Valid

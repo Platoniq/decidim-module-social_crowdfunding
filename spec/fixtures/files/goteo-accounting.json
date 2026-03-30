@@ -1,0 +1,9 @@
+{
+   "id": 1,
+   "currency": "EUR",
+   "balance": {
+       "amount": 31456,
+       "currency": "EUR"
+   },
+   "owner": "/v4/projects/1"
+}

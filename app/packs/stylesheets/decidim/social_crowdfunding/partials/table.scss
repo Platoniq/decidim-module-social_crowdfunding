@@ -1,20 +1,64 @@
-.table__costs,
-th,
-td,
-tr:nth-child(even) {
-  border: 1px solid #f2f2f2;
-  padding: 2%;
+.table__costs {
+  width: 100%;
+  border-collapse: collapse;
+
+  thead td {
+    background-color: #e8e8e8;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: .85em;
+    letter-spacing: .03em;
+  }
+
+  tbody tr:nth-child(odd) {
+    background-color: #fff;
+  }
+
+  tbody tr:nth-child(even) {
+    background-color: #fafafa;
+  }
+
+  tfoot td {
+    background-color: #e8e8e8;
+    font-weight: 600;
+  }
+
+  td {
+    padding: .75rem 1rem;
+    border-bottom: 1px solid #e0e0e0;
+    vertical-align: top;
+  }
 }
 
 .table-scroll {
   padding-top: 2%;
 }
 
-thead td,
-tfoot td {
-  background-color: #fafafa;
-}
+.goteo-configurations .table-list__actions .actions-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
 
-tr:nth-child(odd) {
-  background-color: #ffff;
+  form {
+    display: inline;
+  }
+
+  form {
+    display: inline;
+
+    button[class*="action-icon"] {
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+
+      svg {
+        display: inline-block;
+        height: 1.25rem;
+        width: 1.25rem;
+        fill: rgb(var(--secondary-rgb));
+      }
+    }
+  }
 }
