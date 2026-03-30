@@ -8,7 +8,6 @@ en:
           global:
             campaign_slug: Campaign slug
             goteo_api_update_hours: Time interval (in hours) to update campaigns with Goteo API data
-            goteo_configuration_id: Goteo configuration ID
     social_crowdfunding:
       actions:
         confirm_campaign_destroy: Are you sure you want to delete this campaign? (It will only delete the Decidim copy of this campaign, not the original one)

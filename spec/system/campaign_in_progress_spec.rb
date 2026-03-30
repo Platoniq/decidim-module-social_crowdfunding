@@ -15,7 +15,7 @@ describe "Show campaign" do
     before do
       login_as user, scope: :user
 
-      component.settings = { goteo_configuration_id: goteo_configuration.id, campaign_slug: campaign_slug }
+      component.settings = { campaign_slug: campaign_slug }
       component.save!
 
       visit_component

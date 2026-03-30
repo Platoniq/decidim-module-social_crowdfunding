@@ -12,7 +12,6 @@ ca:
             goteo_api_update_hours: Interval de temps (en hores) per actualitzar campanyes amb les dades de l'API de Goteo
             goteo_api_url: URL de l'API de Goteo
             goteo_api_username: Nom d'usuària de l'API de Goteo
-            goteo_configuration_id: ID de configuració de Goteo
     social_crowdfunding:
       actions:
         confirm_campaign_destroy: Confirmes que vols eliminar aquesta campanya? (Només s'eliminarà la còpia que guarda Decidim, no l'original)

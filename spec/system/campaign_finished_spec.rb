@@ -12,6 +12,7 @@ describe "Show campaign" do
   context "when the component has not a valid Goteo Configuration setted" do
     before do
       login_as user, scope: :user
+      visit_component
     end
 
     it "displays an alert" do
@@ -25,7 +26,7 @@ describe "Show campaign" do
     before do
       login_as user, scope: :user
 
-      component.settings = { goteo_configuration_id: goteo_configuration.id, campaign_slug: campaign_slug }
+      component.settings = { campaign_slug: campaign_slug }
       component.save!
 
       visit_component

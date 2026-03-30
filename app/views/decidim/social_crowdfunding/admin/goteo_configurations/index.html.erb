@@ -59,9 +59,7 @@
                   <%= icon "refresh-line" %>
                 <% end %>
                 <% if allowed_to? :destroy, :goteo_configuration, goteo_configuration: goteo_configuration %>
-                  <%= button_to goteo_configuration_path(goteo_configuration), method: :delete, class: "action-icon action-icon--remove", title: t("actions.destroy", scope: "decidim.social_crowdfunding"), onclick: "return confirm('#{j t("actions.confirm_config_destroy", scope: "decidim.social_crowdfunding")}');" do %>
-                    <%= icon "close-circle-line" %>
-                  <% end %>
+                  <%= icon_link_to "close-circle-line", goteo_configuration_path(goteo_configuration), t("actions.destroy", scope: "decidim.social_crowdfunding"), method: :delete, class: "action-icon--remove", data: { confirm: t("actions.confirm_config_destroy", scope: "decidim.social_crowdfunding") } %>
                 <% end %>
               </div>
             </td>

@@ -12,7 +12,6 @@ cs:
             goteo_api_update_hours: Časový interval (v hodinách) pro aktualizaci kampaní pomocí Goteo API
             goteo_api_url: Goteo API URL
             goteo_api_username: Goteo API uživatelské jméno
-            goteo_configuration_id: ID konfigurace Goteo
     social_crowdfunding:
       actions:
         confirm_campaign_destroy: Opravdu chcete odstranit tuto kampaň? (Odstraní pouze kopii této kampaně v Decidim, nikoliv původní kampaň)

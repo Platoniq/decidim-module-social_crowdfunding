@@ -14,8 +14,7 @@ Decidim.register_component(:social_crowdfunding_campaign) do |component|
   component.settings(:global) do |settings|
     # Add your global settings
     # Available types: :integer, :boolean
-    settings.attribute :campaign_slug, type: :string
-    settings.attribute :goteo_configuration_id, type: :integer
+    settings.attribute :campaign_slug, type: :string, readonly: ->(_context) { true }
     settings.attribute :goteo_api_update_hours, type: :integer, default: 24
   end
 

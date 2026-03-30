@@ -7,11 +7,10 @@ describe "Visit the admin page" do
   include_context "with stubs example api"
   include_context "with finished campaign component"
 
-  let!(:campaign) { create(:campaign) }
+  let!(:campaign) { create(:campaign, organization:) }
   let!(:campaign_name) { "Nodo Móvil" }
   let!(:campaign_slug) { "nodo-movil" }
 
-  let!(:organization) { create(:organization) }
   let!(:admin) { create(:user, :admin, :confirmed, organization:) }
 
   let!(:edit_component_path) { Decidim::EngineRouter.admin_proxy(component.participatory_space).edit_component_path(component.id) }
@@ -34,7 +33,7 @@ describe "Visit the admin page" do
 
     context "when there isn't a valid Goteo configuration setted for the component" do
       it "displays an alert requesting to create a Goteo configuration" do
-        expect(page).to have_content("Please create a valid Goteo configuration")
+        expect(page).to have_content("The selected Goteo configuration could not be found.")
       end
     end
 
@@ -90,14 +89,14 @@ describe "Visit the admin page" do
       let!(:goteo_configuration) { create(:goteo_configuration, organization:) }
 
       before do
-        component.settings = { goteo_configuration_id: goteo_configuration.id, campaign_slug: campaign_slug }
+        component.settings = { campaign_slug: campaign_slug }
         component.save!
         visit manage_component_path(component)
       end
 
       it "doesn't display an alert requesting to create a Goteo configuration" do
         visit manage_component_path(component)
-        expect(page).to have_no_content("Please create a valid Goteo configuration")
+        expect(page).to have_no_content("The selected Goteo configuration could not be found.")
       end
 
       it "allows selecting a different campaign" do

@@ -79,6 +79,8 @@ module Decidim
         def destroy
           enforce_permission_to(:destroy, :campaign, campaign:)
 
+          clear_selected_campaign if campaign.slug == current_component.settings[:campaign_slug]
+
           DestroyCampaign.call(campaign, current_user) do
             on(:ok) do
               flash[:notice] = I18n.t("campaigns.destroy.success", scope: "decidim.social_crowdfunding.admin")
@@ -100,6 +102,11 @@ module Decidim
 
         def collection
           @collection ||= Decidim::SocialCrowdfunding::Campaign.where(organization: current_organization)
+        end
+
+        def clear_selected_campaign
+          current_component.settings = current_component.settings.to_h.merge("campaign_slug" => "")
+          current_component.save!
         end
       end
     end
