@@ -27,13 +27,13 @@ describe "Show campaign" do
         expect(page).to have_content("Second round")
 
         within ".reached" do
-          expect(page).to have_content("€126,563")
+          expect(page).to have_content("€ 126,563")
         end
         within ".optimum" do
-          expect(page).to have_content("€130,111")
+          expect(page).to have_content("€ 130,111")
         end
         within ".minimum" do
-          expect(page).to have_content("€94,185")
+          expect(page).to have_content("€ 94,185")
         end
       end
 
@@ -95,7 +95,7 @@ describe "Show campaign" do
 
     within "#rewards .card__list-list .card__container:first-of-type" do
       within ".card__content" do
-        expect(page).to have_content "Contributing €10"
+        expect(page).to have_content "Contributing € 10"
         expect(page).to have_content "Amadrina una Teya"
 
         within ".card__text" do
@@ -107,7 +107,7 @@ describe "Show campaign" do
         end
         within ".card__grid-metadata .card__icondata:nth-child(2)" do
           expect(page).to have_css "svg"
-          expect(page).to have_content "CONTRIBUTING €10"
+          expect(page).to have_content "CONTRIBUTING € 10"
         end
       end
 

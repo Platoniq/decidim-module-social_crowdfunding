@@ -21,13 +21,13 @@ describe "Show campaign" do
         expect(page).to have_content("23/01/2012")
       end
       within ".reached" do
-        expect(page).to have_content("€1,744")
+        expect(page).to have_content("€ 1,744")
       end
       within ".optimum" do
-        expect(page).to have_content("€1,750")
+        expect(page).to have_content("€ 1,750")
       end
       within ".minimum" do
-        expect(page).to have_content("€1,250")
+        expect(page).to have_content("€ 1,250")
       end
     end
 
@@ -66,7 +66,7 @@ describe "Show campaign" do
 
     within "#rewards .card__list-list .card__container:first-of-type" do
       within ".card__content" do
-        expect(page).to have_content "Contributing €5"
+        expect(page).to have_content "Contributing € 5"
         expect(page).to have_content "Acreditación de mecenazgo"
 
         within ".card__text" do
@@ -78,7 +78,7 @@ describe "Show campaign" do
         end
         within ".card__grid-metadata .card__icondata:nth-child(2)" do
           expect(page).to have_css "svg"
-          expect(page).to have_content "CONTRIBUTING €5"
+          expect(page).to have_content "CONTRIBUTING € 5"
         end
       end
 

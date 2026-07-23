@@ -25,3 +25,4 @@ node_modules/
 npm_debug.log
 
 .rubocop-*
+mise.toml
