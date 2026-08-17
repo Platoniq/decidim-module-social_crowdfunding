@@ -317,6 +317,11 @@ GEM
       decidim-core (= 0.31.0)
     decidim-generators (0.31.0)
       decidim-core (= 0.31.0)
+    decidim-initiatives (0.31.0)
+      decidim-admin (= 0.31.0)
+      decidim-comments (= 0.31.0)
+      decidim-core (= 0.31.0)
+      decidim-verifications (= 0.31.0)
     decidim-meetings (0.31.0)
       decidim-core (= 0.31.0)
       decidim-forms (= 0.31.0)
@@ -413,6 +418,7 @@ GEM
       logger
     faraday-net_http (3.4.4)
       net-http (~> 0.5)
+    ffi (1.17.4)
     ffi (1.17.4-aarch64-linux-gnu)
     ffi (1.17.4-aarch64-linux-musl)
     ffi (1.17.4-arm-linux-gnu)
@@ -1013,6 +1019,7 @@ PLATFORMS
   arm-linux-gnu
   arm-linux-musl
   arm64-darwin
+  ruby
   x86-linux
   x86-linux-gnu
   x86-linux-musl
@@ -1026,6 +1033,7 @@ DEPENDENCIES
   coveralls_reborn
   decidim (= 0.31.0)
   decidim-dev (= 0.31.0)
+  decidim-initiatives (= 0.31.0)
   decidim-social_crowdfunding!
   faker
   letter_opener_web (~> 1.3)
