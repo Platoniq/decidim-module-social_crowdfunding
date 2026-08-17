@@ -7,8 +7,8 @@ ruby RUBY_VERSION
 DECIDIM_VERSION = "0.31.0"
 
 gem "decidim", DECIDIM_VERSION
-gem "decidim-social_crowdfunding", path: "."
 gem "decidim-initiatives", DECIDIM_VERSION
+gem "decidim-social_crowdfunding", path: "."
 
 gem "bootsnap", "~> 1.4"
 
