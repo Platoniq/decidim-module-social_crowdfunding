@@ -69,7 +69,7 @@ module Decidim
         private
 
         def campaign
-          @campaign ||= Decidim::SocialCrowdfunding::Campaign.find_by(id: params[:id])
+          @campaign ||= collection.find(params[:id])
         end
 
         def campaigns
