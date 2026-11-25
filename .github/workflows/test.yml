@@ -7,12 +7,14 @@ on:
   pull_request:
 
 env:
-  RUBY_VERSION: 3.3.4
-  NODE_VERSION: 18.17.1
+  RUBY_VERSION: 3.4.13
+  # Ruby 3.4.13 refuses to cache compiled code while coverage runs; the dummy app turns the bootsnap iseq cache off when SIMPLECOV is set
+  SIMPLECOV: "true"
+  NODE_VERSION: 22.14.0
 
 jobs:
   test-report:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
 
     services:
       postgres:
@@ -37,7 +39,7 @@ jobs:
           fetch-depth: 1
 
       - run: |
-          sudo apt install imagemagick
+          sudo apt-get update && sudo apt-get install -y imagemagick libvips libvips-tools
 
       - uses: ruby/setup-ruby@v1
         with:
